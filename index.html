@@ -127,8 +127,23 @@ nav .container {
 
 .nav-cta:hover { background: var(--sage-light); }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger svg {
+  display: block;
+  color: var(--charcoal);
+}
+
 @media (max-width: 900px) {
   .nav-links { display: none; }
+  .nav-right { display: none; }
+  .hamburger { display: block; }
 }
 
 /* ── Hero ── */
@@ -145,9 +160,22 @@ nav .container {
 }
 
 @media (max-width: 900px) {
+  .hero {
+    padding: 100px 0 40px;
+  }
+
   .hero .container {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 0;
+  }
+
+  .hero-content {
+    order: 2;
+  }
+
+  .hero-visual {
+    order: 1;
+    margin-bottom: 24px;
   }
 }
 
@@ -261,8 +289,65 @@ nav .container {
 }
 
 @media (max-width: 900px) {
-  .hero-visual { min-height: auto; }
-  .hero-annotation { display: none; }
+  .hero-visual {
+    min-height: auto;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  .hero-spread:first-child img {
+    border-radius: 8px;
+    max-height: 320px;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .hero-spread-2 {
+    margin-top: 16px;
+  }
+
+  .hero-spread-2 img {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 8px;
+  }
+
+  .hero-annotation {
+    font-size: 22px;
+  }
+
+  .hero-annotation-1 {
+    top: auto;
+    bottom: -8px;
+    right: 8px;
+  }
+
+  .hero-annotation-2 {
+    bottom: 30px;
+    left: 8px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 18px;
+    font-size: 17px;
+  }
+
+  .hero-note {
+    margin-top: 16px;
+    font-size: 24px;
+  }
 }
 
 /* ── Tagline bar ── */
@@ -856,6 +941,47 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .container { padding: 0 20px; }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .how-it-works,
+  .showcase,
+  .prompt-section,
+  .use-cases,
+  .pricing,
+  .faq,
+  .final-cta {
+    padding: 56px 0;
+  }
+
+  .step { padding: 36px 24px; }
+
+  .prompt-card { grid-template-columns: 1fr; }
+  .prompt-left { padding: 36px 24px; }
+  .prompt-right { padding: 36px 24px; }
+
+  .cta-card {
+    padding: 56px 24px;
+    border-radius: 16px;
+  }
+
+  .cta-card .hero-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .price-card { padding: 36px 24px; }
+
+  .modal { padding: 32px 24px; }
+
+  .tagline-bar .container { gap: 16px; }
+  .tagline-bar span { font-size: 10px; letter-spacing: 1.5px; }
+
   .footer-content {
     flex-direction: column;
     gap: 16px;
@@ -1007,6 +1133,9 @@ footer {
       <a href="#" class="nav-login">Log in</a>
       <a href="#pricing" class="nav-cta">Start Your Book</a>
     </div>
+    <button class="hamburger" aria-label="Menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
   </div>
 </nav>
 
