@@ -9,8 +9,6 @@
   --shadow:0 18px 50px rgba(38,34,27,.12);
 }
 *{box-sizing:border-box}
-
-/* ── Buttons ── */
 .button{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:16px 36px;background:var(--olive);color:#fff;
@@ -22,11 +20,7 @@
 .button.small{padding:10px 22px;font-size:.82rem}
 .button.ghost{background:transparent;color:var(--olive)}
 .button.ghost:hover{background:var(--olive);color:#fff}
-
-/* ── Handwritten ── */
 .hand{font-family:"Reenie Beanie",cursive;font-size:1.55rem;line-height:.95}
-
-/* ── Polaroid ── */
 .polaroid{
   background:#fff;padding:10px 10px 4px;
   box-shadow:0 8px 28px rgba(38,34,27,.1);
@@ -44,6 +38,16 @@
 }
 .tilt-left{transform:rotate(-4deg)}
 .tilt-right{transform:rotate(4deg)}
+.hero-main-photo:before{
+  content:"";position:absolute;top:-8px;left:38%;
+  width:48px;height:16px;background:rgba(210,196,170,.6);
+  transform:rotate(3deg);z-index:5;
+}
+.hero-city-photo:before,.mobile-city-photo:before{
+  content:"";position:absolute;top:-6px;right:18%;
+  width:40px;height:14px;background:rgba(210,196,170,.6);
+  transform:rotate(-2deg);z-index:5;
+}
 html{scroll-behavior:smooth}
 body{
   margin:0;
@@ -146,16 +150,6 @@ img{display:block;width:100%;height:auto}
   letter-spacing:.2em;
   text-transform:uppercase
 }
-.hero-main-photo:before{
-  content:"";position:absolute;top:-8px;left:38%;
-  width:48px;height:16px;background:rgba(210,196,170,.6);
-  transform:rotate(3deg);z-index:5;
-}
-.hero-city-photo:before,.mobile-city-photo:before{
-  content:"";position:absolute;top:-6px;right:18%;
-  width:40px;height:14px;background:rgba(210,196,170,.6);
-  transform:rotate(-2deg);z-index:5;
-}
 .hero-collage{display:none}
 .mobile-hero-bottom{
   position:relative;
@@ -256,6 +250,47 @@ label span,.fineprint{color:#747970;font-size:.74rem}
 footer{padding:30px 20px 50px;border-top:1px solid var(--line);display:grid;gap:8px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
 footer .brand{text-transform:none;font-size:1.8rem;letter-spacing:-.04em}
 
+
+.lede-small{
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.28rem;
+  line-height:1.2;
+  max-width:42rem;
+  color:#3f463f;
+}
+.real-spreads{padding-top:40px}
+.spread-showcase{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:12px 20px 28px;
+  margin:16px -20px 0;
+  scrollbar-width:none;
+}
+.spread-showcase::-webkit-scrollbar{display:none}
+.spread-card{
+  flex:0 0 92%;
+  scroll-snap-align:center;
+  margin:0;
+  background:#faf7f0;
+  padding:8px 8px 14px;
+  box-shadow:var(--shadow);
+}
+.spread-card img{width:100%;display:block}
+.spread-card figcaption{
+  margin-top:12px;
+  padding:0 8px;
+  text-align:center;
+  font-size:1.45rem;
+}
+.spread-note{
+  margin:8px 0 0 auto;
+  max-width:16rem;
+  text-align:right;
+  transform:rotate(-2deg);
+}
+
 @media (min-width: 780px){
   .menu-btn{display:none}.menu{position:static;display:flex;flex-direction:row;align-items:center;padding:0;background:none;box-shadow:none;border:0}
   .nav{padding:20px 4vw}
@@ -291,6 +326,20 @@ footer .brand{text-transform:none;font-size:1.8rem;letter-spacing:-.04em}
   .hero-book .book-sub{font-size:.55rem}
   .mobile-hero-bottom{display:none}
   .proof{grid-template-columns:repeat(3,1fr);margin-top:22px}
+
+  .real-spreads{padding-left:5vw;padding-right:5vw}
+  .real-spreads h2{max-width:900px}
+  .spread-showcase{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    overflow:visible;
+    margin:28px 0 0;
+    padding:0;
+  }
+  .spread-card{width:auto;transform:none}
+  .spread-card figcaption{font-size:1.65rem}
+  .spread-note{font-size:1.85rem;max-width:22rem;margin-top:20px}
   .steps,.cards{grid-template-columns:repeat(3,1fr)}
   .cards article{grid-template-columns:1fr}.cards img{width:100%;height:230px}
   .gallery{grid-template-columns:1.2fr 1fr}.mini-grid{grid-column:1/-1}
