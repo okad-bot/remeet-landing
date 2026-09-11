@@ -1,1537 +1,274 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Remeet — Your photos, beautifully remembered</title>
-<meta name="description" content="Send us your photos. Get a stunning photo book in 72 hours. Edit with simple prompts. Digital & print.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --sage: #4A5D4A;
-  --sage-light: #5C6E5C;
-  --sage-bg: #EEF2EB;
-  --cream: #F5F1EB;
-  --cream-dark: #EDE8E0;
-  --sand: #D5C7B5;
-  --terracotta: #C4704B;
-  --charcoal: #2E2E2E;
-  --white: #FFFFFF;
-  --text: #2E2E2E;
-  --text-secondary: #6B6560;
-  --border: #E0DAD0;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  color: var(--text);
-  background: var(--cream);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-.handwritten {
-  font-family: 'Reenie Beanie', cursive;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-/* ── Nav ── */
-nav {
-  padding: 18px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: rgba(245, 241, 235, 0.92);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s;
-}
-
-nav.scrolled { border-bottom-color: var(--border); }
-
-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  font-weight: 500;
-  color: var(--charcoal);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-  font-style: italic;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.nav-links a {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover { color: var(--charcoal); }
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.nav-login {
-  font-size: 14px;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-login:hover { color: var(--charcoal); }
-
-.nav-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  background: var(--sage);
-  color: var(--cream);
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background 0.2s;
-}
-
-.nav-cta:hover { background: var(--sage-light); }
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
-
-.hamburger svg {
-  display: block;
-  color: var(--charcoal);
-}
-
-@media (max-width: 900px) {
-  .nav-links { display: none; }
-  .nav-right { display: none; }
-  .hamburger { display: block; }
-}
-
-/* ── Hero ── */
-.hero {
-  padding: 140px 0 80px;
-  overflow: hidden;
-}
-
-.hero .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-@media (max-width: 900px) {
-  .hero {
-    padding: 100px 0 40px;
-  }
-
-  .hero .container {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .hero-content {
-    order: 2;
-  }
-
-  .hero-visual {
-    order: 1;
-    margin-bottom: 24px;
-  }
-}
-
-.hero-content {
-  position: relative;
-}
-
-.hero-badge {
-  display: inline-block;
-  padding: 8px 20px;
-  background: var(--cream-dark);
-  border-radius: 4px;
-  margin-bottom: 32px;
-  transform: rotate(-2deg);
-}
-
-.hero-badge span {
-  font-family: 'Reenie Beanie', cursive;
-  font-size: 24px;
-  color: var(--charcoal);
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 4.5vw, 56px);
-  line-height: 1.12;
-  letter-spacing: -1px;
-  color: var(--charcoal);
-  margin-bottom: 24px;
-  font-weight: 400;
-}
-
-.hero-sub {
-  font-size: 17px;
-  color: var(--text-secondary);
-  max-width: 440px;
-  margin-bottom: 40px;
-  line-height: 1.7;
-}
-
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 40px;
-  background: var(--sage);
-  color: var(--cream);
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: background 0.2s, transform 0.2s;
-  border: none;
-  cursor: pointer;
-}
-
-.hero-cta:hover {
-  background: var(--sage-light);
-  transform: translateY(-1px);
-}
-
-.hero-note {
-  margin-top: 20px;
-  font-family: 'Reenie Beanie', cursive;
-  font-size: 26px;
-  color: var(--charcoal);
-  line-height: 1.3;
-}
-
-.hero-visual {
-  position: relative;
-  min-height: 500px;
-}
-
-.hero-spread {
-  position: relative;
-}
-
-.hero-spread img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 16px 60px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.hero-spread-2 {
-  margin-top: -40px;
-}
-
-.hero-spread-2 img {
-  width: 90%;
-  margin-left: 10%;
-}
-
-.hero-annotation {
-  position: absolute;
-  font-family: 'Reenie Beanie', cursive;
-  font-size: 24px;
-  color: var(--charcoal);
-  line-height: 1.2;
-  pointer-events: none;
-}
-
-.hero-annotation-1 {
-  top: -10px;
-  right: 0;
-}
-
-.hero-annotation-2 {
-  bottom: 20px;
-  left: -20px;
-}
-
-@media (max-width: 900px) {
-  .hero-visual {
-    min-height: auto;
-    margin-left: -16px;
-    margin-right: -16px;
-  }
-
-  .hero-spread:first-child img {
-    border-radius: 8px;
-    max-height: 320px;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  .hero-spread-2 {
-    margin-top: 16px;
-  }
-
-  .hero-spread-2 img {
-    width: 100%;
-    margin-left: 0;
-    border-radius: 8px;
-  }
-
-  .hero-annotation {
-    font-size: 22px;
-  }
-
-  .hero-annotation-1 {
-    top: auto;
-    bottom: -8px;
-    right: 8px;
-  }
-
-  .hero-annotation-2 {
-    bottom: 30px;
-    left: 8px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero-sub {
-    font-size: 16px;
-    margin-bottom: 28px;
-  }
-
-  .hero-cta {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 18px;
-    font-size: 17px;
-  }
-
-  .hero-note {
-    margin-top: 16px;
-    font-size: 24px;
-  }
-}
-
-/* ── Tagline bar ── */
-.tagline-bar {
-  padding: 24px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.tagline-bar .container {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-}
-
-.tagline-bar span {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-
-.tagline-divider {
-  color: var(--border);
-}
-
-/* ── Social proof ── */
-.social-proof {
-  padding: 48px 0;
-  text-align: center;
-}
-
-.proof-stats {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-
-.proof-stat {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--text-secondary);
-  font-size: 14px;
-}
-
-.proof-stat svg {
-  flex-shrink: 0;
-  color: var(--sage);
-}
-
-/* ── Showcase ── */
-.showcase {
-  padding: 80px 0;
-}
-
-.showcase-label {
-  text-align: center;
-  font-family: 'Reenie Beanie', cursive;
-  font-size: 28px;
-  color: var(--charcoal);
-  margin-bottom: 32px;
-}
-
-.showcase-spreads {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.spread-wrapper {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.spread-wrapper:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 60px rgba(0,0,0,0.12);
-}
-
-.spread-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* ── Section shared ── */
-.section-label {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--sage);
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 4vw, 48px);
-  text-align: center;
-  letter-spacing: -0.5px;
-  margin-bottom: 64px;
-  line-height: 1.15;
-  font-weight: 400;
-}
-
-/* ── How it works ── */
-.how-it-works {
-  padding: 80px 0;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-@media (max-width: 768px) {
-  .steps { grid-template-columns: 1fr; gap: 32px; }
-}
-
-.step {
-  background: var(--white);
-  border-radius: 16px;
-  padding: 48px 32px;
-  text-align: center;
-  border: 1px solid var(--border);
-}
-
-.step-number {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--sage-bg);
-  color: var(--sage);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 16px;
-  margin-bottom: 24px;
-}
-
-.step h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-
-.step p {
-  color: var(--text-secondary);
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.step-time {
-  display: inline-block;
-  margin-top: 20px;
-  font-family: 'Reenie Beanie', cursive;
-  font-size: 22px;
-  color: var(--sage);
-}
-
-/* ── Prompt editing ── */
-.prompt-section {
-  padding: 80px 0;
-}
-
-.prompt-card {
-  background: var(--white);
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-@media (max-width: 768px) {
-  .prompt-card { grid-template-columns: 1fr; }
-}
-
-.prompt-left {
-  padding: 56px 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.prompt-left h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(26px, 3vw, 36px);
-  margin-bottom: 16px;
-  line-height: 1.2;
-  font-weight: 400;
-}
-
-.prompt-left p {
-  color: var(--text-secondary);
-  font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-
-.prompt-examples {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.prompt-example {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px 16px;
-  background: var(--cream);
-  border-radius: 10px;
-  font-size: 14px;
-  color: var(--text);
-  line-height: 1.5;
-}
-
-.prompt-example .prompt-icon {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  background: var(--sage-bg);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  margin-top: 1px;
-  color: var(--sage);
-}
-
-.prompt-right {
-  background: var(--cream);
-  padding: 56px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.chat-bubble {
-  max-width: 320px;
-  width: 100%;
-  padding: 16px 20px;
-  border-radius: 16px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.chat-user {
-  background: var(--sage);
-  color: var(--cream);
-  border-bottom-right-radius: 4px;
-  align-self: flex-end;
-}
-
-.chat-ai {
-  background: var(--white);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-bottom-left-radius: 4px;
-  align-self: flex-start;
-}
-
-.chat-ai .typing {
-  color: var(--sage);
-  font-style: italic;
-  font-size: 13px;
-}
-
-/* ── Use cases ── */
-.use-cases {
-  padding: 80px 0;
-}
-
-.cases-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-@media (max-width: 768px) {
-  .cases-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-.case-card {
-  background: var(--white);
-  border-radius: 16px;
-  padding: 32px 24px;
-  text-align: center;
-  border: 1px solid var(--border);
-  transition: transform 0.2s;
-}
-
-.case-card:hover { transform: translateY(-2px); }
-
-.case-icon {
-  font-size: 36px;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.case-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 19px;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.case-card p {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-
-/* ── Pricing ── */
-.pricing {
-  padding: 80px 0;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-@media (max-width: 640px) {
-  .pricing-grid { grid-template-columns: 1fr; }
-}
-
-.price-card {
-  background: var(--white);
-  border-radius: 20px;
-  padding: 48px 36px;
-  border: 1px solid var(--border);
-  text-align: center;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.price-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.06);
-}
-
-.price-card.featured {
-  border-color: var(--sage);
-  border-width: 2px;
-}
-
-.price-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 4px 18px;
-  background: var(--sage);
-  color: var(--cream);
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.price-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.price-card .price {
-  font-size: 48px;
-  font-weight: 700;
-  margin: 20px 0;
-  letter-spacing: -2px;
-  color: var(--charcoal);
-}
-
-.price-card .price span {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--text-secondary);
-  letter-spacing: 0;
-}
-
-.price-card .price-desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: 28px;
-  line-height: 1.5;
-}
-
-.price-features {
-  list-style: none;
-  text-align: left;
-  margin-bottom: 32px;
-}
-
-.price-features li {
-  padding: 7px 0;
-  font-size: 14px;
-  color: var(--text);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.price-features li::before {
-  content: '';
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  background: var(--sage-bg);
-  border-radius: 50%;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 6L5 9L10 3' stroke='%234A5D4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-top: 1px;
-}
-
-.price-btn {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
-  font-family: 'Inter', sans-serif;
-}
-
-.price-btn-primary {
-  background: var(--sage);
-  color: var(--cream);
-}
-
-.price-btn-primary:hover { background: var(--sage-light); }
-
-.price-btn-secondary {
-  background: var(--cream);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-.price-btn-secondary:hover { background: var(--cream-dark); }
-
-/* ── FAQ ── */
-.faq {
-  padding: 80px 0;
-}
-
-.faq-list {
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--border);
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 24px 0;
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text);
-  cursor: pointer;
-  text-align: left;
-  font-family: 'Inter', sans-serif;
-  gap: 16px;
-}
-
-.faq-question::after {
-  content: '+';
-  font-size: 24px;
-  font-weight: 300;
-  color: var(--text-secondary);
-  flex-shrink: 0;
-  transition: transform 0.3s;
-}
-
-.faq-item.open .faq-question::after {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.faq-answer-inner {
-  padding: 0 0 24px;
-  color: var(--text-secondary);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-/* ── CTA ── */
-.final-cta {
-  padding: 80px 0;
-  text-align: center;
-}
-
-.cta-card {
-  background: var(--sage);
-  border-radius: 24px;
-  padding: 80px 48px;
-  color: var(--cream);
-}
-
-.cta-card h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 4vw, 48px);
-  margin-bottom: 16px;
-  line-height: 1.15;
-  font-weight: 400;
-}
-
-.cta-card p {
-  font-size: 17px;
-  opacity: 0.8;
-  max-width: 480px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-
-.cta-card .hero-cta {
-  background: var(--cream);
-  color: var(--sage);
-}
-
-.cta-card .hero-cta:hover {
-  background: var(--white);
-}
-
-/* ── Footer ── */
-footer {
-  padding: 48px 0;
-  border-top: 1px solid var(--border);
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-style: italic;
-  color: var(--charcoal);
-}
-
-.footer-tagline {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-
-.footer-copy {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-@media (max-width: 640px) {
-  .container { padding: 0 20px; }
-
-  .section-title {
-    font-size: 28px;
-    margin-bottom: 40px;
-  }
-
-  .how-it-works,
-  .showcase,
-  .prompt-section,
-  .use-cases,
-  .pricing,
-  .faq,
-  .final-cta {
-    padding: 56px 0;
-  }
-
-  .step { padding: 36px 24px; }
-
-  .prompt-card { grid-template-columns: 1fr; }
-  .prompt-left { padding: 36px 24px; }
-  .prompt-right { padding: 36px 24px; }
-
-  .cta-card {
-    padding: 56px 24px;
-    border-radius: 16px;
-  }
-
-  .cta-card .hero-cta {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .price-card { padding: 36px 24px; }
-
-  .modal { padding: 32px 24px; }
-
-  .tagline-bar .container { gap: 16px; }
-  .tagline-bar span { font-size: 10px; letter-spacing: 1.5px; }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
-}
-
-/* ── Modal ── */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(4px);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-
-.modal-overlay.active { display: flex; }
-
-.modal {
-  background: var(--white);
-  border-radius: 20px;
-  padding: 48px;
-  max-width: 520px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 36px;
-  height: 36px;
-  border: none;
-  background: var(--cream);
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: var(--text-secondary);
-  transition: background 0.2s;
-}
-
-.modal-close:hover { background: var(--cream-dark); }
-
-.modal h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.modal .modal-subtitle {
-  color: var(--text-secondary);
-  font-size: 15px;
-  margin-bottom: 32px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 6px;
-  color: var(--text);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  font-size: 15px;
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  background: var(--cream);
-  transition: border-color 0.2s;
-  outline: none;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--sage);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-.form-group .hint {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-top: 4px;
-}
-
-.form-submit {
-  width: 100%;
-  padding: 16px;
-  background: var(--sage);
-  color: var(--cream);
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'Inter', sans-serif;
-  transition: background 0.2s;
-  margin-top: 8px;
-}
-
-.form-submit:hover { background: var(--sage-light); }
-
-.form-footer {
-  text-align: center;
-  margin-top: 16px;
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#F3F0E9" />
+  <title>Remeet — Your photos deserve more than a camera roll</title>
+  <meta name="description" content="Remeet turns your photos into a professionally designed storybook in 72 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<!-- Nav -->
-<nav id="nav">
-  <div class="container">
-    <a href="#" class="logo">Remeet</a>
-    <div class="nav-links">
-      <a href="#how-it-works">How It Works</a>
-      <a href="#showcase">Examples</a>
+  <header class="nav">
+    <a class="brand" href="#top">Remeet</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="menu">
+      <a href="#how">How It Works</a>
+      <a href="#examples">Examples</a>
       <a href="#pricing">Pricing</a>
-      <a href="#use-cases">Gifts</a>
-    </div>
-    <div class="nav-right">
-      <a href="#" class="nav-login">Log in</a>
-      <a href="#pricing" class="nav-cta">Start Your Book</a>
-    </div>
-    <button class="hamburger" aria-label="Menu">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-    </button>
-  </div>
-</nav>
+      <a href="#gifts">Gifts</a>
+      <a href="#">Log in</a>
+      <a class="button small" href="#start">Start Your Book</a>
+    </nav>
+  </header>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-badge"><span>Ready in 72 hours</span></div>
-      <h1>Your photos deserve more than a camera roll</h1>
-      <p class="hero-sub">Send us your photos. We'll turn them into a stunning, professionally designed book. Edit anything with simple prompts.</p>
-      <a href="#pricing" class="hero-cta">
-        Start Your Book
-        <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <p class="hero-note">From 50 to 5,000 photos.<br>We handle the rest.</p>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-spread">
-        <img src="spread-2.jpg" alt="Photo book spread — First time in Porto with Eva">
-      </div>
-      <div class="hero-spread hero-spread-2">
-        <img src="spread-1.jpg" alt="Photo book spread — A walk in the park">
-      </div>
-      <div class="hero-annotation hero-annotation-1 handwritten">Small moments<br>make a big life. ♡</div>
-      <div class="hero-annotation hero-annotation-2 handwritten">Real moments last longer ♡</div>
-    </div>
-  </div>
-</section>
+  <main id="top">
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="hero-stage">
+        <div class="hero-left">
+          <div class="badge tape">Ready in<br><strong>72 hours</strong></div>
 
-<!-- Tagline bar -->
-<div class="tagline-bar">
-  <div class="container">
-    <span>Photos</span>
-    <span class="tagline-divider">/</span>
-    <span>Stories</span>
-    <span class="tagline-divider">/</span>
-    <span>People</span>
-    <span class="tagline-divider">/</span>
-    <span>Forever</span>
-  </div>
-</div>
-
-<!-- Social Proof -->
-<section class="social-proof">
-  <div class="container">
-    <div class="proof-stats">
-      <div class="proof-stat">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L12.5 7.5L18 8L14 12L15 18L10 15L5 18L6 12L2 8L7.5 7.5L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        Editorial-quality design
-      </div>
-      <div class="proof-stat">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        72-hour turnaround
-      </div>
-      <div class="proof-stat">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/></svg>
-        Unlimited revisions
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- How It Works -->
-<section class="how-it-works" id="how-it-works">
-  <div class="container">
-    <div class="section-label">How it works</div>
-    <h2 class="section-title">Three steps to your book</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Share your photos</h3>
-        <p>Share a Google Drive folder, Google Photos album, or upload a zip. 50 photos or 5,000 — we handle any amount.</p>
-        <span class="step-time">~ 5 minutes</span>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>We design your book</h3>
-        <p>We curate the best shots, remove duplicates, organize by events, write captions, and create beautiful editorial layouts.</p>
-        <span class="step-time">~ 72 hours</span>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Edit with prompts</h3>
-        <p>Don't like something? Just tell us: "Use more beach photos" or "Remove page 7." No drag-and-drop editors. Just words.</p>
-        <span class="step-time">~ Same day</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Showcase -->
-<section class="showcase" id="showcase">
-  <div class="container">
-    <div class="section-label">Examples</div>
-    <h2 class="section-title">Made from real phone photos</h2>
-    <div class="showcase-spreads">
-      <div class="spread-wrapper">
-        <img src="spread-2.jpg" alt="Photo book spread — First time in Porto with Eva" loading="lazy">
-      </div>
-      <div class="spread-wrapper">
-        <img src="spread-1.jpg" alt="Photo book spread — A walk in the park, Eva's first nap on daddy" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Prompt Editing -->
-<section class="prompt-section">
-  <div class="container">
-    <div class="prompt-card">
-      <div class="prompt-left">
-        <h2>Edit your book like you'd text a friend</h2>
-        <p>No complicated editors. No templates to figure out. Just tell us what you want changed, and we'll update your book.</p>
-        <div class="prompt-examples">
-          <div class="prompt-example">
-            <span class="prompt-icon">→</span>
-            "Add more photos from the birthday party"
+          <div class="hero-copy">
+            <h1 id="hero-title">Your photos<br>deserve more<br>than a camera roll</h1>
+            <p class="lede">Send us your photos. We'll turn them into a stunning, professionally designed book. Edit anything with simple prompts.</p>
+            <a class="button hero-cta" href="#start">Start Your Book →</a>
+            <p class="hand note">From 50 to 5,000 photos.<br>We handle the rest.<span class="scribble-line"></span></p>
           </div>
-          <div class="prompt-example">
-            <span class="prompt-icon">→</span>
-            "Make the cover photo the one at the beach"
-          </div>
-          <div class="prompt-example">
-            <span class="prompt-icon">→</span>
-            "Swap pages 4 and 8, and remove the blurry one"
-          </div>
-          <div class="prompt-example">
-            <span class="prompt-icon">→</span>
-            "Change the title to 'The Johnsons, 2026'"
+
+          <div class="tagline-bar">Photos&nbsp;&nbsp;/&nbsp;&nbsp; Stories&nbsp;&nbsp;/&nbsp;&nbsp; People&nbsp;&nbsp;/&nbsp;&nbsp; Forever</div>
+        </div>
+
+        <div class="hero-collage" aria-hidden="true">
+          <figure class="polaroid hero-main-photo">
+            <img src="assets/hero-family.jpg" alt="" />
+            <figcaption>Eva's first walk<br>in Porto ♡</figcaption>
+          </figure>
+
+          <figure class="polaroid hero-city-photo">
+            <img src="assets/example-garden-spread.jpg" alt="" />
+          </figure>
+
+          <figure class="polaroid hero-dad-photo">
+            <img src="assets/dad-baby.jpg" alt="" />
+          </figure>
+
+          <p class="hand hero-side-note top-note">Small<br>moments<br>make a<br>big life. ♡</p>
+          <p class="hand hero-side-note dad-note">You slept<br>on him for<br>the first<br>time — ♡</p>
+
+          <figure class="polaroid hero-leaves-photo">
+            <img src="assets/detail-leaves.jpg" alt="" />
+            <figcaption>Porto always<br>surprises ♡</figcaption>
+          </figure>
+
+          <div class="hero-book">
+            <img src="assets/example-garden-spread.jpg" alt="" />
+            <div class="book-overlay">
+              <div class="book-brand">Remeet</div>
+              <div class="book-sub">REAL MOMENTS LAST LONGER</div>
+              <div class="book-photo-window"></div>
+              <div class="book-year">OUR YEAR<br>2026</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="prompt-right">
-        <div class="chat-bubble chat-user">Can you use more photos from our trip to Lisbon? And maybe add a chapter title for it?</div>
-        <div class="chat-bubble chat-ai">Done! I added 8 Lisbon photos across 3 new spreads and created a "Summer in Lisbon" chapter. <span class="typing">Preview is ready ↗</span></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Use Cases -->
-<section class="use-cases" id="use-cases">
-  <div class="container">
-    <div class="section-label">Perfect for</div>
-    <h2 class="section-title">Every story worth keeping</h2>
-    <div class="cases-grid">
-      <div class="case-card">
-        <span class="case-icon">👶</span>
-        <h3>Baby's First Year</h3>
-        <p>All those milestones you photographed but never organized</p>
+        <div class="mobile-hero-bottom">
+          <figure class="polaroid mobile-city-photo">
+            <img src="assets/example-garden-spread.jpg" alt="" />
+            <figcaption>Small moments<br>make a big life. ♡</figcaption>
+          </figure>
+          <div class="mobile-book">
+            <div class="book-overlay">
+              <div class="book-brand">Remeet</div>
+              <div class="book-sub">REAL MOMENTS LAST LONGER</div>
+              <div class="book-photo-window"></div>
+              <div class="book-year">OUR YEAR<br>2026</div>
+            </div>
+          </div>
+          <figure class="polaroid mobile-hand-photo">
+            <img src="assets/detail-family.jpg" alt="" />
+            <figcaption>Good people<br>Good days ♡</figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="case-card">
-        <span class="case-icon">👨‍👩‍👧‍👦</span>
-        <h3>Family Yearbook</h3>
-        <p>A year of your family's life, beautifully captured</p>
-      </div>
-      <div class="case-card">
-        <span class="case-icon">✈️</span>
-        <h3>Travel Memories</h3>
-        <p>Turn a trip into a coffee table book you'll actually open</p>
-      </div>
-      <div class="case-card">
-        <span class="case-icon">🎁</span>
-        <h3>Gift for Grandparents</h3>
-        <p>The present they'll keep on the shelf forever</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Pricing -->
-<section class="pricing" id="pricing">
-  <div class="container">
-    <div class="section-label">Simple pricing</div>
-    <h2 class="section-title">Choose your format</h2>
-    <div class="pricing-grid">
-      <div class="price-card">
+      <div class="proof">
+        <span>Editorial-quality design</span>
+        <span>72-hour turnaround</span>
+        <span>Unlimited revisions</span>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <p class="eyebrow">How it works</p>
+      <h2>Three steps to your book</h2>
+
+      <div class="steps">
+        <article class="step">
+          <div class="num">1</div>
+          <div>
+            <h3>Share your photos</h3>
+            <p>Share a Google Drive folder, Google Photos album, or upload a zip. 50 photos or 5,000 — we handle any amount.</p>
+            <p class="meta">~ 5 minutes</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="num">2</div>
+          <div>
+            <h3>We design your book</h3>
+            <p>We curate the best shots, remove duplicates, organize by events, write captions, and create beautiful editorial layouts.</p>
+            <p class="meta">~ 72 hours</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="num">3</div>
+          <div>
+            <h3>Edit with prompts</h3>
+            <p>Don't like something? Just tell us: “Use more beach photos” or “Remove page 7.” No drag-and-drop editors. Just words.</p>
+            <p class="meta">~ Same day</p>
+          </div>
+        </article>
+      </div>
+      <p class="hand side-note">Less effort.<br>More meaning. ♡</p>
+    </section>
+
+    <section class="section examples" id="examples">
+      <p class="eyebrow">Examples</p>
+      <h2>Made from real phone photos</h2>
+      <div class="gallery">
+        <img src="assets/example-garden-spread.jpg" alt="Editorial family photo book spread" />
+        <img src="assets/example-park-spread.jpg" alt="Editorial photo book spread" />
+        <div class="mini-grid">
+          <img src="assets/dad-baby.jpg" alt="" />
+          <img src="assets/plant.jpg" alt="" />
+        </div>
+      </div>
+      <p class="hand">Real people. Real stories. ♡</p>
+    </section>
+
+    <section class="section prompt-edit">
+      <p class="eyebrow">Edit with prompts</p>
+      <h2>Edit your book like you'd text a friend</h2>
+      <p>No complicated editors. No templates to figure out. Just tell us what you want changed, and we'll update your book.</p>
+
+      <div class="prompt-list hand">
+        <p>“Add more photos from the birthday party”</p>
+        <p>“Make the cover photo the one at the beach”</p>
+        <p>“Swap pages 4 and 8, and remove the blurry one”</p>
+        <p>“Change the title to ‘The Johnsons, 2026’”</p>
+      </div>
+
+      <div class="chat">
+        <div class="bubble user">Can you use more photos from our trip to Lisbon? And maybe add a chapter title for it?</div>
+        <div class="bubble ai">Done! I added 8 Lisbon photos across 3 new spreads and created a “Summer in Lisbon” chapter. Preview is ready ↗</div>
+      </div>
+    </section>
+
+    <section class="section" id="gifts">
+      <p class="eyebrow">Perfect for</p>
+      <h2>Every story worth keeping</h2>
+      <div class="cards">
+        <article><img src="assets/baby-close.jpg" alt=""><h3>Baby's First Year</h3><p>All those milestones you photographed but never organized.</p></article>
+        <article><img src="assets/friends.jpg" alt=""><h3>Family Yearbook</h3><p>A year of your family's life, beautifully captured.</p></article>
+        <article><img src="assets/park.jpg" alt=""><h3>Travel Memories</h3><p>Turn a trip into a coffee table book you'll actually open.</p></article>
+        <article><img src="assets/detail-family.jpg" alt=""><h3>Gift for Grandparents</h3><p>The present they'll keep on the shelf forever.</p></article>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <p class="eyebrow">Simple pricing</p>
+      <h2>Choose your format</h2>
+      <article class="price-card">
         <h3>Digital Book</h3>
-        <div class="price">$69<span> one-time</span></div>
-        <p class="price-desc">A beautifully designed digital book you can share with your whole family</p>
-        <ul class="price-features">
+        <div class="price">$69 <small>one-time</small></div>
+        <p>A beautifully designed digital book you can share with your whole family.</p>
+        <ul>
           <li>Up to 60 curated pages</li>
           <li>Professional editorial design</li>
           <li>Captions & chapter titles</li>
           <li>Shareable link & PDF download</li>
           <li>Unlimited prompt-based edits</li>
         </ul>
-        <button class="price-btn price-btn-secondary" onclick="openModal('digital')">Get Digital Book</button>
-      </div>
-      <div class="price-card featured">
-        <div class="price-badge">Most Popular</div>
+        <a class="button ghost" href="#start">Choose Digital</a>
+      </article>
+
+      <article class="price-card featured">
+        <div class="pill">Most Popular</div>
         <h3>Printed Book</h3>
-        <div class="price">$199<span> shipped</span></div>
-        <p class="price-desc">Premium hardcover book printed and delivered to your door. Digital edition included.</p>
-        <ul class="price-features">
-          <li>Everything in Digital, plus:</li>
+        <div class="price">$199 <small>shipped</small></div>
+        <p>Premium hardcover book printed and delivered to your door. Digital edition included.</p>
+        <ul>
+          <li>Everything in Digital</li>
           <li>Premium hardcover, 80+ pages</li>
           <li>Archival-quality paper</li>
           <li>Free US shipping</li>
-          <li>Extra copy for grandparents — $79</li>
+          <li>Extra grandparents copy — $79</li>
         </ul>
-        <button class="price-btn price-btn-primary" onclick="openModal('printed')">Get Printed Book</button>
-      </div>
-    </div>
-  </div>
-</section>
+        <a class="button" href="#start">Choose Printed</a>
+      </article>
+    </section>
 
-<!-- FAQ -->
-<section class="faq">
-  <div class="container">
-    <div class="section-label">Questions</div>
-    <h2 class="section-title">Good questions</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question">How many photos should I share?</button>
-        <div class="faq-answer"><div class="faq-answer-inner">Anywhere from 50 to 5,000. More is better — we'll curate the best ones. You don't need to pre-select or organize anything. Just share the folder as-is.</div></div>
+    <section class="section faq">
+      <p class="eyebrow">Questions</p>
+      <h2>Good questions</h2>
+      <div class="accordion">
+        <details><summary>How many photos should I share?</summary><p>Anything from roughly 50 to 5,000. We curate the useful set for the story.</p></details>
+        <details><summary>What if I don't like the result?</summary><p>You get a proof first and can request unlimited prompt-based revisions before print.</p></details>
+        <details><summary>How does prompt editing work?</summary><p>Tell us changes in plain language; we update the layout and send a refreshed proof.</p></details>
+        <details><summary>Are my photos safe?</summary><p>This prototype copy should be replaced with your final privacy and retention policy before launch.</p></details>
+        <details><summary>Can I order extra copies?</summary><p>Yes. Grandparents and gift copies can be added to the order.</p></details>
+        <details><summary>How long does shipping take?</summary><p>Add your final print partner's US shipping estimate here.</p></details>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">What if I don't like the result?</button>
-        <div class="faq-answer"><div class="faq-answer-inner">You get unlimited revisions through simple prompts. Tell us what to change — swap photos, reorder pages, update text — and we'll update your proof. Nothing prints until you approve.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">How does prompt editing work?</button>
-        <div class="faq-answer"><div class="faq-answer-inner">Just like texting. You write what you want changed in plain English — "Add more photos from the park," "Remove page 12," "Change the cover." We make the changes, usually within a few hours.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Are my photos safe?</button>
-        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. We access your photos only to create your book. They are never shared, used for training, or stored beyond your project. You can request deletion at any time.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Can I order extra copies?</button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes! Additional copies of the same book are $79 each. Perfect for grandparents, godparents, or anyone who'd love a copy. Each can ship to a different address.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">How long does shipping take?</button>
-        <div class="faq-answer"><div class="faq-answer-inner">After you approve the proof, printing takes 5–7 business days. Shipping within the US is free and takes another 3–5 business days. We'll send you tracking info.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Final CTA -->
-<section class="final-cta">
-  <div class="container">
-    <div class="cta-card">
+    <section class="section final-cta">
       <h2>Your photos are waiting</h2>
       <p>You took the photos. You lived the moments. Let us turn them into something you'll keep forever.</p>
-      <a href="#pricing" class="hero-cta">
-        Start Your Book
-        <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
+      <a class="button" href="#start">Start Your Book →</a>
+      <figure class="polaroid small-polaroid tilt-left">
+        <img src="assets/detail-leaves.jpg" alt="">
+        <figcaption>Real moments last longer ♡</figcaption>
+      </figure>
+    </section>
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="footer-content">
-      <span class="footer-logo">Remeet</span>
-      <span class="footer-tagline">Photos / Stories / People / Forever</span>
-      <span class="footer-copy">Remeet &copy; 2026</span>
-    </div>
-  </div>
-</footer>
-
-<!-- Order Modal -->
-<div class="modal-overlay" id="modal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2 id="modal-title">Get Your Book</h2>
-    <p class="modal-subtitle" id="modal-subtitle">Share your photos and we'll start designing</p>
-    <form id="order-form" onsubmit="submitForm(event)">
-      <input type="hidden" id="plan" name="plan" value="digital">
-      <div class="form-group">
-        <label for="name">Your name</label>
-        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+    <section class="section form-section" id="start">
+      <p class="eyebrow">Start your book</p>
+      <h2>Let's create your book</h2>
+      <form id="bookForm">
+        <label>Your name<input required name="name" type="text" placeholder="Jane Smith"></label>
+        <label>Email<input required name="email" type="email" placeholder="you@email.com"></label>
+        <label>What kind of book?
+          <select name="type">
+            <option>Baby's First Year</option>
+            <option>Family Yearbook</option>
+            <option>Travel Memories</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Link to your photos<input name="photos" type="url" placeholder="Google Drive or Google Photos link"></label>
+        <label>Anything we should know? <span>(optional)</span><textarea name="notes" placeholder="e.g. dates, places, special moments"></textarea></label>
+        <label>Extra copies for grandparents?
+          <select name="copies"><option>0</option><option>+1</option><option>+2</option><option>+3</option></select>
+        </label>
+        <p class="fineprint">You'll get a preview to approve before anything prints or charges.</p>
+        <button class="button" type="submit">Send My Photos →</button>
+      </form>
+      <div class="success" hidden>
+        <div class="heart">♡</div>
+        <h2>We're on it!</h2>
+        <p>Check your email for next steps. Your book proof will be ready within 72 hours.</p>
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="jane@email.com">
-      </div>
-      <div class="form-group">
-        <label for="book-type">What kind of book?</label>
-        <select id="book-type" name="book-type">
-          <option value="baby-first-year">Baby's First Year</option>
-          <option value="family-yearbook">Family Yearbook</option>
-          <option value="travel">Travel Memories</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="photos-link">Link to your photos</label>
-        <input type="url" id="photos-link" name="photos-link" required placeholder="Google Drive or Google Photos link">
-        <div class="hint">Share a Google Drive folder or Google Photos album. Make sure we have view access.</div>
-      </div>
-      <div class="form-group">
-        <label for="notes">Anything we should know? (optional)</label>
-        <textarea id="notes" name="notes" placeholder="E.g. 'This is for our daughter Eva's first birthday' or 'Focus on the Italy trip photos'"></textarea>
-      </div>
-      <div class="form-group" id="copies-group" style="display:none">
-        <label for="extra-copies">Extra copies for grandparents?</label>
-        <select id="extra-copies" name="extra-copies">
-          <option value="0">No extra copies</option>
-          <option value="1">+1 copy ($79)</option>
-          <option value="2">+2 copies ($158)</option>
-          <option value="3">+3 copies ($237)</option>
-        </select>
-      </div>
-      <button type="submit" class="form-submit" id="submit-btn">Place Order — $69</button>
-      <div class="form-footer">You'll get a preview to approve before anything prints or charges.</div>
-    </form>
-    <div id="success-message" style="display:none; text-align:center; padding: 40px 0;">
-      <span style="font-size:48px; display:block; margin-bottom:16px;">🎉</span>
-      <h3 style="font-family:'Playfair Display',serif; font-size:24px; margin-bottom:8px;">We're on it!</h3>
-      <p style="color:var(--text-secondary); font-size:15px; line-height:1.6;">Check your email for next steps.<br>Your book proof will be ready within 72 hours.</p>
-    </div>
-  </div>
-</div>
+    </section>
+  </main>
 
-<script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 20);
-});
+  <footer>
+    <div class="brand">Remeet</div>
+    <div>Photos / Stories / People / Forever</div>
+    <div>Remeet © 2026</div>
+  </footer>
 
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const answer = item.querySelector('.faq-answer');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(openItem => {
-      openItem.classList.remove('open');
-      openItem.querySelector('.faq-answer').style.maxHeight = '0';
-    });
-    if (!isOpen) {
-      item.classList.add('open');
-      answer.style.maxHeight = answer.scrollHeight + 'px';
-    }
-  });
-});
-
-function openModal(plan) {
-  const modal = document.getElementById('modal');
-  document.getElementById('plan').value = plan;
-  const title = document.getElementById('modal-title');
-  const subtitle = document.getElementById('modal-subtitle');
-  const submitBtn = document.getElementById('submit-btn');
-  const copiesGroup = document.getElementById('copies-group');
-
-  if (plan === 'printed') {
-    title.textContent = 'Get Your Printed Book';
-    subtitle.textContent = 'Premium hardcover with free US shipping';
-    submitBtn.textContent = 'Place Order — $199';
-    copiesGroup.style.display = 'block';
-  } else {
-    title.textContent = 'Get Your Digital Book';
-    subtitle.textContent = 'Beautifully designed, ready to share';
-    submitBtn.textContent = 'Place Order — $69';
-    copiesGroup.style.display = 'none';
-  }
-
-  document.getElementById('order-form').style.display = 'block';
-  document.getElementById('success-message').style.display = 'none';
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('modal').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('modal').addEventListener('click', (e) => {
-  if (e.target === e.currentTarget) closeModal();
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
-});
-
-document.getElementById('extra-copies').addEventListener('change', (e) => {
-  const copies = parseInt(e.target.value);
-  const total = 199 + (copies * 79);
-  document.getElementById('submit-btn').textContent = `Place Order — $${total}`;
-});
-
-function submitForm(e) {
-  e.preventDefault();
-  const form = document.getElementById('order-form');
-  const data = new FormData(form);
-  console.log('Order:', Object.fromEntries(data));
-  form.style.display = 'none';
-  document.getElementById('success-message').style.display = 'block';
-}
-</script>
-
+  <script src="app.js"></script>
 </body>
 </html>
