@@ -191,7 +191,7 @@ h1,h2,h3{font-weight:500;letter-spacing:-.045em}
 .story-copy p{font-family:var(--serif);font-size:1.27rem;line-height:1.25;margin:0 0 12px}
 .quiet{color:#6f756f}
 .story-visual{position:relative}
-.phone-scene{min-height:480px;display:flex;align-items:end;justify-content:center;background:linear-gradient(180deg,#f4f0e8,#e9e0d2)}
+.phone-scene{min-height:480px;display:flex;align-items:end;justify-content:center;background:linear-gradient(180deg,#f4f0e8,#e9e0d2);overflow:hidden}
 .phone-scene img{width:43%;max-width:290px;filter:drop-shadow(0 24px 34px rgba(0,0,0,.16));transform:rotate(-3deg)}
 .floating-note{position:absolute;font-size:1.6rem;right:8%;top:8%;transform:rotate(-5deg)}
 .book-scene img{box-shadow:var(--shadow);border:10px solid #fffaf2}
