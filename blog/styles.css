@@ -75,13 +75,60 @@ footer{padding:0;border-top:1px solid var(--line);font-size:.82rem;color:#6f756f
 .footer-col a{font-size:.82rem;color:#6f756f;text-decoration:none}
 .footer-col a:hover{color:var(--ink)}
 .footer-bottom{padding:20px;text-align:center;font-size:.72rem;border-top:1px solid var(--line)}
-.blog-list{max-width:680px;margin:0 auto;padding:48px 20px 80px}
-.blog-list h1{font-family:"Cormorant Garamond",serif;font-size:2.4rem;margin:0 0 32px}
-.blog-card{display:block;padding:24px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
-.blog-card:hover h2{color:var(--olive)}
-.blog-card h2{font-family:"Cormorant Garamond",serif;font-size:1.4rem;line-height:1.15;margin:0 0 6px;transition:color .2s}
-.blog-card p{margin:0;font-size:.9rem;color:#5f665f}
-.blog-card .date{font-size:.78rem;color:#9a9e97;margin-top:6px}
+.blog-list{max-width:960px;margin:0 auto;padding:48px 20px 80px}
+.blog-list h1{font-family:"Cormorant Garamond",serif;font-size:2.4rem;margin:0 0 12px}
+.blog-list>.blog-subtitle{font-size:.95rem;color:#6f756f;margin:0 0 36px}
+.blog-section-title{
+  margin:40px 0 20px;font-family:"Cormorant Garamond",serif;
+  font-size:1.5rem;font-weight:600;letter-spacing:-.01em;
+  border-bottom:1px solid var(--line);padding-bottom:10px;color:var(--ink)
+}
+.blog-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:12px}
+.blog-card{
+  display:flex;flex-direction:column;
+  border-radius:12px;overflow:hidden;
+  text-decoration:none;color:inherit;
+  border:1px solid var(--line);
+  background:var(--cream);
+  transition:transform .2s,box-shadow .2s
+}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,42,34,.1)}
+.blog-card:hover h3{color:var(--olive)}
+.blog-card .cover{
+  position:relative;height:160px;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden
+}
+.blog-card .cover-icon{font-size:3.2rem;position:relative;z-index:1;filter:saturate(.85)}
+.blog-card .cover-badge{
+  position:absolute;top:10px;right:10px;
+  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 8px;border-radius:4px;
+  background:rgba(255,255,255,.85);color:var(--olive);z-index:2
+}
+.blog-card .card-body{padding:16px 20px 20px;flex:1;display:flex;flex-direction:column}
+.blog-card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.25rem;line-height:1.2;letter-spacing:-.01em;
+  margin:0 0 8px;transition:color .2s;color:var(--ink)
+}
+.blog-card p{margin:0 0 12px;font-size:.85rem;color:#5f665f;line-height:1.5;flex:1}
+.blog-card .date{font-size:.72rem;color:#9a9e97;text-transform:uppercase;letter-spacing:.05em}
+
+.cover-guides{background:linear-gradient(135deg,#37483a 0%,#5a7a5e 50%,#8aab7c 100%)}
+.cover-photo{background:linear-gradient(135deg,#b78b72 0%,#d7c8b6 50%,#e8ddd0 100%)}
+.cover-baby{background:linear-gradient(135deg,#c9918a 0%,#e4bfb5 50%,#f0ddd6 100%)}
+.cover-family{background:linear-gradient(135deg,#6b8f71 0%,#9ab89e 50%,#c5d8c3 100%)}
+.cover-gifts{background:linear-gradient(135deg,#b8944a 0%,#d4ba7c 50%,#e8dbb4 100%)}
+.cover-tips{background:linear-gradient(135deg,#6b7f8d 0%,#99aeb8 50%,#c4d3d9 100%)}
+
+@media(min-width:560px){
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:860px){
+  .blog-grid{grid-template-columns:repeat(3,1fr)}
+  .blog-card .cover{height:180px}
+}
 @media(min-width:780px){
   .nav{padding:20px 4vw}
   .article{padding:64px 20px 100px}
