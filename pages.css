@@ -64,7 +64,17 @@ img{display:block;max-width:100%;height:auto}
 .breadcrumb a{color:#6f756f;text-decoration:none}
 .breadcrumb a:hover{color:var(--ink)}
 
-footer{padding:30px 20px;border-top:1px solid var(--line);text-align:center;font-size:.74rem;color:#6f756f}
+footer{padding:0;border-top:1px solid var(--line);font-size:.82rem;color:#6f756f}
+.footer-inner{max-width:1100px;margin:0 auto;padding:48px 20px 32px;display:grid;gap:32px}
+.footer-brand{display:grid;gap:4px}
+.footer-brand .brand{font-family:"Cormorant Garamond",serif;font-size:1.8rem;font-weight:600;letter-spacing:-.04em;color:var(--ink);text-decoration:none}
+.footer-tagline{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
+.footer-links{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.footer-col{display:grid;gap:6px;align-content:start}
+.footer-col h4{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--ink);margin:0 0 4px;font-weight:600}
+.footer-col a{font-size:.82rem;color:#6f756f;text-decoration:none}
+.footer-col a:hover{color:var(--ink)}
+.footer-bottom{padding:20px;text-align:center;font-size:.72rem;border-top:1px solid var(--line)}
 
 @media(min-width:780px){
   .nav{padding:20px 4vw}
@@ -72,4 +82,5 @@ footer{padding:30px 20px;border-top:1px solid var(--line);text-align:center;font
   .section{padding:56px 20px}
   .features{grid-template-columns:1fr 1fr}
   .cta-section{padding:80px 20px}
+  .footer-links{grid-template-columns:repeat(4,1fr)}
 }
