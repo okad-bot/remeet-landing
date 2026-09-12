@@ -52,22 +52,17 @@
   "offers": [
     {
       "@type": "Offer",
-      "name": "Digital Book",
-      "price": "69",
+      "name": "Book Design (deposit)",
+      "price": "29",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
     },
     {
       "@type": "Offer",
-      "name": "Printed Book",
+      "name": "Printed Book (1 copy)",
       "price": "199",
       "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "shippingDetails": {
-        "@type": "OfferShippingDetails",
-        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"},
-        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"}
-      }
+      "availability": "https://schema.org/InStock"
     }
   ]
 }
@@ -187,19 +182,84 @@
   </div>
 </section>
 
-<section class="shell pricing" id="pricing">
-  <span class="eyebrow">Simple pricing</span>
-  <h2>One beautiful book.<br>Everything taken care of.</h2>
-  <div class="price-grid">
-    <article class="price featured">
-      <span class="pill">Most popular</span><h3>Printed Book</h3><div class="amount">$199</div><p>Premium hardcover book, designed for you and delivered to your door.</p>
-      <ul><li>Curated selection from up to 5,000 photos</li><li>80+ professionally designed pages</li><li>Chapters & captions</li><li>Digital edition included</li><li>Revisions before printing</li><li>US shipping included</li></ul>
-      <a class="cta" href="#start">Start Your Book →</a><p class="hand">Extra copy for grandparents — $79 ♡</p>
-    </article>
-    <article class="price"><h3>Digital Edition</h3><div class="amount">$69</div><p>Your complete Remeet book as a beautifully designed digital edition.</p>
-      <ul><li>Up to 60 curated pages</li><li>Editorial design</li><li>Captions & chapter titles</li><li>PDF download</li><li>Revisions included</li></ul>
-      <a class="cta ghost" href="#start">Create a Digital Book</a>
-    </article>
+<section class="pricing-start" id="pricing">
+  <div class="shell pricing-start-wrap">
+    <div class="pricing-start-copy">
+      <span class="eyebrow">Simple pricing</span>
+      <h2>Start your book for $29.</h2>
+      <p>We'll design your book and show you the full result before you decide to print. Your $29 goes toward the final price.</p>
+      <a class="cta" href="#start">Start Your Book &nbsp;→&nbsp; $29</a>
+      <p class="scribble">See it first.<br>Print it only if you love it. ♡</p>
+    </div>
+    <div class="pricing-start-visual">
+      <img class="pricing-book" src="assets/hero-book-scene.jpg" alt="Remeet photo book — Good People Good Days, A Family Story 2026"/>
+      <img class="pricing-polaroid" src="assets/hero-dad-baby-polaroid.jpg" alt="Polaroid photo"/>
+      <p class="hand pricing-note">A more meaningful<br>tomorrow ♡</p>
+    </div>
+  </div>
+</section>
+
+<section class="process-bar">
+  <div class="shell">
+    <div class="process-steps">
+      <div class="process-step">
+        <img src="assets/icon-upload.svg" alt=""/>
+        <strong>$29</strong>
+        <span>Start your book</span>
+      </div>
+      <b class="process-arrow">→</b>
+      <div class="process-step">
+        <img src="assets/icon-clock.svg" alt=""/>
+        <strong>72 hours</strong>
+        <span>Get your first proof</span>
+      </div>
+      <b class="process-arrow">→</b>
+      <div class="process-step">
+        <img src="assets/icon-edit.svg" alt=""/>
+        <strong>Request changes</strong>
+        <span>(as many as you need)</span>
+      </div>
+      <b class="process-arrow">→</b>
+      <div class="process-step">
+        <img src="assets/icon-heart.svg" alt=""/>
+        <strong>Love it?</strong>
+        <span>Approve &amp; print</span>
+      </div>
+      <b class="process-arrow">→</b>
+      <div class="process-step">
+        <img src="assets/icon-book.svg" alt=""/>
+        <strong>Pay the rest only then</strong>
+        <span>(we'll apply your $29)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="printed-books">
+  <div class="shell printed-books-wrap">
+    <div class="printed-books-copy">
+      <span class="eyebrow">Printed books</span>
+      <h2>Timeless quality,<br>made to be kept.</h2>
+      <p>When you're happy with the design, choose to print. Your $29 is credited toward the final price.</p>
+      <p>High-quality hardcover books,<br>made to last for generations.</p>
+      <p class="scribble">More copies,<br>more people to share it with ♡</p>
+    </div>
+    <div class="printed-books-table-wrap">
+      <table class="printed-books-table">
+        <thead><tr><th>Copies</th><th>Price per copy</th><th>Total (after $29 credit)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>$199</td><td>$170</td></tr>
+          <tr><td>2–3</td><td>$179</td><td>from $329</td></tr>
+          <tr><td>4–5</td><td>$159</td><td>from $489</td></tr>
+          <tr><td>6+</td><td>$139</td><td>from $669</td></tr>
+        </tbody>
+      </table>
+      <div class="printed-badges">
+        <div><img src="assets/icon-truck.svg" alt=""/><span><strong>Worldwide</strong> shipping</span></div>
+        <div><img src="assets/icon-shield.svg" alt=""/><span><strong>No hidden</strong> fees</span></div>
+        <div><img src="assets/icon-leaf.svg" alt=""/><span><strong>Sustainable,</strong> archival quality</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
