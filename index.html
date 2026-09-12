@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1ZSJLBMRD"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X1ZSJLBMRD');</script>
-<meta name="theme-color" content="#F3F0E9" />
+<meta name="theme-color" content="#f4f0e8" />
 <title>Remeet — Your photos deserve more than a camera roll</title>
 <meta name="description" content="Upload your photos and get a beautifully designed photo book in 72 hours. Remeet curates your best moments into an editorial-quality storybook with captions, chapters, and professional design." />
 <link rel="canonical" href="https://remeet.cc/" />
@@ -88,266 +88,394 @@
 <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-<header class="nav">
-  <a class="logo" href="#top">Remeet</a>
-  <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
-  <nav class="menu">
-    <a href="#how">How It Works</a><a href="#examples">Examples</a><a href="#pricing">Pricing</a><a href="#gifts">Gifts</a><a href="/blog/">Blog</a>
-    <a class="cta small" href="#start">Start Your Book</a>
-  </nav>
-</header>
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Remeet home">Remeet</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="#how">How It Works</a>
+      <a href="#examples">Examples</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#gifts">Gifts</a>
+      <a href="/blog/">Blog</a>
+      <a class="nav-cta" href="#start">Start Your Book</a>
+    </nav>
+  </header>
 
-<main id="top">
-<section class="hero" style="background-image:url(assets/hero-mobile-collage.jpg)">
-  <div class="shell hero-wrap">
-    <div class="hero-copy">
-      <h1>Your photos deserve more than a camera roll</h1>
-      <p class="sub">Send us your photos. We'll turn them into a stunning, professionally designed book. Edit anything with simple prompts.</p>
-      <a class="cta hero-cta" href="#start">Start Your Book →</a>
-      <p class="scribble">From 50 to 5,000 photos.<br>We handle the rest.</p>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="tape-note">First proof in<br><strong>72 hours</strong></div>
+        <h1>Your photos deserve more than a camera roll</h1>
+        <p class="hero-sub">You took thousands of photos. We find the moments worth keeping and turn them into a beautifully designed book — captions, chapters and all.</p>
+        <a class="button button-dark hero-button" href="#start">Start Your Book <span>&rarr;</span></a>
+        <p class="handwritten hero-hand">From 50 to 5,000 photos.<br>We handle the rest. &hearts;</p>
+        <div class="hero-tags">Photos / Stories / People / Forever</div>
+      </div>
+
+      <div class="hero-collage" aria-hidden="true">
+        <div class="photo-card photo-card-main">
+          <img src="assets/mom-baby.jpg" alt="" />
+          <span>Eva's first walk in Porto &hearts;</span>
+        </div>
+        <div class="photo-card photo-card-city">
+          <img src="assets/park.jpg" alt="" />
+        </div>
+        <div class="photo-card photo-card-dad">
+          <img src="assets/dad-baby.jpg" alt="" />
+        </div>
+        <div class="hero-note note-a handwritten">Small moments<br>make a big life. &hearts;</div>
+        <div class="hero-note note-b handwritten">You slept on him<br>for the first time &hearts;</div>
+        <div class="hero-book">
+          <div class="book-cloth"></div>
+          <div class="book-title">Remeet</div>
+          <div class="book-kicker">REAL MOMENTS LAST LONGER</div>
+          <img src="assets/park.jpg" alt="" />
+          <div class="book-year">OUR YEAR<br><b>2026</b></div>
+        </div>
+        <div class="olive-sprig">
+          <i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+
+      <div class="hero-mobile-art">
+        <img src="assets/hero-mobile-bg.png" alt="" />
+      </div>
+    </section>
+
+    <!-- PROOF BAR -->
+    <section class="proof-strip" aria-label="Remeet benefits">
+      <div><span class="proof-icon">&squarf;</span><strong>Thousands of photos</strong><small>&rarr; one beautiful story</small></div>
+      <div><span class="proof-icon">&sung;</span><strong>Expertly curated</strong><small>and designed</small></div>
+      <div><span class="proof-icon">&hearts;</span><strong>Easy revisions</strong><small>you have the final say</small></div>
+      <div><span class="proof-icon">&marker;</span><strong>Made for real</strong><small>family photos</small></div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section-how" id="how">
+      <div class="section-label">How it works</div>
+      <h2>Three steps. No photo-book project required.</h2>
+
+      <div class="story-steps">
+        <article class="story-step">
+          <div class="story-num">01</div>
+          <div class="story-copy">
+            <h3>Send us your photos</h3>
+            <p>Share a Google Photos album, Google Drive folder or upload your photos. No sorting. No renaming. No choosing favorites first.</p>
+            <p class="quiet">50 photos or 5,000 — send them as they are.</p>
+          </div>
+          <div class="story-visual phone-scene">
+            <img src="assets/camera-roll-phone.png" alt="Camera roll with family photos" />
+            <span class="handwritten floating-note">Five minutes.<br>That's it. &hearts;</span>
+          </div>
+        </article>
+
+        <article class="story-step">
+          <div class="story-num">02</div>
+          <div class="story-copy">
+            <h3>We find the story</h3>
+            <p>We curate the strongest moments, remove duplicates, group photos into chapters and create a beautiful editorial book around your memories.</p>
+            <p class="quiet">Your first proof is ready within 72 hours.</p>
+          </div>
+          <div class="story-visual book-scene">
+            <img src="assets/spread-garden.jpg" alt="Open Remeet book spread" />
+            <span class="handwritten floating-note right-note">You send the chaos.<br>We make the story. &hearts;</span>
+          </div>
+        </article>
+
+        <article class="story-step">
+          <div class="story-num">03</div>
+          <div class="story-copy">
+            <h3>Make it yours</h3>
+            <p>Want something changed? Just tell us. No template editor. No dragging boxes. No design work.</p>
+          </div>
+          <div class="story-visual chat-scene">
+            <div class="chat-bubble chat-user">Can you use more photos from Lisbon and make it its own chapter?</div>
+            <div class="chat-bubble chat-remeet"><b>Remeet</b><br>Done. We added 8 more Lisbon photos and created a new chapter.</div>
+            <img src="assets/spread-park.jpg" alt="Updated Remeet book spread" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BEFORE AFTER -->
+    <section class="before-after">
+      <div class="before-copy">
+        <div class="section-label">Before / after</div>
+        <h2>From thousands of photos to one story worth keeping.</h2>
+        <p>The photos were already there. We just made them unforgettable. &hearts;</p>
+      </div>
+
+      <div class="before-visual">
+        <div class="stack">
+          <div class="phone-shot shot-one"></div>
+          <div class="phone-shot shot-two"></div>
+          <div class="phone-shot shot-three"></div>
+        </div>
+        <div class="transform-arrow">&rarr;</div>
+        <div class="after-book">
+          <img src="assets/spread-garden.jpg" alt="Finished Remeet book" />
+        </div>
+      </div>
+
+      <div class="stats-line" aria-label="Photo curation statistics">
+        <div><b>2,846</b><span>photos</span></div>
+        <span>&rarr;</span>
+        <div><b>134</b><span>moments selected</span></div>
+        <span>&rarr;</span>
+        <div><b>7</b><span>chapters</span></div>
+        <span>&rarr;</span>
+        <div><b>82</b><span>pages designed</span></div>
+      </div>
+    </section>
+
+    <!-- EXAMPLES -->
+    <section class="section examples" id="examples">
+      <div class="examples-head">
+        <div>
+          <div class="section-label">Examples</div>
+          <h2>Made from real phone photos.</h2>
+        </div>
+      </div>
+
+      <div class="spread-gallery">
+        <figure class="spread-feature">
+          <img src="assets/spread-garden.jpg" alt="Family photo book spread in Porto" />
+          <figcaption><b>First days</b><span>The little moments</span></figcaption>
+        </figure>
+        <figure class="spread-feature">
+          <img src="assets/spread-park.jpg" alt="Family photo book spread from a park day" />
+          <figcaption><b>Everyday magic</b><span>Ordinary days, kept beautifully</span></figcaption>
+        </figure>
+      </div>
+
+      <p class="handwritten editorial-note">Not professional shoots.<br>Just the life you actually lived. &hearts;</p>
+    </section>
+
+    <!-- EDIT WITH PROMPTS -->
+    <section class="prompt-section">
+      <div class="prompt-copy">
+        <div class="section-label">Easy revisions</div>
+        <h2>Edit your book like you'd text a friend.</h2>
+        <p>No complicated editor to learn. Tell us what you'd like changed, and we update the book for you.</p>
+      </div>
+
+      <div class="prompt-demo">
+        <div class="prompt-card">"Use the beach photo for the cover."</div>
+        <div class="prompt-card">"Add more photos with Grandma."</div>
+        <div class="prompt-card">"Make Lisbon its own chapter."</div>
+        <div class="prompt-answer">
+          <span class="r-avatar">R</span>
+          <p><b>Done.</b> Your updated proof is ready.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERFECT FOR -->
+    <section class="section use-cases" id="gifts">
+      <div class="section-label">Perfect for</div>
+      <h2>Some years deserve their own book.</h2>
+
+      <div class="use-case-grid">
+        <article>
+          <div class="use-image"><img src="assets/mom-baby.jpg" alt="" /></div>
+          <h3>Baby's First Year</h3>
+          <p>The first smiles, sleepy afternoons, tiny hands and all the moments you thought you'd never forget.</p>
+        </article>
+        <article>
+          <div class="use-image"><img src="assets/family-detail.jpg" alt="" /></div>
+          <h3>Family Yearbook</h3>
+          <p>A whole year of ordinary days, birthdays, holidays and everything in between.</p>
+        </article>
+        <article>
+          <div class="use-image"><img src="assets/park.jpg" alt="" /></div>
+          <h3>Travel Memories</h3>
+          <p>Turn hundreds of trip photos into a coffee-table book you'll actually revisit.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-section" id="pricing">
+      <div class="pricing-top">
+        <div class="pricing-copy">
+          <div class="section-label">Simple pricing</div>
+          <h2>Start your book for $29.</h2>
+          <p>We'll design your book and show you the full result before you decide to print. Your $29 goes toward the final price.</p>
+          <a class="button button-dark" href="#start">Start Your Book &rarr; $29</a>
+          <p class="handwritten pricing-hand">See it first.<br>Print it only if you love it. &hearts;</p>
+        </div>
+
+        <div class="pricing-book">
+          <div class="linen-book">
+            <span>Good<br>People<br>Good<br>Days</span>
+            <small>A FAMILY STORY<br>2026</small>
+          </div>
+          <div class="tiny-polaroid"><img src="assets/family-detail.jpg" alt="" /></div>
+        </div>
+      </div>
+
+      <div class="pricing-flow">
+        <div><b>$29</b><span>Start your book</span></div>
+        <span>&rarr;</span>
+        <div><b>72 hours</b><span>Get your first proof</span></div>
+        <span>&rarr;</span>
+        <div><b>Request changes</b><span>as many as you need</span></div>
+        <span>&rarr;</span>
+        <div><b>Love it?</b><span>Approve &amp; print</span></div>
+        <span>&rarr;</span>
+        <div><b>Pay the rest</b><span>we apply your $29</span></div>
+      </div>
+
+      <div class="printed-books">
+        <div class="printed-copy">
+          <div class="section-label">Printed books</div>
+          <h3>Timeless quality, made to be kept.</h3>
+          <p>When you're happy with the design, choose to print. Your $29 is credited toward the final price.</p>
+          <p>High-quality hardcover books, made to last for generations.</p>
+          <p class="handwritten">More copies, more people to share it with &hearts;</p>
+        </div>
+
+        <div class="pricing-table-wrap">
+          <table class="pricing-table">
+            <thead><tr><th>Copies</th><th>Price per copy</th><th>Total after $29 credit</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>$199</td><td>$170</td></tr>
+              <tr><td>2&ndash;3</td><td>$179</td><td>from $329</td></tr>
+              <tr><td>4&ndash;5</td><td>$159</td><td>from $489</td></tr>
+              <tr><td>6+</td><td>$139</td><td>from $669</td></tr>
+            </tbody>
+          </table>
+          <div class="pricing-benefits">
+            <span>Worldwide shipping</span>
+            <span>No hidden fees</span>
+            <span>Archival quality</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIFT -->
+    <section class="gift-section">
+      <div class="gift-box">
+        <div class="ribbon-v"></div><div class="ribbon-h"></div>
+        <span>Remeet</span>
+      </div>
+      <div class="gift-copy">
+        <div class="section-label">A meaningful gift</div>
+        <h2>For the people who matter most.</h2>
+        <p>Birthdays, anniversaries, new parents or just because. A Remeet book is a gift they'll keep forever.</p>
+        <a class="text-link" href="#start">Send a Gift &rarr;</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+      <div class="faq-title">
+        <div class="section-label">Good questions</div>
+        <h2>You've got questions. We've got answers.</h2>
+        <p class="handwritten">Still curious?<br>We're here &hearts;</p>
+      </div>
+
+      <div class="faq-list">
+        <details><summary>How many photos should I send?</summary><p>Anything from roughly 50 to 5,000. We curate the best moments for your story.</p></details>
+        <details><summary>Do I need to choose my favorite photos?</summary><p>No. Send us everything — we'll find the best ones. That's what we do.</p></details>
+        <details><summary>What if you leave out an important photo?</summary><p>Just tell us. Revisions are unlimited before printing. Say "add the one at the beach" and we will.</p></details>
+        <details><summary>What if I don't like the design?</summary><p>You get a full proof to review. Request as many changes as you need — in plain language, not an editor.</p></details>
+        <details><summary>Do I need to use an editor?</summary><p>No. There's no editor, no templates, no dragging and dropping. You just talk to us.</p></details>
+        <details><summary>Are my photos private?</summary><p>Yes. Your photos are encrypted in transit and at rest. We delete them 90 days after your book is complete.</p></details>
+        <details><summary>Can I order copies for grandparents?</summary><p>Yes. Extra copies are $79 each and can be shipped directly to family.</p></details>
+        <details><summary>When will I receive my book?</summary><p>First proof in 72 hours. After you approve, printing takes 5-7 business days plus shipping.</p></details>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="section form-section" id="start">
+      <div class="section-label">Let's make your book</div>
+      <h2>Tell us a little bit.</h2>
+      <form id="bookForm">
+        <label>Your name<input required name="name" type="text" placeholder="Olga Miller"></label>
+        <label>Email<input required name="email" type="email" placeholder="you@email.com"></label>
+        <label>What are we remembering?
+          <select name="type">
+            <option>Baby's First Year</option>
+            <option>Family Yearbook</option>
+            <option>Travel Memories</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Share your photos<input name="photos" type="url" placeholder="Google Photos or Drive link"></label>
+        <label>Anything we should know? <span>(optional)</span><textarea name="notes" placeholder="Tell us about people, places or moments you definitely don't want us to miss."></textarea></label>
+        <label>Extra copies for family
+          <select name="copies"><option>None</option><option>+1 ($79)</option><option>+2 ($158)</option><option>+3 ($237)</option></select>
+        </label>
+        <p class="fineprint">You'll see and approve your complete book before anything is printed.</p>
+        <button class="button button-dark" type="submit">Start My Book &rarr;</button>
+      </form>
+      <div class="success" hidden>
+        <div class="heart-icon">&hearts;</div>
+        <h2>We're on it!</h2>
+        <p>Check your email for next steps. Your book proof will be ready within 72 hours.</p>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="final-cta">
+      <div class="final-polaroids">
+        <div class="final-photo a"><img src="assets/park.jpg" alt="" /></div>
+        <div class="final-photo b"><img src="assets/family-detail.jpg" alt="" /></div>
+      </div>
+      <div class="final-copy">
+        <p class="handwritten final-note">Real moments last longer. &hearts;</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="wordmark">Remeet</span>
+        <div class="footer-tagline">Photos / Stories / People / Forever</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Photo Books</h4>
+          <a href="/baby-photo-book/">Baby's First Year</a>
+          <a href="/family-yearbook/">Family Yearbook</a>
+          <a href="/travel-photo-book/">Travel Photo Book</a>
+          <a href="/coffee-table-photo-book/">Coffee Table Book</a>
+          <a href="/gift-photo-book/">Gift Photo Book</a>
+          <a href="/christmas-photo-book/">Christmas Gift</a>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <a href="/ai-photo-book/">AI Photo Book</a>
+          <a href="/design-service/">Design Service</a>
+          <a href="/how-to-make-a-photo-book/">How to Make a Photo Book</a>
+          <a href="/your-year-in-photos/">Your Year in Photos</a>
+          <a href="/quality/">Quality &amp; Materials</a>
+          <a href="/shipping/">Shipping</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compare</h4>
+          <a href="/remeet-vs-artifact-uprising/">vs Artifact Uprising</a>
+          <a href="/remeet-vs-chatbooks/">vs Chatbooks</a>
+          <a href="/remeet-vs-mixbook/">vs Mixbook</a>
+          <a href="/reviews/">Reviews</a>
+          <a href="/blog/">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+          <a href="mailto:hello@remeet.cc">Contact</a>
+        </div>
+      </div>
     </div>
-    <div class="tagline">Photos / Stories / People / Forever</div>
-  </div>
-</section>
-
-<section class="proofbar">
-  <div><img src="assets/check.svg" alt=""/><span>Editorial-quality design</span></div>
-  <div><img src="assets/check.svg" alt=""/><span>First proof in 72 hours</span></div>
-  <div><img src="assets/check.svg" alt=""/><span>Easy revisions</span></div>
-</section>
-
-<section class="shell how" id="how">
-  <div class="section-head">
-    <span class="eyebrow">How it works</span>
-    <h2>Three steps. No photo-book project required.</h2>
-  </div>
-  <div class="how-grid">
-    <article><img class="icon" src="assets/upload.svg"/><span class="step">01</span><h3>Share your photos</h3><p>Send a Google Photos album, Google Drive folder, or upload your photos. No sorting or choosing favorites first.</p><em>~ 5 minutes</em></article>
-    <article><img class="icon" src="assets/layers.svg"/><span class="step">02</span><h3>We find the story</h3><p>We curate the strongest moments, remove duplicates, group photos into chapters and create a beautiful editorial book.</p><em>~ 72 hours</em></article>
-    <article><img class="icon" src="assets/heart.svg"/><span class="step">03</span><h3>Make it yours</h3><p>Want something changed? Just tell us. More Lisbon photos. Another cover. A new chapter. We update it for you.</p><em>Same day</em></article>
-  </div>
-  <img class="phone" src="assets/camera-roll-phone.png" alt="Phone camera roll mockup"/>
-</section>
-
-<section class="beforeafter">
-  <div class="shell">
-    <span class="eyebrow">Before / After</span>
-    <h2>You send the chaos.<br>We make the story.</h2>
-    <div class="funnel">
-      <div><strong>2,846</strong><span>photos sitting in a camera roll</span></div>
-      <b>↓</b>
-      <div><strong>134</strong><span>moments selected</span></div>
-      <b>↓</b>
-      <div><strong>7</strong><span>chapters created</span></div>
-      <b>↓</b>
-      <div class="final"><strong>82</strong><span>pages designed</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="shell examples" id="examples">
-  <span class="eyebrow">Examples</span>
-  <h2>Made from real phone photos</h2>
-  <p class="intro">Not professional shoots. Not perfectly organized albums. Just everyday photos — transformed into something worth keeping.</p>
-  <div class="spread-grid">
-    <figure><img src="assets/spread_garden.jpeg" alt="Editorial family photo book spread"/><figcaption>First time in Porto with Eva ♡</figcaption></figure>
-    <figure><img src="assets/spread_park.jpeg" alt="Editorial family photo book spread"/><figcaption>Small adventures. Everyday magic. ♡</figcaption></figure>
-  </div>
-</section>
-
-<section class="shell prompt">
-  <span class="eyebrow">Easy revisions</span>
-  <h2>Edit your book like you'd text a friend</h2>
-  <div class="chat">
-    <div class="bubble user">Can you use more photos from our trip to Lisbon? And maybe give it its own chapter?</div>
-    <div class="bubble ai">Done. I added 8 more Lisbon photos and created a "Summer in Lisbon" chapter. Your updated proof is ready ↗</div>
-  </div>
-</section>
-
-<section class="shell usecases" id="gifts">
-  <span class="eyebrow">Perfect for</span>
-  <h2>Some years deserve their own book.</h2>
-  <div class="cards">
-    <article><h3>Baby's First Year</h3><p>All those tiny changes, sleepy afternoons and firsts you thought you'd never forget.</p></article>
-    <article><h3>Family Yearbook</h3><p>A whole year of ordinary days, birthdays, holidays and everything in between.</p></article>
-    <article><h3>Travel Memories</h3><p>Turn hundreds of trip photos into a coffee-table book you'll actually revisit.</p></article>
-    <article><h3>For Grandparents</h3><p>Give them the story, not another photo frame.</p></article>
-  </div>
-</section>
-
-<section class="pricing-start" id="pricing">
-  <div class="shell pricing-start-wrap">
-    <div class="pricing-start-copy">
-      <span class="eyebrow">Simple pricing</span>
-      <h2>Start your book for $29.</h2>
-      <p>We'll design your book and show you the full result before you decide to print. Your $29 goes toward the final price.</p>
-      <a class="cta" href="#start">Start Your Book &nbsp;→&nbsp; $29</a>
-      <p class="scribble">See it first.<br>Print it only if you love it. ♡</p>
-    </div>
-    <div class="pricing-start-visual">
-      <img class="pricing-book" src="assets/pricing-book.jpg" alt="Remeet photo book — Real Moments Last Longer, Our Year 2026"/>
-      <img class="pricing-polaroid" src="assets/polaroid-baby-hands.jpg" alt="Polaroid photo"/>
-      <p class="hand pricing-note">A more meaningful<br>tomorrow ♡</p>
-    </div>
-  </div>
-</section>
-
-<section class="process-bar">
-  <div class="shell">
-    <div class="process-steps">
-      <div class="process-step">
-        <img src="assets/icon-upload.svg" alt=""/>
-        <strong>$29</strong>
-        <span>Start your book</span>
-      </div>
-      <b class="process-arrow">→</b>
-      <div class="process-step">
-        <img src="assets/icon-clock.svg" alt=""/>
-        <strong>72 hours</strong>
-        <span>Get your first proof</span>
-      </div>
-      <b class="process-arrow">→</b>
-      <div class="process-step">
-        <img src="assets/icon-edit.svg" alt=""/>
-        <strong>Request changes</strong>
-        <span>(as many as you need)</span>
-      </div>
-      <b class="process-arrow">→</b>
-      <div class="process-step">
-        <img src="assets/icon-heart.svg" alt=""/>
-        <strong>Love it?</strong>
-        <span>Approve &amp; print</span>
-      </div>
-      <b class="process-arrow">→</b>
-      <div class="process-step">
-        <img src="assets/icon-book.svg" alt=""/>
-        <strong>Pay the rest only then</strong>
-        <span>(we'll apply your $29)</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="printed-books">
-  <div class="shell printed-books-wrap">
-    <div class="printed-books-copy">
-      <span class="eyebrow">Printed books</span>
-      <h2>Timeless quality,<br>made to be kept.</h2>
-      <p>When you're happy with the design, choose to print. Your $29 is credited toward the final price.</p>
-      <p>High-quality hardcover books,<br>made to last for generations.</p>
-      <p class="scribble">More copies,<br>more people to share it with ♡</p>
-    </div>
-    <div class="printed-books-table-wrap">
-      <table class="printed-books-table">
-        <thead><tr><th>Copies</th><th>Price per copy</th><th>Total (after $29 credit)</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>$199</td><td>$170</td></tr>
-          <tr><td>2–3</td><td>$179</td><td>from $329</td></tr>
-          <tr><td>4–5</td><td>$159</td><td>from $489</td></tr>
-          <tr><td>6+</td><td>$139</td><td>from $669</td></tr>
-        </tbody>
-      </table>
-      <div class="printed-badges">
-        <div><img src="assets/icon-truck.svg" alt=""/><span><strong>Worldwide</strong> shipping</span></div>
-        <div><img src="assets/icon-shield.svg" alt=""/><span><strong>No hidden</strong> fees</span></div>
-        <div><img src="assets/icon-leaf.svg" alt=""/><span><strong>Sustainable,</strong> archival quality</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="shell faq">
-  <span class="eyebrow">Questions</span>
-  <h2>Good questions.</h2>
-  <div class="accordion">
-    <details><summary>How many photos should I send?</summary><p>Anything from roughly 50 to 5,000. We curate the best moments for your story.</p></details>
-    <details><summary>Do I need to choose my favorite photos?</summary><p>No. Send us everything — we'll find the best ones. That's what we do.</p></details>
-    <details><summary>What if you leave out an important photo?</summary><p>Just tell us. Revisions are unlimited before printing. Say "add the one at the beach" and we will.</p></details>
-    <details><summary>What if I don't like the design?</summary><p>You get a full proof to review. Request as many changes as you need — in plain language, not an editor.</p></details>
-    <details><summary>Do I need to use an editor?</summary><p>No. There's no editor, no templates, no dragging and dropping. You just talk to us.</p></details>
-    <details><summary>Are my photos private?</summary><p>Yes. Your photos are encrypted in transit and at rest. We delete them 90 days after your book is complete.</p></details>
-    <details><summary>Can I order copies for grandparents?</summary><p>Yes. Extra copies are $79 each and can be shipped directly to family.</p></details>
-    <details><summary>When will I receive my book?</summary><p>First proof in 72 hours. After you approve, printing takes 5-7 business days plus shipping.</p></details>
-  </div>
-</section>
-
-<section class="shell form-section" id="start">
-  <span class="eyebrow">Let's make your book</span>
-  <h2>Tell us a little bit.</h2>
-  <form id="bookForm">
-    <label>Your name<input required name="name" type="text" placeholder="Olga Miller"></label>
-    <label>Email<input required name="email" type="email" placeholder="you@email.com"></label>
-    <label>What are we remembering?
-      <select name="type">
-        <option>Baby's First Year</option>
-        <option>Family Yearbook</option>
-        <option>Travel Memories</option>
-        <option>Other</option>
-      </select>
-    </label>
-    <label>Share your photos<input name="photos" type="url" placeholder="Google Photos or Drive link"></label>
-    <label>Anything we should know? <span>(optional)</span><textarea name="notes" placeholder="Tell us about people, places or moments you definitely don't want us to miss."></textarea></label>
-    <label>Extra copies for family
-      <select name="copies"><option>None</option><option>+1 ($79)</option><option>+2 ($158)</option><option>+3 ($237)</option></select>
-    </label>
-    <p class="fineprint">You'll see and approve your complete book before anything is printed.</p>
-    <button class="cta" type="submit">Start My Book →</button>
-  </form>
-  <div class="success" hidden>
-    <div class="heart-icon">♡</div>
-    <h2>We're on it!</h2>
-    <p>Check your email for next steps. Your book proof will be ready within 72 hours.</p>
-  </div>
-</section>
-
-<section class="shell final-msg">
-  <p class="scribble">Real moments last longer. ♡</p>
-</section>
-</main>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="logo">Remeet</span>
-      <div class="footer-tagline">Photos / Stories / People / Forever</div>
-    </div>
-    <div class="footer-links">
-      <div class="footer-col">
-        <h4>Photo Books</h4>
-        <a href="/baby-photo-book/">Baby's First Year</a>
-        <a href="/family-yearbook/">Family Yearbook</a>
-        <a href="/travel-photo-book/">Travel Photo Book</a>
-        <a href="/coffee-table-photo-book/">Coffee Table Book</a>
-        <a href="/gift-photo-book/">Gift Photo Book</a>
-        <a href="/christmas-photo-book/">Christmas Gift</a>
-      </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="/ai-photo-book/">AI Photo Book</a>
-        <a href="/design-service/">Design Service</a>
-        <a href="/how-to-make-a-photo-book/">How to Make a Photo Book</a>
-        <a href="/your-year-in-photos/">Your Year in Photos</a>
-        <a href="/quality/">Quality &amp; Materials</a>
-        <a href="/shipping/">Shipping</a>
-      </div>
-      <div class="footer-col">
-        <h4>Compare</h4>
-        <a href="/remeet-vs-artifact-uprising/">vs Artifact Uprising</a>
-        <a href="/remeet-vs-chatbooks/">vs Chatbooks</a>
-        <a href="/remeet-vs-mixbook/">vs Mixbook</a>
-        <a href="/reviews/">Reviews</a>
-        <a href="/blog/">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms of Service</a>
-        <a href="mailto:hello@remeet.cc">Contact</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">© 2026 Remeet</div>
-</footer>
-<script src="app.js"></script>
+    <div class="footer-bottom">&copy; 2026 Remeet</div>
+  </footer>
+  <script src="app.js"></script>
 </body>
 </html>

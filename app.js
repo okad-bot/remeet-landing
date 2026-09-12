@@ -1,15 +1,26 @@
-const btn = document.querySelector('.menu-btn');
-const menu = document.querySelector('.menu');
-btn?.addEventListener('click', () => {
-  const open = menu.classList.toggle('open');
-  btn.setAttribute('aria-expanded', String(open));
-  btn.textContent = open ? '×' : '☰';
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.site-nav');
+
+toggle?.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(open));
 });
-menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  menu.classList.remove('open');
-  btn?.setAttribute('aria-expanded','false');
-  if(btn) btn.textContent = '☰';
+
+nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open');
+  toggle?.setAttribute('aria-expanded', 'false');
 }));
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+  });
+}, {threshold: .08});
+
+document.querySelectorAll('.story-step, .spread-feature, .use-case-grid article').forEach(el => {
+  el.classList.add('reveal');
+  observer.observe(el);
+});
 
 const form = document.getElementById('bookForm');
 form?.addEventListener('submit', async (e) => {
