@@ -6,7 +6,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}.shell{wid
 .logo,h1,h2,h3,.amount{font-family:"Cormorant Garamond",serif}.logo{font-size:2rem;font-weight:600;letter-spacing:-.04em}.menu{display:flex;gap:28px;align-items:center;font-size:.92rem}.menu-btn{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer}
 .cta{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 24px;border-radius:10px;background:var(--olive);color:white;font-weight:600;font-family:"DM Sans",sans-serif;font-size:1rem;border:2px solid var(--olive);cursor:pointer;transition:background .2s,transform .15s}.cta:hover{background:#2e3e30;border-color:#2e3e30;transform:translateY(-1px)}.cta.small{min-height:42px;padding:0 17px}.cta.ghost{background:transparent;color:var(--olive)}.cta.ghost:hover{background:var(--olive);color:white}
 .hero{padding:0;overflow:hidden;background-size:cover;background-position:center top;background-repeat:no-repeat;min-height:100svh;display:flex;align-items:flex-end;position:relative}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(243,239,231,0) 30%,rgba(243,239,231,.55) 48%,rgba(243,239,231,.92) 62%,var(--paper) 78%);pointer-events:none;z-index:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(243,239,231,0) 18%,rgba(243,239,231,.6) 30%,rgba(243,239,231,.93) 38%,var(--paper) 46%);pointer-events:none;z-index:1}
 .hero-wrap{position:relative;width:100%;padding-bottom:28px;z-index:2}
 .hero-copy{position:relative;z-index:3;padding-top:40px}
 .hero h1{font-size:clamp(3.2rem,12vw,4.6rem);line-height:.84;letter-spacing:-.055em;margin:0 0 16px}
@@ -68,7 +68,7 @@ footer{padding:0;border-top:1px solid var(--line);font-size:.82rem;color:#6f756f
 @media(max-width:800px){
  .menu-btn{display:block}.menu{display:none;position:absolute;left:16px;right:16px;top:68px;background:var(--cream);padding:20px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}.menu.open{display:flex}
  .hero{min-height:100svh;background-position:center top}
- .hero-copy{padding-top:46svh}
+ .hero-copy{padding-top:36svh}
  .proofbar{grid-template-columns:1fr}.proofbar>div{padding:14px 20px}
  section{padding-top:64px;padding-bottom:64px}.how-grid,.spread-grid,.cards{grid-template-columns:1fr}
  .how-grid{padding-right:0}.phone{position:static;width:78%;margin:34px auto 0}
