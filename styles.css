@@ -14,6 +14,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}.shell{wid
 .hero-cta{min-width:240px;min-height:58px;font-size:1.06rem;border-radius:12px;margin-top:10px}
 .hero-note-50{width:220px;margin-top:18px;transform:rotate(-2deg)}
 .scribble,.hand{font-family:"Reenie Beanie",cursive;font-size:1.6rem;line-height:.95}.scribble{margin-top:18px;transform:rotate(-2deg)}
+.hero-m-collage{display:none}
 .hero-collage{position:relative;min-height:500px}
 .hero-collage img{position:absolute}
 .hc-mom{width:52%;top:0;left:8%;z-index:2;filter:drop-shadow(0 12px 30px rgba(0,0,0,.12))}
@@ -78,14 +79,8 @@ footer{padding:0;border-top:1px solid var(--line);font-size:.82rem;color:#6f756f
 @media(max-width:800px){
  .menu-btn{display:block}.menu{display:none;position:absolute;left:16px;right:16px;top:68px;background:var(--cream);padding:20px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}.menu.open{display:flex}
  .hero-badge{width:130px}
- .hero-collage{min-height:420px;margin:0 -20px}
- .hc-mom{width:60%;top:0;left:5%}
- .hc-porto{width:35%;top:55%;right:3%}
- .hc-baby{width:28%;top:0;right:2%}
- .hc-note{width:30%;top:60%;right:28%}
- .hc-book{width:65%;bottom:0;left:5%}
- .hc-olive{width:18%;top:40%;right:0}
- .hc-tomorrow{width:28%;bottom:22%;left:5%}
+ .hero-m-collage{display:block;margin:20px -20px 0;width:calc(100% + 40px)}
+ .hero-collage{display:none}
  .hero-note-50{width:180px}
  .proofbar{grid-template-columns:1fr}.proofbar>div{padding:14px 20px}
  section{padding-top:64px;padding-bottom:64px}.how-grid,.spread-grid,.cards{grid-template-columns:1fr}
