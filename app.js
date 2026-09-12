@@ -20,9 +20,9 @@ form?.addEventListener('submit', async (e) => {
   submitBtn.disabled = true;
 
   try {
-    const resp = await fetch('https://formsubmit.co/ajax/hello@remeet.cc', {
+    const resp = await fetch('https://okad.cc/api/remeet-form/submit', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(Object.fromEntries(new FormData(form)))
     });
     if (resp.ok) {
