@@ -1,3 +1,9 @@
+const carousel = document.querySelector('.social-carousel');
+if (carousel) {
+  const second = carousel.children[1];
+  if (second) carousel.scrollLeft = second.offsetLeft - carousel.offsetLeft - 20;
+}
+
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
 
