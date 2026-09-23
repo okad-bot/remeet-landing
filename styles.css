@@ -229,6 +229,7 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .hero-button{width:100%}
   .section{padding:48px 20px}.section h2,.faq-section h2{font-size:clamp(2.6rem,8vw,3.5rem)}
   .steps-grid{grid-template-columns:1fr;gap:24px}.steps-heading{margin-bottom:28px}
+  .step-1,.step-2,.step-img-1,.step-img-2{grid-column:auto;grid-row:auto}
   .step-1{order:1}.step-img-1{order:2;max-height:none}.step-2{order:3}.step-img-2{order:4}
   .step-text h3{font-size:1.5rem}
   .value-grid{grid-template-columns:1fr;gap:20px}.value-heading{margin-bottom:28px}
