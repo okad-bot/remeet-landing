@@ -110,7 +110,7 @@ h1,h2,h3{font-weight:500;letter-spacing:-.045em}
 .proof-strip small{color:#687068}
 
 /* global sections */
-.section{padding:100px 5vw}
+.section{padding:70px 5vw}
 .section h2,.pricing-section h2,.gift-section h2,.faq-section h2,.final-cta h2{
   font-size:clamp(3.5rem,5.5vw,6rem);line-height:.9;margin:0
 }
@@ -136,7 +136,6 @@ h1,h2,h3{font-weight:500;letter-spacing:-.045em}
 .spread-feature img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
 .spread-feature figcaption{display:flex;justify-content:space-between;align-items:baseline;padding:12px 10px 2px;font-family:var(--serif);font-size:1.2rem}
 .spread-feature figcaption span{font-family:var(--sans);font-size:.66rem;text-transform:uppercase;letter-spacing:.15em}
-.editorial-note{font-size:1.85rem;text-align:right;margin-top:30px}
 
 
 /* cases */
@@ -146,7 +145,7 @@ h1,h2,h3{font-weight:500;letter-spacing:-.045em}
 .use-case-grid h3{font-size:2rem;margin:0 0 8px}.use-case-grid p{font-family:var(--serif);font-size:1.15rem}
 
 /* pricing */
-.pricing-section{background:#eee7dc;padding:100px 5vw}
+.pricing-section{background:#eee7dc;padding:70px 5vw}
 .pricing-top{display:grid;grid-template-columns:.86fr 1.14fr;gap:6vw;align-items:center}
 .pricing-copy p{font-family:var(--serif);font-size:1.35rem;max-width:560px}
 .pricing-hand{font-size:1.85rem;margin-left:48%;margin-top:-30px;transform:rotate(-5deg)}
