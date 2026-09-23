@@ -107,6 +107,27 @@ h1,h2,h3{font-weight:500;letter-spacing:-.045em}
 .hero .button-dark{background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3)}
 .hero .button-dark:hover{background:rgba(255,255,255,.3)}
 
+/* hero-carousel variant — no background image */
+.hero-carousel{
+  min-height:auto;max-height:none;overflow:visible;
+  background:var(--olive);
+  padding:0 0 48px;
+}
+.hero-carousel .hero-copy{
+  position:static;
+  padding:80px 5vw 40px;
+  max-width:720px;
+  margin:0 auto;
+  text-align:center;
+}
+.hero-carousel .hero-sub{margin-left:auto;margin-right:auto}
+.hero-carousel .hero-button{display:inline-flex;width:auto}
+.hero-carousel .social-carousel{padding-top:0}
+.hero-carousel-sub{
+  text-align:center;font-family:var(--serif);font-size:1.15rem;
+  color:rgba(255,255,255,.7);margin:28px 0 0;padding:0 20px;
+}
+
 /* global sections */
 .section{padding:70px 5vw}
 .section h2,.faq-section h2{
@@ -227,6 +248,8 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .hero{min-height:70vh}
   .hero-image img{object-position:center 40%}
   .hero-copy{padding:36px 20px 0;text-align:center}
+  .hero-carousel .hero-copy{padding:48px 20px 28px}
+  .hero-carousel .hero-button{width:100%}
   .hero h1{font-size:clamp(2.4rem,8vw,4rem);max-width:100%;margin-bottom:14px}
   .hero-sub{font-size:1.1rem;margin-bottom:18px;margin-left:auto;margin-right:auto}
   .hero-button{width:100%}
