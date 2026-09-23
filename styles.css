@@ -221,9 +221,9 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .site-nav::-webkit-scrollbar{display:none}
   .site-nav a{white-space:nowrap;padding:6px 0;margin-right:24px}
   .site-nav .nav-cta{display:none}
-  .hero{min-height:85vh}
+  .hero{min-height:75vh}
   .hero-image img{object-position:center 40%}
-  .hero-copy{padding:100px 20px 40px;text-align:center}
+  .hero-copy{padding:70px 20px 0;text-align:center}
   .hero h1{font-size:clamp(2.4rem,8vw,4rem);max-width:100%;margin-bottom:14px}
   .hero-sub{font-size:1.1rem;margin-bottom:18px;margin-left:auto;margin-right:auto}
   .hero-button{width:100%}
