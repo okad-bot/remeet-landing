@@ -188,9 +188,9 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .topbar{padding:14px 20px}.wordmark{font-size:2rem}.menu-toggle{display:block}.site-nav{display:none;position:absolute;left:14px;right:14px;top:68px;background:var(--white);padding:20px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;border-radius:12px}.site-nav.open{display:flex}
   .hero{display:flex;flex-direction:column;padding:0;min-height:auto}
   .hero-image{order:-1;border-radius:0}.hero-image img{aspect-ratio:4/3}
-  .hero-copy{padding:24px 20px 0;order:1}
+  .hero-copy{padding:24px 20px 0;order:1;text-align:center}
   .hero h1{font-size:clamp(2.1rem,7.5vw,4rem);max-width:100%;margin-bottom:14px}
-  .hero-sub{font-size:1.1rem;margin-bottom:18px}
+  .hero-sub{font-size:1.1rem;margin-bottom:18px;margin-left:auto;margin-right:auto}
   .hero-button{width:100%}
   .section{padding:48px 20px}.section h2,.faq-section h2{font-size:clamp(2.6rem,8vw,3.5rem)}
   .steps-grid{grid-template-columns:1fr;gap:24px}.steps-heading{margin-bottom:28px}
