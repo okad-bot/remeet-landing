@@ -234,6 +234,7 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .step-1{order:1}.step-img-1{order:2}.step-2{order:3}.step-img-2{order:4}
   .step-text h3{font-size:1.5rem}
   .value-grid{grid-template-columns:1fr;gap:20px}.value-heading{margin-bottom:28px}
+  .value-section{padding-bottom:72px}
   .social-card{flex:0 0 280px}
   .pricing-cards{grid-template-columns:1fr}
   .faq-section{grid-template-columns:1fr}.faq-title .handwritten{margin-top:20px}
