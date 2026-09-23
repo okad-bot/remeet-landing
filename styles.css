@@ -191,7 +191,7 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .hero{display:flex;flex-direction:column;padding:0;min-height:auto}
   .hero-image{order:-1;border-radius:0}.hero-image img{aspect-ratio:4/3}
   .hero-copy{padding:24px 20px 0;order:1}
-  .hero h1{font-size:clamp(2.8rem,10vw,4rem);max-width:100%;margin-bottom:14px}
+  .hero h1{font-size:clamp(2.1rem,7.5vw,4rem);max-width:100%;margin-bottom:14px}
   .hero-sub{font-size:1.1rem;margin-bottom:18px}
   .hero-button{width:100%}
   .section{padding:48px 20px}.section h2,.faq-section h2{font-size:clamp(2.6rem,8vw,3.5rem)}
