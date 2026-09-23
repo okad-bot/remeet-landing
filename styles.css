@@ -21,7 +21,9 @@ body{
   color:var(--ink);
   font-family:var(--sans);
   line-height:1.45;
+  text-wrap:pretty;
 }
+h1,h2,h3,.promo-note,.hero-carousel-sub{text-wrap:balance}
 body:before{
   content:"";
   position:fixed;
