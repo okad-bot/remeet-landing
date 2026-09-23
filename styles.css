@@ -179,9 +179,10 @@ h1,h2,h3{font-weight:500;letter-spacing:-.045em}
 .social-section{padding-bottom:40px}
 .social-carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 5vw 20px}
 .social-carousel::-webkit-scrollbar{display:none}
-.social-card{flex:0 0 320px;scroll-snap-align:center;position:relative;border-radius:16px;overflow:hidden}
-.social-card img{width:100%;height:auto;display:block}
-.social-handle{position:absolute;bottom:16px;left:16px;background:rgba(0,0,0,.5);color:#fff;font-size:.85rem;padding:6px 14px;border-radius:20px;backdrop-filter:blur(8px)}
+.social-card{flex:0 0 280px;scroll-snap-align:center;position:relative;border-radius:16px;overflow:hidden}
+.social-card img{width:100%;height:340px;object-fit:cover;display:block}
+.social-handle{position:absolute;bottom:40px;left:12px;background:rgba(0,0,0,.5);color:#fff;font-size:.8rem;padding:5px 12px;border-radius:20px;backdrop-filter:blur(8px)}
+.social-caption{display:block;padding:8px 12px;font-family:var(--serif);font-size:.95rem;color:rgba(255,255,255,.75);background:rgba(0,0,0,.35);text-align:center}
 
 /* pricing simple */
 .pricing-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:700px;margin:0 auto}
