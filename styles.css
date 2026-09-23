@@ -133,7 +133,7 @@ h1,h2,h3{font-weight:500;letter-spacing:-.045em}
 .section h2,.faq-section h2{
   font-size:clamp(3.5rem,5.5vw,6rem);line-height:.9;margin:0
 }
-.hi{font-family:var(--hand);font-size:1.15em;line-height:.8}
+.hi{font-family:var(--hand);font-size:1.15em;line-height:.8;margin-right:-.08em}
 /* steps */
 .steps-intro{text-align:center;font-family:var(--hand);font-size:1.8rem;color:var(--ink);margin:0 0 4px;line-height:1}
 h2.steps-heading{text-align:center;margin:0 0 50px;font-size:clamp(2.8rem,4.5vw,4.5rem)}
@@ -155,6 +155,8 @@ h2.steps-heading{text-align:center;margin:0 0 50px;font-size:clamp(2.8rem,4.5vw,
 .step-text p{font-family:var(--serif);font-size:1.1rem;line-height:1.25;color:#4a5249;margin:0}
 .step-visual{border-radius:12px}
 .step-visual img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.step-img-2{background:var(--cream)}
+.step-img-2 img{object-fit:contain;padding:16px;max-height:480px}
 
 /* value cards */
 h2.value-heading{text-align:center;margin:0 0 48px}
