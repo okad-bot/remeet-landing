@@ -269,10 +269,10 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .hero-button{width:100%}
   .section{padding:48px 20px}.section h2,.faq-section h2{font-size:clamp(2.4rem,7.5vw,3.2rem)}
   .steps-intro{font-size:1.5rem;margin-bottom:4px}
-  .steps-grid{grid-template-columns:1fr;gap:20px}.steps-heading{margin-bottom:56px}
+  .steps-grid{grid-template-columns:1fr;gap:20px}.steps-heading{margin-bottom:72px}
   .step-img-1{order:1}.step-1{order:2}.step-img-2{order:3}.step-2{order:4}
   .step-text h3{font-size:1.5rem}
-  .value-grid{grid-template-columns:1fr;gap:20px}.value-heading{margin-bottom:56px}
+  .value-grid{grid-template-columns:1fr;gap:20px}.value-heading{margin-bottom:72px}
   .value-section{padding-bottom:72px}
   .social-card{flex:0 0 280px}
   .pricing-cards{grid-template-columns:1fr}
