@@ -134,8 +134,8 @@ h1,h2,h3{font-weight:500;letter-spacing:-.045em}
   font-size:clamp(3.5rem,5.5vw,6rem);line-height:.9;margin:0
 }
 /* steps */
-.steps-intro{text-align:center;font-family:var(--serif);font-size:1.25rem;color:#6a6a6a;margin:0 0 8px}
-.steps-heading{text-align:center;margin:0 0 50px}
+.steps-intro{text-align:center;font-family:var(--hand);font-size:1.8rem;color:var(--ink);margin:0 0 4px;line-height:1}
+.steps-heading{text-align:center;margin:0 0 50px;font-size:clamp(2.8rem,4.5vw,4.5rem)}
 .steps-grid{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
@@ -268,7 +268,7 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .hero-sub{font-size:1.1rem;margin-bottom:18px;margin-left:auto;margin-right:auto}
   .hero-button{width:100%}
   .section{padding:48px 20px}.section h2,.faq-section h2{font-size:clamp(2.4rem,7.5vw,3.2rem)}
-  .steps-intro{font-size:1.05rem;margin-bottom:6px}
+  .steps-intro{font-size:1.5rem;margin-bottom:4px}
   .steps-grid{grid-template-columns:1fr;gap:20px}.steps-heading{margin-bottom:44px}
   .step-img-1{order:1}.step-1{order:2}.step-img-2{order:3}.step-2{order:4}
   .step-text h3{font-size:1.5rem}
