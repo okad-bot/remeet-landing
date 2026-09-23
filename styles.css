@@ -157,7 +157,7 @@ h2.steps-heading{text-align:center;margin:0 0 50px;font-size:clamp(2.8rem,4.5vw,
 .step-text p{font-family:var(--serif);font-size:1.1rem;line-height:1.25;color:#4a5249;margin:0}
 .step-visual{border-radius:12px}
 .step-visual img{width:100%;height:100%;object-fit:cover;border-radius:12px}
-.step-img-2{background:#f0ece4;border-radius:12px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.step-img-2{background:#f8f5ef;border-radius:12px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
 .step-img-2 img{width:auto;height:auto;max-width:55%;max-height:80%;object-fit:contain;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.15)}
 
 /* value cards */
