@@ -277,8 +277,8 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .social-card{flex:0 0 280px}
   .pricing-cards{grid-template-columns:1fr}
   .pricing-cards-v2{grid-template-columns:1fr;gap:20px}
-  .price-card-info{grid-template-columns:1fr;gap:8px}
-  .price-card-amount{font-size:2.4rem}
+  .price-card-info{grid-template-columns:2fr 3fr;gap:8px}
+  .price-card-amount{font-size:2.2rem}
   .price-card-btn{width:auto}
   .faq-section{grid-template-columns:1fr}.faq-title .handwritten{margin-top:20px}
   .form-section{padding:48px 20px}
