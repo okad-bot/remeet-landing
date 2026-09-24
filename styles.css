@@ -168,7 +168,7 @@ h2.value-heading{text-align:center;margin:0 0 48px}
 .value-card-image{aspect-ratio:4/3;overflow:hidden}
 .value-card-image img{width:100%;height:100%;object-fit:cover}
 .value-card-body{padding:28px 24px 32px;background:#eee8de;text-align:center}
-.value-card-body h3{font-size:1.6rem;line-height:1;margin:0 0 10px}
+.value-card-body h3{font-family:var(--hand);font-size:2rem;line-height:1;margin:0 0 10px;letter-spacing:0}
 .value-card-body p{font-family:var(--serif);font-size:1.1rem;line-height:1.3;color:inherit;opacity:.85;margin:0}
 
 
