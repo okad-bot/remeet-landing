@@ -263,17 +263,12 @@ label span,.fineprint{color:#747970;font-size:.74rem}
 
 /* responsive */
 @media(max-width:900px){
-  .topbar{padding:12px 20px;flex-wrap:wrap}.wordmark{font-size:2rem}
-  .menu-toggle{display:none}
-  .site-nav{width:100%;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:8px 0 0;border-top:1px solid var(--line);margin-top:10px;font-size:.82rem}
-  .site-nav::-webkit-scrollbar{display:none}
-  .site-nav a{white-space:nowrap;padding:6px 0;margin-right:24px}
+  .topbar{padding:12px 20px;flex-wrap:nowrap}.wordmark{font-size:2rem}
+  .menu-toggle{display:flex;align-items:center;justify-content:center}
+  .site-nav{display:none;width:100%;gap:0;font-size:.82rem}
+  .site-nav.open{display:flex;flex-direction:column;gap:0;padding:12px 0 4px;border-top:1px solid var(--line);margin-top:10px;position:absolute;top:100%;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);padding:12px 20px 4px;z-index:29}
+  .site-nav.open a{padding:10px 0;margin-right:0;border-bottom:1px solid var(--line);display:block}
   .site-nav .nav-cta{display:none}
-  .topbar.scrolled .menu-toggle{display:flex;align-items:center;justify-content:center}
-  .topbar.scrolled .site-nav{display:none}
-  .topbar.scrolled .site-nav.open{display:flex;flex-direction:column;gap:0;padding:12px 0 4px;border-top:1px solid var(--line);margin-top:10px}
-  .topbar.scrolled .site-nav.open a{padding:10px 0;margin-right:0;border-bottom:1px solid var(--line)}
-  .topbar.scrolled{flex-wrap:nowrap}
   .hero{min-height:70vh}
   .hero-image img{object-position:center 40%}
   .hero-copy{padding:36px 20px 0;text-align:center}
