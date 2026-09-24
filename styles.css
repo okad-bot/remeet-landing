@@ -265,9 +265,10 @@ label span,.fineprint{color:#747970;font-size:.74rem}
 @media(max-width:900px){
   .topbar{padding:12px 20px;flex-wrap:nowrap}.wordmark{font-size:2rem}
   .menu-toggle{display:flex;align-items:center;justify-content:center}
-  .site-nav{display:none;width:100%;gap:0;font-size:.82rem}
-  .site-nav.open{display:flex;flex-direction:column;gap:0;padding:12px 0 4px;border-top:1px solid var(--line);margin-top:10px;position:absolute;top:100%;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);padding:12px 20px 4px;z-index:29}
-  .site-nav.open a{padding:10px 0;margin-right:0;border-bottom:1px solid var(--line);display:block}
+  .site-nav{display:none;font-size:.82rem}
+  .site-nav.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.1);padding:8px 20px;z-index:29}
+  .site-nav.open a{padding:12px 0;border-bottom:1px solid var(--line);display:block}
+  .site-nav.open a:last-child{border-bottom:none}
   .site-nav .nav-cta{display:none}
   .hero{min-height:70vh}
   .hero-image img{object-position:center 40%}
