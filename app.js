@@ -6,6 +6,17 @@ if (carousel) {
 
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
+const topbar = document.querySelector('.topbar');
+
+if (topbar && window.matchMedia('(max-width:900px)').matches) {
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > 80) topbar.classList.add('scrolled');
+    else { topbar.classList.remove('scrolled'); nav?.classList.remove('open'); }
+    lastY = y;
+  }, {passive: true});
+}
 
 toggle?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');

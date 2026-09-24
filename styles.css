@@ -34,6 +34,7 @@ body:before{
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
 }
 .announcement-bar{background:#7a2e3a;color:#fff;text-align:center;padding:10px 20px;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;position:sticky;top:0;z-index:31}
+.announcement-bar strong{letter-spacing:.12em}
 img{display:block;width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
@@ -262,11 +263,17 @@ label span,.fineprint{color:#747970;font-size:.74rem}
 
 /* responsive */
 @media(max-width:900px){
-  .topbar{padding:12px 20px;flex-wrap:wrap}.wordmark{font-size:2rem}.menu-toggle{display:none}
+  .topbar{padding:12px 20px;flex-wrap:wrap}.wordmark{font-size:2rem}
+  .menu-toggle{display:none}
   .site-nav{width:100%;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:8px 0 0;border-top:1px solid var(--line);margin-top:10px;font-size:.82rem}
   .site-nav::-webkit-scrollbar{display:none}
   .site-nav a{white-space:nowrap;padding:6px 0;margin-right:24px}
   .site-nav .nav-cta{display:none}
+  .topbar.scrolled .menu-toggle{display:flex;align-items:center;justify-content:center}
+  .topbar.scrolled .site-nav{display:none}
+  .topbar.scrolled .site-nav.open{display:flex;flex-direction:column;gap:0;padding:12px 0 4px;border-top:1px solid var(--line);margin-top:10px}
+  .topbar.scrolled .site-nav.open a{padding:10px 0;margin-right:0;border-bottom:1px solid var(--line)}
+  .topbar.scrolled{flex-wrap:nowrap}
   .hero{min-height:70vh}
   .hero-image img{object-position:center 40%}
   .hero-copy{padding:36px 20px 0;text-align:center}
