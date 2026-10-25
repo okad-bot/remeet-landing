@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X1ZSJLBMRD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X1ZSJLBMRD');</script>
+<meta name="theme-color" content="#f4f0e8" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Order Received — ReMeet</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=20261025"/>
+<style>
+  .ty-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px 24px;text-align:center}
+  .ty-card{max-width:520px}
+  .ty-check{width:72px;height:72px;margin:0 auto 32px;border-radius:50%;background:var(--olive);display:flex;align-items:center;justify-content:center}
+  .ty-check svg{width:36px;height:36px}
+  .ty-card h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 16px;letter-spacing:-.04em}
+  .ty-card p{font-size:1.05rem;color:var(--olive-2);margin:0 0 12px;line-height:1.6}
+  .ty-email{display:inline-block;font-weight:600;color:var(--olive);font-size:1.1rem;margin:8px 0 24px;cursor:pointer;border-bottom:2px solid var(--olive)}
+  .ty-or{font-size:.9rem;color:var(--olive-2);margin:0 0 24px}
+  .ty-home{margin-top:24px}
+</style>
+</head>
+<body>
+<div class="ty-wrap">
+  <div class="ty-card">
+    <div class="ty-check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1>Your order is&nbsp;received!</h1>
+    <p>Share a Google Drive folder with all your photos and any notes&nbsp;to:</p>
+    <a class="ty-email copy-email" data-email="olga@okad.agency">olga@okad.agency</a>
+    <p class="ty-or">Or we'll reach out within 24&nbsp;hours&nbsp;— check your&nbsp;inbox.</p>
+    <a class="button button-dark ty-home" href="/">Back to ReMeet</a>
+  </div>
+</div>
+<div class="copy-toast" role="status" aria-live="polite" hidden>Email copied</div>
+<script>
+const toast=document.querySelector('.copy-toast');let t;
+document.addEventListener('click',e=>{
+  const el=e.target.closest('.copy-email');if(!el)return;e.preventDefault();
+  const email=el.dataset.email;
+  navigator.clipboard.writeText(email).catch(()=>{const ta=document.createElement('textarea');ta.value=email;document.body.appendChild(ta);ta.select();try{document.execCommand('copy')}catch{}ta.remove()});
+  if(toast){toast.textContent=email+' copied';toast.hidden=false;clearTimeout(t);t=setTimeout(()=>toast.hidden=true,2200)}
+  gtag('event','purchase_thank_you_copy_email');
+});
+</script>
+</body>
+</html>
