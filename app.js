@@ -28,28 +28,42 @@ document.querySelectorAll('.story-step, .spread-feature, .use-case-grid article'
   observer.observe(el);
 });
 
+const STRIPE_LINKS = {
+  '30': 'https://buy.stripe.com/14A4gzcns28d3CL3F58k80H',
+  '60': 'https://buy.stripe.com/5kQ7sLevA8wB6OXejJ8k80I',
+  '90': 'https://buy.stripe.com/4gMbJ1bjodQV2yH8Zp8k80J'
+};
+const PRICES = {'30': 29, '60': 59, '90': 89};
+
 const form = document.getElementById('bookForm');
+const payBtn = document.getElementById('payBtn');
+const pageOptions = document.querySelectorAll('.page-option');
+
+pageOptions.forEach(opt => {
+  opt.addEventListener('click', () => {
+    pageOptions.forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+    const val = opt.querySelector('input').value;
+    if (payBtn) payBtn.innerHTML = 'Pay $' + PRICES[val] + ' &rarr;';
+  });
+});
+
 form?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const origText = submitBtn.textContent;
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled = true;
+  const data = Object.fromEntries(new FormData(form));
+  const pages = data.pages || '30';
+  const stripeUrl = STRIPE_LINKS[pages];
+
+  payBtn.textContent = 'Redirecting...';
+  payBtn.disabled = true;
 
   try {
-    const resp = await fetch('https://okad.cc/api/remeet-form/submit', {
+    await fetch('https://okad.cc/api/remeet-form/submit', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      body: JSON.stringify(data)
     });
-    if (resp.ok) {
-      form.hidden = true;
-      document.querySelector('.success').hidden = false;
-      document.querySelector('.form-section').scrollIntoView({behavior:'smooth'});
-    } else { throw new Error(); }
-  } catch {
-    submitBtn.textContent = origText;
-    submitBtn.disabled = false;
-    alert('Something went wrong. Please try again or email hello@remeet.cc');
-  }
+  } catch {}
+
+  window.location.href = stripeUrl;
 });

@@ -67,8 +67,15 @@
     },
     {
       "@type": "Offer",
-      "name": "Printed Book (1 copy)",
-      "price": "199",
+      "name": "Digital Photo Book (60 pages, print-ready PDF)",
+      "price": "59",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Digital Photo Book (90 pages, print-ready PDF)",
+      "price": "89",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
     }
@@ -84,7 +91,7 @@
     {"@type": "Question", "name": "What if I don't like the result?", "acceptedAnswer": {"@type": "Answer", "text": "You get a proof first and can request unlimited revisions before print."}},
     {"@type": "Question", "name": "How does prompt editing work?", "acceptedAnswer": {"@type": "Answer", "text": "Tell us changes in plain language — like texting a friend. We update the layout and send a refreshed proof."}},
     {"@type": "Question", "name": "Are my photos safe?", "acceptedAnswer": {"@type": "Answer", "text": "Your photos are encrypted in transit and at rest. We delete them 90 days after your book is complete unless you request otherwise."}},
-    {"@type": "Question", "name": "Can I order extra copies?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Additional copies start at $179 each, with discounts for 2 or more. See our pricing table for details."}},
+    {"@type": "Question", "name": "Can I get a printed book?", "acceptedAnswer": {"@type": "Answer", "text": "Printed hardcover and softcover books are coming soon. For now, you can order a print-ready PDF and print it anywhere."}},
     {"@type": "Question", "name": "How long does shipping take?", "acceptedAnswer": {"@type": "Answer", "text": "Free US standard shipping takes 7-10 business days after you approve the final proof."}}
   ]
 }
@@ -93,7 +100,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260924m"/>
+<link rel="stylesheet" href="styles.css?v=20261026"/>
 </head>
 <body>
   <div class="announcement-bar">30% OFF — use code <strong>EARLYBIRDS</strong></div>
@@ -267,43 +274,7 @@
     <section class="section pricing-simple" id="pricing">
       <div class="section-label" style="text-align:center">Pricing</div>
       <h2 style="text-align:center;margin:0 0 48px"><span class="hi">C</span>hoose your format.</h2>
-      <div class="pricing-cards-v2">
-
-        <div class="price-card-v2">
-          <div class="price-card-img">
-            <img src="assets/book-cover-eva.jpg" alt="Hardcover ReMeet photo book" loading="lazy" />
-          </div>
-          <div class="price-card-info">
-            <div class="price-card-left">
-              <div class="price-card-amount"><span class="price-was">$299</span> $199</div>
-              <div class="price-card-name">Hardcover</div>
-            </div>
-            <div class="price-card-right">
-              <p>26×20 cm hardcover</p>
-              <p>Archival paper</p>
-              <p>Proof in 72 hours</p>
-            </div>
-          </div>
-          <a class="button button-dark price-card-btn" href="#start">Build Your Book <span>&rarr;</span></a>
-        </div>
-
-        <div class="price-card-v2">
-          <div class="price-card-img">
-            <img src="assets/social-3.jpg" alt="Softcover ReMeet photo book" loading="lazy" />
-          </div>
-          <div class="price-card-info">
-            <div class="price-card-left">
-              <div class="price-card-amount"><span class="price-was">$219</span> $149</div>
-              <div class="price-card-name">Softcover</div>
-            </div>
-            <div class="price-card-right">
-              <p>26×20 cm softcover</p>
-              <p>Archival paper</p>
-              <p>Proof in 72 hours</p>
-            </div>
-          </div>
-          <a class="button button-dark price-card-btn" href="#start">Build Your Book <span>&rarr;</span></a>
-        </div>
+      <div class="pricing-cards-v2" style="max-width:820px">
 
         <div class="price-card-v2">
           <div class="price-card-img price-card-img-digital" style="background:#c9a84c">
@@ -311,36 +282,36 @@
           </div>
           <div class="price-card-info">
             <div class="price-card-left">
-              <div class="price-card-amount"><span class="price-was">$49</span> $29</div>
+              <div class="price-card-amount">From $29</div>
               <div class="price-card-name">Digital</div>
             </div>
             <div class="price-card-right">
-              <p>Print-ready PDF, 30&nbsp;pages</p>
-              <p>+$10 per extra 10&nbsp;pages</p>
+              <p>Print-ready PDF</p>
+              <p>30, 60, or 90&nbsp;pages</p>
               <p>Ready in 72 hours</p>
             </div>
           </div>
-          <a class="button button-dark price-card-btn" href="https://buy.stripe.com/14A4gzcns28d3CL3F58k80H" target="_blank" rel="noopener">Buy Now <span>&rarr;</span></a>
+          <a class="button button-dark price-card-btn" href="#start">Order Now <span>&rarr;</span></a>
         </div>
 
-      </div>
-
-      <!-- MULTI-COPY DISCOUNT -->
-      <div class="promo-banner">
-        <p class="promo-title">Save on extra copies</p>
-        <div class="promo-grid">
-          <div class="promo-item">
-            <span class="promo-percent">–15%</span>
-            <span class="promo-desc">2 books</span>
-            <span class="promo-price">$152 each</span>
+        <div class="price-card-v2" style="opacity:.55;pointer-events:none">
+          <div class="price-card-img">
+            <img src="assets/book-cover-eva.jpg" alt="Printed ReMeet photo book" loading="lazy" />
           </div>
-          <div class="promo-item">
-            <span class="promo-percent">–25%</span>
-            <span class="promo-desc">3+ books</span>
-            <span class="promo-price">$134 each</span>
+          <div class="price-card-info">
+            <div class="price-card-left">
+              <div class="price-card-amount">From $149</div>
+              <div class="price-card-name">Printed Book</div>
+            </div>
+            <div class="price-card-right">
+              <p>Hardcover or softcover</p>
+              <p>Archival paper</p>
+              <p>Shipped to your door</p>
+            </div>
           </div>
+          <span class="button button-dark price-card-btn" style="background:#999;cursor:default">Coming Soon</span>
         </div>
-        <p class="promo-note">Perfect for grandparents, partners, or a second copy at&nbsp;the&nbsp;office.</p>
+
       </div>
     </section>
 
@@ -381,17 +352,16 @@
         <details><summary>What if I don't like the design?</summary><p>You get a full proof to review. Request as many changes as you need — in plain language, not an&nbsp;editor.</p></details>
         <details><summary>Do I need to use an editor?</summary><p>No. There's no editor, no templates, no dragging and dropping. You just talk to&nbsp;us.</p></details>
         <details><summary>Are my photos private?</summary><p>Yes. Your photos are encrypted in transit and at rest. We delete them 90 days after your book is&nbsp;complete.</p></details>
-        <details><summary>Can I order copies for grandparents?</summary><p>Yes. Additional copies start at $179 each, with volume discounts — and can be shipped directly to&nbsp;family.</p></details>
+        <details><summary>Can I get a printed book?</summary><p>Printed hardcover and softcover books are coming soon. For now, order a print-ready PDF and print it at any local or online print&nbsp;shop.</p></details>
         <details><summary>When will I receive my book?</summary><p>First proof in 72 hours. After you approve, printing takes 5-7 business days plus&nbsp;shipping.</p></details>
       </div>
     </section>
 
-    <!-- FORM -->
+    <!-- ORDER FORM -->
     <section class="section form-section" id="start">
-      <div class="section-label">Let's make your book</div>
+      <div class="section-label">Order your book</div>
       <h2><span class="hi">T</span>ell us a little bit.</h2>
       <form id="bookForm">
-        <label>Your name<input required name="name" type="text" placeholder="Olga Miller"></label>
         <label>Email<input required name="email" type="email" placeholder="you@email.com"></label>
         <label>What are we remembering?
           <select name="type">
@@ -401,14 +371,15 @@
             <option>Other</option>
           </select>
         </label>
-        <p class="fineprint">We'll reach out with next steps — no photos needed&nbsp;yet.</p>
-        <button class="button button-dark" type="submit">Get Started &rarr;</button>
+        <label>How many pages?
+          <div class="page-options">
+            <label class="page-option selected"><input type="radio" name="pages" value="30" checked /><span>Up to 30</span><span class="page-price">$29</span></label>
+            <label class="page-option"><input type="radio" name="pages" value="60" /><span>Up to 60</span><span class="page-price">$59</span></label>
+            <label class="page-option"><input type="radio" name="pages" value="90" /><span>Up to 90</span><span class="page-price">$89</span></label>
+          </div>
+        </label>
+        <button class="button button-dark" type="submit" id="payBtn">Pay $29 &rarr;</button>
       </form>
-      <div class="success" hidden>
-        <div class="heart-icon">&hearts;</div>
-        <h2>We're on it!</h2>
-        <p>Check your email — we'll be in touch shortly to get started on your&nbsp;book.</p>
-      </div>
     </section>
   </main>
 
