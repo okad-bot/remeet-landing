@@ -29,7 +29,7 @@ document.querySelectorAll('.story-step, .spread-feature, .use-case-grid article'
 });
 
 const STRIPE_LINKS = {
-  '30': 'https://buy.stripe.com/14A4gzcns28d3CL3F58k80H',
+  '30': 'https://buy.stripe.com/28EeVdbjo8wB8X5dfF8k80K',
   '60': 'https://buy.stripe.com/5kQ7sLevA8wB6OXejJ8k80I',
   '90': 'https://buy.stripe.com/4gMbJ1bjodQV2yH8Zp8k80J'
 };
