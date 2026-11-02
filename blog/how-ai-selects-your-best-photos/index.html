@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1ZSJLBMRD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X1ZSJLBMRD');</script>
+  <meta name="theme-color" content="#F3F0E9" />
+  <title>How AI Selects Your Best Photos for a Photo Book | Remeet</title>
+  <meta name="description" content="A step-by-step look at how AI photo curation works: quality scoring, face detection, duplicate removal, event grouping, and layout-aware selection. What it gets right and what it still misses." />
+  <link rel="canonical" href="https://remeet.cc/blog/how-ai-selects-your-best-photos/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://remeet.cc/blog/how-ai-selects-your-best-photos/" />
+  <meta property="og:title" content="How AI Selects Your Best Photos for a Photo Book" />
+  <meta property="og:description" content="Behind the scenes of AI photo curation: how algorithms pick the best 100 photos from 5,000. Quality scoring, face detection, deduplication, and why human review still matters." />
+  <meta property="og:image" content="https://remeet.cc/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How AI Selects Your Best Photos for a Photo Book" />
+  <meta name="twitter:description" content="Behind the scenes of AI photo curation: how algorithms pick the best 100 photos from 5,000." />
+  <meta name="twitter:image" content="https://remeet.cc/assets/og-image.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../blog/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How AI Selects Your Best Photos for a Photo Book",
+    "description": "A step-by-step look at how AI photo curation works for photo book creation, from quality scoring to layout-aware selection.",
+    "datePublished": "2026-11-02",
+    "publisher": {"@type": "Organization", "name": "Remeet", "url": "https://remeet.cc"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can AI really pick better photos than I can?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For technical quality, yes. AI is faster and more consistent at spotting blur, poor exposure, and duplicates across thousands of images. For emotional or sentimental value, no. AI cannot tell that a blurry photo of your child's first steps is the most important image in the set. The best results come from AI handling the technical filtering and a human making the final judgment calls."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to photos the AI doesn't select?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nothing is deleted. The AI creates a shortlist from your library, but all your original photos remain untouched. With Remeet, you can request changes to the selection during the review stage. If the AI missed a photo you want included, you can ask your designer to swap it in."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I override the AI's choices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With most AI photo book services, yes. Remeet gives you a full proof to review, and you can request swaps or additions in plain language. The AI's selection is a starting point, not a final answer."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="/">Remeet</a>
+    <a class="nav-link" href="/blog/">Blog</a>
+  </header>
+
+  <article class="article">
+    <h1>How AI Selects Your Best Photos for a Photo Book</h1>
+    <div class="article-meta">November 2026 &middot; 7 min read</div>
+
+    <p>You have 5,000 photos on your phone. An AI photo book service needs to pick the best 100. How does it decide which photos make the cut and which ones get left behind?</p>
+
+    <p>This is not a vague "we use AI" marketing pitch. Below is a step-by-step breakdown of what actually happens when an AI system curates photos for a book, using the kind of pipeline we built at <a href="/">Remeet</a>. Not every service does all of these steps, and the order can vary, but these are the building blocks of modern AI photo curation.</p>
+
+    <h2>Step 1: Technical quality scoring</h2>
+
+    <p>The first pass is purely mechanical. The AI evaluates every image on objective technical criteria:</p>
+
+    <ul>
+      <li><strong>Sharpness and blur detection.</strong> A neural network analyzes local contrast patterns to separate genuinely sharp photos from motion blur and focus misses. This is the single biggest filter. In a typical camera roll, 15 to 25 percent of photos have some degree of blur.</li>
+      <li><strong>Exposure analysis.</strong> Overexposed (blown-out highlights) and underexposed (too dark to see detail) images are scored down. The AI measures the histogram distribution to judge if the exposure falls within a usable range.</li>
+      <li><strong>Noise levels.</strong> Low-light photos often have heavy grain. The AI estimates signal-to-noise ratio, especially in shadow regions, and penalizes images where noise obscures detail.</li>
+      <li><strong>Resolution and artifacts.</strong> Screenshots, compressed memes forwarded on WhatsApp, and tiny web images get filtered out. The AI checks both pixel dimensions and compression artifact levels.</li>
+    </ul>
+
+    <p>After this step, a library of 5,000 photos typically drops to around 3,500 candidates. The removed images are almost always ones you would have skipped yourself: screenshots of directions, accidental pocket photos, blurry shots taken while walking.</p>
+
+    <h2>Step 2: Face and people detection</h2>
+
+    <p>Photo books are about people. The AI runs face detection and recognition across the remaining images to understand who appears in your library:</p>
+
+    <ul>
+      <li><strong>Face detection</strong> identifies every face in every image, even in group shots and crowds.</li>
+      <li><strong>Face clustering</strong> groups detections by identity. Without knowing anyone's name, the AI learns that "person A" appears in 400 photos and "person B" in 50.</li>
+      <li><strong>Expression analysis</strong> scores faces for eyes open, smiling, and natural expressions. A photo where someone is mid-blink scores lower than one where everyone looks good.</li>
+      <li><strong>Key person weighting.</strong> People who appear frequently are assumed to be important (family members, close friends) and the AI ensures they are well-represented throughout the book, not concentrated in one section.</li>
+    </ul>
+
+    <p>This step is critical for group photos. If you have ten similar shots from a family dinner, the AI picks the one where the most faces are visible, eyes are open, and expressions look natural.</p>
+
+    <h2>Step 3: Duplicate and near-duplicate removal</h2>
+
+    <p>Modern phones make it easy to take five shots of the same moment. Burst mode makes it worse. The AI identifies and collapses these clusters:</p>
+
+    <ul>
+      <li><strong>Perceptual hashing</strong> creates a compact fingerprint of each image's visual content. Two photos taken a second apart from the same angle will produce nearly identical hashes.</li>
+      <li><strong>Temporal clustering</strong> groups photos taken within a short time window (typically 3 to 10 seconds) at the same location. These are almost certainly the same moment.</li>
+      <li><strong>Best-of-cluster selection.</strong> From each cluster of near-duplicates, the AI picks the single best version based on the quality scores from Step 1 and the face analysis from Step 2.</li>
+    </ul>
+
+    <p>Deduplication alone typically removes another 20 to 30 percent of the remaining photos. For people who use burst mode regularly, the reduction can be even larger.</p>
+
+    <h2>Step 4: Event and timeline grouping</h2>
+
+    <p>A good photo book tells a story. To create narrative structure, the AI needs to understand when things happened:</p>
+
+    <ul>
+      <li><strong>Time-gap analysis.</strong> The AI looks at timestamps and identifies natural breaks. A four-hour gap between photos usually signals the boundary between two events.</li>
+      <li><strong>Location clustering.</strong> GPS data (when available) helps confirm event boundaries. Photos from the same coordinates within the same time window belong together.</li>
+      <li><strong>Event labeling.</strong> Using a combination of time, location, visual content, and photo count, the AI categorizes clusters: a beach vacation, a birthday party, a Tuesday afternoon at home. Dense clusters with many photos are likely important events.</li>
+      <li><strong>Timeline pacing.</strong> The AI allocates page space proportionally. A week-long vacation with 300 photos gets more pages than a random Tuesday with 8. But it also avoids letting any single event dominate the entire book.</li>
+    </ul>
+
+    <p>The result is a rough chapter structure: major events become sections, and the book flows chronologically with appropriate weight given to each period.</p>
+
+    <h2>Step 5: Composition and aesthetic scoring</h2>
+
+    <p>Beyond technical quality, some photos are simply more visually interesting than others. The AI evaluates composition:</p>
+
+    <ul>
+      <li><strong>Rule of thirds.</strong> Photos where the subject falls along the grid lines or intersections tend to be more visually balanced. The AI detects subject placement and scores accordingly.</li>
+      <li><strong>Color harmony.</strong> Images with coherent, pleasing color palettes score higher than ones with clashing or muddy colors.</li>
+      <li><strong>Visual interest.</strong> A landscape with strong leading lines and depth scores higher than a flat, featureless shot. The AI has been trained on millions of photos rated by humans to learn what people generally find compelling.</li>
+      <li><strong>Lighting quality.</strong> Golden hour warmth, even natural light, and dramatic shadows all boost a photo's aesthetic score. Flat overhead fluorescent light does not.</li>
+    </ul>
+
+    <p>This is the most subjective step, and it is where different AI systems diverge the most. Some services use simple heuristics. Others use deep learning models trained on large datasets of human aesthetic preferences. The more data the model has seen, the better its taste tends to be.</p>
+
+    <h2>Step 6: Diversity and balance</h2>
+
+    <p>Left to the previous steps alone, the AI might select 50 photos from your best-lit vacation and skip everything else. The diversity pass corrects for this:</p>
+
+    <ul>
+      <li><strong>Event coverage.</strong> Every identified event gets a minimum number of representative photos, even if individual shots from other events scored higher.</li>
+      <li><strong>People distribution.</strong> Key people should appear throughout the book, not just in one section. If person A appears in 400 photos but person B only in 50, the AI ensures B still shows up proportionally.</li>
+      <li><strong>Visual variety.</strong> The selection should include a mix of close-ups, wide shots, group photos, landscapes, and detail shots. A book of 100 similar portrait headshots would be monotonous even if each one is technically excellent.</li>
+      <li><strong>Seasonal and temporal spread.</strong> For year-in-review books, the AI ensures each month or season is represented, avoiding a book that is 80 percent summer and barely mentions winter.</li>
+    </ul>
+
+    <h2>Step 7: Layout-aware selection</h2>
+
+    <p>The final step considers how photos will look together on a physical page:</p>
+
+    <ul>
+      <li><strong>Orientation mix.</strong> A spread needs both landscape and portrait images to create interesting layouts. The AI adjusts the selection to ensure a usable ratio of orientations.</li>
+      <li><strong>Color pairing.</strong> Photos placed side by side on a spread should have complementary or harmonious color palettes. The AI considers which images will work well as neighbors.</li>
+      <li><strong>Hero image identification.</strong> Some photos are "spread-worthy" — strong enough to fill an entire page or double-page spread. The AI flags these and ensures enough exist for key moments in the book.</li>
+      <li><strong>Filler awareness.</strong> Conversely, some smaller or simpler images work best as supporting elements in a grid layout. The AI selects a range of image strengths to give the designer flexibility.</li>
+    </ul>
+
+    <p>This step is what separates photo selection from photo <em>book</em> selection. Picking 100 great photos is not the same as picking 100 photos that create a great book. The AI optimizes for the final product, not just individual image quality.</p>
+
+    <h2>What AI still gets wrong</h2>
+
+    <p>For all its capability, AI photo curation has real blind spots:</p>
+
+    <ul>
+      <li><strong>Sentimental value.</strong> A blurry photo of your grandmother's hands making pasta might be the most meaningful image in your entire library. The AI sees blur and low contrast. It does not see the memory.</li>
+      <li><strong>Context and inside jokes.</strong> The photo of an empty parking lot means nothing to an algorithm. To you it is where you got engaged. AI cannot read that story from pixels.</li>
+      <li><strong>Cultural significance.</strong> A plain-looking image of a specific meal, outfit, or location might carry deep cultural or personal meaning that no amount of training data can predict.</li>
+      <li><strong>Intentional imperfection.</strong> Some of the most loved photos in family albums are messy, candid, and technically poor. Kids in motion, chaotic holiday mornings, blurry dance floors. The AI tends to filter these out unless told otherwise.</li>
+    </ul>
+
+    <p>This is exactly why <a href="/">Remeet</a> pairs AI curation with human designer review. The AI handles the heavy lifting of sorting through thousands of images, scoring quality, removing duplicates, and building a timeline. Then a human looks at the result and makes the judgment calls that require context, empathy, and taste. The AI is fast. The human is wise. Together they produce a better book than either could alone.</p>
+
+    <div class="highlight">
+      <h3>Questions people ask</h3>
+
+      <p><strong>Can AI really pick better photos than I can?</strong></p>
+      <p>For technical quality, yes. AI is faster and more consistent at spotting blur, poor exposure, and duplicates across thousands of images. For emotional or sentimental value, no. AI cannot tell that a blurry photo of your child's first steps is the most important image in the set. The best results come from AI handling the technical filtering and a human making the final judgment calls.</p>
+
+      <p><strong>What happens to photos the AI doesn't select?</strong></p>
+      <p>Nothing is deleted. The AI creates a shortlist from your library, but all your original photos remain untouched. With Remeet, you can request changes to the selection during the review stage. If the AI missed a photo you want included, you can ask your designer to swap it in.</p>
+
+      <p><strong>Can I override the AI's choices?</strong></p>
+      <p>With most AI photo book services, yes. Remeet gives you a full proof to review, and you can request swaps or additions in plain language. The AI's selection is a starting point, not a final answer.</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>See it in action</h3>
+      <p>Upload your photos to Remeet and see what our AI selects. You get a full proof to review before you commit to anything.</p>
+      <a class="button" href="/">Try Remeet &rarr;</a>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand">Remeet</div>
+        <div class="footer-tagline">Photos / Stories / People / Forever</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Photo Books</h4>
+          <a href="/baby-photo-book/">Baby's First Year</a>
+          <a href="/family-yearbook/">Family Yearbook</a>
+          <a href="/travel-photo-book/">Travel Photo Book</a>
+          <a href="/coffee-table-photo-book/">Coffee Table Book</a>
+          <a href="/gift-photo-book/">Gift Photo Book</a>
+          <a href="/christmas-photo-book/">Christmas Gift</a>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <a href="/ai-photo-book/">AI Photo Book</a>
+          <a href="/design-service/">Design Service</a>
+          <a href="/how-to-make-a-photo-book/">How to Make a Photo Book</a>
+          <a href="/your-year-in-photos/">Your Year in Photos</a>
+          <a href="/quality/">Quality &amp; Materials</a>
+          <a href="/shipping/">Shipping</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compare</h4>
+          <a href="/remeet-vs-artifact-uprising/">vs Artifact Uprising</a>
+          <a href="/remeet-vs-chatbooks/">vs Chatbooks</a>
+          <a href="/remeet-vs-mixbook/">vs Mixbook</a>
+          <a href="/reviews/">Reviews</a>
+          <a href="/blog/">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+          <a href="mailto:hello@remeet.cc">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">Remeet &copy; 2026</div>
+  </footer>
+</body>
+</html>
