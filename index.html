@@ -49,21 +49,120 @@
   "@type": "Product",
   "name": "ReMeet Photo Book",
   "description": "A beautifully designed photo book created from your everyday photos. Upload up to 5,000 photos — we curate, design, and deliver.",
+  "image": [
+    "https://remeet.cc/assets/product-open-album.jpg",
+    "https://remeet.cc/assets/book-cover-eva.jpg",
+    "https://remeet.cc/assets/book-spread-digital.jpg"
+  ],
   "brand": {"@type": "Brand", "name": "ReMeet"},
   "offers": [
     {
       "@type": "Offer",
-      "name": "Digital Photo Book (30 pages, print-ready PDF)",
+      "name": "Digital Photo Book — 30 pages",
       "price": "29",
       "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "url": "https://remeet.cc/#start",
+      "priceValidUntil": "2027-12-31",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"},
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 7,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
     },
     {
       "@type": "Offer",
-      "name": "Digital Photo Book (100 pages, print-ready PDF)",
+      "name": "Digital Photo Book — 100 pages",
       "price": "79",
       "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "url": "https://remeet.cc/#start",
+      "priceValidUntil": "2027-12-31",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"},
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 7,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Softcover Photo Book",
+      "price": "149",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://remeet.cc/#start",
+      "priceValidUntil": "2027-12-31",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"},
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 7, "maxValue": 10, "unitCode": "d"}
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 7,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Hardcover Photo Book",
+      "price": "199",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://remeet.cc/#start",
+      "priceValidUntil": "2027-12-31",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"},
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 7, "maxValue": 10, "unitCode": "d"}
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 7,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
     }
   ]
 }
