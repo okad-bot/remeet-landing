@@ -156,3 +156,4 @@ footer{padding:0;border-top:1px solid var(--line);font-size:.82rem;color:#6f756f
 
 h1,h2,h3{font-weight:400;letter-spacing:-.015em}
 .article-body p,.article-body li,article p,article li{font-family:"Newsreader",Georgia,serif;font-size:1.12rem}
+.nw{white-space:nowrap}
