@@ -187,7 +187,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261114c"/>
+<link rel="stylesheet" href="styles.css?v=20261114d"/>
 </head>
 <body>
   <div class="announcement-bar">30% OFF — use code <strong>EARLYBIRDS</strong></div>
@@ -214,7 +214,7 @@
         <a class="button button-dark hero-button" href="#start">Start your&nbsp;book, from&nbsp;$29 <span>&rarr;</span></a>
         <ul class="hero-proof">
           <li>First proof in&nbsp;72h</li>
-          <li>Unlimited edits</li>
+          <li>Most choose the&nbsp;$79 full&nbsp;book</li>
           <li>Printed from&nbsp;$50</li>
         </ul>
       </div>
@@ -385,7 +385,8 @@
             </div>
             <div class="price-card-right">
               <p>Print-ready PDF</p>
-              <p>Up to&nbsp;30 or&nbsp;100&nbsp;pages</p>
+              <p>30 or&nbsp;100&nbsp;pages</p>
+              <p>Up to&nbsp;~250 photos</p>
               <p>Ready in&nbsp;72 hours</p>
             </div>
           </div>
@@ -412,6 +413,7 @@
         </div>
 
       </div>
+      <p class="pricing-addon">Add-on: moments from&nbsp;your&nbsp;videos, +$50. We pull the&nbsp;best frames into&nbsp;your&nbsp;book.</p>
     </section>
 
     <!-- REVIEWS -->
@@ -474,13 +476,14 @@
         </label>
         <label>How many pages?
           <div class="page-options">
-            <label class="page-option selected"><input type="radio" name="pages" value="30" checked /><span>Up to&nbsp;30</span><span class="page-price">$29</span></label>
-            <label class="page-option"><input type="radio" name="pages" value="100" /><span>Up to&nbsp;100</span><span class="page-price">$79</span></label>
+            <label class="page-option"><input type="radio" name="pages" value="30" /><span>Up to&nbsp;30 pages</span><span class="page-price">$29</span><span class="page-hint">up to&nbsp;~70 photos</span></label>
+            <label class="page-option selected"><span class="page-badge">Most popular</span><input type="radio" name="pages" value="100" checked /><span>Up to&nbsp;100 pages</span><span class="page-price">$79</span><span class="page-hint">up to&nbsp;~250 photos</span></label>
           </div>
         </label>
+        <label class="addon"><input type="checkbox" name="video_frames" value="yes" id="videoAddon" /><span class="addon-text"><strong>Add moments from&nbsp;your&nbsp;videos, +$50</strong><span>We go through your videos and&nbsp;pull the&nbsp;best frames into&nbsp;the&nbsp;book.</span></span></label>
         <label>Link to&nbsp;your&nbsp;photos <span>(optional, you&nbsp;can send it&nbsp;later)</span><input name="photos_link" type="url" placeholder="https://www.icloud.com/photos/..."></label>
         <p class="form-note">Want a&nbsp;printed copy? Pay for&nbsp;the&nbsp;design now. Once you&nbsp;approve it, we'll send print options from&nbsp;$50.</p>
-        <button class="button button-dark" type="submit" id="payBtn">Pay $29 &rarr;</button>
+        <button class="button button-dark" type="submit" id="payBtn">Pay $79 &rarr;</button>
       </form>
     </section>
   </main>
@@ -552,6 +555,6 @@
     <div class="footer-bottom">&copy; 2026 <span class="hi">Re</span>Meet</div>
   </footer>
   <a class="sticky-cta" href="#start" aria-hidden="true" tabindex="-1">Start your&nbsp;book, from&nbsp;$29 &rarr;</a>
-  <script src="app.js?v=20261114"></script>
+  <script src="app.js?v=20261114d"></script>
 </body>
 </html>
