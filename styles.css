@@ -9,8 +9,9 @@
   --line:rgba(32,48,39,.14);
   --white:#fffaf3;
   --shadow:0 26px 64px rgba(52,43,31,.14);
-  --serif:"Cormorant Garamond",Georgia,serif;
-  --sans:"DM Sans",system-ui,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --text-serif:"Newsreader",Georgia,serif;
+  --sans:"Instrument Sans",system-ui,sans-serif;
   --hand:"Reenie Beanie",cursive;
 }
 *{box-sizing:border-box}
@@ -369,3 +370,22 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .sticky-cta{display:flex;align-items:center;justify-content:center;position:fixed;left:16px;right:16px;bottom:16px;z-index:40;min-height:54px;border-radius:12px;background:var(--olive);color:#fff;font-weight:600;box-shadow:0 10px 30px rgba(32,48,39,.25);transform:translateY(120%);transition:transform .3s ease}
   .sticky-cta.show{transform:none}
 }
+
+/* v7: editorial type */
+h1,h2,h3,.wordmark{font-weight:400;letter-spacing:-.02em}
+.wordmark{letter-spacing:-.01em}
+.hi{font-family:var(--serif);font-style:italic;font-size:1em;line-height:inherit;margin-right:0}
+.hero h1{line-height:.95;letter-spacing:-.025em}
+.section h2,.faq-section h2{line-height:.98}
+.hero-sub,.step-text,.designer-copy p,.review-card p,.reason p,.value-card-body p,.price-card-name,.faq-list summary,.hero-carousel-sub{font-family:var(--text-serif)}
+.hero-sub{font-size:1.25rem;line-height:1.4}
+.designer-copy p,.step-text{line-height:1.45}
+.review-card p{font-style:italic}
+.hero-carousel-sub{font-style:italic;font-size:1.25rem}
+.section-label{font-family:var(--sans);font-weight:500}
+.trust-num,.price-card-amount,.pricing-amount{font-weight:400}
+.step-card .step-num{font-family:var(--text-serif);font-style:italic}
+.wordmark{gap:0}
+.wordmark .remeet-flower{margin-right:8px}
+h1,h2,h3{letter-spacing:-.008em}
+.hero h1{letter-spacing:-.01em;line-height:1}
