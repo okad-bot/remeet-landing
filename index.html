@@ -7,8 +7,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1ZSJLBMRD"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X1ZSJLBMRD');</script>
 <meta name="theme-color" content="#f4f0e8" />
-<title>ReMeet — Your photos deserve more than a camera roll</title>
-<meta name="description" content="Upload your photos and get a beautifully designed photo book in 72 hours. We curate your best moments into a story — ready to print." />
+<title>ReMeet: send a photo link, get a designed photo book</title>
+<meta name="description" content="Share an iCloud or Google Photos link and get a designer-checked photo book. First proof in 72 hours, printed books from $50." />
 <link rel="canonical" href="https://remeet.cc/" />
 
 <!-- Open Graph -->
@@ -172,6 +172,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {"@type": "Question", "name": "Can I send an iCloud or Google Photos link?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. On iPhone, select your photos, tap Share, then Copy iCloud Link. Shared Albums shrink photos, so use an iCloud link instead. Google Photos album links work as they are."}},
     {"@type": "Question", "name": "How many photos should I share?", "acceptedAnswer": {"@type": "Answer", "text": "Anything from roughly 50 to 5,000. We curate the best moments for your&nbsp;story."}},
     {"@type": "Question", "name": "What if I don't like the result?", "acceptedAnswer": {"@type": "Answer", "text": "You get a proof first and can request unlimited revisions before print."}},
     {"@type": "Question", "name": "How does prompt editing work?", "acceptedAnswer": {"@type": "Answer", "text": "Tell us changes in plain language — like texting a friend. We update the layout and send a refreshed proof."}},
@@ -185,7 +186,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261026"/>
+<link rel="stylesheet" href="styles.css?v=20261114"/>
 </head>
 <body>
   <div class="announcement-bar">30% OFF — use code <strong>EARLYBIRDS</strong></div>
@@ -207,9 +208,14 @@
     <!-- HERO WITH CAROUSEL -->
     <section class="hero hero-carousel">
       <div class="hero-copy">
-        <h1><span class="hi">W</span>e make the photo book you'll never make&nbsp;yourself</h1>
-        <p class="hero-sub">Our AI picks the best shots, arranges every&nbsp;page, and writes the&nbsp;captions. You just&nbsp;upload.</p>
-        <a class="button button-dark hero-button" href="#start">Start Your Book — from $29 <span>&rarr;</span></a>
+        <h1><span class="hi">S</span>end us your camera roll. Get back a book you'll actually&nbsp;finish.</h1>
+        <p class="hero-sub">Share one iCloud or Google Photos link. We pick the best shots, lay out every page, and a designer checks each one by&nbsp;eye.</p>
+        <a class="button button-dark hero-button" href="#start">Start your book, from $29 <span>&rarr;</span></a>
+        <ul class="hero-proof">
+          <li>First proof in 72h</li>
+          <li>Unlimited edits</li>
+          <li>Printed from $50</li>
+        </ul>
       </div>
       <div class="social-carousel">
         <div class="social-card">
@@ -244,8 +250,8 @@
     <!-- SOCIAL PROOF STRIP -->
     <section class="trust-strip">
       <div class="trust-item">
-        <span class="trust-num">500+</span>
-        <span class="trust-label">books designed</span>
+        <span class="trust-num">1 link</span>
+        <span class="trust-label">is all we need</span>
       </div>
       <div class="trust-sep"></div>
       <div class="trust-item">
@@ -254,67 +260,58 @@
       </div>
       <div class="trust-sep"></div>
       <div class="trust-item">
-        <span class="trust-num">1 000</span>
-        <span class="trust-label">photos per book</span>
+        <span class="trust-num">5 000</span>
+        <span class="trust-label">photos max</span>
       </div>
     </section>
 
-    <!-- HOW IT WORKS — 2 STEPS -->
+    <!-- HOW IT WORKS — 3 STEPS -->
     <section class="section steps-section" id="how">
-      <h2 class="steps-heading"><span class="hi">N</span>o stress. Just 2 steps.</h2>
+      <h2 class="steps-heading"><span class="hi">N</span>o stress. Just 3 steps.</h2>
 
-      <div class="steps-grid">
+      <div class="steps-grid steps-grid-3">
         <div class="step-card">
           <div class="step-num">01</div>
-          <h3>Upload your photos</h3>
-          <div class="step-visual step-img-1">
-            <img src="assets/before-after.jpg" alt="From camera roll to a beautifully designed photo book" width="1200" height="880" loading="lazy" />
+          <h3>Send a link</h3>
+          <p class="step-text">Share an iCloud or Google Photos album, or upload from your phone. No&nbsp;sorting.</p>
+          <div class="sources">
+            <span class="source-chip"><img src="assets/icon-upload.svg" alt="" width="16" height="16"/>iCloud link</span>
+            <span class="source-chip"><img src="assets/icon-upload.svg" alt="" width="16" height="16"/>Google Photos</span>
+            <span class="source-chip"><img src="assets/icon-upload.svg" alt="" width="16" height="16"/>Upload</span>
           </div>
+          <p class="step-tip">On iPhone, pick your photos and tap Share &rarr; Copy iCloud Link. That way we get them in full&nbsp;quality.</p>
         </div>
         <div class="step-card">
           <div class="step-num">02</div>
-          <h3>Make it your story</h3>
+          <h3>We design it</h3>
+          <p class="step-text">AI finds the best shots. A designer lays out the pages and checks every one. Your proof lands in 72&nbsp;hours.</p>
+          <div class="step-visual step-img-1">
+            <img src="assets/before-after.jpg" alt="From camera roll to a designed photo book" width="1200" height="880" loading="lazy" />
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3>Edit by text</h3>
+          <p class="step-text">"Add the beach photo to page 12." We change it and send it back. Then we print and&nbsp;ship.</p>
           <div class="step-visual step-img-2">
-            <img src="assets/make-it-yours.jpg" alt="Phone showing ReMeet chat with your designed book" width="900" height="1250" loading="lazy" />
+            <img src="assets/make-it-yours.jpg" alt="Phone showing a ReMeet chat with your designed book" width="900" height="1250" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHY REMEET -->
-    <section class="section value-section" id="examples">
-      <h2 class="value-heading"><span class="hi">M</span>ade for Parents</h2>
-
-      <div class="value-grid">
-        <article class="value-card">
-          <div class="value-card-image">
-            <img src="assets/one-hand-phone.jpg" alt="Hand holding a phone on the couch — make a book one-handed" width="870" height="1160" title="Make It With One Hand" loading="lazy" />
-          </div>
-          <div class="value-card-body" style="background:#2c4a6e;color:#fff">
-            <h3>Make it with one hand</h3>
-            <p>Nap-trapped? Our app is designed for&nbsp;simplicity and&nbsp;ease.</p>
-          </div>
-        </article>
-
-        <article class="value-card">
-          <div class="value-card-image" style="background:#ece4d8">
-            <img src="assets/design-styles.jpg" alt="Multiple photo book design styles and layouts" width="1280" height="720" title="Impossible to Mess Up" loading="lazy" />
-          </div>
-          <div class="value-card-body" style="background:#b5652a;color:#fff">
-            <h3>Impossible to mess up</h3>
-            <p>Enough design options to&nbsp;feel in&nbsp;control. Not possible to&nbsp;make an&nbsp;ugly&nbsp;ReMeet.</p>
-          </div>
-        </article>
-
-        <article class="value-card">
-          <div class="value-card-image">
-            <img src="assets/book-cover-eva.jpg" alt="Mother and child reading a ReMeet photo book together" width="1400" height="2489" title="You've Got This" loading="lazy" />
-          </div>
-          <div class="value-card-body" style="background:#b8941e;color:#fff">
-            <h3>You've got this</h3>
-            <p>Printing photos is proven to&nbsp;increase confidence and&nbsp;connection.</p>
-          </div>
-        </article>
+    <!-- DESIGNER CHECK -->
+    <section class="section designer-section" id="examples">
+      <div class="designer-card">
+        <div class="designer-img">
+          <img src="assets/book-cover-eva.jpg" alt="Mother and child reading a ReMeet photo book together" width="1400" height="2489" loading="lazy" />
+        </div>
+        <div class="designer-copy">
+          <div class="section-label">Why it looks this good</div>
+          <h2><span class="hi">A</span>I does the sorting. <span class="hi">A</span> person does the&nbsp;taste.</h2>
+          <p>Most AI photo books stop at the algorithm. Ours don't. A designer goes through your book page by page before you see it: no odd crops, no cut-off faces, no repeats, no blurry&nbsp;shots.</p>
+          <p class="designer-note">Made for parents who have 4,000 photos and zero free&nbsp;evenings.</p>
+        </div>
       </div>
     </section>
 
@@ -327,15 +324,15 @@
         <div class="reason">
           <svg class="reason-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="5" fill="#5f6d60" opacity=".85"/><circle cx="22" cy="14" r="5" fill="#5f6d60" opacity=".7"/><circle cx="20" cy="21" r="5" fill="#5f6d60" opacity=".6"/><circle cx="12" cy="21" r="5" fill="#5f6d60" opacity=".7"/><circle cx="10" cy="14" r="5" fill="#5f6d60" opacity=".85"/><circle cx="16" cy="16" r="3" fill="#d4a647"/></svg>
           <div>
-            <h3>AI does the work</h3>
-            <p>Send your photos — AI curates, arranges, and&nbsp;writes the&nbsp;captions. You&nbsp;approve.</p>
+            <h3>Checked by a designer</h3>
+            <p>AI does the sorting. A person checks every page before you see&nbsp;it.</p>
           </div>
         </div>
         <div class="reason">
           <svg class="reason-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="5" fill="#5f6d60" opacity=".85"/><circle cx="22" cy="14" r="5" fill="#5f6d60" opacity=".7"/><circle cx="20" cy="21" r="5" fill="#5f6d60" opacity=".6"/><circle cx="12" cy="21" r="5" fill="#5f6d60" opacity=".7"/><circle cx="10" cy="14" r="5" fill="#5f6d60" opacity=".85"/><circle cx="16" cy="16" r="3" fill="#d4a647"/></svg>
           <div>
             <h3>Ready in 72 hours</h3>
-            <p>Digital proof in&nbsp;3&nbsp;days. Print and ship in&nbsp;7–10 business&nbsp;days.</p>
+            <p>Digital proof in&nbsp;3&nbsp;days. Printed and shipped in&nbsp;7–10 business days after you&nbsp;approve.</p>
           </div>
         </div>
         <div class="reason">
@@ -349,7 +346,7 @@
           <svg class="reason-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="5" fill="#5f6d60" opacity=".85"/><circle cx="22" cy="14" r="5" fill="#5f6d60" opacity=".7"/><circle cx="20" cy="21" r="5" fill="#5f6d60" opacity=".6"/><circle cx="12" cy="21" r="5" fill="#5f6d60" opacity=".7"/><circle cx="10" cy="14" r="5" fill="#5f6d60" opacity=".85"/><circle cx="16" cy="16" r="3" fill="#d4a647"/></svg>
           <div>
             <h3>Your photos are safe</h3>
-            <p>Encrypted end-to-end. Deleted 90&nbsp;days after your book is&nbsp;complete.</p>
+            <p>Encrypted in transit and at rest. Deleted 90&nbsp;days after your book is&nbsp;complete.</p>
           </div>
         </div>
       </div>
@@ -465,7 +462,7 @@
             </div>
             <div class="price-card-right">
               <p>Print-ready PDF</p>
-              <p>30, 60, or 90&nbsp;pages</p>
+              <p>Up to 30 or 100&nbsp;pages</p>
               <p>Ready in 72 hours</p>
             </div>
           </div>
@@ -524,6 +521,7 @@
       </div>
 
       <div class="faq-list">
+        <details><summary>Can I send an iCloud or Google Photos link?</summary><p>Yes, that's the easiest way. On iPhone, select your photos, tap Share, then Copy iCloud Link. Please don't use a Shared Album: Apple shrinks photos there, and they print soft. Google Photos album links work as&nbsp;they&nbsp;are.</p></details>
         <details><summary>How many photos should I send?</summary><p>Anything from roughly 50 to 5,000. We curate the best moments for your&nbsp;story.</p></details>
         <details><summary>Do I need to choose my favorite photos?</summary><p>No. Send us everything — we'll find the best ones. That's what we&nbsp;do.</p></details>
         <details><summary>What if you leave out an important photo?</summary><p>Just tell us. Revisions are unlimited before printing. Say "add the one at the beach" and we&nbsp;will.</p></details>
@@ -531,7 +529,7 @@
         <details><summary>Do I need to use an editor?</summary><p>No. There's no editor, no templates, no dragging and dropping. You just talk to&nbsp;us.</p></details>
         <details><summary>Are my photos private?</summary><p>Yes. Your photos are encrypted in transit and at rest. We delete them 90 days after your book is&nbsp;complete.</p></details>
         <details><summary>Can I get a printed book?</summary><p>Yes. We print on demand and ship to your door. The price starts at $50 per copy and depends on the number of pages and your&nbsp;location.</p></details>
-        <details><summary>When will I receive my book?</summary><p>First proof in 72 hours. After you approve, printing takes 5-7 business days plus&nbsp;shipping.</p></details>
+        <details><summary>When will I receive my book?</summary><p>First proof in 72 hours. After you approve, your printed book arrives in 7–10 business&nbsp;days.</p></details>
       </div>
     </section>
 
