@@ -389,3 +389,46 @@ h1,h2,h3,.wordmark{font-weight:400;letter-spacing:-.02em}
 .wordmark .remeet-flower{margin-right:8px}
 h1,h2,h3{letter-spacing:-.008em}
 .hero h1{letter-spacing:-.01em;line-height:1}
+
+/* v8: calmer scale, less text */
+.hero h1{font-size:clamp(2.3rem,4.6vw,4.6rem)}
+.section h2,.faq-section h2,h2.steps-heading{font-size:clamp(2.2rem,3.6vw,3.6rem)}
+.designer-copy h2{font-size:clamp(2.2rem,3.4vw,3.4rem)!important}
+.hero-sub{font-size:1.15rem;max-width:420px}
+.step-card h3{font-size:1.5rem}
+.inside-section{padding-top:56px;padding-bottom:40px;text-align:center}
+.inside-sub{font-family:var(--text-serif);font-style:italic;color:#6f756f;margin:8px 0 24px}
+.inside-scroll{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 5vw 8px;margin:0 -5vw}
+.inside-scroll::-webkit-scrollbar{display:none}
+.inside-scroll img{flex:0 0 auto;height:340px;width:auto;border-radius:10px;scroll-snap-align:center;object-fit:cover}
+.inside-scroll img.tall{width:220px}
+.founder-section{text-align:center;padding-top:48px;padding-bottom:48px}
+.founder-quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1.15;max-width:640px;margin:0 auto 12px}
+.founder-name{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#6f756f;margin:0}
+@media(max-width:900px){
+  .hero h1{font-size:2.35rem;line-height:1.02}
+  .hero-carousel .hero-copy{padding:36px 22px 24px}
+  .hero-sub{font-size:1.05rem;line-height:1.4;margin-bottom:20px}
+  .hero-proof{font-size:.78rem;gap:4px 12px;margin-top:14px}
+  .section{padding:44px 20px}
+  .section h2,.faq-section h2,h2.steps-heading{font-size:2rem;line-height:1.02}
+  h2.steps-heading{margin-bottom:32px}
+  .designer-copy h2{font-size:2rem!important}
+  .designer-copy p,.step-text{font-size:1rem}
+  .designer-note{font-size:1.4rem!important}
+  .steps-grid-3{gap:32px}
+  .step-card h3{font-size:1.35rem;margin-bottom:8px}
+  .handled-item{padding:14px 0}
+  .handled-item h3{font-size:1.15rem}
+  .handled-item p{font-size:.85rem}
+  .handled-check{width:26px;height:26px}
+  .inside-section{padding:36px 20px 28px}
+  .inside-scroll{padding:0 20px 8px;margin:0 -20px}
+  .inside-scroll img{height:240px}
+  .inside-scroll img.tall{width:150px}
+  .founder-quote{font-size:1.5rem}
+  .review-card p{font-size:1rem}
+  .faq-list summary{font-size:1.05rem}
+  .price-card-amount{font-size:1.9rem}
+  .trust-strip{padding:18px 20px}
+}
