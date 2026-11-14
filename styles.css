@@ -359,3 +359,13 @@ label span,.fineprint{color:#747970;font-size:.74rem}
   .designer-img{aspect-ratio:4/3}
   .designer-copy{text-align:center}
 }
+.handled-item:nth-last-child(-n+2){border-bottom:1px solid rgba(32,48,39,.1)}
+.handled-item:last-child{border-bottom:none}
+@media(min-width:681px){.handled-item:nth-last-child(2){border-bottom:none}}
+.page-options{grid-template-columns:repeat(2,1fr)}
+.form-note{font-size:.82rem;line-height:1.45;color:#6f756f;background:#f7f4ef;border-radius:10px;padding:12px 14px;margin:0}
+.sticky-cta{display:none}
+@media(max-width:900px){
+  .sticky-cta{display:flex;align-items:center;justify-content:center;position:fixed;left:16px;right:16px;bottom:16px;z-index:40;min-height:54px;border-radius:12px;background:var(--olive);color:#fff;font-weight:600;box-shadow:0 10px 30px rgba(32,48,39,.25);transform:translateY(120%);transition:transform .3s ease}
+  .sticky-cta.show{transform:none}
+}
