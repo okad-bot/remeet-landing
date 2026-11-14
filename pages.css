@@ -5,7 +5,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);background:var(--paper);font-family:"DM Sans",system-ui,sans-serif;line-height:1.55}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:"Instrument Sans",system-ui,sans-serif;line-height:1.55}
 a{color:var(--olive);text-decoration:underline;text-underline-offset:2px}
 a:hover{color:var(--ink)}
 img{display:block;max-width:100%;height:auto}
@@ -15,14 +15,14 @@ img{display:block;max-width:100%;height:auto}
   padding:18px 20px;background:rgba(243,240,233,.92);backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(30,42,34,.08)
 }
-.brand{font-family:"Cormorant Garamond",serif;font-size:2.1rem;font-weight:600;letter-spacing:-.04em;color:var(--ink);text-decoration:none}
+.brand{font-family:"Instrument Serif",Georgia,serif;font-size:2.1rem;font-weight:400;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
 .nav-link{font-size:.85rem;color:var(--ink);text-decoration:none;opacity:.6}
 .nav-link:hover{opacity:1}
 .button{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:16px 36px;background:var(--olive);color:#fff;
   border:2px solid var(--olive);border-radius:10px;
-  font-family:"DM Sans",system-ui,sans-serif;font-size:1rem;font-weight:600;
+  font-family:"Instrument Sans",system-ui,sans-serif;font-size:1rem;font-weight:600;
   text-decoration:none;cursor:pointer;transition:background .2s,transform .15s;
 }
 .button:hover{background:#2e3e30;color:#fff;border-color:#2e3e30;transform:translateY(-1px)}
@@ -32,7 +32,7 @@ img{display:block;max-width:100%;height:auto}
 .page-hero{padding:56px 20px 48px;text-align:center}
 .page-hero .eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.73rem;margin-bottom:10px;color:var(--terracotta)}
 .page-hero h1{
-  font-family:"Cormorant Garamond",serif;
+  font-family:"Instrument Serif",Georgia,serif;
   font-size:clamp(2.4rem,7vw,3.8rem);line-height:.95;
   letter-spacing:-.03em;margin:0 0 16px;max-width:700px;margin-left:auto;margin-right:auto
 }
@@ -40,7 +40,7 @@ img{display:block;max-width:100%;height:auto}
 .page-hero .hand{font-family:"Reenie Beanie",cursive;font-size:1.5rem;margin-top:20px;display:inline-block;transform:rotate(-2deg)}
 
 .section{padding:48px 20px;max-width:780px;margin:0 auto}
-.section h2{font-family:"Cormorant Garamond",serif;font-size:1.8rem;line-height:1.05;margin:0 0 14px}
+.section h2{font-family:"Instrument Serif",Georgia,serif;font-size:1.8rem;line-height:1.05;margin:0 0 14px}
 .section p{margin:0 0 14px;color:#2a3029}
 .section ul,.section ol{margin:0 0 16px;padding-left:22px}
 .section li{margin:6px 0}
@@ -57,7 +57,7 @@ img{display:block;max-width:100%;height:auto}
 .highlight-row td{background:rgba(55,72,58,.06)}
 
 .cta-section{text-align:center;padding:56px 20px;max-width:600px;margin:0 auto}
-.cta-section h2{font-family:"Cormorant Garamond",serif;font-size:2rem;margin:0 0 10px}
+.cta-section h2{font-family:"Instrument Serif",Georgia,serif;font-size:2rem;margin:0 0 10px}
 .cta-section p{margin:0 0 24px;color:#5f665f}
 
 .breadcrumb{font-size:.78rem;color:#9a9e97;padding:12px 20px;max-width:780px;margin:0 auto}
@@ -67,7 +67,7 @@ img{display:block;max-width:100%;height:auto}
 footer{padding:0;border-top:1px solid var(--line);font-size:.82rem;color:#6f756f}
 .footer-inner{max-width:1100px;margin:0 auto;padding:48px 20px 32px;display:grid;gap:32px}
 .footer-brand{display:grid;gap:4px}
-.footer-brand .brand{font-family:"Cormorant Garamond",serif;font-size:1.8rem;font-weight:600;letter-spacing:-.04em;color:var(--ink);text-decoration:none}
+.footer-brand .brand{font-family:"Instrument Serif",Georgia,serif;font-size:1.8rem;font-weight:400;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
 .footer-tagline{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
 .footer-links{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .footer-col{display:grid;gap:6px;align-content:start}
@@ -84,3 +84,7 @@ footer{padding:0;border-top:1px solid var(--line);font-size:.82rem;color:#6f756f
   .cta-section{padding:80px 20px}
   .footer-links{grid-template-columns:repeat(4,1fr)}
 }
+
+h1,h2,h3{font-weight:400;letter-spacing:-.015em}
+.article-body p,.article-body li,article p,article li{font-family:"Newsreader",Georgia,serif;font-size:1.12rem}
+.nw{white-space:nowrap}

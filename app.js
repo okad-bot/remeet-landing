@@ -66,3 +66,13 @@ form?.addEventListener('submit', async (e) => {
 
   window.location.href = stripeUrl;
 });
+
+const sticky = document.querySelector('.sticky-cta');
+const heroEl = document.querySelector('.hero');
+const formEl = document.getElementById('start');
+if (sticky && heroEl && formEl) {
+  let pastHero = false, atForm = false;
+  const update = () => sticky.classList.toggle('show', pastHero && !atForm);
+  new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; update(); }).observe(heroEl);
+  new IntersectionObserver(([e]) => { atForm = e.isIntersecting; update(); }).observe(formEl);
+}
