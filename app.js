@@ -31,9 +31,8 @@ document.querySelectorAll('.story-step, .spread-feature, .use-case-grid article'
 const STRIPE_LINKS = {
   '30': 'https://buy.stripe.com/28EeVdbjo8wB8X5dfF8k80K',
   '100': 'https://buy.stripe.com/cNi28rfzE0057T1grR8k80L',
-  // TODO: create Stripe payment links for the video add-on bundles and paste them here
-  '30v': '',   // $79 = 30 pages + video frames
-  '100v': ''   // $129 = 100 pages + video frames
+  '30v': 'https://buy.stripe.com/3cIbJ11IOeUZb5dcbB8k80N',
+  '100v': 'https://buy.stripe.com/cNi6oH5Z4005b5da3t8k80O'
 };
 const PRICES = {'30': 29, '100': 79};
 const VIDEO_ADDON = 50;
@@ -65,8 +64,7 @@ form?.addEventListener('submit', async (e) => {
   const data = Object.fromEntries(new FormData(form));
   const pages = data.pages || '100';
   const withVideo = !!videoAddon?.checked;
-  // If the bundle link isn't set yet, charge the base price; the add-on is invoiced separately (data.video_frames = 'yes')
-  const stripeUrl = (withVideo && STRIPE_LINKS[pages + 'v']) || STRIPE_LINKS[pages];
+  const stripeUrl = withVideo ? STRIPE_LINKS[pages + 'v'] : STRIPE_LINKS[pages];
 
   payBtn.textContent = 'Redirecting...';
   payBtn.disabled = true;
