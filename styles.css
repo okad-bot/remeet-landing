@@ -442,7 +442,6 @@ h1,h2,h3{letter-spacing:-.008em}
 .addon-text span{font-size:.8rem;color:#6f756f}
 .pricing-addon{text-align:center;font-family:var(--text-serif);font-style:italic;color:#4a5249;margin:24px auto 0;max-width:520px}
 /* v10: real books */
-.inside-scroll img{height:360px;border-radius:0;object-fit:contain}
 .covers-section{text-align:center;background:#f7f4ef}
 .covers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:32px auto 0}
 .covers-grid figure{margin:0}
@@ -454,7 +453,6 @@ h1,h2,h3{letter-spacing:-.008em}
 .founder-wrap .founder-quote{margin:0 0 12px}
 .price-card-img-digital img.contain{object-fit:contain;padding:12px}
 @media(max-width:900px){
-  .inside-scroll img{height:230px}
   .covers-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}
   .covers-grid figcaption{font-size:.85rem}
   .founder-wrap{flex-direction:column;text-align:center;gap:20px}
