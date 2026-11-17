@@ -21,6 +21,8 @@
   .ty-or{font-size:.9rem;color:var(--olive-2);margin:0 0 24px}
   .ty-home{margin-top:24px}
 </style>
+<!-- Meta domain verification: paste the tag from Business Manager here, e.g. <meta name="facebook-domain-verification" content="..."> -->
+<script src="/pixel.js"></script>
 </head>
 <body>
 <div class="ty-wrap">
@@ -45,6 +47,13 @@ document.addEventListener('click',e=>{
   if(toast){toast.textContent=email+' copied';toast.hidden=false;clearTimeout(t);t=setTimeout(()=>toast.hidden=true,2200)}
   gtag('event','purchase_thank_you_copy_email');
 });
+</script>
+<script>
+  (function () {
+    var v = 0;
+    try { v = Number(localStorage.getItem('remeet_order_total')) || 0; localStorage.removeItem('remeet_order_total'); } catch (e) {}
+    if (window.fbq && v) fbq('track', 'Purchase', {value: v, currency: 'USD'});
+  })();
 </script>
 </body>
 </html>

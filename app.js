@@ -66,6 +66,10 @@ form?.addEventListener('submit', async (e) => {
   const withVideo = !!videoAddon?.checked;
   const stripeUrl = withVideo ? STRIPE_LINKS[pages + 'v'] : STRIPE_LINKS[pages];
 
+  const total = PRICES[pages] + (withVideo ? VIDEO_ADDON : 0);
+  try { localStorage.setItem('remeet_order_total', String(total)); } catch (e) {}
+  if (window.fbq) fbq('track', 'InitiateCheckout', {value: total, currency: 'USD'});
+
   payBtn.textContent = 'Redirecting...';
   payBtn.disabled = true;
 
