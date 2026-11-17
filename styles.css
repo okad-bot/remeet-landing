@@ -461,3 +461,25 @@ h1,h2,h3{letter-spacing:-.008em}
 .covers-grid img{height:auto}
 .price-card-img-cover{background:#1b3a41}
 .price-card-img-cover img{object-fit:contain}
+
+/* v11: prelaunch */
+.xmas-bar{background:#c9a84c;color:#1e2a22;text-align:center;font-size:.85rem;font-weight:500;padding:9px 16px;line-height:1.3}
+.real-review{display:flex;align-items:center;gap:40px;max-width:900px;margin:24px auto 0}
+.real-review img{width:300px;aspect-ratio:3/4;height:auto;object-fit:cover;border-radius:14px;flex-shrink:0}
+.real-review-quote{font-family:var(--serif);font-size:clamp(2rem,3.4vw,3rem);line-height:1.05;margin:0 0 16px}
+.real-review-more{font-family:var(--text-serif);font-style:italic;font-size:1.15rem;line-height:1.45;color:#4a5249;margin:0 0 18px}
+.real-review-who{font-weight:600;margin:0;line-height:1.4}
+.real-review-who span{display:block;font-weight:400;font-size:.85rem;color:#6f756f}
+.form-privacy{font-size:.8rem;color:#6f756f;margin:0;text-align:center}
+@media(max-width:900px){
+  .real-review{flex-direction:column;text-align:center;gap:22px}
+  .real-review img{width:220px}
+  .real-review-quote{font-size:2rem}
+  .real-review-more{font-size:1rem}
+}
+.mom-review{max-width:640px;margin:56px auto 0;text-align:center;padding-top:40px;border-top:1px solid rgba(30,42,34,.12)}
+.mom-review-quote{font-family:var(--text-serif);font-style:italic;font-size:clamp(1.35rem,2.2vw,1.8rem);line-height:1.35;margin:0 0 16px}
+@media(max-width:900px){.mom-review{margin-top:40px;padding-top:32px}}
+.covers-shelf{margin:36px auto 0;max-width:560px}
+.covers-shelf img{width:100%;height:auto;border-radius:14px;display:block}
+.covers-shelf figcaption{font-family:var(--text-serif);font-style:italic;color:#6f756f;margin-top:10px}
