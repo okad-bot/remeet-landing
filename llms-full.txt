@@ -1,6 +1,6 @@
 # ReMeet — Full Reference
 
-> ReMeet is a done-for-you photo book design service. You share an iCloud or Google Photos link, a designer curates your best photos, lays out every page, and delivers a proof within 72 hours. Every book is checked by a person, not auto-generated. Digital book from $29 (30 pages) or $79 (100 pages). Add video frame extraction for +$50. Printed hardcover from $25. Based in Lisbon, serving customers worldwide.
+> ReMeet is a done-for-you photo book design service. You share an iCloud or Google Photos link, a designer curates your best photos, lays out every page, and delivers a proof within 72 hours. Every book is checked by a person, not auto-generated. Digital book from $29 (30 pages) or $79 (100 pages). Add video frame extraction for +$50. Printed hardcover from $25. Based in Porto, Portugal, serving customers worldwide.
 
 ## Pricing
 
