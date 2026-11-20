@@ -672,3 +672,7 @@ picture{display:contents}
 .pt-opt:has(input:checked){border-color:var(--olive);box-shadow:0 0 0 1px var(--olive)}
 .pt-opt span{font-size:.95rem}
 .photos-link-field[hidden],.pay-now-hint[hidden]{display:none!important}
+.hv2-wrap{display:grid;grid-template-columns:minmax(0,400px) minmax(0,520px);gap:40px;justify-content:center;align-items:center}
+.hv2-img img{width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.hv2-wrap .hv2-grid{grid-template-columns:1fr 1fr;margin:0}
+@media(max-width:900px){.hv2-wrap{grid-template-columns:1fr;gap:20px}.hv2-img{max-width:400px;margin:0 auto}}
