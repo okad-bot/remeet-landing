@@ -69,6 +69,7 @@ form?.addEventListener('submit', async (e) => {
   const total = PRICES[pages] + (withVideo ? VIDEO_ADDON : 0);
   try { localStorage.setItem('remeet_order_total', String(total)); } catch (e) {}
   if (window.fbq) fbq('track', 'InitiateCheckout', {value: total, currency: 'USD'});
+  if (window.ym) ym(114414250, 'reachGoal', 'checkout', {order_price: total, currency: 'USD'});
 
   payBtn.textContent = 'Redirecting...';
   payBtn.disabled = true;
