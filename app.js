@@ -93,3 +93,27 @@ if (sticky && heroEl && formEl) {
   new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; update(); }).observe(heroEl);
   new IntersectionObserver(([e]) => { atForm = e.isIntersecting; update(); }).observe(formEl);
 }
+
+// Pricing table buttons and gift block: preselect the form
+document.querySelectorAll('[data-pick-pages]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const v = btn.getAttribute('data-pick-pages');
+    const opt = document.querySelector('.page-option input[value="' + v + '"]');
+    if (opt) opt.closest('.page-option').click();
+  });
+});
+document.querySelectorAll('[data-pick-type]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sel = document.querySelector('#bookForm select[name="type"]');
+    if (sel) sel.value = btn.getAttribute('data-pick-type');
+  });
+});
+
+// Send photos now / later
+const linkField = document.querySelector('.photos-link-field');
+document.querySelectorAll('input[name="photos_when"]').forEach(r => r.addEventListener('change', () => {
+  const now = document.querySelector('input[name="photos_when"]:checked')?.value === 'now';
+  if (linkField) { linkField.hidden = !now; if (now) linkField.querySelector('input')?.focus(); }
+  const hint = document.querySelector('.pay-now-hint');
+  if (hint) hint.hidden = now;
+}));
