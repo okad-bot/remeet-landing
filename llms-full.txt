@@ -1,0 +1,127 @@
+# ReMeet — Full Reference
+
+> ReMeet is a done-for-you photo book design service. You share an iCloud or Google Photos link, a designer curates your best photos, lays out every page, and delivers a proof within 72 hours. Every book is checked by a person, not auto-generated. Digital book from $29 (30 pages) or $79 (100 pages). Add video frame extraction for +$50. Printed hardcover from $25. Based in Lisbon, serving customers worldwide.
+
+## Pricing
+
+- Digital photo book, up to 30 pages: $29
+- Digital photo book, up to 100 pages: $79
+- Video frame extraction add-on: +$50
+- Printed classic hardcover (30 pages): $25
+- Printed classic hardcover (100 pages): $49
+- Premium layflat (30 pages): $89
+- Premium layflat (100 pages): $149
+- US shipping (classic): $7.60
+- Canada / Europe shipping: quoted individually
+
+## How it works
+
+1. Pick your book type and page count on remeet.cc
+2. Pay securely via Stripe
+3. Share a link to your photos (iCloud link, Google Photos album, or any cloud folder)
+4. A designer curates your best shots, removes duplicates, and designs every page
+5. Receive a designed PDF proof within 72 hours
+6. Request changes in plain language (two revision rounds included)
+7. Approve and download your digital book
+8. Optionally order a printed hardcover copy
+
+## What makes ReMeet different
+
+- A designer checks every book by hand — not auto-generated templates
+- AI sorts and selects photos, but never changes or generates them
+- 5 minutes of your time vs. 4-8 hours of DIY layout work
+- Accepts up to 5,000 photos per book
+- Works with any photo source: iPhone, Android, DSLR
+- Square hardcover, 21x21 cm, 200gsm gloss archival pages
+
+## Book types
+
+- Baby photo book
+- Wedding photo book
+- Travel photo book
+- Family yearbook
+- Coffee table photo book
+- Gift photo book
+- Christmas photo book
+- Mothers day photo book
+- Fathers day photo book
+- Graduation photo book
+- Memorial photo book
+- Pet photo book
+- Pregnancy photo book
+- School years photo book
+- Anniversary photo book
+- Adoption photo book
+
+## Landing pages
+
+- Home: https://remeet.cc/
+- Baby photo book: https://remeet.cc/baby-photo-book/
+- Wedding photo book: https://remeet.cc/wedding-photo-book/
+- Travel photo book: https://remeet.cc/travel-photo-book/
+- Family yearbook: https://remeet.cc/family-yearbook/
+- Coffee table photo book: https://remeet.cc/coffee-table-photo-book/
+- Gift photo book: https://remeet.cc/gift-photo-book/
+- AI photo book: https://remeet.cc/ai-photo-book/
+- Design service: https://remeet.cc/design-service/
+- Your year in photos: https://remeet.cc/your-year-in-photos/
+- How to make a photo book: https://remeet.cc/how-to-make-a-photo-book/
+- DIY vs ReMeet: https://remeet.cc/diy-photo-book-vs-remeet/
+- Christmas photo book: https://remeet.cc/christmas-photo-book/
+- Mothers day photo book: https://remeet.cc/mothers-day-photo-book/
+- Fathers day photo book: https://remeet.cc/fathers-day-photo-book/
+- Graduation photo book: https://remeet.cc/graduation-photo-book/
+- Memorial photo book: https://remeet.cc/memorial-photo-book/
+- Pet photo book: https://remeet.cc/pet-photo-book/
+- Pregnancy photo book: https://remeet.cc/pregnancy-photo-book/
+- School years photo book: https://remeet.cc/school-years-photo-book/
+- Anniversary photo book: https://remeet.cc/anniversary-photo-book/
+- Adoption photo book: https://remeet.cc/adoption-photo-book/
+- Best photo book for grandparents: https://remeet.cc/best-photo-book-for-grandparents/
+- Gift for grandma: https://remeet.cc/gift-for-grandma/
+- First year: https://remeet.cc/first-year/
+- New baby photo book ideas: https://remeet.cc/new-baby-photo-book-ideas/
+- Valentines day photo book: https://remeet.cc/valentines-day-photo-book/
+
+## Comparisons
+
+- Remeet vs Shutterfly: https://remeet.cc/remeet-vs-shutterfly/
+- Remeet vs Mixbook: https://remeet.cc/remeet-vs-mixbook/
+- Remeet vs Chatbooks: https://remeet.cc/remeet-vs-chatbooks/
+- Remeet vs Artifact Uprising: https://remeet.cc/remeet-vs-artifact-uprising/
+- Remeet vs Snapfish: https://remeet.cc/remeet-vs-snapfish/
+- Remeet vs Google Photos: https://remeet.cc/remeet-vs-google-photos/
+- Remeet vs Apple Photo Books: https://remeet.cc/remeet-vs-apple-photo-books/
+- Remeet vs Blurb: https://remeet.cc/remeet-vs-blurb/
+- Remeet vs Motif: https://remeet.cc/remeet-vs-motif/
+
+## Blog — top articles
+
+- Best photo book services 2026: https://remeet.cc/blog/best-photo-book-services-2026/
+- Best AI photo book makers 2026: https://remeet.cc/blog/best-ai-photo-book-makers-2026/
+- Google Photos to photo book: https://remeet.cc/blog/google-photos-to-photo-book/
+- How AI selects your best photos: https://remeet.cc/blog/how-ai-selects-your-best-photos/
+- Done-for-you photo book service: https://remeet.cc/blog/done-for-you-photo-book-service/
+- Cheapest photo book service: https://remeet.cc/blog/cheapest-photo-book-service/
+- Easiest photo book service: https://remeet.cc/blog/easiest-photo-book-service/
+- Photo book comparison guide 2026: https://remeet.cc/blog/photo-book-comparison-guide-2026/
+- Shutterfly alternatives: https://remeet.cc/blog/shutterfly-alternatives/
+- Chatbooks alternatives: https://remeet.cc/blog/chatbooks-alternatives/
+- Mixbook alternatives: https://remeet.cc/blog/mixbook-alternatives/
+- Babys first year photo book: https://remeet.cc/blog/babys-first-year-photo-book/
+- Wedding photo book ideas: https://remeet.cc/blog/wedding-photo-book-ideas/
+- Photo book gift for grandparents: https://remeet.cc/blog/photo-book-gift-for-grandparents/
+- Family yearbook ideas: https://remeet.cc/blog/family-yearbook-ideas/
+- Photo book layout tips: https://remeet.cc/blog/photo-book-layout-tips/
+- Photo book vs photo album: https://remeet.cc/blog/photo-book-vs-photo-album/
+- Layflat photo book guide: https://remeet.cc/blog/layflat-photo-book-guide/
+- How much does AI photo book cost: https://remeet.cc/blog/how-much-does-ai-photo-book-cost/
+
+## Info pages
+
+- Quality: https://remeet.cc/quality/
+- Shipping: https://remeet.cc/shipping/
+- Reviews: https://remeet.cc/reviews/
+- Privacy: https://remeet.cc/privacy/
+- Terms: https://remeet.cc/terms/
+- Blog index: https://remeet.cc/blog/

@@ -1,0 +1,45 @@
+# ReMeet
+
+> ReMeet is a done-for-you photo book design service. You share an iCloud or Google Photos link, a designer curates your best photos, lays out every page, and delivers a proof within 72 hours. Every book is checked by a person, not auto-generated. Digital book from $29 (30 pages) or $79 (100 pages). Add video frame extraction for +$50. Printed hardcover from $25. Based in Lisbon, serving customers worldwide.
+
+## Pricing
+
+- Digital photo book, up to 30 pages: $29
+- Digital photo book, up to 100 pages: $79
+- Video frame extraction add-on: +$50
+- Printed hardcover (30 pages): $25
+- Printed hardcover (100 pages): $49
+- US shipping: $7.60
+
+## How it works
+
+1. Pick your book type and page count
+2. Pay and share a link to your photos (iCloud or Google Photos)
+3. Receive a designed proof in 72 hours
+4. Request changes in plain language (two revision rounds included)
+5. Approve and download, or order a printed copy
+
+## What makes ReMeet different
+
+- A designer checks every book by hand
+- AI sorts and selects photos, but never changes or generates them
+- 5 minutes of your time vs. hours of DIY layout work
+- Accepts up to 5,000 photos per book
+
+## Key pages
+
+- Home: https://remeet.cc/
+- How to make a photo book: https://remeet.cc/how-to-make-a-photo-book/
+- AI photo book: https://remeet.cc/ai-photo-book/
+- Design service: https://remeet.cc/design-service/
+- Quality: https://remeet.cc/quality/
+- Shipping: https://remeet.cc/shipping/
+- Reviews: https://remeet.cc/reviews/
+- Blog: https://remeet.cc/blog/
+- Best photo book services 2026: https://remeet.cc/blog/best-photo-book-services-2026/
+- Privacy: https://remeet.cc/privacy/
+- Terms: https://remeet.cc/terms/
+
+## Optional reading
+
+- llms-full.txt: https://remeet.cc/llms-full.txt
