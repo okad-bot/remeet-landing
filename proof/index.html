@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css?v=20261120q" />
-<link rel="stylesheet" href="/proof/proof.css?v=9" />
+<link rel="stylesheet" href="/proof/proof.css?v=10" />
 
 <script src="/pixel.js"></script>
 <!-- Yandex.Metrika counter -->
@@ -226,20 +226,10 @@
         </div>
         <fieldset><legend>Who's the&nbsp;book for?</legend><div class="pf-chips"><label class="pf-chip"><input type="radio" name="who" value="baby" required /><span>My baby or&nbsp;kids</span></label><label class="pf-chip"><input type="radio" name="who" value="me" required /><span>Me</span></label><label class="pf-chip"><input type="radio" name="who" value="family" required /><span>My family</span></label><label class="pf-chip"><input type="radio" name="who" value="couple" required /><span>Us (couple)</span></label><label class="pf-chip"><input type="radio" name="who" value="gift-parents" required /><span>A gift for&nbsp;my&nbsp;parents</span></label><label class="pf-chip"><input type="radio" name="who" value="gift-other" required /><span>A gift for&nbsp;someone else</span></label></div></fieldset>
         <fieldset><legend>When do you&nbsp;need it?</legend><div class="pf-chips"><label class="pf-chip"><input type="radio" name="when" value="christmas" required /><span>Before Christmas</span></label><label class="pf-chip"><input type="radio" name="when" value="january" required /><span>In January</span></label><label class="pf-chip"><input type="radio" name="when" value="no-rush" required /><span>No rush</span></label></div></fieldset>
-        <fieldset>
-          <legend>Your photos <span class="pf-hint">10&nbsp;to&nbsp;30, 10&nbsp;is&nbsp;enough. JPG, PNG or&nbsp;HEIC</span></legend>
-          <label class="pf-drop" id="pfDrop">
-            <input type="file" id="pfFiles" accept="image/*,.heic,.heif" multiple />
-            <span class="pf-drop-btn">Choose photos</span>
-            <span class="pf-counter" id="pfCounter">0&nbsp;/ 30</span>
-          </label>
-          <div class="pf-thumbs" id="pfThumbs"></div>
-          <p class="pf-file-msg" id="pfFileMsg" role="status"></p>
-        </fieldset>
+        <label>Link to your photos <span class="pf-hint">Google Photos, iCloud, Dropbox or any shared album. 10&nbsp;to&nbsp;30&nbsp;photos is&nbsp;enough.</span><input name="photos_link" type="url" placeholder="https://photos.google.com/share/..." required /></label>
         <label>Anything I&nbsp;should know? <span class="pf-hint">optional</span><textarea name="notes" rows="3" placeholder="Names, dates, the story behind the photos"></textarea></label>
         <label class="pf-agree"><input type="checkbox" name="agree" required /><span>I&nbsp;agree that ReMeet uses my&nbsp;photos only to&nbsp;design my&nbsp;book. They're deleted after&nbsp;60&nbsp;days if&nbsp;I&nbsp;don't order.</span></label>
         <input type="hidden" name="utm_source" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_medium" />
-        <div class="pf-progress" id="pfProgress" hidden><div></div><span>Uploading… 0%</span></div>
         <p class="pf-error" id="pfError" role="alert" hidden></p>
         <button class="btn btn-primary pf-submit" type="submit" id="pfSubmit">Send my&nbsp;photos</button>
         <p class="pf-under">I'll&nbsp;email your&nbsp;spread within 24&nbsp;hours.<br>Free, no&nbsp;card needed.</p>
@@ -250,8 +240,6 @@
       <h2>Questions</h2>
       <div class="faq-list"><details><summary>Is the&nbsp;spread really free?</summary><p>Yes. You only pay if&nbsp;you&nbsp;love it&nbsp;and&nbsp;want the&nbsp;whole book.</p></details><details><summary>Why up&nbsp;to&nbsp;30&nbsp;photos if&nbsp;a&nbsp;spread uses only a&nbsp;few?</summary><p>Picking is&nbsp;half the&nbsp;job. A spread holds 2&nbsp;to&nbsp;6&nbsp;photos, and&nbsp;seeing which ones I&nbsp;choose shows you&nbsp;how I'll&nbsp;build the&nbsp;whole book.</p></details><details><summary>What if&nbsp;I&nbsp;have 500&nbsp;photos?</summary><p>Send your&nbsp;favorite 10&nbsp;to&nbsp;30&nbsp;now. After you&nbsp;pick a&nbsp;style, I'll&nbsp;ask for&nbsp;the&nbsp;rest by&nbsp;email.</p></details><details><summary>How long does the&nbsp;whole book take?</summary><p>First full draft in&nbsp;72&nbsp;hours after&nbsp;payment. Printing takes 3&nbsp;to&nbsp;5&nbsp;working days, plus shipping.</p></details><details><summary>Can I&nbsp;change things?</summary><p>Yes. You see the&nbsp;full draft before it&nbsp;prints.</p></details><details><summary>Can I&nbsp;get only the&nbsp;digital file?</summary><p>Yes, choose "Design only (PDF)" at&nbsp;checkout.</p></details><details><summary>Do you&nbsp;ship outside the&nbsp;US?</summary><p>Currently US and&nbsp;Canada. Write to&nbsp;me&nbsp;for&nbsp;other countries.</p></details><details><summary>What happens to&nbsp;my&nbsp;photos?</summary><p>They're used only for&nbsp;your&nbsp;book and&nbsp;deleted after&nbsp;60&nbsp;days if&nbsp;you&nbsp;don't order.</p></details></div>
     </section>
-
-  </main>
 
   </main>
 
@@ -318,7 +306,7 @@
           <a href="mailto:olga@okad.agency">Contact</a>
         </div>
       </div>
-<script src="/proof/proof.js?v=1"></script>
+<script src="/proof/proof.js?v=2"></script>
 <script>if(window.fbq)fbq("track","ViewContent",{content_name:"proof"});</script>
 </body>
 </html>
