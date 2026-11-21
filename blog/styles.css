@@ -31,7 +31,11 @@ img{display:block;max-width:100%;height:auto}
   font-size:clamp(2.2rem,6vw,3.2rem);line-height:1;
   letter-spacing:-.03em;margin:0 0 16px
 }
-.article-meta{font-size:.82rem;color:#6f756f;margin-bottom:32px}
+.article-meta{font-size:.82rem;color:#6f756f;margin-bottom:12px}
+.author-byline{display:flex;align-items:center;gap:10px;margin-bottom:32px}
+.author-byline img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.author-byline a{font-size:.85rem;color:var(--olive);text-decoration:none;font-weight:500}
+.author-byline a:hover{text-decoration:underline}
 .article h2{
   font-family:"Instrument Serif",Georgia,serif;
   font-size:1.6rem;line-height:1.1;letter-spacing:-.02em;
