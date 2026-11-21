@@ -183,3 +183,34 @@
 @media(max-width:900px){.d-br{display:none}.pf-sub{font-size:1.02rem}.pf-more span{font-size:1.6rem}}
 .pf-faq summary{padding-right:28px}
 @media(min-width:901px){.pf-sub{max-width:25em}}
+
+/* v10: form in the first screen */
+.pf-hero{padding:28px 0 36px}
+.pf-hero h1{font-size:clamp(2.3rem,6vw,4rem);margin:0 0 18px}
+.pf-hero-copy .pf-hero-img{margin:0 auto;padding:0;max-width:640px}
+.pf-hero-copy .pf-hero-img img{border-radius:6px}
+.pf-hero-form{max-width:520px;margin:20px auto 0;padding:0 18px;text-align:left}
+.pf-oneline{color:#fff;opacity:.92;font-size:1rem;line-height:1.45;margin:0 0 14px;text-align:center}
+.pf-hero .pf-form{padding:20px;gap:16px;box-shadow:0 14px 40px rgba(0,0,0,.25);color:var(--ink,#203027)}
+.pf-step{display:grid;gap:14px}
+.pf-step[hidden]{display:none}
+.pf-email-label input{font-size:1.05rem!important;padding:15px 14px!important}
+.pf-email-done{margin:0;font-size:.92rem;color:#4a5249;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.pf-email-done span{font-weight:600;color:var(--ink,#203027)}
+.pf-email-done button{background:none;border:0;color:#8a867c;text-decoration:underline;cursor:pointer;font:inherit;padding:0 0 0 4px}
+.pf-hero .pf-under{margin:0;text-align:center;font-size:.8rem;line-height:1.45;color:#6b6860}
+.pf-hero .pf-chip span{padding:8px 12px;font-size:.88rem}
+.pf-sticky{position:fixed;left:16px;right:16px;bottom:14px;z-index:60;display:flex;justify-content:center;align-items:center;background:var(--olive);color:#fff;text-decoration:none;font-weight:600;font-size:1.02rem;border-radius:14px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.pf-sticky[hidden]{display:none}
+@media(min-width:901px){
+  .pf-hero{grid-template-columns:minmax(0,600px) minmax(0,460px);gap:48px;padding:48px 32px 56px;align-items:center}
+  .pf-hero-form{margin:0;padding:0;max-width:none}
+  .pf-oneline{text-align:left}
+  .pf-sticky{left:auto;right:28px;bottom:24px;width:auto;padding:15px 26px}
+}
+.pf-hero .pf-form .btn-primary{background:var(--olive);color:#fff}.pf-hero .pf-form .btn-primary:hover{background:#263a2d}
+
+/* v11 */
+.pf-stepno{margin:0;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#8a867c;font-weight:600}
+.pf-hero .pf-free{margin:0;text-align:center;font-weight:600;font-size:.95rem;color:var(--ink,#203027)}
+.pf-hero .pf-under{margin-top:-8px}

@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20261120q" />
+<link rel="stylesheet" href="/styles.css?v=20261120r" />
 <link rel="stylesheet" href="/proof/proof.css?v=11" />
 
 <script src="/pixel.js"></script>
@@ -49,52 +49,50 @@
 <body class="proof-page">
   <header class="topbar">
     <a class="wordmark" href="/" aria-label="ReMeet home"><svg class="remeet-flower" width="28" height="28" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="5" fill="#5f6d60" opacity=".85"/><circle cx="22" cy="14" r="5" fill="#5f6d60" opacity=".7"/><circle cx="20" cy="21" r="5" fill="#5f6d60" opacity=".6"/><circle cx="12" cy="21" r="5" fill="#5f6d60" opacity=".7"/><circle cx="10" cy="14" r="5" fill="#5f6d60" opacity=".85"/><circle cx="16" cy="16" r="3" fill="#d4a647"/></svg><span class="hi">Re</span>Meet</a>
-    <a class="nav-cta pf-top-cta" href="/proof/#start">Get my free spread</a>
   </header>
   <main id="top">
 
-    <section class="pf-hero">
+    <section class="pf-hero" id="top-form">
       <div class="pf-hero-copy">
         <h1>See your&nbsp;book before you&nbsp;pay.</h1>
-        <p class="pf-sub">Send me&nbsp;10&nbsp;to&nbsp;30&nbsp;photos.<br class="d-br"> In 24&nbsp;hours you&nbsp;get your&nbsp;first spread in&nbsp;3&nbsp;styles. Love one? I'll&nbsp;make the&nbsp;whole book.</p>
-        <a class="btn btn-primary pf-btn" href="#start">Get my&nbsp;free spread</a>
-        <p class="pf-note">Free. No card needed.<br>For Christmas, send photos by&nbsp;Dec 3.</p>
+        <div class="pf-hero-img"><picture><source srcset="/assets/proof/style_editorial.webp" type="image/webp" /><img src="/assets/proof/style_editorial.jpg" alt="A ReMeet spread: The slow mornings, a Sunday in Porto" width="1600" height="800" /></picture></div>
       </div>
-      <div class="pf-hero-img"><picture><source srcset="/assets/proof/hero_vibes.webp" type="image/webp" /><img src="/assets/proof/hero_vibes.jpg" alt="The same spread in three moods: calm and quiet, bright and playful, sweet and doodly" width="1080" height="980" /></picture><p class="pf-more"><span>and 100+ other styles</span></p></div>
-    </section>
-
-    <section class="section steps-section pf-how" id="how">
-      <h2>How it&nbsp;works</h2>
-      <div class="steps-grid steps-grid-3">
-        <div class="step-card">
-          <div class="step-num">01</div>
-          <h3>Send 10&nbsp;to&nbsp;30&nbsp;photos</h3>
-          <p class="step-text">Your favorites from&nbsp;the&nbsp;camera roll. Any year, any&nbsp;trip, your&nbsp;baby's first months.</p>
-          <div class="step-visual pf-step-ba"><picture><source srcset="/assets/proof/before_after.webp" type="image/webp" /><img src="/assets/proof/before_after.jpg" alt="Before: 30 near-identical shots of one afternoon. After: one designed spread" width="1080" height="1350" loading="lazy" /></picture></div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">02</div>
-          <h3>I&nbsp;pick the&nbsp;best and&nbsp;design your&nbsp;spread</h3>
-          <p class="step-text">A spread holds 2&nbsp;to&nbsp;6&nbsp;photos, so&nbsp;I&nbsp;choose the&nbsp;ones that tell the&nbsp;story. You get it&nbsp;in&nbsp;3&nbsp;styles within 24&nbsp;hours.</p>
-          <div class="step-visual step-img-1"><img src="/assets/before-after.jpg" alt="From camera roll to a designed photo book" width="1200" height="880" loading="lazy" /></div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">03</div>
-          <h3>Pick a&nbsp;style, then&nbsp;I&nbsp;make the&nbsp;whole book</h3>
-          <p class="step-text">First full draft in&nbsp;72&nbsp;hours. Change anything by&nbsp;text, then&nbsp;it&nbsp;goes to&nbsp;print.</p>
-          <div class="step-visual step-img-2"><img src="/assets/make-it-yours.jpg" alt="Phone showing a ReMeet chat with your designed book" width="900" height="1250" loading="lazy" /></div>
-        </div>
+      <div class="pf-hero-form" id="start">
+        <p class="pf-oneline">Upload 10&nbsp;to&nbsp;30&nbsp;photos, get a&nbsp;free spread in&nbsp;3&nbsp;styles in&nbsp;24h, pay only if&nbsp;you&nbsp;love it.</p>
+        <form class="pf-form" id="proofForm" novalidate>
+          <div class="pf-step" id="pfStep1">
+            <p class="pf-stepno">Step 1&nbsp;of&nbsp;2</p>
+            <label class="pf-email-label">Your email<input name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required /></label>
+            <button class="btn btn-primary pf-submit" type="button" id="pfNext">Next: add photos</button>
+          </div>
+          <div class="pf-step" id="pfStep2" hidden>
+            <p class="pf-stepno">Step 2&nbsp;of&nbsp;2</p>
+            <p class="pf-email-done" id="pfEmailDone"></p>
+            <fieldset id="pfPhotos">
+              <legend>Your photos <span class="pf-hint">10&nbsp;to&nbsp;30, 10&nbsp;is&nbsp;enough</span></legend>
+              <label class="pf-drop" id="pfDrop">
+                <input type="file" id="pfFiles" accept="image/*,.heic,.heif" multiple />
+                <span class="pf-drop-btn">Choose photos</span>
+                <span class="pf-counter" id="pfCounter">0&nbsp;/ 30</span>
+              </label>
+              <div class="pf-thumbs" id="pfThumbs"></div>
+              <p class="pf-file-msg" id="pfFileMsg" role="status"></p>
+            </fieldset>
+            <fieldset><legend>What's the&nbsp;book for? <span class="pf-hint">one tap, optional</span></legend><div class="pf-chips"><label class="pf-chip"><input type="radio" name="who" value="baby" /><span>My baby or&nbsp;kids</span></label><label class="pf-chip"><input type="radio" name="who" value="me" /><span>Me</span></label><label class="pf-chip"><input type="radio" name="who" value="family" /><span>My family</span></label><label class="pf-chip"><input type="radio" name="who" value="couple" /><span>Us (couple)</span></label><label class="pf-chip"><input type="radio" name="who" value="gift-parents" /><span>A gift for&nbsp;my&nbsp;parents</span></label><label class="pf-chip"><input type="radio" name="who" value="gift-other" /><span>A gift for&nbsp;someone else</span></label></div></fieldset>
+            <div class="pf-progress" id="pfProgress" hidden><div></div><span>Uploading…</span></div>
+            <button class="btn btn-primary pf-submit" type="submit" id="pfSubmit">Send my&nbsp;photos</button>
+          </div>
+          <input type="hidden" name="utm_source" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_medium" />
+          <p class="pf-error" id="pfError" role="alert" hidden></p>
+          <p class="pf-free">Free, no&nbsp;card needed.</p>
+          <p class="pf-under">Photos are used only for&nbsp;your&nbsp;book and&nbsp;deleted after&nbsp;60&nbsp;days if&nbsp;you&nbsp;don't order. For Christmas, send photos by&nbsp;Dec 3.</p>
+        </form>
       </div>
     </section>
 
     <section class="section pf-styles" id="styles">
       <h2>Same photos, <em>three moods</em></h2>
       <div class="pf-style-row"><article class="pf-style"><picture><source srcset="/assets/proof/style_editorial.webp" type="image/webp" /><img src="/assets/proof/style_editorial.jpg" alt="Sample spread, calm, quiet style" width="1600" height="800" loading="lazy" /></picture><div class="pf-style-body"><span class="pf-letter">A</span><h3 class="pf-vibe">calm, quiet</h3><p>Big photos, lots of&nbsp;white space, magazine feel.</p></div></article><article class="pf-style"><picture><source srcset="/assets/proof/style_journal.webp" type="image/webp" /><img src="/assets/proof/style_journal.jpg" alt="Sample spread, sweet, doodly style" width="1600" height="800" loading="lazy" /></picture><div class="pf-style-body"><span class="pf-letter">B</span><h3 class="pf-vibe">sweet, doodly</h3><p>Hand-drawn frames and&nbsp;handwritten notes.</p></div></article><article class="pf-style"><picture><source srcset="/assets/proof/style_playful.webp" type="image/webp" /><img src="/assets/proof/style_playful.jpg" alt="Sample spread, bright, playful style" width="1600" height="800" loading="lazy" /></picture><div class="pf-style-body"><span class="pf-letter">C</span><h3 class="pf-vibe">bright, playful</h3><p>Bright frames, stamps and&nbsp;color.</p></div></article></div>
-    </section>
-
-    <section class="section pf-then">
-      <h2>Stop making photo albums <em>like it's 2006.</em></h2>
-      <div class="pf-then-img"><picture><source srcset="/assets/proof/then_now.webp" type="image/webp" /><img src="/assets/proof/then_now.jpg" alt="2006: a gradient album page with clip-art stickers. 2026: the same photos in a clean ReMeet spread" width="1080" height="995" loading="lazy" /></picture></div>
     </section>
 
     <section class="section pf-real">
@@ -208,51 +206,14 @@
       <p class="pf-only">You only pay after&nbsp;you've seen your&nbsp;spread<br class="d-br"> and&nbsp;picked a&nbsp;style.</p>
     </section>
 
-    <section class="section pf-xmas" id="christmas">
-      <h2>Want it&nbsp;under the&nbsp;tree?</h2>
-      <p>Send your&nbsp;photos by&nbsp;Dec 3&nbsp;and&nbsp;pay by&nbsp;Dec 5.<br>I'll&nbsp;make sure your&nbsp;book prints in&nbsp;time for&nbsp;US delivery before Christmas.</p>
-      <div class="pf-countdown" data-deadline="2026-12-06T04:59:59Z" aria-label="Time left to order for Christmas">
-        <div><b data-u="d">0</b><span>days</span></div><div><b data-u="h">0</b><span>hours</span></div><div><b data-u="m">0</b><span>min</span></div><div><b data-u="s">0</b><span>sec</span></div>
-      </div>
-      <a class="btn btn-primary pf-btn" href="#start">Get my&nbsp;free spread</a>
-    </section>
-
-    <section class="section pf-form-section" id="start">
-      <h2>Get your&nbsp;free spread</h2>
-      <form class="pf-form" id="proofForm" novalidate>
-        <div class="pf-two">
-          <label>First name<input name="first_name" type="text" autocomplete="given-name" required /></label>
-          <label>Email<input name="email" type="email" autocomplete="email" required /></label>
-        </div>
-        <fieldset><legend>Who's the&nbsp;book for?</legend><div class="pf-chips"><label class="pf-chip"><input type="radio" name="who" value="baby" required /><span>My baby or&nbsp;kids</span></label><label class="pf-chip"><input type="radio" name="who" value="me" required /><span>Me</span></label><label class="pf-chip"><input type="radio" name="who" value="family" required /><span>My family</span></label><label class="pf-chip"><input type="radio" name="who" value="couple" required /><span>Us (couple)</span></label><label class="pf-chip"><input type="radio" name="who" value="gift-parents" required /><span>A gift for&nbsp;my&nbsp;parents</span></label><label class="pf-chip"><input type="radio" name="who" value="gift-other" required /><span>A gift for&nbsp;someone else</span></label></div></fieldset>
-        <fieldset><legend>When do you&nbsp;need it?</legend><div class="pf-chips"><label class="pf-chip"><input type="radio" name="when" value="christmas" required /><span>Before Christmas</span></label><label class="pf-chip"><input type="radio" name="when" value="january" required /><span>In January</span></label><label class="pf-chip"><input type="radio" name="when" value="no-rush" required /><span>No rush</span></label></div></fieldset>
-        <fieldset>
-          <legend>Your photos <span class="pf-hint">10&nbsp;to&nbsp;30, 10&nbsp;is&nbsp;enough. JPG, PNG or&nbsp;HEIC</span></legend>
-          <label class="pf-drop" id="pfDrop">
-            <input type="file" id="pfFiles" accept="image/*,.heic,.heif" multiple />
-            <span class="pf-drop-btn">Choose photos</span>
-            <span class="pf-counter" id="pfCounter">0&nbsp;/ 30</span>
-          </label>
-          <div class="pf-thumbs" id="pfThumbs"></div>
-          <p class="pf-file-msg" id="pfFileMsg" role="status"></p>
-        </fieldset>
-        <label>Anything I&nbsp;should know? <span class="pf-hint">optional</span><textarea name="notes" rows="3" placeholder="Names, dates, the story behind the photos"></textarea></label>
-        <label class="pf-agree"><input type="checkbox" name="agree" required /><span>I&nbsp;agree that ReMeet uses my&nbsp;photos only to&nbsp;design my&nbsp;book. They're deleted after&nbsp;60&nbsp;days if&nbsp;I&nbsp;don't order.</span></label>
-        <input type="hidden" name="utm_source" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_medium" />
-        <div class="pf-progress" id="pfProgress" hidden><div></div><span>Uploading… 0%</span></div>
-        <p class="pf-error" id="pfError" role="alert" hidden></p>
-        <button class="btn btn-primary pf-submit" type="submit" id="pfSubmit">Send my&nbsp;photos</button>
-        <p class="pf-under">I'll&nbsp;email your&nbsp;spread within 24&nbsp;hours.<br>Free, no&nbsp;card needed.</p>
-      </form>
-    </section>
-
     <section class="section faq-section pf-faq" id="faq">
       <h2>Questions</h2>
       <div class="faq-list"><details><summary>Is the&nbsp;spread really free?</summary><p>Yes. You only pay if&nbsp;you&nbsp;love it&nbsp;and&nbsp;want the&nbsp;whole book.</p></details><details><summary>Why up&nbsp;to&nbsp;30&nbsp;photos if&nbsp;a&nbsp;spread uses only a&nbsp;few?</summary><p>Picking is&nbsp;half the&nbsp;job. A spread holds 2&nbsp;to&nbsp;6&nbsp;photos, and&nbsp;seeing which ones I&nbsp;choose shows you&nbsp;how I'll&nbsp;build the&nbsp;whole book.</p></details><details><summary>What if&nbsp;I&nbsp;have 500&nbsp;photos?</summary><p>Send your&nbsp;favorite 10&nbsp;to&nbsp;30&nbsp;now. After you&nbsp;pick a&nbsp;style, I'll&nbsp;ask for&nbsp;the&nbsp;rest by&nbsp;email.</p></details><details><summary>How long does the&nbsp;whole book take?</summary><p>First full draft in&nbsp;72&nbsp;hours after&nbsp;payment. Printing takes 3&nbsp;to&nbsp;5&nbsp;working days, plus shipping.</p></details><details><summary>Can I&nbsp;change things?</summary><p>Yes. You see the&nbsp;full draft before it&nbsp;prints.</p></details><details><summary>Can I&nbsp;get only the&nbsp;digital file?</summary><p>Yes, choose "Design only (PDF)" at&nbsp;checkout.</p></details><details><summary>Do you&nbsp;ship outside the&nbsp;US?</summary><p>Currently US and&nbsp;Canada. Write to&nbsp;me&nbsp;for&nbsp;other countries.</p></details><details><summary>What happens to&nbsp;my&nbsp;photos?</summary><p>They're used only for&nbsp;your&nbsp;book and&nbsp;deleted after&nbsp;60&nbsp;days if&nbsp;you&nbsp;don't order.</p></details></div>
     </section>
 
-  </main>
+    <a class="pf-sticky" id="pfSticky" href="#start" hidden>Get my&nbsp;free spread</a>
 
+  </main>
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -316,7 +277,10 @@
           <a href="mailto:olga@okad.agency">Contact</a>
         </div>
       </div>
-<script src="/proof/proof.js?v=3"></script>
+    </div>
+    <div class="footer-bottom">&copy; 2026 <span class="hi">Re</span>Meet</div>
+  </footer>
+<script src="/proof/proof.js?v=4"></script>
 <script>if(window.fbq)fbq("track","ViewContent",{content_name:"proof"});</script>
 </body>
 </html>
