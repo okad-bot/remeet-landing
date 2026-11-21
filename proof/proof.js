@@ -1,38 +1,42 @@
-/* ReMeet /proof: photo picker, upload, UTM, countdown */
+/* ReMeet /proof: email first, then photos. Uploads go to Google Apps Script. */
 (function () {
-  // Where the form posts (multipart/form-data). Empty = backend not connected yet.
   var PROOF_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzwVGoW_BcdCjok1d3Ga2LIdTELb9i5lslE5Jqrtly3qp2Uxz47ff85Q77xC9XhAtKBBg/exec';
   var MAX = 30, MIN = 10, MAX_MB = 25;
   var OK_EXT = /\.(jpe?g|png|heic|heif)$/i;
+
+  function ss(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
 
   // UTM: keep from the first landing URL for the whole session
   var UTM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
   var q = new URLSearchParams(location.search);
   UTM.forEach(function (k) {
-    try {
-      if (q.get(k)) sessionStorage.setItem('remeet_' + k, q.get(k));
-      var v = sessionStorage.getItem('remeet_' + k);
-      var f = document.querySelector('#proofForm [name="' + k + '"]');
-      if (f && v) f.value = v;
-    } catch (e) {}
+    if (q.get(k)) ss('remeet_' + k, q.get(k));
+    var v = ss('remeet_' + k);
+    var f = document.querySelector('#proofForm [name="' + k + '"]');
+    if (f && v) f.value = v;
   });
 
-  // Christmas countdown
-  var cd = document.querySelector('.pf-countdown');
-  if (cd) {
-    var end = new Date(cd.dataset.deadline).getTime();
-    var tick = function () {
-      var t = Math.max(0, end - Date.now());
-      var u = { d: Math.floor(t / 864e5), h: Math.floor(t / 36e5) % 24, m: Math.floor(t / 6e4) % 60, s: Math.floor(t / 1e3) % 60 };
-      Object.keys(u).forEach(function (k) { cd.querySelector('[data-u="' + k + '"]').textContent = u[k]; });
-      if (t === 0) { var sec = cd.closest('.pf-xmas'); if (sec) sec.hidden = true; return; }
-      setTimeout(tick, 1000);
-    };
-    tick();
+  // Sticky button while the form is off screen
+  var sticky = document.getElementById('pfSticky');
+  var formBox = document.getElementById('start');
+  if (sticky && formBox && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { sticky.hidden = es[0].isIntersecting; }, { threshold: 0.15 }).observe(formBox);
   }
+  if (sticky) sticky.addEventListener('click', function (e) {
+    e.preventDefault();
+    formBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(function () {
+      var el = document.getElementById('pfStep2').hidden ? form.querySelector('[name=email]') : null;
+      if (el) el.focus({ preventScroll: true });
+    }, 450);
+  });
 
   var form = document.getElementById('proofForm');
   if (!form) return;
+  var step1 = document.getElementById('pfStep1'), step2 = document.getElementById('pfStep2');
+  var emailIn = form.querySelector('[name=email]');
+  var nextBtn = document.getElementById('pfNext');
+  var emailDone = document.getElementById('pfEmailDone');
   var input = document.getElementById('pfFiles');
   var drop = document.getElementById('pfDrop');
   var thumbs = document.getElementById('pfThumbs');
@@ -42,7 +46,42 @@
   var btn = document.getElementById('pfSubmit');
   var prog = document.getElementById('pfProgress');
   var files = [];
+  var id = ss('remeet_proof_id') || (Date.now().toString(36) + Math.random().toString(36).slice(2, 8));
+  ss('remeet_proof_id', id);
 
+  function fail(msg) { errBox.textContent = msg; errBox.hidden = false; }
+  function clearErr() { errBox.hidden = true; }
+  function utm() { var o = {}; UTM.forEach(function (k) { o[k] = form.querySelector('[name="' + k + '"]').value; }); return o; }
+  function emailOk(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+  // Step 1: email. Saved right away, so a dropped upload still leaves a contact.
+  function goStep2() {
+    clearErr();
+    var v = emailIn.value.trim();
+    if (!emailOk(v)) { fail('Please check your email.'); emailIn.focus(); return; }
+    var lead = utm(); lead.action = 'email'; lead.id = id; lead.email = v; lead.page = location.href;
+    post(lead).catch(function () {});
+    if (ss('remeet_proof_email') !== v) {
+      if (window.fbq) fbq('trackCustom', 'ProofEmail', { content_name: 'proof' });
+      if (window.ym) ym(114414250, 'reachGoal', 'proof_email');
+      ss('remeet_proof_email', v);
+    }
+    step1.hidden = true; step2.hidden = false;
+    emailDone.innerHTML = '';
+    var t = document.createElement('span'); t.textContent = v;
+    var ch = document.createElement('button'); ch.type = 'button'; ch.textContent = 'change';
+    ch.onclick = function () { step2.hidden = true; step1.hidden = false; emailIn.focus(); };
+    emailDone.appendChild(document.createTextNode('✓ ')); emailDone.appendChild(t); emailDone.appendChild(ch);
+    // Bring the photo picker and the send button into view
+    setTimeout(function () {
+      var top = step2.getBoundingClientRect().top + window.pageYOffset - 84;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }, 60);
+  }
+  nextBtn.addEventListener('click', goStep2);
+  emailIn.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); goStep2(); } });
+
+  // Step 2: photos
   function render() {
     thumbs.innerHTML = '';
     files.forEach(function (f, i) {
@@ -85,49 +124,39 @@
   ['dragleave', 'drop'].forEach(function (e) { drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.remove('drag'); }); });
   drop.addEventListener('drop', function (ev) { if (ev.dataTransfer) add(ev.dataTransfer.files); });
 
-  function fail(msg) { errBox.textContent = msg; errBox.hidden = false; errBox.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
-
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    errBox.hidden = true;
-    var fd = new FormData(form);
-    if (!String(fd.get('first_name') || '').trim()) return fail('Please add your first name.');
-    if (!/^\S+@\S+\.\S+$/.test(String(fd.get('email') || ''))) return fail('Please check your email.');
-    if (!fd.get('who')) return fail("Please pick who the book is for.");
-    if (!fd.get('when')) return fail('Please pick when you need it.');
+    if (!step1.hidden) { goStep2(); return; }
+    clearErr();
     if (files.length < MIN) return fail('Please add at least ' + MIN + ' photos (you have ' + files.length + ').');
-    if (!fd.get('agree')) return fail('Please tick the box about your photos.');
-    if (!PROOF_ENDPOINT) return fail("Uploads aren't switched on yet. Email your photos to olga@okad.agency and I'll send your spread.");
 
     btn.disabled = true; prog.hidden = false;
     var bar = prog.querySelector('div'), label = prog.querySelector('span');
-    var id = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
-    var name = String(fd.get('first_name') || '').trim();
-    var done = 0, total = files.length;
+    var email = emailIn.value.trim();
+    var nameHint = email.split('@')[0];
+    var done = 0, total = files.length, failed = 0, queue = files.slice();
     function setProg() {
-      var p = Math.round(done / total * 100);
-      bar.style.width = p + '%';
+      bar.style.width = Math.round(done / total * 100) + '%';
       label.textContent = 'Uploading photo ' + Math.min(done + 1, total) + ' of ' + total + '…';
     }
     setProg();
-    var queue = files.slice(), failed = 0;
     function worker() {
       var f = queue.shift();
       if (!f) return Promise.resolve();
-      return sendPhoto(f, id, name, 0).then(function () { done++; setProg(); }, function () { failed++; done++; setProg(); }).then(worker);
+      return sendPhoto(f, nameHint, 0).then(function () { done++; setProg(); }, function () { failed++; done++; setProg(); }).then(worker);
     }
     Promise.all([worker(), worker(), worker()]).then(function () {
       if (failed > total / 2) throw new Error('too many failed');
       label.textContent = 'Almost done…';
-      var lead = {};
-      fd.forEach(function (v, k) { lead[k] = v; });
-      delete lead.agree;
-      lead.id = id; lead.photos_count = (total - failed) + (failed ? ' (' + failed + ' failed)' : ''); lead.page = location.href;
+      var lead = utm();
+      lead.id = id; lead.email = email; lead.first_name = nameHint;
+      var who = form.querySelector('[name=who]:checked'); lead.who = who ? who.value : '';
+      lead.photos_count = (total - failed) + (failed ? ' (' + failed + ' failed)' : '');
+      lead.page = location.href;
       return post(lead);
     }).then(function () {
-      if (window.fbq) fbq('track', 'Lead', { content_name: 'proof_spread' });
-      if (window.gtag) gtag('event', 'generate_lead', { event_category: 'proof', event_label: fd.get('who') });
-      try { sessionStorage.setItem('remeet_proof_sent', '1'); } catch (e) {}
+      ss('remeet_proof_sent', '1');
+      try { sessionStorage.removeItem('remeet_proof_id'); } catch (e) {}
       location.href = '/proof/thanks/';
     }).catch(function () {
       btn.disabled = false; prog.hidden = true;
@@ -141,10 +170,13 @@
       .then(function (j) { if (!j || j.status !== 'ok') throw new Error('bad'); return j; });
   }
 
-  function sendPhoto(f, id, name, attempt) {
-    return shrink(f).then(function (blob) { return toB64(blob).then(function (b64) {
-      return post({ action: 'photo', id: id, first_name: name, name: f.name.replace(/\.(hei[cf]|png)$/i, blob.type === 'image/jpeg' ? '.jpg' : '.$1'), type: blob.type || f.type || 'image/jpeg', data: b64 });
-    }); }).catch(function (e) { if (attempt < 1) return sendPhoto(f, id, name, attempt + 1); throw e; });
+  function sendPhoto(f, nameHint, attempt) {
+    return shrink(f).then(function (blob) {
+      return toB64(blob).then(function (b64) {
+        var name = blob === f ? f.name : f.name.replace(/\.[^.]+$/, '') + '.jpg';
+        return post({ action: 'photo', id: id, first_name: nameHint, name: name, type: blob.type || 'image/jpeg', data: b64 });
+      });
+    }).catch(function (e) { if (attempt < 1) return sendPhoto(f, nameHint, attempt + 1); throw e; });
   }
 
   // Resize to max 2400px JPEG when the browser can decode the file; otherwise send it as is.
