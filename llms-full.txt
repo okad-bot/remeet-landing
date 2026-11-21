@@ -124,8 +124,18 @@
 - Layflat photo book guide: https://remeet.cc/blog/layflat-photo-book-guide/
 - How much does AI photo book cost: https://remeet.cc/blog/how-much-does-ai-photo-book-cost/
 
+## Examples
+
+- Examples hub: https://remeet.cc/examples/
+- Sail Beyond Cancer: https://remeet.cc/examples/sail-beyond-cancer/
+
+## For photographers
+
+- Photographer partnership program: https://remeet.cc/for-photographers/
+
 ## Info pages
 
+- About: https://remeet.cc/about/
 - Quality: https://remeet.cc/quality/
 - Shipping: https://remeet.cc/shipping/
 - Reviews: https://remeet.cc/reviews/
