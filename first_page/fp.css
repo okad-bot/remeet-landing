@@ -351,3 +351,26 @@ body.pi-dark-page .topbar{background:var(--olive);border-color:transparent}
 body.pi-dark-page .topbar,body.pi-dark-page .topbar a{color:#fff}
 body.pi-dark-page .topbar img{filter:brightness(0) invert(1)}
 .pi-dark{min-height:calc(100vh - 80px)}
+/* TZ rev15: short landing, trust on the order screen */
+.pi-feed-sec{max-width:760px;margin:0 auto;padding:8px 0 10px}
+.pi-feed{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 18px;scrollbar-width:none}
+.pi-feed::-webkit-scrollbar{display:none}
+.pi-feed picture{flex:0 0 88%;scroll-snap-align:center}
+.pi-feed img{width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+@media(min-width:901px){.pi-feed picture{flex-basis:70%}}
+.pi-how{max-width:560px;margin:0 auto;padding:18px}
+.pi-how .pi-steps{grid-template-columns:1fr;gap:8px;margin:0}
+.pi-how .pi-steps li{display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:1rem}
+.pi-how .pi-steps li::before{margin:0;flex:0 0 28px}
+.pi-priceline{text-align:center;font-weight:600;margin:16px 0 0;font-size:1rem}
+.pi-faq{max-width:560px;margin:0 auto;padding:6px 18px 30px}
+.pi-xmas{font-size:.86rem;text-align:center;margin:6px 0 0;font-weight:600;color:#8b3a3f}
+.pi-trust{margin-top:22px;border-top:1px solid rgba(32,48,39,.12);padding-top:18px}
+.pi-quote{font-family:var(--serif);font-size:1.6rem;line-height:1.15;margin:0}
+.pi-who{font-size:.82rem;color:#6b6860;margin:6px 0 0}
+.pi-olga{display:flex;gap:14px;align-items:center;margin-top:16px}
+.pi-olga img{width:84px;height:84px;object-fit:cover;border-radius:50%;flex:0 0 84px;display:block}
+.pi-olga p{margin:0;font-size:.95rem;line-height:1.4;color:#3d463f}
+.pi-footer{display:flex;justify-content:center;gap:22px;padding:22px 16px 90px;font-size:.85rem}
+.pi-footer a{color:#6b6860;text-decoration:none}
+body.pi-app .pi-footer{display:none}

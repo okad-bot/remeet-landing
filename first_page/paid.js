@@ -23,6 +23,8 @@
 
   if (O.links.copy) $('pdCopy').href = O.links.copy + '?client_reference_id=' + encodeURIComponent(id) + (email ? '&prefilled_email=' + encodeURIComponent(email) : '');
 
+  var LIMIT = order.picks ? 300 : 100;
+  if (order.picks) { var sub = document.querySelector('#pdMain .pi-sub'); if (sub) sub.textContent = "Add everything, I'll pick the best. Up to 300 photos, and you can come back from the link in your email."; }
   var MAX = 300, files = [], state = {}, queue = [], active = 0;
   var grid = $('pdGrid'), count = $('pdCount'), msg = $('pdMsg'), input = $('pdFiles');
   input.addEventListener('change', function () { add(input.files); input.value = ''; });
@@ -37,7 +39,7 @@
   function draw() {
     var done = files.filter(function (f) { return state[f._k] === 'ok'; }).length;
     var left = files.length - done - files.filter(function (f) { return state[f._k] === 'fail'; }).length;
-    count.textContent = files.length + ' of 100';
+    count.textContent = files.length + ' of ' + LIMIT;
     msg.textContent = left > 0 ? 'Uploading ' + left + ' more… you can keep adding.' : (files.some(function (f) { return state[f._k] === 'fail'; }) ? "A few photos didn't upload. Add them again or email them to me." : '');
     grid.innerHTML = '';
     files.slice(-14).forEach(function (f) {

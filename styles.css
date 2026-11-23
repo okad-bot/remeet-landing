@@ -718,3 +718,4 @@ picture{display:contents}
 .featured-on a:hover{color:var(--ink);text-decoration:underline}
 .featured-on a+a::before{content:"·";margin:0 7px;color:#9aa09a;display:inline-block;text-decoration:none}
 @media(max-width:600px){.featured-on span{display:block;margin:0 0 2px}}
+.try-approve{font-weight:600;margin:14px 0 0;font-size:1rem}
