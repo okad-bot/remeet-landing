@@ -1,7 +1,7 @@
 /* ReMeet /proof: 6 photos -> email -> instant spread in 6 styles -> pick -> order. */
 (function () {
   var O = window.REMEET_ORDER, R = window.RemeetRender;
-  var MAX = 10, MIN = 3, MAX_MB = 25;
+  var MAX = 10, MIN = 6, MAX_MB = 25, BUILD_MS = 15000;
   var $ = function (id) { return document.getElementById(id); };
   function ss(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
   function track(ev, ymGoal, params) { if (window.fbq) fbq(ev[0], ev[1], params || {}); if (window.ym && ymGoal) ym(114414250, 'reachGoal', ymGoal); }
@@ -43,7 +43,7 @@
   input.addEventListener('change', function () {
     var first = !files.length;
     add(input.files); input.value = '';
-    if (files.length) { if (first) track(['trackCustom', 'ProofPhotos'], 'proof_photos'); if ($('s2').hidden) show('s2'); }
+    if (files.length) { if (first) track(['trackCustom', 'UploadStarted'], 'proof_photos'); if ($('s2').hidden) show('s2'); }
   });
 
   function add(list) {
@@ -143,7 +143,7 @@
     email = v; ss('remeet_proof_email', v);
     var lead = utm(); lead.action = 'email'; lead.id = id; lead.email = v; lead.page = location.href; lead.photos_count = files.length;
     O.post(lead).catch(function () {});
-    track(['trackCustom', 'ProofEmail'], 'proof_email', { content_name: 'proof' });
+    track(['track', 'Lead'], 'proof_email', { content_name: 'first_page' });
     document.querySelectorAll('.pi-email-echo').forEach(function (el) { el.textContent = v; });
     show('s4'); build();
   });
@@ -152,9 +152,9 @@
   function build() {
     var bar = $('piBar'), line = $('piLine');
     var t0 = Date.now(), tick = 0;
-    var anim = 0, raf = setInterval(function () { anim = Math.min(92, anim + 3); bar.style.width = anim + '%'; }, 120);
+    var raf = setInterval(function () { bar.style.width = Math.min(96, 4 + 92 * (Date.now() - t0) / BUILD_MS) + '%'; }, 150);
     (renderP || startRender()).then(function (r) {
-      var wait = Math.max(0, 3200 - (Date.now() - t0));
+      var wait = Math.max(0, BUILD_MS - (Date.now() - t0));
       setTimeout(function () {
         clearInterval(tick); clearInterval(raf); bar.style.width = '100%';
         showResults(r); sendPreview(r);
@@ -167,7 +167,7 @@
   }
 
   function sendPreview(r) {
-    var imgs = r.map(function (o) { return { name: o.key + '.jpg', style: o.name, data: o.canvas.toDataURL('image/jpeg', 0.72).split(',')[1] }; });
+    var imgs = r.map(function (o) { return { name: o.key + '.jpg', style: o.name, data: o.src.split(',')[1] }; });
     var lead = utm(); lead.action = 'preview'; lead.id = id; lead.email = email; lead.first_name = email.split('@')[0];
     lead.photos_count = files.length; lead.page = location.href; lead.images = imgs;
     O.post(lead).catch(function () {});
@@ -175,37 +175,54 @@
 
   // ---------- s5: pick a style
   var car = $('piCar'), dots = $('piDots'), styleName = $('piStyleName'), styleNum = $('piStyleNum');
+  var FIRST = 4, shown = FIRST, moreBtn = $('piMore');
+  function small(c) {
+    var k = 1200 / c.width, t = document.createElement('canvas');
+    t.width = 1200; t.height = Math.round(c.height * k);
+    t.getContext('2d').drawImage(c, 0, 0, t.width, t.height);
+    return t.toDataURL('image/jpeg', 0.86);
+  }
   function showResults(r) {
     car.innerHTML = ''; dots.innerHTML = '';
+    shown = Math.min(FIRST, r.length);
     r.forEach(function (o, i) {
       var fig = document.createElement('figure'); fig.className = 'pi-slide';
-      var img = document.createElement('img'); img.alt = 'Your first spread, ' + o.name + ' style'; img.src = o.canvas.toDataURL('image/jpeg', 0.86);
-      o.src = img.src;
+      var img = document.createElement('img'); img.alt = 'Your first spread, ' + o.name + ' style'; o.src = small(o.canvas); img.src = o.src;
       img.addEventListener('click', function () { zoom(o.src); });
       fig.appendChild(img); car.appendChild(fig);
       var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Style ' + (i + 1));
+      if (i >= shown) { fig.hidden = true; d.hidden = true; }
       d.onclick = function () { car.scrollTo({ left: i * car.clientWidth, behavior: 'smooth' }); };
       dots.appendChild(d);
     });
+    moreBtn.hidden = r.length <= shown;
+    moreBtn.textContent = 'See ' + (r.length - shown) + ' more styles';
     current = 0; setCurrent(0);
     show('s5');
-    track(['track', 'Lead'], 'proof_lead', { content_name: 'proof_instant' });
+    track(['trackCustom', 'PreviewViewed'], 'proof_preview');
   }
   function setCurrent(i) {
     current = i;
-    styleName.textContent = results[i].name; styleNum.textContent = (i + 1) + ' of ' + results.length;
+    styleName.textContent = results[i].name; styleNum.textContent = (i + 1) + ' of ' + shown;
     Array.prototype.forEach.call(dots.children, function (d, k) { d.classList.toggle('on', k === i); });
   }
   car.addEventListener('scroll', function () {
     var i = Math.round(car.scrollLeft / Math.max(1, car.clientWidth));
-    if (results && i !== current && i >= 0 && i < results.length) setCurrent(i);
+    if (results && i !== current && i >= 0 && i < shown) setCurrent(i);
   }, { passive: true });
   $('piPrev').onclick = function () { car.scrollTo({ left: Math.max(0, current - 1) * car.clientWidth, behavior: 'smooth' }); };
-  $('piNext').onclick = function () { car.scrollTo({ left: Math.min(results.length - 1, current + 1) * car.clientWidth, behavior: 'smooth' }); };
+  $('piNext').onclick = function () { car.scrollTo({ left: Math.min(shown - 1, current + 1) * car.clientWidth, behavior: 'smooth' }); };
+  moreBtn.onclick = function () {
+    var first = shown; shown = results.length;
+    Array.prototype.forEach.call(car.children, function (f) { f.hidden = false; });
+    Array.prototype.forEach.call(dots.children, function (d) { d.hidden = false; });
+    moreBtn.hidden = true; setCurrent(current);
+    car.scrollTo({ left: first * car.clientWidth, behavior: 'smooth' });
+  };
   $('piChoose').addEventListener('click', function () {
     chosen = results[current];
     O.post({ action: 'style', id: id, email: email, style: chosen.name }).catch(function () {});
-    track(['trackCustom', 'ProofStyle'], 'proof_style', { content_name: chosen.key });
+    track(['trackCustom', 'StyleChosen'], 'proof_style', { style: chosen.name });
     $('piChosen').src = chosen.src; $('piChosenName').textContent = chosen.name;
     var others = results.filter(function (o) { return o !== chosen; });
     $('piBlur1').src = others[0].src; $('piBlur2').src = others[1].src;
