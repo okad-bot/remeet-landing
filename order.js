@@ -11,9 +11,9 @@
       layflat: { name: 'Premium layflat + PDF', sub: 'Thick pages that open flat. US shipping included.' }
     },
     links: {
-      pdf: '', hardcover: '', layflat: '',
-      pdf_picks: '', hardcover_picks: '', layflat_picks: '',
-      copy: '', upgrade: ''
+      pdf: 'https://buy.stripe.com/00wcN5afk149ehpb7x8k80Q', hardcover: 'https://buy.stripe.com/dRmfZhdrwbINc9hcbB8k80R', layflat: 'https://buy.stripe.com/6oU3cv5Z47sx1uD8Zp8k80S',
+      pdf_picks: 'https://buy.stripe.com/8x24gz0EKeUZ0qz7Vl8k80T', hardcover_picks: 'https://buy.stripe.com/14A8wP7388wBddl5Nd8k80U', layflat_picks: 'https://buy.stripe.com/8x228r2MS149flt6Rh8k80V',
+      copy: 'https://buy.stripe.com/4gM00j0EK149flta3t8k80W', upgrade: 'https://buy.stripe.com/3cI7sL1IO9AF2yH3F58k80X'
     },
     total: function (format, picks) { return O.prices[format] + (picks ? O.prices.picks : 0); },
     post: function (obj) {
