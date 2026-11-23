@@ -28,25 +28,17 @@ document.querySelectorAll('.story-step, .spread-feature, .use-case-grid article'
   observer.observe(el);
 });
 
-const STRIPE_LINKS = {
-  '30': 'https://buy.stripe.com/28EeVdbjo8wB8X5dfF8k80K',
-  '100': 'https://buy.stripe.com/cNi28rfzE0057T1grR8k80L',
-  '30v': 'https://buy.stripe.com/3cIbJ11IOeUZb5dcbB8k80N',
-  '100v': 'https://buy.stripe.com/cNi6oH5Z4005b5da3t8k80O'
-};
-const PRICES = {'30': 29, '100': 79};
-const VIDEO_ADDON = 50;
-
+// Order form: prices and Stripe links live in /order.js (shared with /proof)
 const form = document.getElementById('bookForm');
 const payBtn = document.getElementById('payBtn');
 const pageOptions = document.querySelectorAll('.page-option');
-const videoAddon = document.getElementById('videoAddon');
+const picksAddon = document.getElementById('picksAddon');
+const ORDER = window.REMEET_ORDER;
 
-const currentPages = () => form?.querySelector('input[name="pages"]:checked')?.value || '100';
+const currentFormat = () => form?.querySelector('input[name="format"]:checked')?.value || 'hardcover';
 const updateTotal = () => {
-  if (!payBtn) return;
-  const total = PRICES[currentPages()] + (videoAddon?.checked ? VIDEO_ADDON : 0);
-  payBtn.innerHTML = 'Pay $' + total + ' &rarr;';
+  if (!payBtn || !ORDER) return;
+  payBtn.innerHTML = 'Pay $' + ORDER.total(currentFormat(), !!picksAddon?.checked) + ' &rarr;';
 };
 
 pageOptions.forEach(opt => {
@@ -57,23 +49,13 @@ pageOptions.forEach(opt => {
     updateTotal();
   });
 });
-videoAddon?.addEventListener('change', updateTotal);
+picksAddon?.addEventListener('change', updateTotal);
 
 form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(form));
-  const pages = data.pages || '100';
-  const withVideo = !!videoAddon?.checked;
-  const stripeUrl = withVideo ? STRIPE_LINKS[pages + 'v'] : STRIPE_LINKS[pages];
-
-  const total = PRICES[pages] + (withVideo ? VIDEO_ADDON : 0);
-  try { localStorage.setItem('remeet_order_total', String(total)); } catch (e) {}
-  if (window.fbq) fbq('track', 'InitiateCheckout', {value: total, currency: 'USD'});
-  if (window.ym) ym(114414250, 'reachGoal', 'checkout', {order_price: total, currency: 'USD'});
-
   payBtn.textContent = 'Redirecting...';
   payBtn.disabled = true;
-
   try {
     await fetch('https://okad.cc/api/remeet-form/submit', {
       method: 'POST',
@@ -81,9 +63,11 @@ form?.addEventListener('submit', async (e) => {
       body: JSON.stringify(data)
     });
   } catch {}
-
-  window.location.href = stripeUrl;
+  const went = ORDER.checkout({ id: ORDER.newId(), email: data.email || '', format: currentFormat(), picks: !!picksAddon?.checked, style: '' });
+  if (!went) { payBtn.hidden = true; const fb = document.getElementById('payFallback'); if (fb) fb.hidden = false; }
 });
+window.addEventListener('pageshow', e => { if (e.persisted && payBtn) { payBtn.disabled = false; updateTotal(); } });
+updateTotal();
 
 const sticky = document.querySelector('.sticky-cta');
 const heroEl = document.querySelector('.hero');
@@ -96,10 +80,9 @@ if (sticky && heroEl && formEl) {
 }
 
 // Pricing table buttons and gift block: preselect the form
-document.querySelectorAll('[data-pick-pages]').forEach(btn => {
+document.querySelectorAll('[data-pick-format]').forEach(btn => {
   btn.addEventListener('click', () => {
-    const v = btn.getAttribute('data-pick-pages');
-    const opt = document.querySelector('.page-option input[value="' + v + '"]');
+    const opt = document.querySelector('.page-option input[value="' + btn.getAttribute('data-pick-format') + '"]');
     if (opt) opt.closest('.page-option').click();
   });
 });
@@ -109,12 +92,3 @@ document.querySelectorAll('[data-pick-type]').forEach(btn => {
     if (sel) sel.value = btn.getAttribute('data-pick-type');
   });
 });
-
-// Send photos now / later
-const linkField = document.querySelector('.photos-link-field');
-document.querySelectorAll('input[name="photos_when"]').forEach(r => r.addEventListener('change', () => {
-  const now = document.querySelector('input[name="photos_when"]:checked')?.value === 'now';
-  if (linkField) { linkField.hidden = !now; if (now) linkField.querySelector('input')?.focus(); }
-  const hint = document.querySelector('.pay-now-hint');
-  if (hint) hint.hidden = now;
-}));
