@@ -28,8 +28,9 @@
   }
   if (O.links.copy && $('pdCopy')) $('pdCopy').href = O.links.copy + '?client_reference_id=' + encodeURIComponent(id) + (email ? '&prefilled_email=' + encodeURIComponent(email) : '');
 
+  if (/^(occasion:|book:)/.test(order.style || '')) { var w = document.querySelector('[name=who]'); if (w) { var box = w.closest('.pi-chips'); if (box) { box.hidden = true; if (box.previousElementSibling) box.previousElementSibling.hidden = true; } } }
   var LIMIT = 300;
-  if (true) { var sub = document.querySelector('#pdMain .pi-sub'); if (sub) sub.textContent = "Add everything, I'll pick the best. Up to 300 photos, and you can come back from the link in your email."; }
+  if (true) { var sub = document.querySelector('#pdMain .pi-sub'); if (sub) sub.textContent = "Add everything, I'll pick the best. Up to 300 photos here, or paste an album link for more. You can come back from the link in your email."; }
   var MAX = 300, files = [], state = {}, queue = [], active = 0;
   var grid = $('pdGrid'), count = $('pdCount'), msg = $('pdMsg'), input = $('pdFiles');
   input.addEventListener('change', function () { add(input.files); input.value = ''; });

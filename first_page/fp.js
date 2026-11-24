@@ -199,6 +199,7 @@
     moreBtn.hidden = r.length <= shown;
     moreBtn.textContent = 'See ' + (r.length - shown) + ' more styles';
     current = 0; setCurrent(0);
+    if ($('piNone')) $('piNone').href = '/first_page/?step=2&id=' + encodeURIComponent(id) + '&e=' + encodeURIComponent(email);
     show('s5');
     track(['trackCustom', 'PreviewViewed'], 'proof_preview');
   }
