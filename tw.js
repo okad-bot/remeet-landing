@@ -32,3 +32,14 @@
   window.addEventListener('resize', function () { if (window.innerWidth === w) return; w = window.innerWidth; clearTimeout(timer); timer = setTimeout(run, 150); });
   document.addEventListener('toggle', function (e) { if (!e.target.open) return; var d = e.target; requestAnimationFrame(function () { [d].concat([].slice.call(d.querySelectorAll(SEL))).forEach(function (x) { if (x.matches && x.matches(SEL)) fixEl(x); }); }); }, true);
 })();
+
+/* Remember where the visitor came from (last outside source), e.g. chatgpt.com, google.com. */
+(function () {
+  try {
+    var r = document.referrer, host = r ? new URL(r).hostname.replace(/^www\./, '') : '';
+    if (/(^|\.)remeet\.cc$/.test(host)) host = '';
+    var q = new URLSearchParams(location.search), tag = q.get('utm_source') || q.get('ref') || '';
+    var ref = host || tag;
+    if (ref || !localStorage.getItem('remeet_src')) localStorage.setItem('remeet_src', JSON.stringify({ ref: ref || 'direct', landing: location.pathname }));
+  } catch (e) {}
+})();

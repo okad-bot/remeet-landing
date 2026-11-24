@@ -26,10 +26,10 @@
     ex.textContent = 'Extra copies: I\'ll email you an invoice for ' + extra + ' more book' + (extra > 1 ? 's' : '') + ', $' + extra * O.prices.copy + '.';
     document.querySelector('#pdMain .pi-sub').after(ex);
   }
-  if (O.links.copy) $('pdCopy').href = O.links.copy + '?client_reference_id=' + encodeURIComponent(id) + (email ? '&prefilled_email=' + encodeURIComponent(email) : '');
+  if (O.links.copy && $('pdCopy')) $('pdCopy').href = O.links.copy + '?client_reference_id=' + encodeURIComponent(id) + (email ? '&prefilled_email=' + encodeURIComponent(email) : '');
 
-  var LIMIT = order.picks ? 300 : 100;
-  if (order.picks) { var sub = document.querySelector('#pdMain .pi-sub'); if (sub) sub.textContent = "Add everything, I'll pick the best. Up to 300 photos, and you can come back from the link in your email."; }
+  var LIMIT = 300;
+  if (true) { var sub = document.querySelector('#pdMain .pi-sub'); if (sub) sub.textContent = "Add everything, I'll pick the best. Up to 300 photos, and you can come back from the link in your email."; }
   var MAX = 300, files = [], state = {}, queue = [], active = 0;
   var grid = $('pdGrid'), count = $('pdCount'), msg = $('pdMsg'), input = $('pdFiles');
   input.addEventListener('change', function () { add(input.files); input.value = ''; });
@@ -86,19 +86,19 @@
   $('pdForm').addEventListener('submit', function (e) {
     e.preventDefault();
     var err = $('pdErr'), btn = $('pdDone'), f = e.target;
-    if (!files.length && !f.notes.value.trim()) { err.textContent = 'Add your photos first, or paste a link to them in the notes.'; err.hidden = false; return; }
+    if (!files.length && !f.notes.value.trim() && !(f.album && f.album.value.trim())) { err.textContent = 'Add your photos first, or paste an album link.'; err.hidden = false; return; }
     err.hidden = true; btn.disabled = true;
     var wait = setInterval(function () {
       var left = files.filter(function (x) { return state[x._k] === 'wait'; }).length;
       btn.textContent = left ? 'Finishing upload, ' + left + ' left…' : 'Sending…';
       if (left) return;
       clearInterval(wait);
-      var who = f.querySelector('[name=who]:checked');
-      O.post({ action: 'done', id: id, email: email, who: who ? who.value : '', title: f.title.value, notes: f.notes.value,
+      var who = f.querySelector('[name=who]:checked'), found = f.querySelector('[name=found]:checked');
+      O.post({ action: 'done', id: id, email: email, who: who ? who.value : '', title: f.title.value, notes: f.notes.value, photos_link: f.album ? f.album.value.trim() : '', found: found ? found.value : '',
         photos_count: files.filter(function (x) { return state[x._k] === 'ok'; }).length })
         .catch(function () {})
         .then(function () {
-          if (window.ym) ym(114414250, 'reachGoal', 'photos_done');
+          if (window.ym) ym(114414250, 'reachGoal', 'photos_sent'); try { if (window.clarity) clarity('event', 'photos_sent'); } catch (x) {}
           $('pdMain').hidden = true; $('pdThanks').hidden = false; window.scrollTo(0, 0);
         });
     }, 400);

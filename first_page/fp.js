@@ -176,7 +176,7 @@
 
   // ---------- s5: pick a style
   var car = $('piCar'), dots = $('piDots'), styleName = $('piStyleName'), styleNum = $('piStyleNum');
-  var FIRST = 4, shown = FIRST, moreBtn = $('piMore');
+  var FIRST = 99, shown = FIRST, moreBtn = $('piMore');
   function small(c) {
     var k = 1200 / c.width, t = document.createElement('canvas');
     t.width = 1200; t.height = Math.round(c.height * k);
@@ -191,9 +191,9 @@
       var img = document.createElement('img'); img.alt = 'Your first spread, ' + o.name + ' style'; o.src = small(o.canvas); img.src = o.src;
       img.addEventListener('click', function () { zoom(o.src); });
       fig.appendChild(img); car.appendChild(fig);
-      var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Style ' + (i + 1));
+      var d = document.createElement('button'); d.type = 'button'; d.textContent = 'Style ' + (i + 1); d.setAttribute('aria-label', 'Style ' + (i + 1) + ', ' + o.name);
       if (i >= shown) { fig.hidden = true; d.hidden = true; }
-      d.onclick = function () { car.scrollTo({ left: i * car.clientWidth, behavior: 'smooth' }); };
+      d.onclick = function () { car.scrollTo({ left: i * car.clientWidth, behavior: 'auto' }); setCurrent(i); };
       dots.appendChild(d);
     });
     moreBtn.hidden = r.length <= shown;
@@ -220,11 +220,37 @@
     moreBtn.hidden = true; setCurrent(current);
     car.scrollTo({ left: first * car.clientWidth, behavior: 'smooth' });
   };
+  // Save or share the preview spread (with a small remeet.cc line under it)
+  if ($('piSave')) $('piSave').addEventListener('click', function () {
+    var o = results && results[current]; if (!o) return;
+    var img = new Image();
+    img.onload = function () {
+      var c = document.createElement('canvas'), pad = 70;
+      c.width = img.width; c.height = img.height + pad;
+      var x = c.getContext('2d');
+      x.fillStyle = '#F4EFE6'; x.fillRect(0, 0, c.width, c.height);
+      x.drawImage(img, 0, 0);
+      x.fillStyle = '#334639'; x.font = '26px Georgia, serif'; x.textAlign = 'center';
+      x.fillText('My book preview · remeet.cc', c.width / 2, img.height + 45);
+      c.toBlob(function (blob) {
+        var file = new File([blob], 'my-remeet-book.jpg', { type: 'image/jpeg' });
+        track(['trackCustom', 'PreviewSaved'], 'preview_saved');
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          navigator.share({ files: [file], title: 'My ReMeet book', text: 'Look what my photos became: remeet.cc' }).catch(function () {});
+        } else {
+          var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'my-remeet-book.jpg';
+          document.body.appendChild(a); a.click(); a.remove();
+        }
+      }, 'image/jpeg', 0.9);
+    };
+    img.src = o.src;
+  });
   $('piChoose').addEventListener('click', function () {
     chosen = results[current];
     O.post({ action: 'style', id: id, email: email, style: chosen.name }).catch(function () {});
     track(['trackCustom', 'StyleChosen'], 'proof_style', { style: chosen.name });
     $('piChosen').src = chosen.src; $('piChosenName').textContent = chosen.name;
+    if ($('piRecap')) { $('piRecapImg').src = chosen.src; $('piRecapTitle').textContent = 'Your book'; $('piRecap').hidden = false; }
     var others = results.filter(function (o) { return o !== chosen; });
     $('piBlur1').src = others[0].src; $('piBlur2').src = others[1].src;
     show('s6'); price();
@@ -237,7 +263,7 @@
 
   // ---------- s6: order
   var form = $('piOrder'), payBtn = $('piPay'), fallback = $('piFallback');
-  function sel() { var f = form.querySelector('input[name=format]:checked'); return { format: f ? f.value : 'hardcover', picks: form.querySelector('input[name=picks]').checked }; }
+  function sel() { var f = form.querySelector('input[name=format]:checked'); return { format: f ? f.value : 'pdf', picks: !!(form.querySelector('input[name=picks]') || {}).checked }; }
   function price() {
     var s = sel(), t = O.total(s.format, s.picks);
     form.querySelectorAll('.pi-opt').forEach(function (l) { l.classList.toggle('sel', l.querySelector('input').checked); });

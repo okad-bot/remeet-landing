@@ -9,7 +9,7 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X1ZSJLBMRD');</script>
 <meta name="theme-color" content="#f4f0e8" />
 <title>ReMeet: send a photo link, get a designed photo book</title>
-<meta name="description" content="Share an iCloud or Google Photos link and get a designer-made photo book. See your first page free, hardcover from $149 with US shipping." />
+<meta name="description" content="Share an iCloud or Google Photos link and get a designer-made photo book. Books from $29: I pick the best shots and design every page by hand." />
 <link rel="canonical" href="https://remeet.cc/" />
 
 <!-- Open Graph -->
@@ -66,26 +66,19 @@
     "https://remeet.cc/assets/book-cover-eva.jpg",
     "https://remeet.cc/assets/book-spread-digital.jpg"
   ],
-  "brand": {"@type": "Brand", "name": "ReMeet"},
+  "brand": {
+    "@type": "Brand",
+    "name": "ReMeet"
+  },
   "offers": [
     {
       "@type": "Offer",
-      "name": "Digital Photo Book (PDF), up to 100 pages",
-      "price": "89",
+      "name": "Small photo book (PDF), up to 30 pages",
+      "price": "29",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
       "url": "https://remeet.cc/#start",
       "priceValidUntil": "2027-12-31",
-      "shippingDetails": {
-        "@type": "OfferShippingDetails",
-        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
-        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"},
-        "deliveryTime": {
-          "@type": "ShippingDeliveryTime",
-          "handlingTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 3, "unitCode": "d"},
-          "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}
-        }
-      },
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
         "applicableCountry": "US",
@@ -97,49 +90,12 @@
     },
     {
       "@type": "Offer",
-      "name": "Hardcover Photo Book + PDF, up to 100 pages",
-      "price": "149",
+      "name": "Big photo book (PDF), up to 100 pages",
+      "price": "79",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
       "url": "https://remeet.cc/#start",
       "priceValidUntil": "2027-12-31",
-      "shippingDetails": {
-        "@type": "OfferShippingDetails",
-        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
-        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"},
-        "deliveryTime": {
-          "@type": "ShippingDeliveryTime",
-          "handlingTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 3, "unitCode": "d"},
-          "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}
-        }
-      },
-      "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 7,
-        "returnMethod": "https://schema.org/ReturnByMail",
-        "returnFees": "https://schema.org/FreeReturn"
-      }
-    },
-    {
-      "@type": "Offer",
-      "name": "Premium Layflat Photo Book + PDF, up to 100 pages",
-      "price": "199",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://remeet.cc/#start",
-      "priceValidUntil": "2027-12-31",
-      "shippingDetails": {
-        "@type": "OfferShippingDetails",
-        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
-        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"},
-        "deliveryTime": {
-          "@type": "ShippingDeliveryTime",
-          "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"},
-          "transitTime": {"@type": "QuantitativeValue", "minValue": 7, "maxValue": 10, "unitCode": "d"}
-        }
-      },
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
         "applicableCountry": "US",
@@ -178,7 +134,7 @@
       "name": "How many photos should I send?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anything from about 50 to 5,000. With the photo picks add-on (+$25) I choose the best ones for you."
+        "text": "Anything from about 50 to 5,000. I pick the best ones for you, that's included."
       }
     },
     {
@@ -194,7 +150,15 @@
       "name": "How much does it cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your first page is free. The digital PDF is $89. Hardcover + PDF is $149 and premium layflat + PDF is $199, up to 100 pages, US shipping included. Extra copies are $69 each. Bigger book? I'll send a custom quote."
+        "text": "A small book up to 30 pages is $29 and a big book up to 100 pages is $79, both as a PDF, with photo picking and 2 rounds of edits included. Want it printed? Once you've approved your book, I'll offer a hardcover with a price for your book."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much is printing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Once you've seen and approved your book: hardcover $60, premium layflat $110, US shipping included. Extra copies are $69 each."
       }
     },
     {
@@ -202,7 +166,7 @@
       "name": "What if I don't like the design?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You see the whole book before it prints. Ask for changes in plain words, 2 rounds of edits are included. Don't love it? Full refund before print."
+        "text": "You see the whole book before it prints. Ask for changes in plain words, 2 rounds of edits are included. Don't love it? Full&nbsp;refund before&nbsp;print."
       }
     },
     {
@@ -288,7 +252,7 @@
 .bk-small .bk-box{padding:6% 6%}
 @media(max-width:700px){.bk-grid-big{grid-template-columns:1fr;gap:28px}.bk-grid-small{grid-template-columns:1fr 1fr;gap:20px 12px}
 .bk-small .bk-name{font-size:1rem}.bk-buy2{font-size:.78rem;padding:5px 10px}}
-</style><style>.styles-loop{max-width:640px;margin:16px auto 18px}@media(min-width:901px){.how2-chips{max-width:760px!important;flex-wrap:nowrap!important}.styles-section .styles-img{max-width:560px}}.styles-loop img,.styles-loop video{width:100%;height:auto;display:block;border-radius:14px}</style></head>
+</style><style>.styles-loop{max-width:640px;margin:16px auto 18px}@media(min-width:901px){.how2-chips{max-width:760px!important;flex-wrap:nowrap!important}.styles-section .styles-img{max-width:560px}}.styles-loop img,.styles-loop video{width:100%;height:auto;display:block;border-radius:14px}.o2-sec{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#7a7f78;margin:14px 0 6px;text-align:left}.o2-guar{background:#eef1ea;border-radius:10px;padding:10px 12px;font-size:.86rem;line-height:1.45;color:#2f3a31;text-align:center;margin:12px 0 8px}.bk-corp{grid-column:1/-1;display:grid;grid-template-columns:calc(25% - 12px) 1fr;gap:18px;align-items:center;text-decoration:none;color:var(--ink);margin-top:6px}.bk-corp-ph{display:flex;align-items:center;justify-content:center;aspect-ratio:800/474;background:#EFEDE2;border:1.5px dashed rgba(32,48,39,.25);border-radius:12px;color:#7a7f78;font:600 .78rem var(--sans);letter-spacing:.08em;text-transform:uppercase}.bk-corp-t{text-align:left}.bk-corp .bk-buy2{display:inline-block;margin-top:10px}@media(max-width:700px){.bk-corp{grid-template-columns:1fr;gap:4px}.bk-corp-t{text-align:center}.bk-corp .bk-name{font-size:1.2rem!important}}</style></head>
 <body>
 <div class="xmas-bar"><a href="/christmas-photo-book/" style="color:inherit;text-decoration:none">Order by&nbsp;Dec&nbsp;1&nbsp;for&nbsp;Christmas delivery &rarr;</a></div>
   <header class="topbar">
@@ -312,7 +276,7 @@
       <div class="hero-copy">
         <h1><span class="hi">Y</span>our photo&nbsp;book, designed by&nbsp;a&nbsp;person.</h1>
         <p class="hero-sub">Editorial design for&nbsp;your photos, up&nbsp;to&nbsp;100&nbsp;pages.<br/>See your first page before you&nbsp;pay.</p>
-        <div class="hero-btns"><a class="button button-dark hero-button hero-try" href="/first_page/">See my book on one spread <span>&rarr;</span></a><a class="button hero-button hero-order" href="#pricing">Order your book, from&nbsp;$89</a></div>
+        <div class="hero-btns"><a class="button button-dark hero-button hero-try" href="/proof/">See my book on one spread <span>&rarr;</span></a><a class="button hero-button hero-order" href="#pricing">Order your book, from&nbsp;$29</a></div>
       </div>
       <div class="hero-rv" aria-label="Real ReMeet books and client reviews">
         <figure class="rv-card"><img src="assets/shelf-bookcase.jpg" alt="A shelf of ReMeet photo books: Hello Eva, 2026 Summer, Slow September, For Grandma" width="1103" height="1426" fetchpriority="high" /><span class="rv-chip">Every chapter</span></figure>
@@ -334,15 +298,19 @@
       <h2><span class="hi">A</span>ny moment of&nbsp;your&nbsp;life is&nbsp;worth printing.</h2>
       <p class="bk-label">Most ordered</p>
       <div class="bk-grid bk-grid-big">
-        <div class="bk-card bk-big"><a href="/books/baby/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/eva_baby_book.jpg"><source src="assets/flips/eva_baby_book.mp4" type="video/mp4" /></video></span></a><div class="bk-row"><div class="bk-meta"><a class="bk-name" href="/books/baby/">Baby's first year</a><span class="bk-from">Hardcover&nbsp;$149 · PDF&nbsp;$89</span></div><a class="button button-dark bk-buy" href="/books/baby/">Order, $149 &rarr;</a></div></div>
-        <div class="bk-card bk-big"><a href="/books/travel/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/travel_book.jpg"><source src="assets/flips/travel_book.mp4" type="video/mp4" /></video></span></a><div class="bk-row"><div class="bk-meta"><a class="bk-name" href="/books/travel/">Travel book</a><span class="bk-from">Hardcover&nbsp;$149 · PDF&nbsp;$89</span></div><a class="button button-dark bk-buy" href="/books/travel/">Order, $149 &rarr;</a></div></div>
+        <div class="bk-card bk-big"><a href="/books/baby/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/eva_baby_book.jpg"><source src="assets/flips/eva_baby_book.mp4" type="video/mp4" /></video></span></a><div class="bk-row"><div class="bk-meta"><a class="bk-name" href="/books/baby/">Baby's first year</a><span class="bk-from">Small&nbsp;$29 · Big&nbsp;$79</span></div><a class="button button-dark bk-buy" href="/books/baby/">Order, from $29 &rarr;</a></div></div>
+        <div class="bk-card bk-big"><a href="/books/travel/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/travel_book.jpg"><source src="assets/flips/travel_book.mp4" type="video/mp4" /></video></span></a><div class="bk-row"><div class="bk-meta"><a class="bk-name" href="/books/travel/">Travel book</a><span class="bk-from">Small&nbsp;$29 · Big&nbsp;$79</span></div><a class="button button-dark bk-buy" href="/books/travel/">Order, from $29 &rarr;</a></div></div>
       </div>
       <p class="bk-label">More books</p>
       <div class="bk-grid bk-grid-small">
-        <a class="bk-card bk-small" href="/books/love-story/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/love_book.jpg"><source src="assets/flips/love_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Love story</span><span class="bk-buy2">Order, from&nbsp;$89 &rarr;</span></a>
-        <a class="bk-card bk-small" href="/books/birthday/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/birthday_book.jpg"><source src="assets/flips/birthday_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Birthday book</span><span class="bk-buy2">Order, from&nbsp;$89 &rarr;</span></a>
-        <a class="bk-card bk-small" href="/books/family/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/eva_family_book.jpg"><source src="assets/flips/eva_family_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Family book</span><span class="bk-buy2">Order, from&nbsp;$89 &rarr;</span></a>
-        <a class="bk-card bk-small" href="/books/best-friends-magazine/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/bestie_magazine.jpg"><source src="assets/flips/bestie_magazine.mp4" type="video/mp4" /></video></span><span class="bk-name">Best friends magazine</span><span class="bk-buy2">Order, from&nbsp;$89 &rarr;</span></a>
+        <a class="bk-card bk-small" href="/books/love-story/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/love_book.jpg"><source src="assets/flips/love_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Love story</span><span class="bk-buy2">Order, from&nbsp;$29 &rarr;</span></a>
+        <a class="bk-card bk-small" href="/books/birthday/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/birthday_book.jpg"><source src="assets/flips/birthday_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Birthday book</span><span class="bk-buy2">Order, from&nbsp;$29 &rarr;</span></a>
+        <a class="bk-card bk-small" href="/books/family/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/eva_family_book.jpg"><source src="assets/flips/eva_family_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Family book</span><span class="bk-buy2">Order, from&nbsp;$29 &rarr;</span></a>
+        <a class="bk-card bk-small" href="/books/best-friends-magazine/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/bestie_magazine.jpg"><source src="assets/flips/bestie_magazine.mp4" type="video/mp4" /></video></span><span class="bk-name">Best friends magazine</span><span class="bk-buy2">Order, from&nbsp;$29 &rarr;</span></a>
+        <a class="bk-corp" href="mailto:olga@okad.agency?subject=Corporate%20album">
+          <span class="bk-corp-ph"><span>Example soon</span></span>
+          <span class="bk-corp-t"><span class="bk-name">Corporate album</span><span class="bk-from">For a&nbsp;company, team, club or&nbsp;school. Your year, your people, your logo. Price on&nbsp;request.</span><span class="bk-buy2">Ask for&nbsp;a&nbsp;quote &rarr;</span></span>
+        </a>
       </div>
     </section>
 
@@ -367,7 +335,7 @@
     <section class="section styles-section">
       <h2 class="v-styles"><span class="hi">Y</span>our memories, <span class="hi">b</span>eautifully&nbsp;designed.</h2>
       <div class="styles-img"><picture><source srcset="assets/gallery-to-book.webp" type="image/webp" /><img src="assets/gallery-to-book.jpg" alt="Photos from a phone gallery turning into a designed book spread" width="1200" height="880" loading="lazy" /></picture></div>
-      <a class="button button-dark" href="/first_page/">Try it with your&nbsp;photos <span>&rarr;</span></a>
+      <a class="button button-dark" href="/proof/">Try it with your&nbsp;photos <span>&rarr;</span></a>
     </section>
 
 
@@ -380,7 +348,7 @@
         <div class="up-slots" id="upSlots"><label class="up-slot" for="upFiles"><span>+</span></label><label class="up-slot" for="upFiles"><span>+</span></label><label class="up-slot" for="upFiles"><span>+</span></label><label class="up-slot" for="upFiles"><span>+</span></label><label class="up-slot" for="upFiles"><span>+</span></label><label class="up-slot" for="upFiles"><span>+</span></label></div>
         <input type="file" id="upFiles" accept="image/*" multiple hidden />
         <label class="button button-dark up-btn" for="upFiles" id="upBtn">+ Add 6&nbsp;photos</label>
-        <p class="up-note" id="upNote">Your first page in&nbsp;a&nbsp;minute. Full book from&nbsp;$89.</p>
+        <p class="up-note" id="upNote">Your first page in&nbsp;a&nbsp;minute. Full book from&nbsp;$29.</p>
       </div>
       <p class="how2-big">5,000&nbsp;photos? Not&nbsp;a&nbsp;problem.</p>
       <div class="hv2-grid how2-chips"><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>No&nbsp;sorting</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>No&nbsp;blurry shots</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Month by&nbsp;month</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Small notes</span></div></div>
@@ -401,29 +369,29 @@
 
     <!-- ORDER -->
     <section class="section order2" id="pricing"><span id="start"></span>
-      <h2><span class="hi">Y</span>our book, from&nbsp;$89.</h2>
-      <p class="order2-sub">Designed by&nbsp;hand, up&nbsp;to&nbsp;100&nbsp;pages.<br/>Nothing prints until you&nbsp;approve.</p>
-      <p class="order2-alt">Not sure? <a href="/first_page/">See your first page before you&nbsp;pay</a></p>
-      <form class="order2-box" id="bookForm">
+      <h2><span class="hi">Y</span>our book, from&nbsp;$29.</h2>
+      <p class="order2-sub">Designed by&nbsp;hand. I&nbsp;pick the&nbsp;best photos for&nbsp;you.<br/>2&nbsp;rounds of&nbsp;edits included.</p>
+            <form class="order2-box" id="bookForm">
         <h3>Order the&nbsp;whole&nbsp;book</h3>
-        <p class="o2-pages">Up to&nbsp;100&nbsp;pages.<br/>Bigger book? I'll&nbsp;send a&nbsp;custom quote.</p>
-        <label class="o2-opt sel"><input type="radio" name="format" value="hardcover" checked /><span class="o2-t"><b>Hardcover + PDF</b> <i class="o2-tag">Most gifted</i><small>US shipping included</small></span><span class="o2-p">$149</span></label>
-        <div class="o2-covers"><img src="assets/book-cover-green.jpg" alt="" loading="lazy" /><img src="assets/book-cover-type.jpg" alt="" loading="lazy" /><img src="assets/book-cover-blue.webp" alt="" loading="lazy" /></div>
-        <label class="o2-opt"><input type="radio" name="format" value="layflat" /><span class="o2-t"><b>Premium layflat + PDF</b><small>Pages open flat, US shipping included</small></span><span class="o2-p">$199</span></label>
-        <label class="o2-opt"><input type="radio" name="format" value="pdf" /><span class="o2-t"><b>Digital PDF</b><small>Print later for $60</small></span><span class="o2-p">$89</span></label>
-        <div class="o2-row" id="o2copies"><span><b>How many books?</b><small>Each extra copy $69</small></span><span class="o2-step"><button type="button" data-d="-1">&minus;</button><b id="o2n">1</b><button type="button" data-d="1">+</button></span></div>
-        <label class="o2-opt o2-check"><input type="checkbox" id="o2picks" /><span class="o2-t"><b>I pick your best photos</b><small>Send me everything, even 5,000</small></span><span class="o2-p">+$25</span></label>
+        <p class="o2-pages">Bigger book? I'll&nbsp;send a&nbsp;custom quote.</p>
+        <p class="o2-sec">Your book</p>
+        <label class="o2-opt sel"><input type="radio" name="format" value="small" checked /><span class="o2-t"><b>Small book</b><small>Up to&nbsp;30&nbsp;pages, PDF</small></span><span class="o2-p">$29</span></label>
+        <label class="o2-opt"><input type="radio" name="format" value="pdf" /><span class="o2-t"><b>Big book</b><small>Up to&nbsp;100&nbsp;pages, PDF</small></span><span class="o2-p">$79</span></label>
+        <p class="o2-pages" style="text-align:left;margin:8px 0 4px">Want it&nbsp;printed? You can add a&nbsp;hardcover once you've seen your&nbsp;book. Picking the&nbsp;best photos is&nbsp;included.</p>
+        <label class="o2-opt o2-check"><input type="checkbox" data-custom /><span class="o2-t"><b>Something special in&nbsp;mind?</b><small>Your notes, your own design idea. I'll&nbsp;tell&nbsp;you if&nbsp;it&nbsp;costs extra.</small></span><span class="o2-p">Ask</span></label>
+        <textarea class="o2-in o2-custom" data-custom-text rows="3" style="width:100%;box-sizing:border-box;min-height:76px;font:inherit;resize:vertical;margin:0 0 8px" maxlength="1000" placeholder="For example: add our handwritten notes to each page" hidden></textarea>
         <input class="o2-in" type="email" name="email" placeholder="Your email" autocomplete="email" required />
         <select class="o2-in" name="type" aria-label="What is the book about?"><option value="">What is the book about? (optional)</option><option>Baby's first year</option><option>Family yearbook</option><option>Travel</option><option>A gift</option><option>Other</option></select>
-        <p class="pay-fallback" id="payFallback" hidden><b>Got it, thank you.</b> I'll email you a&nbsp;payment link within a&nbsp;few hours.</p>
-        <button class="button button-dark o2-pay" id="payBtn" type="submit">Pay $149 &rarr;</button>
+        <p class="pay-fallback" id="payFallback" hidden><b>Got it, thank you.</b> I'll email you a&nbsp;payment link within the&nbsp;hour.</p>
+        <p class="o2-guar">Don't love the&nbsp;first draft? <b>Full refund.</b></p>
+        <button class="button button-dark o2-pay" id="payBtn" type="submit">Pay $29 &rarr;</button>
         <p class="o2-note">After payment you add your photos right here.<br/>2&nbsp;rounds of&nbsp;edits included.</p>
       </form>
     </section>
 
     <section class="section faq2">
       <details class="faq2-all"><summary>Questions and&nbsp;answers <span>+</span></summary>
-      <div class="faq-list"><details><summary>How does it work?</summary><p>Add 6&nbsp;photos and&nbsp;see your&nbsp;first page in&nbsp;editorial design, free, in&nbsp;about a&nbsp;minute. Love&nbsp;it? Order&nbsp;the&nbsp;whole book, then add the&nbsp;rest of&nbsp;your&nbsp;photos right on&nbsp;the&nbsp;site. I&nbsp;design every page and&nbsp;send you&nbsp;the&nbsp;first draft in&nbsp;72&nbsp;hours.</p></details><details><summary>Can I send an iCloud or Google Photos link?</summary><p>Yes. After&nbsp;you&nbsp;order, upload your&nbsp;photos on&nbsp;the&nbsp;site or&nbsp;paste an&nbsp;iCloud or&nbsp;Google Photos link. On&nbsp;iPhone, select your&nbsp;photos, tap Share, then Copy iCloud Link. Please&nbsp;don't use a&nbsp;Shared Album: Apple shrinks photos there, and&nbsp;they print soft.</p></details><details><summary>How many photos should I send?</summary><p>Anything from about 50&nbsp;to&nbsp;5,000. With the&nbsp;photo picks add-on&nbsp;(+$25) I&nbsp;choose the&nbsp;best ones for&nbsp;you.</p></details><details><summary>Do you use AI?</summary><p>Only to&nbsp;sort photos. I&nbsp;never change or&nbsp;generate your&nbsp;photos. Every&nbsp;page is&nbsp;designed and&nbsp;checked by&nbsp;a&nbsp;person.</p></details><details><summary>How much does it cost?</summary><p>Your first page is&nbsp;free. The&nbsp;digital PDF is&nbsp;$89. Hardcover + PDF is&nbsp;$149&nbsp;and&nbsp;premium layflat + PDF is&nbsp;$199, up to&nbsp;100&nbsp;pages, US shipping included. Extra&nbsp;copies are $69&nbsp;each. Bigger&nbsp;book? I'll&nbsp;send a&nbsp;custom quote.</p></details><details><summary>What if I don't like the design?</summary><p>You see the&nbsp;whole book before it&nbsp;prints. Ask&nbsp;for&nbsp;changes in&nbsp;plain words, 2&nbsp;rounds of&nbsp;edits are included. Don't&nbsp;love it? Full&nbsp;refund before print.</p></details><details><summary>Do I need to use an editor?</summary><p>No. No&nbsp;editor, no&nbsp;templates, no&nbsp;dragging and&nbsp;dropping. You&nbsp;just reply to&nbsp;my&nbsp;email.</p></details><details><summary>Are my photos private?</summary><p>Yes. Your&nbsp;photos are encrypted in&nbsp;transit and&nbsp;at rest, used only for&nbsp;your&nbsp;book, and&nbsp;deleted 90&nbsp;days after your&nbsp;book is&nbsp;complete.</p></details><details><summary>When will I get my book?</summary><p>The first draft comes in&nbsp;72&nbsp;hours after your&nbsp;photos are in. You&nbsp;have a&nbsp;week for&nbsp;edits, or&nbsp;2&nbsp;to&nbsp;3&nbsp;days for&nbsp;Christmas orders. After&nbsp;you&nbsp;approve, printing takes 3&nbsp;to&nbsp;5&nbsp;working days, plus shipping. Order&nbsp;and&nbsp;send your&nbsp;photos by&nbsp;Dec 1&nbsp;for&nbsp;Christmas delivery.</p></details><details><summary>Do you ship outside the US?</summary><p>US only for&nbsp;now.</p></details></div></details>
+      <div class="faq-list"><details><summary>How does it work?</summary><p>Add 6&nbsp;photos and&nbsp;see your&nbsp;first page in&nbsp;editorial design, free, in&nbsp;about a&nbsp;minute. Love&nbsp;it? Order&nbsp;the&nbsp;whole book, then add the&nbsp;rest of&nbsp;your&nbsp;photos right on&nbsp;the&nbsp;site. I&nbsp;design every page and&nbsp;send you&nbsp;the&nbsp;first draft in&nbsp;72&nbsp;hours.</p></details><details><summary>Can I send an iCloud or Google Photos link?</summary><p>Yes. After&nbsp;you&nbsp;order, upload your&nbsp;photos on&nbsp;the&nbsp;site or&nbsp;paste an&nbsp;iCloud or&nbsp;Google Photos link. On&nbsp;iPhone, select your&nbsp;photos, tap Share, then Copy iCloud Link. Please&nbsp;don't use a&nbsp;Shared Album: Apple shrinks photos there, and&nbsp;they print soft.</p></details><details><summary>How many photos should I send?</summary><p>Anything from about 50&nbsp;to&nbsp;5,000. I&nbsp;pick the&nbsp;best ones for&nbsp;you, that's included.</p></details><details><summary>Do you use AI?</summary><p>Only to&nbsp;sort photos. I&nbsp;never change or&nbsp;generate your&nbsp;photos. Every&nbsp;page is&nbsp;designed and&nbsp;checked by&nbsp;a&nbsp;person.</p></details><details><summary>How much does it cost?</summary><p>A&nbsp;small book up&nbsp;to&nbsp;30&nbsp;pages is&nbsp;$29 and&nbsp;a&nbsp;big book up&nbsp;to&nbsp;100&nbsp;pages is&nbsp;$79, both as&nbsp;a&nbsp;PDF, with photo picking and&nbsp;2&nbsp;rounds of&nbsp;edits included. Want it&nbsp;printed? Once you've approved your book, I'll offer a&nbsp;hardcover with a&nbsp;price for&nbsp;your&nbsp;book.</p></details><details><summary>How much is printing?</summary><p>Once you've seen and&nbsp;approved your book: hardcover $60, premium layflat $110, US shipping included. Extra copies are $69&nbsp;each.</p></details><details><summary>What if I don't like the design?</summary><p>You see the&nbsp;whole book before it&nbsp;prints. Ask&nbsp;for&nbsp;changes in&nbsp;plain words, 2&nbsp;rounds of&nbsp;edits are included. Don't&nbsp;love it? Full&nbsp;refund before print.</p></details><details><summary>Do I need to use an editor?</summary><p>No. No&nbsp;editor, no&nbsp;templates, no&nbsp;dragging and&nbsp;dropping. You&nbsp;just reply to&nbsp;my&nbsp;email.</p></details><details><summary>Are my photos private?</summary><p>Yes. Your&nbsp;photos are encrypted in&nbsp;transit and&nbsp;at rest, used only for&nbsp;your&nbsp;book, and&nbsp;deleted 90&nbsp;days after your&nbsp;book is&nbsp;complete.</p></details><details><summary>When will I get my book?</summary><p>The first draft comes in&nbsp;72&nbsp;hours after your&nbsp;photos are in. You&nbsp;have a&nbsp;week for&nbsp;edits, or&nbsp;2&nbsp;to&nbsp;3&nbsp;days for&nbsp;Christmas orders. After&nbsp;you&nbsp;approve, printing takes 3&nbsp;to&nbsp;5&nbsp;working days, plus shipping. Order&nbsp;and&nbsp;send your&nbsp;photos by&nbsp;Dec 1&nbsp;for&nbsp;Christmas delivery.</p></details><details><summary>Do you ship outside the US?</summary><p>US only for&nbsp;now.</p></details></div></details>
     </section>
 
   </main>
@@ -499,10 +467,10 @@
     </div>
     <div class="footer-bottom">&copy; 2026 <span class="hi">Re</span>Meet</div>
   </footer>
-  <a class="sticky-cta" href="#pricing" aria-hidden="true" tabindex="-1">Order your book, from $89 &rarr;</a>
-  <script src="/order.js?v=20261123c"></script>
-<script src="app.js?v=20261123f"></script>
-<script src="/tw.js?v=20261123d"></script>
+  <a class="sticky-cta" href="#pricing" aria-hidden="true" tabindex="-1">Order your book, from $29 &rarr;</a>
+  <script src="/order.js?v=20261124g"></script>
+<script src="app.js?v=20261124h"></script>
+<script src="/tw.js?v=20261124e"></script>
 <script src="/flips.js?v=20261124b"></script>
 </body>
 </html>

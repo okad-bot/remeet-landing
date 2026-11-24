@@ -36,15 +36,15 @@ const picks = document.getElementById('o2picks');
 const copiesRow = document.getElementById('o2copies');
 const copiesEl = document.getElementById('o2n');
 const covers = document.querySelector('.o2-covers');
-const currentFormat = () => form?.querySelector('input[name="format"]:checked')?.value || 'hardcover';
-const copies = () => currentFormat() === 'pdf' ? 1 : Number(copiesEl?.textContent || 1);
+const currentFormat = () => form?.querySelector('input[name="format"]:checked')?.value || 'small';
+const copies = () => ['pdf', 'small'].includes(currentFormat()) ? 1 : Number(copiesEl?.textContent || 1);
 const updateTotal = () => {
   if (!form || !ORDER) return;
-  const f = currentFormat(), printed = f !== 'pdf';
+  const f = currentFormat(), printed = !['pdf', 'small'].includes(f);
   if (copiesRow) copiesRow.style.display = printed ? 'flex' : 'none';
   if (covers) covers.style.display = f === 'hardcover' ? 'grid' : 'none';
   form.querySelectorAll('.o2-opt').forEach(l => l.classList.toggle('sel', l.querySelector('input').checked));
-  const total = ORDER.total(f, !!picks?.checked) + (copies() - 1) * ORDER.prices.copy;
+  const total = ORDER.total(f);
   payBtn.innerHTML = 'Pay $' + total + ' &rarr;';
 };
 form?.addEventListener('change', updateTotal);
@@ -83,7 +83,7 @@ upInput?.addEventListener('change', () => {
     if (files[i]) { const im = document.createElement('img'); im.alt = ''; im.src = URL.createObjectURL(files[i]); sl.appendChild(im); }
   });
   if (window.fbq) fbq('trackCustom', 'UploadStarted', { content_name: 'home' });
-  const go = () => { location.href = '/first_page/?from=home#s2'; };
+  const go = () => { location.href = '/proof/?from=home#s2'; };
   const note = document.getElementById('upNote'); if (note) note.textContent = 'Opening your preview…';
   try {
     const req = indexedDB.open('remeet', 1);
