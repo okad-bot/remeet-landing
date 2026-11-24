@@ -274,15 +274,21 @@
 @media(max-width:700px){.hero-btns{flex-direction:column}.hero-btns .button{width:100%;justify-content:center}}
 </style><style>
 .bksec{text-align:center}
-.bk-sub{color:#5b625b;margin:4px 0 18px}
-.bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 16px;max-width:1040px;margin:0 auto;text-align:left}
-.bk-card{display:block;text-decoration:none;color:var(--ink)}
+.bk-label{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#7a7f78;margin:22px 0 10px;text-align:left;max-width:1040px;margin-left:auto;margin-right:auto}
+.bk-grid{display:grid;gap:22px 16px;max-width:1040px;margin:0 auto;text-align:left}
+.bk-grid-big{grid-template-columns:1fr 1fr}.bk-grid-small{grid-template-columns:repeat(4,1fr)}
+.bk-card{display:block;text-decoration:none;color:var(--ink)}.bk-card a{text-decoration:none;color:inherit}
 .bk-box{display:block;background:#EFEDE2;border-radius:12px;padding:7% 8%;overflow:hidden}
 .bk-vid{width:100%;aspect-ratio:800/474;display:block;object-fit:cover;background:#EFEDE2}
-.bk-name{display:block;font-family:var(--serif);font-size:1.25rem;line-height:1.1;margin-top:10px}
-.bk-from{display:block;font-size:.82rem;color:#6b6b63;margin-top:2px}
-@media(max-width:700px){.bk-grid{grid-template-columns:1fr;gap:22px}.bk-box{padding:8% 9%}}
-</style></head>
+.bk-name{display:block;font-family:var(--serif);font-size:1.2rem;line-height:1.1;margin-top:10px}
+.bk-big .bk-name{font-size:1.55rem}
+.bk-from{display:block;font-size:.85rem;color:#6b6b63;margin-top:3px}
+.bk-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}.bk-row .bk-name{margin-top:0}.bk-buy{flex:none;width:auto!important;margin:0!important;color:#fff!important;padding:11px 18px;font-size:.92rem;white-space:nowrap}
+.bk-small{text-align:center}.bk-buy2{display:block;text-align:center;margin-top:8px;font-size:.85rem;font-weight:600;color:var(--olive);border:1.5px solid var(--olive);border-radius:999px;padding:6px 12px}
+.bk-small .bk-box{padding:6% 6%}
+@media(max-width:700px){.bk-grid-big{grid-template-columns:1fr;gap:28px}.bk-grid-small{grid-template-columns:1fr 1fr;gap:20px 12px}
+.bk-small .bk-name{font-size:1rem}.bk-buy2{font-size:.78rem;padding:5px 10px}}
+</style><style>.styles-loop{max-width:640px;margin:16px auto 18px}@media(min-width:901px){.how2-chips{max-width:760px!important;flex-wrap:nowrap!important}.styles-section .styles-img{max-width:560px}}.styles-loop img{width:100%;height:auto;display:block;border-radius:14px}</style></head>
 <body>
 <div class="xmas-bar"><a href="/christmas-photo-book/" style="color:inherit;text-decoration:none">Order by&nbsp;Dec&nbsp;1&nbsp;for&nbsp;Christmas delivery &rarr;</a></div>
   <header class="topbar">
@@ -292,7 +298,7 @@
     </button>
     <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
       <a href="#how">How It&nbsp;Works</a>
-      <a href="#examples">Examples</a>
+      <a href="#books">Books</a>
       <a href="#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
       <a href="/reviews/">Reviews</a>
@@ -326,25 +332,42 @@
 
     <!-- SHOP -->
     <section class="section bksec" id="books">
-      <h2><span class="hi">C</span>hoose your book</h2>
-      <p class="bk-sub">Pick a&nbsp;book, I&nbsp;design it with your photos.</p>
-      <div class="bk-grid">
-        <a class="bk-card" href="/books/baby/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/eva_baby_book.jpg"><source src="assets/flips/eva_baby_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Baby book</span><span class="bk-from">from $89</span></a>
-        <a class="bk-card" href="/books/travel/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/travel_book.jpg"><source src="assets/flips/travel_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Travel book</span><span class="bk-from">from $89</span></a>
-        <a class="bk-card" href="/books/love-story/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/love_book.jpg"><source src="assets/flips/love_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Love story</span><span class="bk-from">from $89</span></a>
-        <a class="bk-card" href="/books/birthday/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/birthday_book.jpg"><source src="assets/flips/birthday_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Birthday book</span><span class="bk-from">from $89</span></a>
-        <a class="bk-card" href="/books/family/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/eva_family_book.jpg"><source src="assets/flips/eva_family_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Family book</span><span class="bk-from">from $89</span></a>
-        <a class="bk-card" href="/books/best-friends-magazine/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/bestie_magazine.jpg"><source src="assets/flips/bestie_magazine.mp4" type="video/mp4" /></video></span><span class="bk-name">Best friends magazine</span><span class="bk-from">from $89</span></a>
+      <h2><span class="hi">A</span>ny moment of&nbsp;your&nbsp;life is&nbsp;worth printing.</h2>
+      <p class="bk-label">Most ordered</p>
+      <div class="bk-grid bk-grid-big">
+        <div class="bk-card bk-big"><a href="/books/baby/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/eva_baby_book.jpg"><source src="assets/flips/eva_baby_book.mp4" type="video/mp4" /></video></span></a><div class="bk-row"><div class="bk-meta"><a class="bk-name" href="/books/baby/">Baby's first year</a><span class="bk-from">Hardcover&nbsp;$149 · PDF&nbsp;$89</span></div><a class="button button-dark bk-buy" href="/books/baby/">Order, $149 &rarr;</a></div></div>
+        <div class="bk-card bk-big"><a href="/books/travel/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/travel_book.jpg"><source src="assets/flips/travel_book.mp4" type="video/mp4" /></video></span></a><div class="bk-row"><div class="bk-meta"><a class="bk-name" href="/books/travel/">Travel book</a><span class="bk-from">Hardcover&nbsp;$149 · PDF&nbsp;$89</span></div><a class="button button-dark bk-buy" href="/books/travel/">Order, $149 &rarr;</a></div></div>
+      </div>
+      <p class="bk-label">More books</p>
+      <div class="bk-grid bk-grid-small">
+        <a class="bk-card bk-small" href="/books/love-story/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/love_book.jpg"><source src="assets/flips/love_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Love story</span><span class="bk-buy2">Order, from&nbsp;$89 &rarr;</span></a>
+        <a class="bk-card bk-small" href="/books/birthday/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/birthday_book.jpg"><source src="assets/flips/birthday_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Birthday book</span><span class="bk-buy2">Order, from&nbsp;$89 &rarr;</span></a>
+        <a class="bk-card bk-small" href="/books/family/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/eva_family_book.jpg"><source src="assets/flips/eva_family_book.mp4" type="video/mp4" /></video></span><span class="bk-name">Family book</span><span class="bk-buy2">Order, from&nbsp;$89 &rarr;</span></a>
+        <a class="bk-card bk-small" href="/books/best-friends-magazine/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="none" poster="assets/flips/bestie_magazine.jpg"><source src="assets/flips/bestie_magazine.mp4" type="video/mp4" /></video></span><span class="bk-name">Best friends magazine</span><span class="bk-buy2">Order, from&nbsp;$89 &rarr;</span></a>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section reviews-section">
+      <div class="section-label" style="text-align:center">From our&nbsp;clients</div>
+      <div class="real-review">
+        <img src="assets/hero-sailbeyondcancer.jpg" alt="Notes from Tranquility, the 2026 season book for Sail Beyond Cancer Vermont" width="900" height="1200" loading="lazy" />
+        <div>
+          <p class="real-review-quote">"I&nbsp;LOVE&nbsp;IT. So&nbsp;excited for&nbsp;this."</p>
+          <p class="real-review-more">"I&nbsp;plan to&nbsp;share the&nbsp;final product with&nbsp;the&nbsp;other Sail Beyond Cancer chapters. I'd like to&nbsp;do&nbsp;this annually."</p>
+          <p class="real-review-who">Kelli Shonter<br/><span>Executive Director, Sail Beyond Cancer Vermont. 2026 season book, 46&nbsp;pages</span></p>
+        </div>
+      </div>
+      <div class="mom-review">
+        <p class="mom-review-quote">"I'd forgotten how tiny he&nbsp;was. Honestly, this is&nbsp;such a&nbsp;joy. And&nbsp;now I&nbsp;want a&nbsp;second baby!"</p>
+        <p class="real-review-who">A&nbsp;mom, baby book<br/><span>Sent to&nbsp;me as&nbsp;a&nbsp;voice note</span></p>
       </div>
     </section>
 
     <!-- STYLES -->
     <section class="section styles-section">
       <h2 class="v-styles"><span class="hi">Y</span>our memories, <span class="hi">b</span>eautifully&nbsp;designed.</h2>
-      <div class="styles-img styles-vid"><video class="hero-vid styles-video" autoplay muted loop playsinline preload="none" poster="assets/hero/hero-poster.jpg" width="720" height="900" aria-label="Phone photos turning into a designed spread in three styles">
-          <source src="assets/hero/hero-loop.webm" type="video/webm" />
-          <source src="assets/hero/hero-loop.mp4" type="video/mp4" />
-        </video></div>
+      <div class="styles-img"><picture><source srcset="assets/gallery-to-book.webp" type="image/webp" /><img src="assets/gallery-to-book.jpg" alt="Photos from a phone gallery turning into a designed book spread" width="1200" height="880" loading="lazy" /></picture></div>
       <a class="button button-dark" href="/first_page/">Try it with your&nbsp;photos <span>&rarr;</span></a>
     </section>
 
@@ -353,6 +376,7 @@
     <section class="section how2" id="how">
       <h2><span class="hi">E</span>very day of&nbsp;your&nbsp;life deserves to&nbsp;be&nbsp;kept.</h2>
       <p class="how2-sub">Add 6&nbsp;photos from yesterday, last weekend or&nbsp;your last trip. Pick&nbsp;a&nbsp;style. Love&nbsp;it? Order&nbsp;the&nbsp;whole book.</p>
+      <div class="styles-loop"><img src="assets/hero/styles-loop.webp" alt="One spread in Editorial, Journal and Playful styles" width="640" height="409" loading="lazy" /></div>
       <div class="up-box">
         <div class="up-slots" id="upSlots"><label class="up-slot" for="upFiles"><span>+</span></label><label class="up-slot" for="upFiles"><span>+</span></label><label class="up-slot" for="upFiles"><span>+</span></label><label class="up-slot" for="upFiles"><span>+</span></label><label class="up-slot" for="upFiles"><span>+</span></label><label class="up-slot" for="upFiles"><span>+</span></label></div>
         <input type="file" id="upFiles" accept="image/*" multiple hidden />
@@ -362,25 +386,6 @@
       <p class="how2-big">5,000&nbsp;photos? Not&nbsp;a&nbsp;problem.</p>
       <div class="hv2-grid how2-chips"><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>No&nbsp;sorting</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>No&nbsp;blurry shots</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Month by&nbsp;month</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Small notes</span></div></div>
       <p class="try-approve" style="text-align:center">You approve every page before it's&nbsp;printed.</p>
-    </section>
-
-    <!-- LOOK INSIDE -->
-    <section class="section inside-section" id="examples">
-      <h2><span class="hi">L</span>ook&nbsp;inside</h2>
-      <p class="inside-sub">Real pages from&nbsp;our books</p>
-      <div class="inside-scroll"><picture><img src="assets/spread-garden.jpg" alt="ReMeet spread: Olga with her baby in the garden" loading="lazy" /></picture>
-        <img src="assets/spread-pregnancy.jpg" alt="ReMeet spread: pregnancy photos in black and white, notes Just us, for now" width="1536" height="1024" loading="lazy" />
-        <img src="assets/spread-baby-shower.jpg" alt="ReMeet spread: baby shower in Lisbon, tiny clothes on a string" width="1536" height="1024" loading="lazy" />
-        <img src="assets/spread-love-story.jpg" alt="ReMeet spread: a couple in Moscow, red dress, the day we said yes" width="1536" height="1024" loading="lazy" />
-        <img src="assets/spread-family-archive.jpg" alt="ReMeet spread: old family photos, little me 2004" width="1536" height="1024" loading="lazy" />
-        <picture><source srcset="assets/book/july_waiting_for_you.webp" type="image/webp" /><img src="assets/book/july_waiting_for_you.jpg" alt="ReMeet spread: Waiting for you" width="1600" height="800" loading="lazy" /></picture>
-        <picture><source srcset="assets/book/oct_story_time.webp" type="image/webp" /><img src="assets/book/oct_story_time.jpg" alt="ReMeet spread: Story time with grandma" width="1600" height="800" loading="lazy" /></picture>
-        <picture><source srcset="assets/book/sep_11.webp" type="image/webp" /><img src="assets/book/sep_11.jpg" alt="ReMeet spread: A September garden" width="1600" height="800" loading="lazy" /></picture>
-        <picture><source srcset="assets/book/sep_30.webp" type="image/webp" /><img src="assets/book/sep_30.jpg" alt="ReMeet spread: Coffee and friends" width="1600" height="800" loading="lazy" /></picture>
-        <picture><source srcset="assets/book/sep_41.webp" type="image/webp" /><img src="assets/book/sep_41.jpg" alt="ReMeet spread: Grandma Irina in Porto" width="1600" height="800" loading="lazy" /></picture>
-        <picture><source srcset="assets/book/sep_days.webp" type="image/webp" /><img src="assets/book/sep_days.jpg" alt="ReMeet spread: September, day by day" width="1600" height="800" loading="lazy" /></picture>
-        <picture><source srcset="assets/book/sep_slow.webp" type="image/webp" /><img src="assets/book/sep_slow.jpg" alt="ReMeet spread: Slow September" width="1600" height="800" loading="lazy" /></picture>
-      </div>
     </section>
 
     <!-- DESIGNER -->
