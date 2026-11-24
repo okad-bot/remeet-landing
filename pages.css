@@ -54,6 +54,7 @@ img{display:block;max-width:100%;height:auto}
 .comparison-table th{text-align:left;padding:12px;background:var(--cream);border-bottom:2px solid var(--sand);font-weight:600}
 .comparison-table td{padding:12px;border-bottom:1px solid var(--line)}
 .comparison-table tr:hover td{background:rgba(251,248,241,.5)}
+@media(max-width:600px){.comparison-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:.8rem}.comparison-table th,.comparison-table td{padding:9px 8px;min-width:96px}}
 .highlight-row td{background:rgba(55,72,58,.06)}
 
 .cta-section{text-align:center;padding:56px 20px;max-width:600px;margin:0 auto}
@@ -95,3 +96,4 @@ h1,h2,h3{font-weight:400;letter-spacing:-.015em}
 .featured-on a:hover{color:#1e2a22;text-decoration:underline}
 .featured-on a+a::before{content:"·";margin:0 7px;color:#9aa09a;display:inline-block;text-decoration:none}
 @media(max-width:600px){.featured-on span{display:block;margin:0 0 2px}}
+p,li,figcaption{text-wrap:pretty}

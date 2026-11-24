@@ -25,6 +25,7 @@
     document.body.classList.toggle('pi-dark-page', name === 's4');
     screens.forEach(function (s) { $(s).hidden = s !== name; });
     window.scrollTo(0, 0);
+    if (window.remeetTypo) requestAnimationFrame(function () { window.remeetTypo($(name)); });
     if (push !== false) history.pushState({ s: name }, '', location.pathname + location.search + (name === 's1' ? '' : '#' + name));
   }
   window.addEventListener('popstate', function (e) {
@@ -258,4 +259,20 @@
   if (sticky) sticky.addEventListener('click', function (e) { e.preventDefault(); pick(); });
 
   draw();
+
+  // Photos picked on the homepage come over here
+  if (/from=home/.test(location.search) && window.indexedDB) {
+    try {
+      var rq = indexedDB.open('remeet', 1);
+      rq.onupgradeneeded = function () { rq.result.createObjectStore('handoff'); };
+      rq.onsuccess = function () {
+        var db = rq.result, tx = db.transaction('handoff', 'readwrite'), st = tx.objectStore('handoff'), g = st.get('files');
+        g.onsuccess = function () {
+          var list = (g.result || []).map(function (x) { try { return new File([x.blob], x.name, { type: x.type }); } catch (e) { x.blob.name = x.name; return x.blob; } });
+          st.delete('files');
+          if (list.length) { add(list); track(['trackCustom', 'UploadStarted'], 'proof_photos'); show('s2'); }
+        };
+      };
+    } catch (e) {}
+  }
 })();

@@ -29,11 +29,11 @@
       var total = O.total(o.format, o.picks);
       try {
         localStorage.setItem('remeet_order_total', String(total));
-        localStorage.setItem('remeet_order', JSON.stringify({ id: o.id, email: o.email || '', format: o.format, picks: !!o.picks, style: o.style || '', total: total }));
+        localStorage.setItem('remeet_order', JSON.stringify({ id: o.id, email: o.email || '', format: o.format, picks: !!o.picks, copies: o.copies || 1, style: o.style || '', total: total }));
       } catch (e) {}
       if (w.fbq) fbq('track', 'InitiateCheckout', { value: total, currency: 'USD', content_name: key });
       if (w.ym) ym(114414250, 'reachGoal', 'checkout');
-      O.post({ action: 'order', id: o.id, email: o.email || '', format: key, total: total, style: o.style || '', page: location.href, link: link ? 'stripe' : 'manual' }).catch(function () {});
+      O.post({ action: 'order', id: o.id, email: o.email || '', format: key + ((o.copies || 1) > 1 ? ' x' + o.copies : ''), total: total, style: o.style || '', page: location.href, link: link ? 'stripe' : 'manual' }).catch(function () {});
       if (!link) return false;
       var q = '?client_reference_id=' + encodeURIComponent(o.id) + (o.email ? '&prefilled_email=' + encodeURIComponent(o.email) : '');
       w.location.href = link + q;

@@ -21,6 +21,11 @@
     }
   })();
 
+  if ((order.copies || 1) > 1) {
+    var extra = order.copies - 1, ex = document.createElement('p'); ex.className = 'pi-note';
+    ex.textContent = 'Extra copies: I\'ll email you an invoice for ' + extra + ' more book' + (extra > 1 ? 's' : '') + ', $' + extra * O.prices.copy + '.';
+    document.querySelector('#pdMain .pi-sub').after(ex);
+  }
   if (O.links.copy) $('pdCopy').href = O.links.copy + '?client_reference_id=' + encodeURIComponent(id) + (email ? '&prefilled_email=' + encodeURIComponent(email) : '');
 
   var LIMIT = order.picks ? 300 : 100;
