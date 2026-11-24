@@ -168,3 +168,4 @@ h1,h2,h3{font-weight:400;letter-spacing:-.015em}
 .featured-on a:hover{color:#1e2a22;text-decoration:underline}
 .featured-on a+a::before{content:"·";margin:0 7px;color:#9aa09a;display:inline-block;text-decoration:none}
 @media(max-width:600px){.featured-on span{display:block;margin:0 0 2px}}
+p,li,figcaption{text-wrap:pretty}
