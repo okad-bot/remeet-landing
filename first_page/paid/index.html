@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css?v=20261123g" />
-<link rel="stylesheet" href="/first_page/fp.css?v=20261123d" />
+<link rel="stylesheet" href="/first_page/fp.css?v=20261124h" />
 
 <script src="/pixel.js"></script>
 <!-- Yandex.Metrika counter -->
@@ -77,7 +77,7 @@
     <section class="pi-screen pi-s7" id="s7">
       <div class="pi-mailbar">✉ Receipt and&nbsp;your&nbsp;private link are in&nbsp;your&nbsp;inbox.</div>
       <div id="pdMain">
-        <h1>Thank you! Now add the&nbsp;rest of&nbsp;your&nbsp;photos.</h1>
+        <h1>Thanks, I've got it. Now send me your&nbsp;photos.</h1>
         <p class="pi-sub">Take your&nbsp;time. You can come back anytime from&nbsp;the&nbsp;link in&nbsp;your&nbsp;email, on&nbsp;any&nbsp;device.</p>
         <div class="pi-grid pi-grid-5" id="pdGrid"></div>
         <div class="pi-count"><span>Photos</span><b id="pdCount">0&nbsp;of&nbsp;100</b></div>
@@ -93,20 +93,28 @@
             <label><input type="radio" name="who" value="me" /><span>Me</span></label>
             <label><input type="radio" name="who" value="gift" /><span>A gift</span></label>
           </div>
+          <input class="pi-field" name="album" placeholder="Or paste an album link" inputmode="url" />
           <input class="pi-field" name="title" placeholder="Title on the cover" />
-          <textarea class="pi-field" name="notes" rows="3" placeholder="Anything I should know? Names, dates, the order of photos…"></textarea>
+          <textarea class="pi-field" name="notes" rows="3" placeholder="Anything I should know? A style you like, who's who, pages you want."></textarea>
+          <p class="pi-sec">How did you find me? <span style="text-transform:none;font-weight:400">(optional)</span></p>
+          <div class="pi-chips">
+            <label><input type="radio" name="found" value="ChatGPT or another AI" /><span>ChatGPT or&nbsp;another AI</span></label>
+            <label><input type="radio" name="found" value="Google" /><span>Google</span></label>
+            <label><input type="radio" name="found" value="Instagram or Facebook" /><span>Instagram or&nbsp;Facebook</span></label>
+            <label><input type="radio" name="found" value="A friend" /><span>A&nbsp;friend</span></label>
+            <label><input type="radio" name="found" value="Other" /><span>Other</span></label>
+          </div>
           <p class="pi-err" id="pdErr" role="alert" hidden></p>
           <button class="pi-btn" type="submit" id="pdDone">I'm&nbsp;done, build my&nbsp;book</button>
-          <p class="pi-note">Have a&nbsp;Google Photos or&nbsp;iCloud link instead? Paste it&nbsp;in&nbsp;the&nbsp;notes.</p>
+          <p class="pi-note">All of&nbsp;them is&nbsp;fine, I&nbsp;pick the&nbsp;best.</p>
         </form>
       </div>
       <div id="pdThanks" hidden>
         <h1>Got everything.</h1>
         <p class="pi-sub">Your first full draft comes to <b class="pi-email-echo"></b> within 72&nbsp;hours. Reply to&nbsp;that email with&nbsp;any&nbsp;changes.</p>
         <div class="pi-upsell">
-          <h3>A copy for&nbsp;grandma?</h3>
-          <p>Same book, another hardcover, US shipping included.</p>
-          <a class="pi-btn pi-btn-ghost" id="pdCopy" href="mailto:olga@okad.agency?subject=Extra%20copy">Add a&nbsp;copy, $69</a>
+          <h3>Want it&nbsp;printed?</h3>
+          <p>Once you've approved your book: hardcover $60, premium layflat $110, US shipping included. Copies for&nbsp;family $69&nbsp;each. Just reply to&nbsp;my&nbsp;email.</p>
         </div>
         <div class="pi-upsell">
           <h3>Have photos for&nbsp;another book?</h3>
@@ -117,7 +125,7 @@
 
   </main>
   <footer class="pi-footer"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="mailto:olga@okad.agency">Contact</a></footer>
-<script src="/order.js?v=20261123d"></script>
-<script src="/first_page/paid.js?v=20261123d"></script>
+<script src="/order.js?v=20261124g"></script>
+<script src="/first_page/paid.js?v=20261124g"></script>
 </body>
 </html>

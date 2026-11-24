@@ -118,7 +118,7 @@
       cover(ctx, s[2], P + 560, 470, 350, 250);
       lines(ctx, ['the days we', "don't want to forget"], P + 560, 160, 36, 'italic 400 31px "RM Serif", serif', '#23262f');
       text(ctx, 'ONE', P + 90, 760, '600 15px "RM Serif", serif', '#23262f', 'left', 4);
-      text(ctx, 'slow mornings, all of us at home', P + 90, 800, 'italic 400 24px "RM Serif", serif', '#23262f');
+      text(ctx, 'the moments we keep', P + 90, 800, 'italic 400 24px "RM Serif", serif', '#23262f');
       text(ctx, 'REMEET', P + 910, 940, '600 13px "RM Serif", serif', '#9a958b', 'right', 4);
       gutter(ctx);
     } },
@@ -168,7 +168,7 @@
       p1(s[2], P + 290, 420, 400, 540, 2); tape(ctx, P + 290, 140, 150, -4); tape(ctx, P + 290, 700, 150, 5);
       p1(s[3], P + 720, 640, 430, 310, -3); tape(ctx, P + 600, 480, 110, -30); tape(ctx, P + 850, 480, 110, 28);
       rotated(ctx, P + 600, 180, 2, function () { lines(ctx, ['note to self:', 'keep this one'], 0, 0, 52, '400 36px "RM Hand", cursive', '#23262f'); });
-      text(ctx, '#ourlittlebook', P + 920, 950, '400 20px "RM Type", monospace', '#5b4a3a', 'right');
+      text(ctx, '#ourbook', P + 920, 950, '400 20px "RM Type", monospace', '#5b4a3a', 'right');
       gutter(ctx);
     } },
     { key: 'film', name: 'film, evening', slots: ['h', 'v', 'v', 'v', 'h'], draw: function (ctx, s, t) {
@@ -187,7 +187,7 @@
       fill(ctx, '#EFE7DA', 0, 0, W, H);
       text(ctx, t.title1.toUpperCase(), 500, 120, '600 20px "RM Serif", serif', '#5d5144', 'center', 8);
       cover(ctx, s[0], 230, 170, 540, 700);
-      text(ctx, 'you, at home', 500, 925, 'italic 400 28px "RM Serif", serif', '#5d5144', 'center');
+      text(ctx, 'you, right here', 500, 925, 'italic 400 28px "RM Serif", serif', '#5d5144', 'center');
       cover(ctx, s[1], P + 150, 110, 700, 400);
       cover(ctx, s[2], P + 150, 540, 700, 400);
       text(ctx, t.when.toUpperCase(), P + 850, 975, '600 15px "RM Serif", serif', '#8a7d6c', 'right', 5);
@@ -195,7 +195,7 @@
     } }
   ];
 
-  function texts() { return { title1: 'Our little days', title2: ['Our little', 'days'], when: month() }; }
+  function texts() { return { title1: 'These days', title2: ['These', 'days'], when: month() }; }
 
   // Render one style. Returns a canvas.
   function renderStyle(style, photos, opts) {

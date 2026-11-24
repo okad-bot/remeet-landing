@@ -374,3 +374,15 @@ body.pi-dark-page .topbar img{filter:brightness(0) invert(1)}
 .pi-footer{display:flex;justify-content:center;gap:22px;padding:22px 16px 90px;font-size:.85rem}
 .pi-footer a{color:#6b6860;text-decoration:none}
 body.pi-app .pi-footer{display:none}
+
+.pi-recap{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid rgba(30,42,34,.12);border-radius:12px;padding:10px;margin:14px 0 8px}
+.pi-recap img{width:96px;height:auto;border-radius:3px;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.pi-recap b{display:block;font-size:.95rem}.pi-recap small{display:block;color:#6b6860;font-size:.8rem;line-height:1.35;margin-top:2px}
+.pi-guar{background:#eef1ea;border-radius:10px;padding:10px 12px;font-size:.86rem;line-height:1.45;color:#2f3a31;text-align:center;margin:10px 0}
+
+.pi-custom{width:100%;box-sizing:border-box;margin:-2px 0 10px;font:inherit;font-size:.92rem;resize:vertical;min-height:76px}
+.pi-none{text-align:center;margin:14px 0 0}.pi-none a{color:var(--olive);font-weight:600}
+
+.pi-s5 .pi-dots{flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.pi-s5 .pi-dots button{width:auto;height:auto;border-radius:99px;background:#fff;border:1px solid rgba(32,48,39,.25);padding:8px 13px;font:500 .88rem var(--sans);color:var(--ink)}
+.pi-s5 .pi-dots button.on{background:var(--olive);color:#fff;border-color:var(--olive)}
