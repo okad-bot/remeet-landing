@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20261123f" />
+<link rel="stylesheet" href="/styles.css?v=20261123g" />
 <link rel="stylesheet" href="/first_page/fp.css?v=20261123d" />
 
 <script src="/pixel.js"></script>
@@ -45,6 +45,28 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "zgst64n9mg");
 </script>
+<style>
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hero-order{background:#fff;color:var(--olive);border:1px solid #fff}
+.order2-alt{text-align:center;margin:10px 0 0;font-size:.95rem}.order2-alt a{color:var(--olive);font-weight:600}
+@media(max-width:700px){.hero-btns{flex-direction:column}.hero-btns .button{width:100%;justify-content:center}}
+</style><style>
+.bksec{text-align:center}
+.bk-label{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#7a7f78;margin:22px 0 10px;text-align:left;max-width:1040px;margin-left:auto;margin-right:auto}
+.bk-grid{display:grid;gap:22px 16px;max-width:1040px;margin:0 auto;text-align:left}
+.bk-grid-big{grid-template-columns:1fr 1fr}.bk-grid-small{grid-template-columns:repeat(4,1fr)}
+.bk-card{display:block;text-decoration:none;color:var(--ink)}.bk-card a{text-decoration:none;color:inherit}
+.bk-box{display:block;background:#EFEDE2;border-radius:12px;padding:7% 8%;overflow:hidden}
+.bk-vid{width:100%;aspect-ratio:800/474;display:block;object-fit:cover;background:#EFEDE2}
+.bk-name{display:block;font-family:var(--serif);font-size:1.2rem;line-height:1.1;margin-top:10px}
+.bk-big .bk-name{font-size:1.55rem}
+.bk-from{display:block;font-size:.85rem;color:#6b6b63;margin-top:3px}
+.bk-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}.bk-row .bk-name{margin-top:0}.bk-buy{flex:none;width:auto!important;margin:0!important;color:#fff!important;padding:11px 18px;font-size:.92rem;white-space:nowrap}
+.bk-small{text-align:center}.bk-buy2{display:block;text-align:center;margin-top:8px;font-size:.85rem;font-weight:600;color:var(--olive);border:1.5px solid var(--olive);border-radius:999px;padding:6px 12px}
+.bk-small .bk-box{padding:6% 6%}
+@media(max-width:700px){.bk-grid-big{grid-template-columns:1fr;gap:28px}.bk-grid-small{grid-template-columns:1fr 1fr;gap:20px 12px}
+.bk-small .bk-name{font-size:1rem}.bk-buy2{font-size:.78rem;padding:5px 10px}}
+</style><style>.styles-loop{max-width:640px;margin:16px auto 18px}@media(min-width:901px){.how2-chips{max-width:760px!important;flex-wrap:nowrap!important}.styles-section .styles-img{max-width:560px}}.styles-loop img{width:100%;height:auto;display:block;border-radius:14px}</style>
 </head>
 <body class="proof-page pi-page pi-app">
   <header class="topbar">
@@ -55,8 +77,8 @@
     <section class="pi-screen pi-s7" id="s7">
       <div class="pi-mailbar">✉ Receipt and&nbsp;your&nbsp;private link are in&nbsp;your&nbsp;inbox.</div>
       <div id="pdMain">
-        <h1>Thank you! Now&nbsp;add the&nbsp;rest&nbsp;of&nbsp;your&nbsp;photos.</h1>
-        <p class="pi-sub">Take your&nbsp;time. You&nbsp;can come back anytime from&nbsp;the&nbsp;link in&nbsp;your&nbsp;email, on&nbsp;any&nbsp;device.</p>
+        <h1>Thank you! Now add the&nbsp;rest of&nbsp;your&nbsp;photos.</h1>
+        <p class="pi-sub">Take your&nbsp;time. You can come back anytime from&nbsp;the&nbsp;link in&nbsp;your&nbsp;email, on&nbsp;any&nbsp;device.</p>
         <div class="pi-grid pi-grid-5" id="pdGrid"></div>
         <div class="pi-count"><span>Photos</span><b id="pdCount">0&nbsp;of&nbsp;100</b></div>
         <p class="pi-msg" id="pdMsg" role="status"></p>
@@ -75,20 +97,20 @@
           <textarea class="pi-field" name="notes" rows="3" placeholder="Anything I should know? Names, dates, the order of photos…"></textarea>
           <p class="pi-err" id="pdErr" role="alert" hidden></p>
           <button class="pi-btn" type="submit" id="pdDone">I'm&nbsp;done, build my&nbsp;book</button>
-          <p class="pi-note">Have a&nbsp;Google Photos or&nbsp;iCloud link instead? Paste&nbsp;it&nbsp;in&nbsp;the&nbsp;notes.</p>
+          <p class="pi-note">Have a&nbsp;Google Photos or&nbsp;iCloud link instead? Paste it&nbsp;in&nbsp;the&nbsp;notes.</p>
         </form>
       </div>
       <div id="pdThanks" hidden>
-        <h1>Got&nbsp;everything.</h1>
-        <p class="pi-sub">Your first full draft comes to <b class="pi-email-echo"></b> within 72&nbsp;hours. Reply&nbsp;to&nbsp;that email with&nbsp;any&nbsp;changes.</p>
+        <h1>Got everything.</h1>
+        <p class="pi-sub">Your first full draft comes to <b class="pi-email-echo"></b> within 72&nbsp;hours. Reply to&nbsp;that email with&nbsp;any&nbsp;changes.</p>
         <div class="pi-upsell">
-          <h3>A copy&nbsp;for&nbsp;grandma?</h3>
+          <h3>A copy for&nbsp;grandma?</h3>
           <p>Same book, another hardcover, US shipping included.</p>
           <a class="pi-btn pi-btn-ghost" id="pdCopy" href="mailto:olga@okad.agency?subject=Extra%20copy">Add a&nbsp;copy, $69</a>
         </div>
         <div class="pi-upsell">
-          <h3>Have photos for&nbsp;another&nbsp;book?</h3>
-          <p>Your second book is&nbsp;20% off. Just&nbsp;reply to&nbsp;my&nbsp;email.</p>
+          <h3>Have photos for&nbsp;another book?</h3>
+          <p>Your second book is&nbsp;20% off. Just reply to&nbsp;my&nbsp;email.</p>
         </div>
       </div>
     </section>
