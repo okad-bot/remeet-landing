@@ -29,80 +29,26 @@
   if (O.links.copy && $('pdCopy')) $('pdCopy').href = O.links.copy + '?client_reference_id=' + encodeURIComponent(id) + (email ? '&prefilled_email=' + encodeURIComponent(email) : '');
 
   if (/^(occasion:|book:)/.test(order.style || '')) { var w = document.querySelector('[name=who]'); if (w) { var box = w.closest('.pi-chips'); if (box) { box.hidden = true; if (box.previousElementSibling) box.previousElementSibling.hidden = true; } } }
-  var LIMIT = 300;
-  if (true) { var sub = document.querySelector('#pdMain .pi-sub'); if (sub) sub.textContent = "Add everything, I'll pick the best. Up to 300 photos here, or paste an album link for more. You can come back from the link in your email."; }
-  var MAX = 300, files = [], state = {}, queue = [], active = 0;
-  var grid = $('pdGrid'), count = $('pdCount'), msg = $('pdMsg'), input = $('pdFiles');
-  input.addEventListener('change', function () { add(input.files); input.value = ''; });
-  function add(list) {
-    Array.prototype.forEach.call(list, function (f) {
-      if (!/^image\//.test(f.type) && !/\.(jpe?g|png|heic|heif|webp)$/i.test(f.name)) return;
-      if (files.length >= MAX || files.some(function (g) { return g.name === f.name && g.size === f.size; })) return;
-      f._k = O.newId(); files.push(f); state[f._k] = 'wait'; queue.push(f);
-    });
-    pump(); draw();
-  }
-  function draw() {
-    var done = files.filter(function (f) { return state[f._k] === 'ok'; }).length;
-    var left = files.length - done - files.filter(function (f) { return state[f._k] === 'fail'; }).length;
-    count.textContent = files.length + ' of ' + LIMIT;
-    msg.textContent = left > 0 ? 'Uploading ' + left + ' more… you can keep adding.' : (files.some(function (f) { return state[f._k] === 'fail'; }) ? "A few photos didn't upload. Add them again or email them to me." : '');
-    grid.innerHTML = '';
-    files.slice(-14).forEach(function (f) {
-      var d = document.createElement('div'); d.className = 'pi-th';
-      var img = document.createElement('img'); img.alt = ''; img.src = URL.createObjectURL(f);
-      img.onload = function () { URL.revokeObjectURL(img.src); }; img.onerror = function () { img.remove(); };
-      d.appendChild(img);
-      var m = document.createElement('span'); m.className = state[f._k] === 'ok' ? 'pi-ok' : 'pi-up'; m.textContent = state[f._k] === 'ok' ? '✓' : '';
-      d.appendChild(m); grid.appendChild(d);
-    });
-    var a = document.createElement('label'); a.className = 'pi-th pi-add'; a.htmlFor = 'pdFiles'; a.textContent = '+'; grid.appendChild(a);
-  }
-  function pump() {
-    while (active < 3 && queue.length) {
-      var f = queue.shift(); active++;
-      send(f, 0).then(function (k) { state[k] = 'ok'; }, function (k) { state[k] = 'fail'; }).then(function () { active--; draw(); pump(); });
-    }
-  }
-  function send(f, attempt) {
-    return shrink(f).then(function (b) { return b64(b).then(function (d) {
-      return O.post({ action: 'photo', id: id, first_name: (email || 'client').split('@')[0], name: b === f ? f.name : f.name.replace(/\.[^.]+$/, '') + '.jpg', type: b.type || 'image/jpeg', data: d });
-    }); }).then(function () { return f._k; }, function () { if (attempt < 1) return send(f, attempt + 1); throw f._k; });
-  }
-  function shrink(f) {
-    return new Promise(function (res) {
-      var u = URL.createObjectURL(f), img = new Image();
-      img.onload = function () {
-        var k = Math.min(1, 2400 / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement('canvas');
-        c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
-        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(u);
-        c.toBlob(function (b) { res(b && b.size < f.size ? b : f); }, 'image/jpeg', 0.86);
-      };
-      img.onerror = function () { URL.revokeObjectURL(u); res(f); };
-      img.src = u;
-    });
-  }
-  function b64(b) { return new Promise(function (res, rej) { var r = new FileReader(); r.onload = function () { res(String(r.result).split(',')[1]); }; r.onerror = rej; r.readAsDataURL(b); }); }
 
-  $('pdForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var err = $('pdErr'), btn = $('pdDone'), f = e.target;
-    if (!files.length && !f.notes.value.trim() && !(f.album && f.album.value.trim())) { err.textContent = 'Add your photos first, or paste an album link.'; err.hidden = false; return; }
-    err.hidden = true; btn.disabled = true;
-    var wait = setInterval(function () {
-      var left = files.filter(function (x) { return state[x._k] === 'wait'; }).length;
-      btn.textContent = left ? 'Finishing upload, ' + left + ' left…' : 'Sending…';
-      if (left) return;
-      clearInterval(wait);
-      var who = f.querySelector('[name=who]:checked'), found = f.querySelector('[name=found]:checked');
-      O.post({ action: 'done', id: id, email: email, who: who ? who.value : '', title: f.title.value, notes: f.notes.value, photos_link: f.album ? f.album.value.trim() : '', found: found ? found.value : '',
-        photos_count: files.filter(function (x) { return state[x._k] === 'ok'; }).length })
-        .catch(function () {})
-        .then(function () {
-          if (window.ym) ym(114414250, 'reachGoal', 'photos_sent'); try { if (window.clarity) clarity('event', 'photos_sent'); } catch (x) {}
-          $('pdMain').hidden = true; $('pdThanks').hidden = false; window.scrollTo(0, 0);
-        });
-    }, 400);
-  });
-  draw();
+  // No phone uploads here: an album link, a zip by email, or "later by email" (I send a welcome email, they reply with the link)
+  var f = $('pdForm'), err = $('pdErr');
+  function send(later) {
+    var album = f.album.value.trim(), found = f.querySelector('[name=found]:checked'), who = f.querySelector('[name=who]:checked');
+    if (!later && !/^https?:\/\/\S+\.\S+/i.test(album)) { err.textContent = album ? 'That link doesn\'t look right. Copy it again, or tap "I\'ll send my photos later by email".' : 'Paste your album link, or tap "I\'ll send my photos later by email".'; err.hidden = false; f.album.focus(); return; }
+    if (!found) { err.textContent = 'One more thing: how did you find me?'; err.hidden = false; $('pdFound').scrollIntoView({ block: 'center', behavior: 'smooth' }); return; }
+    err.hidden = true;
+    var btn = later ? $('pdLater') : $('pdDone'); btn.disabled = true; btn.textContent = 'Sending…';
+    O.post({ action: 'done', id: id, email: email, who: who ? who.value : '', title: f.title.value, notes: f.notes.value, photos_link: later ? '' : album, photos_later: later ? 1 : 0, found: found.value, photos_count: 0 })
+      .catch(function () {})
+      .then(function () {
+        if (window.ym) ym(114414250, 'reachGoal', later ? 'photos_later' : 'photos_sent'); try { if (window.clarity) clarity('event', later ? 'photos_later' : 'photos_sent'); } catch (x) {}
+        if (later) {
+          $('pdThanksH').textContent = 'Perfect, no rush.';
+          $('pdThanksP').innerHTML = 'Check your inbox, there\'s an email from me. Just reply to it with a link to your album, or attach a zip. Your first draft comes within 48&nbsp;hours or&nbsp;less after that.';
+        }
+        $('pdMain').hidden = true; $('pdThanks').hidden = false; window.scrollTo(0, 0);
+      });
+  }
+  f.addEventListener('submit', function (e) { e.preventDefault(); send(false); });
+  $('pdLater').addEventListener('click', function () { send(true); });
 })();

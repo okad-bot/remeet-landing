@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css?v=20261123g" />
-<link rel="stylesheet" href="/first_page/fp.css?v=20261124m" />
+<link rel="stylesheet" href="/first_page/fp.css?v=20261125a" />
 
 <script src="/pixel.js"></script>
 <!-- Yandex.Metrika counter -->
@@ -126,7 +126,7 @@
 
     <section class="pi-screen pi-s5" id="s5" hidden>
       <div class="pi-mailbar">✉ Sent to <span class="pi-email-echo"></span> too. Check your&nbsp;inbox anytime.</div>
-      <h2>Here's your&nbsp;book.</h2>
+      <h2>Here's your first spread.</h2>
       <div class="pi-car-wrap">
         <div class="pi-car" id="piCar"></div>
         <button class="pi-arrow pi-prev" id="piPrev" type="button" aria-label="Previous style">&lsaquo;</button>
@@ -134,9 +134,10 @@
       </div>
       <div class="pi-stylename" hidden><span class="pi-v" id="piStyleName"></span><span class="pi-n" id="piStyleNum"></span></div>
       <div class="pi-dots" id="piDots"></div>
+      <p class="pi-stylenote">These styles were picked by&nbsp;my&nbsp;latest clients. Want your book in&nbsp;one of&nbsp;them? Pick it, or&nbsp;write me what you like and&nbsp;I'll design the&nbsp;book around&nbsp;it.</p>
       <div class="pi-get">
         <p class="pi-get-h">Your full book</p>
-        <ul><li>Up&nbsp;to&nbsp;100&nbsp;pages from all&nbsp;your&nbsp;photos</li><li>I&nbsp;pick the&nbsp;best shots</li><li>In&nbsp;your inbox in&nbsp;72&nbsp;hours, 2&nbsp;rounds of&nbsp;edits</li></ul>
+        <ul><li>Up&nbsp;to&nbsp;100&nbsp;pages from all&nbsp;your&nbsp;photos</li><li>I&nbsp;pick the&nbsp;best shots</li><li>In&nbsp;your inbox in&nbsp;48&nbsp;hours or&nbsp;less, 2&nbsp;rounds of&nbsp;edits</li><li>A&nbsp;real person, not a&nbsp;robot: I&nbsp;answer your emails and&nbsp;make your edits myself</li></ul>
       </div>
       <button class="pi-btn" type="button" id="piChoose">Get the&nbsp;whole book, from&nbsp;$29</button>
       <button class="pi-btn pi-btn-ghost" type="button" id="piMore" hidden>See more styles</button>
@@ -153,12 +154,13 @@
         <h2>Make the&nbsp;whole book</h2>
         <p class="pi-sec">Your book</p>
         <label class="pi-opt sel"><input type="radio" name="format" value="small" checked /><span class="pi-radio"></span><span class="pi-opt-t"><b>Small book</b><small>Up to&nbsp;30&nbsp;pages, PDF.</small></span><span class="pi-price">$29</span></label><label class="pi-opt"><input type="radio" name="format" value="pdf" /><span class="pi-radio"></span><span class="pi-opt-t"><b>Big book</b><small>Up to&nbsp;100&nbsp;pages, PDF.</small></span><span class="pi-price">$79</span></label>
-        <p class="pi-note" style="text-align:left">Want it&nbsp;printed? You can add a&nbsp;hardcover once you've seen your&nbsp;book.</p>
+        <p class="pi-note" style="text-align:left">Want it&nbsp;printed? Printing from&nbsp;$69, after you approve your book.</p>
         <label class="pi-opt pi-check"><input type="checkbox" data-custom /><span class="pi-box"></span><span class="pi-opt-t"><b>Something special in&nbsp;mind?</b><small>Add your notes, your own design idea, anything. I'll&nbsp;tell&nbsp;you if&nbsp;it&nbsp;costs extra.</small></span><span class="pi-price">Ask</span></label>
         <textarea class="pi-input pi-custom" data-custom-text rows="3" maxlength="1000" placeholder="For example: add our handwritten notes to each page" hidden></textarea>
         <div class="pi-recap" id="piRecap" hidden><img id="piRecapImg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" /><span><b id="piRecapTitle">Your book</b><small>I&nbsp;pick the&nbsp;best photos for&nbsp;you.</small></span></div>
         <p class="pi-guar">Don't love the&nbsp;first draft? <b>Full refund.</b></p>
-        <ol class="pi-howto"><li>Pay and&nbsp;you go straight to&nbsp;a&nbsp;page where you add all&nbsp;your&nbsp;photos (upload or&nbsp;an&nbsp;album link). The&nbsp;6 you sent are already in.</li><li>The&nbsp;same link comes to&nbsp;your&nbsp;email, so you can add photos later from any device.</li><li>Your book comes to&nbsp;your&nbsp;email within 72&nbsp;hours. 2&nbsp;rounds of&nbsp;edits included.</li></ol>
+        <p class="pi-sec">How to&nbsp;send me your photos</p>
+        <ol class="pi-howto"><li>Paste an&nbsp;album link on&nbsp;the&nbsp;next page, or&nbsp;email a&nbsp;zip to&nbsp;<a href="mailto:hello@remeet.cc">hello@remeet.cc</a>.</li><li>Your book comes in&nbsp;48&nbsp;hours or&nbsp;less, 2&nbsp;rounds of&nbsp;edits.</li></ol>
         <button class="pi-btn" type="submit" id="piPay">Make my&nbsp;full book, $29</button>
         <div class="pi-fallback" id="piFallback" hidden><b>Got it, thank you.</b> I'll&nbsp;email you&nbsp;a&nbsp;payment link within a&nbsp;few hours. Then you&nbsp;add the&nbsp;rest of&nbsp;your&nbsp;photos.</div>
         
@@ -181,7 +183,7 @@
       <p class="pi-priceline">Full book from&nbsp;$29.</p>
     </section>
     <section class="pf-faq pi-faq" id="faq">
-      <div class="faq-list"><details><summary>How much is&nbsp;the&nbsp;full book?</summary><p>A&nbsp;small book up&nbsp;to&nbsp;30&nbsp;pages is&nbsp;$29 and&nbsp;a&nbsp;big book up&nbsp;to&nbsp;100&nbsp;pages is&nbsp;$79, both as&nbsp;a&nbsp;PDF. Printing once you've approved your book: hardcover +$60, premium layflat +$110, US shipping included. Your first page is&nbsp;free.</p></details><details><summary>When will I&nbsp;get it?</summary><p>First full draft in&nbsp;72&nbsp;hours after&nbsp;you&nbsp;add your&nbsp;photos. After you&nbsp;approve, printing takes 3&nbsp;to&nbsp;5&nbsp;working days, plus shipping. Order by&nbsp;Dec&nbsp;1 for&nbsp;Christmas delivery.</p></details><details><summary>What if&nbsp;I&nbsp;don't love it?</summary><p>You see and&nbsp;approve the&nbsp;whole book before it&nbsp;prints, with&nbsp;2&nbsp;rounds of&nbsp;edits. Don't love it? Full&nbsp;refund before&nbsp;print.</p></details><details><summary>Do you&nbsp;ship outside the&nbsp;US?</summary><p>US only for&nbsp;now.</p></details></div>
+      <div class="faq-list"><details><summary>How much is&nbsp;the&nbsp;full book?</summary><p>A&nbsp;small book up&nbsp;to&nbsp;30&nbsp;pages is&nbsp;$29 and&nbsp;a&nbsp;big book up&nbsp;to&nbsp;100&nbsp;pages is&nbsp;$79, both as&nbsp;a&nbsp;PDF. Printing once you've approved your book: hardcover from&nbsp;$69, premium layflat from&nbsp;$129, US and&nbsp;Canada shipping included. Your first page is&nbsp;free.</p></details><details><summary>When will I&nbsp;get it?</summary><p>First full draft in&nbsp;72&nbsp;hours after&nbsp;you&nbsp;add your&nbsp;photos. After you&nbsp;approve, printing takes 3&nbsp;to&nbsp;5&nbsp;working days, plus shipping. Order by&nbsp;Dec&nbsp;1 for&nbsp;Christmas delivery.</p></details><details><summary>What if&nbsp;I&nbsp;don't love it?</summary><p>You see and&nbsp;approve the&nbsp;whole book before it&nbsp;prints, with&nbsp;2&nbsp;rounds of&nbsp;edits. Don't love it? Full&nbsp;refund before&nbsp;print.</p></details><details><summary>Do you&nbsp;ship outside the&nbsp;US?</summary><p>Yes: US, Canada and Europe.</p></details></div>
       <label class="pi-btn" for="piFiles">+ Add 6&nbsp;photos</label>
     </section>
     </div>

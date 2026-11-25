@@ -398,3 +398,9 @@ body.pi-app .pi-footer{display:none}
 .pi-get li::before{content:"✓";position:absolute;left:0;color:var(--olive);font-weight:700}
 .pi-link{display:block;margin:12px auto 0;background:none;border:0;padding:6px;font:500 .92rem var(--sans);color:var(--olive);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .pi-alt{margin:10px 0 0;font-size:.9rem;text-align:center}@media(min-width:900px){.pi-s1 .pi-alt{text-align:left}}.pi-alt a{color:var(--olive);font-weight:600}
+.pi-stylenote{font-size:.86rem;line-height:1.45;color:#5d635d;text-align:center;margin:10px auto 4px;max-width:420px}
+.pi-dots{flex-wrap:wrap;justify-content:center;row-gap:8px}
+.pi-howto a{color:inherit}
+.pd-or{font-size:.9rem;color:#4a5249;line-height:1.5;margin:10px 0 4px}.pd-or a{color:inherit;font-weight:600}
+.pd-hint{font-size:.8rem;color:#7a7f78;margin:6px 0 0}
+.pd-later{display:block;width:100%;margin:10px 0 0;background:none;border:1px solid #c9cdc6;border-radius:12px;padding:14px;font:inherit;font-size:.95rem;color:var(--ink,#25302a);cursor:pointer}

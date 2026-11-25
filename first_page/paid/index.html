@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css?v=20261123g" />
-<link rel="stylesheet" href="/first_page/fp.css?v=20261124m" />
+<link rel="stylesheet" href="/first_page/fp.css?v=20261125a" />
 
 <script src="/pixel.js"></script>
 <!-- Yandex.Metrika counter -->
@@ -78,13 +78,12 @@
       <div class="pi-mailbar">✉ Receipt and&nbsp;your&nbsp;private link are in&nbsp;your&nbsp;inbox.</div>
       <div id="pdMain">
         <h1>Thanks, I've got it. Now send me your&nbsp;photos.</h1>
-        <p class="pi-sub">Take your&nbsp;time. You can come back anytime from&nbsp;the&nbsp;link in&nbsp;your&nbsp;email, on&nbsp;any&nbsp;device.</p>
-        <div class="pi-grid pi-grid-5" id="pdGrid"></div>
-        <div class="pi-count"><span>Photos</span><b id="pdCount">0&nbsp;of&nbsp;100</b></div>
-        <p class="pi-msg" id="pdMsg" role="status"></p>
-        <label class="pi-btn pi-btn-ghost" for="pdFiles">+ Add photos</label>
-        <input type="file" id="pdFiles" accept="image/*" multiple hidden />
+        <p class="pi-sub">No need to&nbsp;upload hundreds of&nbsp;photos from&nbsp;your phone. One link is&nbsp;enough. All of&nbsp;them is&nbsp;fine, I&nbsp;pick the&nbsp;best.</p>
         <form id="pdForm">
+          <p class="pi-sec">Link to&nbsp;your album</p>
+          <input class="pi-field" name="album" type="url" placeholder="Google Photos, iCloud or Google Drive link" inputmode="url" autocomplete="off" />
+          <p class="pd-hint">Make sure anyone with the&nbsp;link can open it.</p>
+          <p class="pd-or">Or&nbsp;email me a&nbsp;zip or&nbsp;a&nbsp;Drive link at&nbsp;<a href="mailto:hello@remeet.cc">hello@remeet.cc</a>.</p>
           <p class="pi-sec">Who's the&nbsp;book for?</p>
           <div class="pi-chips">
             <label><input type="radio" name="who" value="kids" /><span>My baby or&nbsp;kids</span></label>
@@ -93,39 +92,39 @@
             <label><input type="radio" name="who" value="me" /><span>Me</span></label>
             <label><input type="radio" name="who" value="gift" /><span>A gift</span></label>
           </div>
-          <input class="pi-field" name="album" placeholder="Or paste an album link" inputmode="url" />
-          <input class="pi-field" name="title" placeholder="Title on the cover" />
+          <input class="pi-field" name="title" placeholder="Title on the cover (optional)" />
           <textarea class="pi-field" name="notes" rows="3" placeholder="Anything I should know? A style you like, who's who, pages you want."></textarea>
-          <p class="pi-sec">How did you find me? <span style="text-transform:none;font-weight:400">(optional)</span></p>
-          <div class="pi-chips">
+          <p class="pi-sec">How did you find me?</p>
+          <div class="pi-chips" id="pdFound">
             <label><input type="radio" name="found" value="ChatGPT or another AI" /><span>ChatGPT or&nbsp;another AI</span></label>
             <label><input type="radio" name="found" value="Google" /><span>Google</span></label>
             <label><input type="radio" name="found" value="Instagram or Facebook" /><span>Instagram or&nbsp;Facebook</span></label>
+            <label><input type="radio" name="found" value="Pinterest" /><span>Pinterest</span></label>
             <label><input type="radio" name="found" value="A friend" /><span>A&nbsp;friend</span></label>
             <label><input type="radio" name="found" value="Other" /><span>Other</span></label>
           </div>
           <p class="pi-err" id="pdErr" role="alert" hidden></p>
-          <button class="pi-btn" type="submit" id="pdDone">I'm&nbsp;done, build my&nbsp;book</button>
-          <p class="pi-note">All of&nbsp;them is&nbsp;fine, I&nbsp;pick the&nbsp;best.</p>
+          <button class="pi-btn" type="submit" id="pdDone">Send my&nbsp;link</button>
+          <button class="pd-later" type="button" id="pdLater">I'll send my&nbsp;photos later by&nbsp;email</button>
         </form>
       </div>
       <div id="pdThanks" hidden>
-        <h1>Got everything.</h1>
-        <p class="pi-sub">Your first full draft comes to <b class="pi-email-echo"></b> within 72&nbsp;hours. Reply to&nbsp;that email with&nbsp;any&nbsp;changes.</p>
+        <h1 id="pdThanksH">Got it, thank you.</h1>
+        <p class="pi-sub" id="pdThanksP">Your first draft comes to&nbsp;<b class="pi-email-echo"></b> within 48&nbsp;hours or&nbsp;less. Reply to&nbsp;that email with&nbsp;any&nbsp;changes.</p>
         <div class="pi-upsell">
           <h3>Want it&nbsp;printed?</h3>
-          <p>Once you've approved your book: hardcover $60, premium layflat $110, US shipping included. Copies for&nbsp;family $69&nbsp;each. Just reply to&nbsp;my&nbsp;email.</p>
+          <p>Once you've approved your book. Premium layflat: $129 for a&nbsp;small book, $199 for a&nbsp;big one. Hardcover: $69 or&nbsp;$119. Copies for&nbsp;family $69&nbsp;each. US and&nbsp;Canada shipping included, Europe +$15, worldwide on&nbsp;request. Order by&nbsp;Dec&nbsp;1 for&nbsp;Christmas. Just reply to&nbsp;my&nbsp;email.</p>
         </div>
         <div class="pi-upsell">
           <h3>Have photos for&nbsp;another book?</h3>
-          <p>Your second book is&nbsp;20% off. Just reply to&nbsp;my&nbsp;email.</p>
+          <p>Your second book is&nbsp;10% off the&nbsp;design. Just reply to&nbsp;my&nbsp;email.</p>
         </div>
       </div>
     </section>
 
   </main>
-  <footer class="pi-footer"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="mailto:olga@okad.agency">Contact</a></footer>
+  <footer class="pi-footer"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="mailto:hello@remeet.cc">Contact</a></footer>
 <script src="/order.js?v=20261124g"></script>
-<script src="/first_page/paid.js?v=20261124l"></script>
+<script src="/first_page/paid.js?v=20261125a"></script>
 </body>
 </html>
