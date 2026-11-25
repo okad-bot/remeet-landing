@@ -1,18 +1,20 @@
 # ReMeet — Full Reference
 
-> ReMeet is a done-for-you photo book design service. You share an iCloud or Google Photos link, a designer curates your best photos, lays out every page, and delivers a proof within 72 hours. Every book is checked by a person, not auto-generated. Digital book from $29 (30 pages) or $79 (100 pages). Add video frame extraction for +$50. Printed hardcover from $25. Founded by Olga Miller, based in Porto, Portugal, serving customers worldwide.
+> Designed PDF book from $29 (30 pages) or $79 (100 pages). Printing after you approve your book: hardcover from $69, premium layflat from $129, US and Canada shipping included. Ships to the US, Canada and Europe. ReMeet is a done-for-you photo book design service. You share an iCloud or Google Photos link, a designer curates your best photos, lays out every page, and delivers a proof within 72 hours. Every book is checked by a person, not auto-generated. Video frame extraction add-on: +$50. Founded by Olga Miller, based in Porto, Portugal, serving customers worldwide.
 
 ## Pricing
 
-- Digital photo book, up to 30 pages: $29
-- Digital photo book, up to 100 pages: $79
+- Designed PDF book, up to 30 pages: $29
+- Designed PDF book, up to 100 pages: $79
+- Upgrade from 30 to 100 pages after ordering: +$50
 - Video frame extraction add-on: +$50
-- Printed classic hardcover (30 pages): $25
-- Printed classic hardcover (100 pages): $49
-- Premium layflat (30 pages): $89
-- Premium layflat (100 pages): $149
-- US shipping (classic): $7.60
-- Canada / Europe shipping: quoted individually
+- Printed hardcover: $69 (up to 30 pages), $119 (up to 100 pages)
+- Printed premium layflat: $129 (up to 30 pages), $199 (up to 100 pages)
+- Extra printed copies: $69 each
+- Shipping: included to the US and Canada, +$15 to Europe
+- Your next book: 10% off the design
+- Christmas: order printing by Dec 1, a PDF by Dec 20
+- Don't love the first draft? Full refund
 
 ## How it works
 

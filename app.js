@@ -58,16 +58,67 @@ form?.addEventListener('submit', async (e) => {
   data.copies = copies(); data.picks = !!picks?.checked;
   payBtn.textContent = 'Redirecting...';
   payBtn.disabled = true;
-  try {
-    await fetch('https://okad.cc/api/remeet-form/submit', {
-      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
-    });
-  } catch {}
-  const went = ORDER.checkout({ id: ORDER.newId(), email: data.email || '', format: currentFormat(), picks: data.picks, copies: data.copies, style: '' });
+  saveForm();
+  const went = ORDER.checkout({ id: ORDER.newId(), email: data.email || '', format: currentFormat(), picks: data.picks, copies: data.copies, style: '', extra: { who: data.type || '' } });
   if (!went) { payBtn.hidden = true; const fb = document.getElementById('payFallback'); if (fb) fb.hidden = false; }
 });
 window.addEventListener('pageshow', e => { if (e.persisted && payBtn) { payBtn.disabled = false; updateTotal(); } });
+
+// Remember the form, so after coming back from Stripe everything is still filled in
+function saveForm() {
+  if (!form) return;
+  try {
+    const box = form.querySelector('input[data-custom]'), txt = form.querySelector('[data-custom-text]');
+    localStorage.setItem('remeet_form', JSON.stringify({ email: form.email.value, format: currentFormat(), type: form.type.value, custom: box && box.checked ? txt.value : '' }));
+  } catch (e) {}
+}
+function setType(sel, val) {
+  if (!sel || !val) return;
+  if (![...sel.options].some(o => o.value === val || o.text === val)) { const o = document.createElement('option'); o.textContent = val; sel.insertBefore(o, sel.options[1]); }
+  sel.value = val;
+}
+if (form) {
+  try {
+    const s = JSON.parse(localStorage.getItem('remeet_form') || 'null');
+    if (s) {
+      if (s.email) form.email.value = s.email;
+      const r = form.querySelector('input[name="format"][value="' + s.format + '"]'); if (r) r.checked = true;
+      setType(form.type, s.type);
+      if (s.custom) { const box = form.querySelector('input[data-custom]'), txt = form.querySelector('[data-custom-text]'); if (box && txt) { box.checked = true; txt.hidden = false; txt.value = s.custom; } }
+    }
+  } catch (e) {}
+  form.addEventListener('input', saveForm); form.addEventListener('change', saveForm);
+}
+// Links from occasion pages: /#start?type=travel picks the occasion and opens the form
+const TYPES = { baby: "Baby's first year", 'first-year': "Baby's first year", 'baby-photo-book': "Baby's first year", family: 'Family yearbook', 'family-yearbook': 'Family yearbook', travel: 'Travel', gift: 'A gift', christmas: 'Christmas gift', 'gift-for-grandma': 'Gift for grandma', grandparents: 'Gift for grandparents', love: 'Love story', valentines: 'Love story', anniversary: 'Anniversary', wedding: 'Wedding', birthday: 'Birthday', pregnancy: 'Pregnancy', memorial: 'Memorial', pet: 'Pet', graduation: 'Graduation', 'school-years': 'School years', adoption: 'Adoption', 'mothers-day': "Mother's Day", 'fathers-day': "Father's Day", year: 'Year in photos' };
+(function () {
+  const m = location.hash.match(/^#start\?type=([\w-]+)/);
+  if (!m || !form) return;
+  const label = TYPES[m[1]] || m[1].replace(/-/g, ' ').replace(/^./, c => c.toUpperCase());
+  setType(form.type, label); setType(document.querySelector('#freeForm select[name="type"]'), label);
+  saveForm();
+  const go = () => document.getElementById('pricing')?.scrollIntoView();
+  go(); setTimeout(go, 400);
+})();
 updateTotal();
+
+// Free first spread: email + album link + occasion, Olga sends the spread within 24 hours
+const freeLink = document.getElementById('freeLink'), freeForm = document.getElementById('freeForm');
+freeLink?.addEventListener('click', () => {
+  freeForm.hidden = false;
+  if (form?.email.value && !freeForm.email.value) freeForm.email.value = form.email.value;
+  if (form?.type.value) setType(freeForm.type, form.type.value);
+  freeForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(() => (freeForm.email.value ? freeForm.album : freeForm.email).focus({ preventScroll: true }), 400);
+});
+freeForm?.addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = freeForm.querySelector('button[type="submit"]'), done = freeForm.querySelector('.o2-free-done');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  const d = { action: 'free_spread', id: ORDER.newId(), email: freeForm.email.value.trim(), album: freeForm.album.value.trim(), who: freeForm.type.value, page: location.href };
+  const ok = () => { btn.hidden = true; done.hidden = false; if (window.fbq) fbq('track', 'Lead', { content_name: 'free_spread' }); if (window.ym) ym(114414250, 'reachGoal', 'free_spread'); if (window.clarity) clarity('event', 'free_spread'); };
+  ORDER.post(d).then(ok).catch(() => { btn.disabled = false; btn.textContent = 'Send me my free spread →'; done.hidden = false; done.innerHTML = "Something didn't go through. Email me the link at <a href=\"mailto:hello@remeet.cc\">hello@remeet.cc</a>."; });
+});
 
 // Footer: sections open on desktop, folded on phones
 if (window.innerWidth > 700) document.querySelectorAll('details.footer-col').forEach(d => { d.open = true; });

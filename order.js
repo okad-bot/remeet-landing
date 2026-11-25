@@ -13,9 +13,12 @@
       small: 'https://buy.stripe.com/28E5kDcnseUZc9h5Nd8k80Y',
       pdf: 'https://buy.stripe.com/00waEX9bgdQV8X50sT8k80Z'
     },
+    // ?internal=1 once marks this browser as ours: requests go with test=1, no emails, filtered in reports
+    internal: (function () { try { if (/[?&]internal=1/.test(location.search)) localStorage.setItem('remeet_internal', '1'); return localStorage.getItem('remeet_internal') === '1'; } catch (e) { return false; } })(),
     total: function (format) { return O.prices[format] || O.prices.pdf; },
     post: function (obj) {
       try { var src = JSON.parse(localStorage.getItem('remeet_src') || 'null'); if (src) { obj.referrer = obj.referrer || src.ref; obj.landing = obj.landing || src.landing; } } catch (e) {}
+      if (O.internal) obj.test = 1;
       var body = JSON.stringify(obj);
       return fetch(O.endpoint, { method: 'POST', keepalive: body.length < 60000, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body })
         .then(function (r) { return r.json(); })
@@ -38,6 +41,7 @@
       } catch (e) {}
       if (w.fbq) fbq('track', 'InitiateCheckout', { value: total, currency: 'USD', content_name: key });
       if (w.ym) ym(114414250, 'reachGoal', 'checkout');
+      if (w.clarity) { clarity('set', 'lead', o.id); clarity('event', 'checkout_started'); }
       var custom = o.custom || O.customText();
       O.post(Object.assign({}, o.extra || {}, { action: 'order', custom: custom, id: o.id, email: o.email || '', format: key, total: total, style: o.style || '', page: location.href, link: link ? 'stripe' : 'manual' })).catch(function () {});
       if (!link) return false;
@@ -46,6 +50,7 @@
       return true;
     }
   };
+  if (O.internal) { if (w.clarity) clarity('set', 'internal', '1'); if (w.ym) ym(114414250, 'params', { internal: 1 }); }
   document.addEventListener('change', function (e) {
     if (!e.target.matches || !e.target.matches('input[data-custom]')) return;
     var t = document.querySelector('[data-custom-text]'); if (!t) return;

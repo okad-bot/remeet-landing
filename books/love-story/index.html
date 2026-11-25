@@ -82,7 +82,7 @@
 .pdp-info .o2-in{width:100%;box-sizing:border-box;margin-top:10px}
 .pdp-buy{width:100%;justify-content:center;margin-top:12px}
 .pdp-alt{text-align:center;font-size:.9rem;margin:10px 0 0}.pdp-alt a{color:var(--olive);font-weight:600}
-.pdp-incl{margin:16px 0 0;padding:0 0 0 18px;color:#3d463f;font-size:.9rem;line-height:1.7}
+.pdp-contact{font-size:.82rem;color:#6f756f;margin:10px 0 0}.pdp-contact a{color:inherit}.pdp-incl{margin:16px 0 0;padding:0 0 0 18px;color:#3d463f;font-size:.9rem;line-height:1.7}
 .pdp-inside,.pdp-more{margin-top:44px}
 .pdp-inside h2,.pdp-more h2{font-family:var(--serif);font-weight:400;text-align:center;margin:0 0 14px}
 .inside-scroll{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
@@ -129,13 +129,16 @@
         <textarea class="o2-in o2-custom" data-custom-text rows="3" style="width:100%;box-sizing:border-box;min-height:76px;font:inherit;resize:vertical;margin:0 0 8px" maxlength="1000" placeholder="For example: add our handwritten notes to each page" hidden></textarea>
       <input class="o2-in" type="email" name="email" placeholder="Your email" autocomplete="email" required />
       <p class="pay-fallback" id="pdpFallback" hidden><b>Got it, thank you.</b> I'll email you a&nbsp;payment link within the&nbsp;hour.</p>
-      <p class="pdp-fsub" style="margin-top:10px">Want it printed? You can add a hardcover once you've seen your book.</p>
+      <p class="pdp-fsub" style="margin-top:10px">Want it printed? Printing from $69, after you approve your book.</p>
       <button class="button button-dark pdp-buy" id="pdpPay" type="submit">Order this book, $29 &rarr;</button>
       <ul class="pdp-incl">
-        <li>First draft in&nbsp;72&nbsp;hours</li>
-        <li>2&nbsp;rounds of&nbsp;edits, nothing prints until you&nbsp;approve</li>
+        <li>After paying, send me an album link (Google Photos, iCloud, Google Drive) or a zip by email. I pick the best shots</li>
+        <li>A real person, not a robot: I answer your emails and make your edits myself</li>
+        <li>Your first draft comes to your email within 48 hours or less, 2 rounds of edits</li>
+        <li>Printing later if you want it: from $69. US and Canada shipping included, EU and worldwide also available</li>
         <li>Don't love the first draft? Full refund</li>
       </ul>
+      <p class="pdp-contact">Questions? Email me at <a href="mailto:hello@remeet.cc">hello@remeet.cc</a>, I reply within a few hours.</p>
     </form>
   </div>
   <section class="pdp-inside">
@@ -235,7 +238,7 @@
     e.preventDefault();
     if (!f.email.checkValidity()) { f.email.reportValidity(); return; }
     pay.disabled = true;
-    var went = O.checkout({ id: O.newId(), email: f.email.value.trim(), format: fmt(), style: 'book:' + f.dataset.book });
+    var went = O.checkout({ id: O.newId(), email: f.email.value.trim(), format: fmt(), style: 'book:' + f.dataset.book, extra: { who: f.dataset.book } });
     if (!went) { document.getElementById('pdpFallback').hidden = false; pay.hidden = true; }
   });
   addEventListener('pageshow', function (e) { if (e.persisted) { pay.disabled = false; upd(); } });
