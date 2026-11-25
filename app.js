@@ -44,7 +44,7 @@ const updateTotal = () => {
   if (copiesRow) copiesRow.style.display = printed ? 'flex' : 'none';
   if (covers) covers.style.display = f === 'hardcover' ? 'grid' : 'none';
   form.querySelectorAll('.o2-opt').forEach(l => l.classList.toggle('sel', l.querySelector('input').checked));
-  const total = ORDER.total(f);
+  const total = ORDER.total(f, !!picks?.checked);
   payBtn.innerHTML = 'Pay $' + total + ' &rarr;';
 };
 form?.addEventListener('change', updateTotal);

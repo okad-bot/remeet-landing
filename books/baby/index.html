@@ -124,7 +124,8 @@
         <label class="on"><input type="radio" name="format" value="small" checked />Small book<small>Up to 30 pages · $29</small></label>
         <label><input type="radio" name="format" value="pdf" />Big book<small>Up to 100 pages · $79</small></label>
       </div>
-      <p class="pdp-fsub" id="pdpFsub">PDF, designed by hand. I pick the best photos for you.</p>
+      <p class="pdp-fsub" id="pdpFsub">PDF, designed by hand. Send me the photos you want in the book.</p>
+        <label class="o2-opt o2-check"><input type="checkbox" name="picks" /><span class="o2-t"><b>No time to&nbsp;pick your photos?</b><small>Send me up&nbsp;to&nbsp;3,000. I'll choose the&nbsp;best and&nbsp;group them for&nbsp;you.</small></span><span class="o2-p">+$25</span></label>
         <label class="o2-opt o2-check"><input type="checkbox" data-custom /><span class="o2-t"><b>Something special in&nbsp;mind?</b><small>Your notes, your own design idea. I'll&nbsp;tell&nbsp;you if&nbsp;it&nbsp;costs extra.</small></span><span class="o2-p">Ask</span></label>
         <textarea class="o2-in o2-custom" data-custom-text rows="3" style="width:100%;box-sizing:border-box;min-height:76px;font:inherit;resize:vertical;margin:0 0 8px" maxlength="1000" placeholder="For example: add our handwritten notes to each page" hidden></textarea>
       <input class="o2-in" type="email" name="email" placeholder="Your email" autocomplete="email" required />
@@ -222,7 +223,7 @@
     </div>
     <div class="footer-bottom">&copy; 2026 <span class="hi">Re</span>Meet</div>
   </footer>
-<script src="/order.js?v=20261124g"></script>
+<script src="/order.js?v=20261125p"></script>
 <script>
 (function () {
   var O = window.REMEET_ORDER, f = document.getElementById('pdpForm');
@@ -231,14 +232,15 @@
   function fmt() { return f.querySelector('input[name="format"]:checked').value; }
   function upd() {
     f.querySelectorAll('.pdp-chips label').forEach(function (l) { l.classList.toggle('on', l.querySelector('input').checked); });
-    pay.innerHTML = 'Order this book, $' + O.total(fmt()) + ' &rarr;';
+    pay.innerHTML = 'Order this book, $' + O.total(fmt(), O.picksOn(f)) + ' &rarr;';
+    var pk = f.querySelector('input[name=picks]'); if (pk) pk.closest('label').classList.toggle('sel', pk.checked);
   }
   f.addEventListener('change', upd);
   f.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!f.email.checkValidity()) { f.email.reportValidity(); return; }
     pay.disabled = true;
-    var went = O.checkout({ id: O.newId(), email: f.email.value.trim(), format: fmt(), style: 'book:' + f.dataset.book, extra: { who: f.dataset.book } });
+    var went = O.checkout({ id: O.newId(), email: f.email.value.trim(), format: fmt(), picks: O.picksOn(f), style: 'book:' + f.dataset.book, extra: { who: f.dataset.book } });
     if (!went) { document.getElementById('pdpFallback').hidden = false; pay.hidden = true; }
   });
   addEventListener('pageshow', function (e) { if (e.persisted) { pay.disabled = false; upd(); } });
