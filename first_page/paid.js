@@ -31,6 +31,7 @@
   if (/^(occasion:|book:)/.test(order.style || '')) { var w = document.querySelector('[name=who]'); if (w) { var box = w.closest('.pi-chips'); if (box) { box.hidden = true; if (box.previousElementSibling) box.previousElementSibling.hidden = true; } } }
 
   // No phone uploads here: an album link, a zip by email, or "later by email" (I send a welcome email, they reply with the link)
+  if (order.picks) { var pl = $('pdPicksLine'); if (pl) pl.hidden = false; }
   var f = $('pdForm'), err = $('pdErr');
   function send(later) {
     var album = f.album.value.trim(), found = f.querySelector('[name=found]:checked'), who = f.querySelector('[name=who]:checked');

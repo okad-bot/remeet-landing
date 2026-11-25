@@ -92,7 +92,8 @@
         <div class="pi-chips"><label><input type="radio" name="occasion" value="Honeymoon or trip" /><span>Honeymoon or trip</span></label><label><input type="radio" name="occasion" value="Baby's first year" /><span>Baby's first year</span></label><label><input type="radio" name="occasion" value="Our family year" /><span>Our family year</span></label><label><input type="radio" name="occasion" value="Wedding" /><span>Wedding</span></label><label><input type="radio" name="occasion" value="School, team or club" /><span>School, team or club</span></label><label><input type="radio" name="occasion" value="Something else" /><span>Something else</span></label></div>
         <p class="pi-sec">Your book</p>
         <label class="pi-opt sel"><input type="radio" name="plan" value="small" checked /><span class="pi-radio"></span><span class="pi-opt-t"><b>Small book</b><small>Up to&nbsp;30&nbsp;pages, PDF.</small></span><span class="pi-price">$29</span></label><label class="pi-opt"><input type="radio" name="plan" value="pdf" /><span class="pi-radio"></span><span class="pi-opt-t"><b>Big book</b><small>Up to&nbsp;100&nbsp;pages, PDF.</small></span><span class="pi-price">$79</span></label>
-        <p class="pi-note" style="text-align:left">Want it&nbsp;printed? You can add a&nbsp;hardcover once you've seen your&nbsp;book.</p>
+        <p class="pi-note" style="text-align:left">Want it&nbsp;printed? Printing from&nbsp;$69, after you approve your book.</p>
+        <label class="pi-opt pi-check"><input type="checkbox" name="picks" /><span class="pi-box"></span><span class="pi-opt-t"><b>No time to&nbsp;pick your photos?</b><small>Send me up&nbsp;to&nbsp;3,000. I'll choose the&nbsp;best and&nbsp;group them for&nbsp;you.</small></span><span class="pi-price">+$25</span></label>
         <button class="pi-btn nf-go" type="submit" id="nfGo">Start my book, $29</button>
         <p class="pi-xmas">Order by&nbsp;Dec&nbsp;1 for&nbsp;Christmas delivery.</p>
       </form>
@@ -133,21 +134,23 @@
     </section>
   </main>
   <footer class="pi-footer"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="mailto:olga@okad.agency">Contact</a></footer>
-<script src="/order.js?v=20261124g"></script>
+<script src="/order.js?v=20261125p"></script>
 <script>
 (function () {
   var O = window.REMEET_ORDER, q = new URLSearchParams(location.search);
   var $ = function (i) { return document.getElementById(i); };
   var id = q.get('id') || O.newId(), occasion = '';
-  var PLAN = { small: 'Small book, up to 30 pages. $29.', pdf: 'Big book, up to 100 pages. $79.' };
+  var PLAN = { small: 'Small book, up to 30 pages.', pdf: 'Big book, up to 100 pages.' };
+  function pk() { return O.picksOn(document.getElementById('nfStart')); }
   function plan() { return (document.querySelector('input[name=plan]:checked') || {}).value || 'small'; }
   function ev(name, p) { try { if (window.clarity) clarity('event', name); if (window.ym) ym(114414250, 'reachGoal', name, p || {}); if (window.fbq) fbq('trackCustom', name, p || {}); } catch (e) {} }
   function upd() {
     document.querySelectorAll('#nfStart .pi-opt').forEach(function (l) { l.classList.toggle('sel', l.querySelector('input').checked); });
-    var t = O.prices[plan()];
+    var t = O.total(plan(), pk());
+    document.querySelectorAll('#nfStart .pi-check').forEach(function (l) { l.classList.toggle('sel', l.querySelector('input').checked); });
     $('nfGo').textContent = 'Start my book, $' + t;
     $('nfPayBtn').textContent = 'Pay $' + t + ' and start';
-    $('nfPlanLine').textContent = PLAN[plan()];
+    $('nfPlanLine').textContent = PLAN[plan()] + (pk() ? ' I choose your best photos.' : '') + ' $' + t + '.';
   }
   $('nfStart').addEventListener('change', function (e) {
     if (e.target.name === 'occasion') { occasion = e.target.value; ev('occasion_selected', { occasion: occasion }); }
@@ -164,7 +167,7 @@
     if (!em.checkValidity()) { em.reportValidity(); return; }
     var btn = $('nfPayBtn'); btn.disabled = true; btn.textContent = 'One moment…';
     ev('checkout_started', { plan: plan() });
-    var went = O.checkout({ id: id, email: em.value.trim(), format: plan(), style: occasion ? 'occasion: ' + occasion : '',
+    var went = O.checkout({ id: id, email: em.value.trim(), format: plan(), picks: pk(), style: occasion ? 'occasion: ' + occasion : '',
       extra: { first_name: f.names.value.trim(), who: occasion, photos_link: f.album.value.trim(), names: f.names.value.trim() } });
     if (!went) { btn.hidden = true; $('nfFallback').hidden = false; }
   });
