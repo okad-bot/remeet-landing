@@ -13,8 +13,8 @@
       small: 'https://buy.stripe.com/28E5kDcnseUZc9h5Nd8k80Y',
       pdf: 'https://buy.stripe.com/00waEX9bgdQV8X50sT8k80Z',
       // "No time to pick your photos?" up to 3,000, I choose (+$25): Small $54, Big $104. Empty = I email a payment link.
-      small_picks: '',
-      pdf_picks: ''
+      small_picks: 'https://buy.stripe.com/4gM5kDevA5kp5KT8Zp8k810',
+      pdf_picks: 'https://buy.stripe.com/5kQ14ncns3chehp4J98k811'
     },
     // ?internal=1 once marks this browser as ours: requests go with test=1, no emails, filtered in reports
     internal: (function () { try { if (/[?&]internal=1/.test(location.search)) localStorage.setItem('remeet_internal', '1'); return localStorage.getItem('remeet_internal') === '1'; } catch (e) { return false; } })(),
