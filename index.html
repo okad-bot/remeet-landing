@@ -40,21 +40,29 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://remeet.cc/#organization",
   "name": "ReMeet",
   "url": "https://remeet.cc",
-  "description": "ReMeet turns your everyday photos into professionally designed photo books in 48 hours or less.",
-  "logo": "https://remeet.cc/favicon.png",
+  "description": "ReMeet designs photo books from your phone photos. Send an iCloud or Google Photos link, get your first draft in 48 hours or less.",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://remeet.cc/assets/logo-512.png",
+    "width": 512,
+    "height": 512
+  },
   "email": "hello@remeet.cc",
-  "sameAs": [
-    "https://www.instagram.com/remeet.cc/",
-    "https://www.pinterest.com/remeetcc/",
-    "https://www.trustpilot.com/review/remeet.cc"
-  ],
   "founder": {
     "@type": "Person",
     "name": "Olga Miller",
     "url": "https://remeet.cc/about/"
-  }
+  },
+  "sameAs": [
+    "https://www.instagram.com/remeet.cc/",
+    "https://www.pinterest.com/remeetcc/",
+    "https://www.trustpilot.com/review/remeet.cc",
+    "https://www.indiehackers.com/product/remeet",
+    "https://www.saashub.com/remeet"
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -62,7 +70,7 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "ReMeet Photo Book",
-  "description": "A beautifully designed photo book created from your everyday photos. Upload up to 5,000 photos - we curate, design, and deliver.",
+  "description": "A beautifully designed photo book created from your everyday photos. Send up to 3,000 photos and I curate, design and deliver.",
   "image": [
     "https://remeet.cc/assets/product-open-album.jpg",
     "https://remeet.cc/assets/book-cover-eva.jpg",
@@ -83,11 +91,11 @@
       "priceValidUntil": "2027-12-31",
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 7,
-        "returnMethod": "https://schema.org/ReturnByMail",
-        "returnFees": "https://schema.org/FreeReturn"
+        "applicableCountry": [
+          "US",
+          "CA"
+        ],
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
       }
     },
     {
@@ -100,11 +108,11 @@
       "priceValidUntil": "2027-12-31",
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 7,
-        "returnMethod": "https://schema.org/ReturnByMail",
-        "returnFees": "https://schema.org/FreeReturn"
+        "applicableCountry": [
+          "US",
+          "CA"
+        ],
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
       }
     }
   ]
@@ -382,7 +390,7 @@
         <label class="button button-dark up-btn" for="upFiles" id="upBtn">+ Add 6&nbsp;photos</label>
         <p class="up-note" id="upNote">Your first page in&nbsp;a&nbsp;minute. Full book from&nbsp;$29.</p>
       </div>
-      <p class="how2-big">5,000&nbsp;photos? Not&nbsp;a&nbsp;problem.</p>
+      <p class="how2-big">3,000&nbsp;photos? Not&nbsp;a&nbsp;problem.</p>
       <div class="hv2-grid how2-chips"><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>No&nbsp;sorting</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>No&nbsp;blurry shots</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Month by&nbsp;month</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Small notes</span></div></div>
       <p class="try-approve" style="text-align:center">You approve every page before it's&nbsp;printed.</p>
     </section>
