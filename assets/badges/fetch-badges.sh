@@ -1,5 +1,5 @@
 #!/bin/sh
-# Downloads the 3 "Featured on" badges into assets/badges/ and switches every page to the local copies.
+# Downloads the 5 "Featured on" badges into assets/badges/ and switches every page to the local copies.
 # Run from the repo root. If a download fails, that badge keeps its direct link.
 set -u
 cd "$(dirname "$0")/../.."
@@ -14,3 +14,5 @@ get() { # url file
 get "https://showmebest.ai/badge/feature-badge-white.webp" showmebest.webp
 get "https://www.toolpilot.ai/cdn/shop/files/f-w_690x151_crop_center.png" toolpilot.png
 get "https://fazier.com/api/v1/public/badges/launch_badges.svg" fazier.svg
+get "https://startupfa.me/badges/featured-badge-small.webp" startupfame.webp
+get "https://statics.startupbase.io/site/badges/launched-on-sb.svg" startupbase.svg

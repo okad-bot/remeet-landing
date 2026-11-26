@@ -168,6 +168,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.015em}
 .featured-on img{height:40px;width:auto;display:block}
 .footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .footer-top .featured-on{justify-content:flex-end}
+@media(min-width:701px){.footer-top{flex-wrap:nowrap;align-items:flex-start}.footer-top .footer-brand{flex:0 0 auto}.footer-top .featured-on{flex:1 1 auto;row-gap:10px}}
 .pi-footer+.featured-on,body>.featured-on{max-width:1100px;margin:0 auto;padding:0 20px 18px}
 @media(max-width:700px){.footer-top{display:grid;gap:16px}.footer-top .featured-on{justify-content:flex-start}.featured-on span{flex-basis:100%}}
 p,li,figcaption{text-wrap:pretty}
