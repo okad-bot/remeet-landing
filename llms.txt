@@ -1,0 +1,65 @@
+# ReMeet
+
+> ReMeet is a done-for-you photo book design service. You send a link to your Google Photos or iCloud album, and a designer picks the best shots, removes duplicates and blurry frames, and lays out every page by hand. No templates, no drag-and-drop editor, no sorting on your end. First draft in 72 hours. Ask for changes in plain words. Full refund if you don't love the first draft and haven't asked for edits. Designed PDF from $29, printing from $69 after you approve. Ships to the US, Canada and Europe.
+
+## What makes ReMeet different
+
+- You share a link to your album. A designer picks the best shots out of 50 or 5,000.
+- Every page is designed by a person with 10 years in editorial design. No templates, no editor.
+- AI sorts photos only. It never changes or generates your images.
+- Your designed book from $29. Print it only when you love it.
+- First draft in 72 hours. Two rounds of changes in plain words.
+- Don't love the first draft? Full refund, before any edits.
+- Your handwritten notes, scanned and placed next to the right photos.
+- Month by month. No duplicates, no blurry shots.
+- Printed as a premium layflat or hardcover. Copies for the grandparents, shipped to the US, Canada and Europe.
+- Season books for your nonprofit, team or school, every year.
+
+## Pricing
+
+- Designed PDF book, up to 30 pages: $29
+- Designed PDF book, up to 100 pages: $79
+- Upgrade from 30 to 100 pages after ordering: +$50
+- No time to pick your photos? Send up to 3,000 and I choose the best and group them: +$25
+- Video frame extraction add-on: +$50
+- Printed hardcover: from $69 after approval
+- Printed premium layflat: from $129 after approval
+- Extra printed copies: $69 each
+- Shipping: included to the US and Canada, +$15 to Europe
+- Your next book: 10% off the design
+- Christmas 2026: order printing by Dec 1, a designed PDF by Dec 20
+- Don't love the first draft? Full refund, before any edits. 2 rounds of edits included, extra rounds $25 each
+
+## How it works
+
+1. Pick your book type and page count
+2. Pay and share a link to your photos (iCloud or Google Photos)
+3. Receive a designed proof in 72 hours
+4. Request changes in plain language (two revision rounds included)
+5. Approve and download, or order a printed copy (from $69, US and Canada shipping included)
+
+## Key pages
+
+- Christmas photo book (order by Dec 1 for print): https://remeet.cc/christmas-photo-book/
+- Google Photos to photo book (share a link, skip sorting): https://remeet.cc/blog/google-photos-to-photo-book/
+- Done-for-you photo book (what you get for $29): https://remeet.cc/design-service/
+- AI photo book vs designer (AI sorts, a person designs): https://remeet.cc/blog/ai-photo-book-vs-designer/
+- Photo book for grandparents (copies for each household): https://remeet.cc/blog/photo-book-gift-for-grandparents/
+- Home: https://remeet.cc/
+- About: https://remeet.cc/about/
+- Examples: https://remeet.cc/examples/
+- Sail Beyond Cancer case: https://remeet.cc/examples/sail-beyond-cancer/
+- How to make a photo book: https://remeet.cc/how-to-make-a-photo-book/
+- AI photo book: https://remeet.cc/ai-photo-book/
+- Quality: https://remeet.cc/quality/
+- Shipping: https://remeet.cc/shipping/
+- Reviews: https://remeet.cc/reviews/
+- For photographers: https://remeet.cc/for-photographers/
+- Blog: https://remeet.cc/blog/
+- Best photo book services 2026: https://remeet.cc/blog/best-photo-book-services-2026/
+- Privacy: https://remeet.cc/privacy/
+- Terms: https://remeet.cc/terms/
+
+## Optional reading
+
+- llms-full.txt: https://remeet.cc/llms-full.txt

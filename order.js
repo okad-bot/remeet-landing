@@ -1,0 +1,64 @@
+/* ReMeet prices and Stripe Payment Links, shared by the homepage and /proof.
+   Each Payment Link: after payment, redirect to https://remeet.cc/first_page/paid/
+   An empty link falls back to "I'll email you a payment link". */
+(function (w) {
+  var O = w.REMEET_ORDER = {
+    endpoint: 'https://script.google.com/macros/s/AKfycbzwVGoW_BcdCjok1d3Ga2LIdTELb9i5lslE5Jqrtly3qp2Uxz47ff85Q77xC9XhAtKBBg/exec',
+    prices: { small: 29, pdf: 79, picks: 25 },
+    formats: {
+      small: { name: 'Small book', sub: 'Up to 30 pages, PDF.' },
+      pdf: { name: 'Big book', sub: 'Up to 100 pages, PDF.' }
+    },
+    links: {
+      small: 'https://buy.stripe.com/28E5kDcnseUZc9h5Nd8k80Y',
+      pdf: 'https://buy.stripe.com/00waEX9bgdQV8X50sT8k80Z',
+      // "No time to pick your photos?" up to 3,000, I choose (+$25): Small $54, Big $104. Empty = I email a payment link.
+      small_picks: 'https://buy.stripe.com/4gM5kDevA5kp5KT8Zp8k810',
+      pdf_picks: 'https://buy.stripe.com/5kQ14ncns3chehp4J98k811'
+    },
+    // ?internal=1 once marks this browser as ours: requests go with test=1, no emails, filtered in reports
+    internal: (function () { try { if (/[?&]internal=1/.test(location.search)) localStorage.setItem('remeet_internal', '1'); return localStorage.getItem('remeet_internal') === '1'; } catch (e) { return false; } })(),
+    picksOn: function (root) { var c = (root || document).querySelector('input[name=picks]'); return !!(c && c.checked); },
+    total: function (format, picks) { return (O.prices[format] || O.prices.pdf) + (picks ? O.prices.picks : 0); },
+    post: function (obj) {
+      try { var src = JSON.parse(localStorage.getItem('remeet_src') || 'null'); if (src) { obj.referrer = obj.referrer || src.ref; obj.landing = obj.landing || src.landing; } } catch (e) {}
+      if (O.internal) obj.test = 1;
+      var body = JSON.stringify(obj);
+      return fetch(O.endpoint, { method: 'POST', keepalive: body.length < 60000, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body })
+        .then(function (r) { return r.json(); })
+        .then(function (j) { if (!j || j.status !== 'ok') throw new Error('bad'); return j; });
+    },
+    newId: function () { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); },
+    // Go to Stripe. Returns false if there is no link yet (caller shows the fallback).
+    // "Something special in mind?" box: the checkbox shows a text field, its text goes with the order.
+    customText: function () {
+      var box = document.querySelector('input[data-custom]'), t = document.querySelector('[data-custom-text]');
+      return box && box.checked && t ? t.value.trim().slice(0, 1000) : '';
+    },
+    checkout: function (o) {
+      var key = O.prices[o.format] ? o.format : 'pdf';
+      var picks = o.picks === undefined ? O.picksOn() : !!o.picks;
+      var link = O.links[key + (picks ? '_picks' : '')];
+      var total = O.total(key, picks);
+      try {
+        localStorage.setItem('remeet_order_total', String(total));
+        localStorage.setItem('remeet_order', JSON.stringify({ id: o.id, email: o.email || '', format: key, picks: picks, copies: 1, style: o.style || '', total: total }));
+      } catch (e) {}
+      if (w.fbq) fbq('track', 'InitiateCheckout', { value: total, currency: 'USD', content_name: key });
+      if (w.ym) ym(114414250, 'reachGoal', 'checkout');
+      if (w.clarity) { clarity('set', 'lead', o.id); clarity('event', 'checkout_started'); }
+      var custom = o.custom || O.customText();
+      O.post(Object.assign({}, o.extra || {}, { action: 'order', custom: custom, id: o.id, email: o.email || '', format: key + (picks ? '+I-pick-photos' : ''), picks: picks ? 1 : 0, total: total, style: o.style || '', page: location.href, link: link ? 'stripe' : 'manual' })).catch(function () {});
+      if (!link) return false;
+      var q = '?client_reference_id=' + encodeURIComponent(o.id) + (o.email ? '&prefilled_email=' + encodeURIComponent(o.email) : '');
+      w.location.href = link + q;
+      return true;
+    }
+  };
+  if (O.internal) { if (w.clarity) clarity('set', 'internal', '1'); if (w.ym) ym(114414250, 'params', { internal: 1 }); }
+  document.addEventListener('change', function (e) {
+    if (!e.target.matches || !e.target.matches('input[data-custom]')) return;
+    var t = document.querySelector('[data-custom-text]'); if (!t) return;
+    t.hidden = !e.target.checked; if (e.target.checked) t.focus();
+  });
+})(window);

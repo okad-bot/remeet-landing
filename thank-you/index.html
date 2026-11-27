@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Order Received | ReMeet</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1ZSJLBMRD"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X1ZSJLBMRD');</script>
 <meta name="theme-color" content="#f4f0e8" />
 <meta name="robots" content="noindex,nofollow" />
-<title>Order Received — ReMeet</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=20261025"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=20261126c"/>
 <style>
   .ty-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px 24px;text-align:center}
   .ty-card{max-width:520px}
@@ -21,6 +21,57 @@
   .ty-or{font-size:.9rem;color:var(--olive-2);margin:0 0 24px}
   .ty-home{margin-top:24px}
 </style>
+<!-- Meta domain verification: paste the tag from Business Manager here, e.g. <meta name="facebook-domain-verification" content="..."> -->
+<script src="/pixel.js"></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114414250', 'ym');
+    ym(114414250, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114414250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zgst64n9mg");
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://remeet.cc/#organization",
+  "name": "ReMeet",
+  "url": "https://remeet.cc",
+  "description": "ReMeet designs photo books from your phone photos. Send an iCloud or Google Photos link, get your first draft in 48 hours or less.",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://remeet.cc/assets/logo-512.png",
+    "width": 512,
+    "height": 512
+  },
+  "email": "hello@remeet.cc",
+  "founder": {
+    "@type": "Person",
+    "name": "Olga Miller",
+    "url": "https://remeet.cc/about/"
+  },
+  "sameAs": [
+    "https://www.instagram.com/remeet.cc/",
+    "https://www.pinterest.com/remeetcc/",
+    "https://www.trustpilot.com/review/remeet.cc",
+    "https://www.indiehackers.com/product/remeet",
+    "https://www.saashub.com/remeet"
+  ]
+}
+</script>
 </head>
 <body>
 <div class="ty-wrap">
@@ -28,11 +79,10 @@
     <div class="ty-check">
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
-    <h1>Your order is&nbsp;received!</h1>
-    <p>Share a Google Drive folder with all your photos and any notes&nbsp;to:</p>
-    <a class="ty-email copy-email" data-email="olga@okad.agency">olga@okad.agency</a>
-    <p class="ty-or">Or we'll reach out within 24&nbsp;hours&nbsp;— check your&nbsp;inbox.</p>
-    <a class="button button-dark ty-home" href="/">Back to ReMeet</a>
+    <h1>Thank you!</h1>
+    <p>Check your inbox in&nbsp;a&nbsp;few minutes. I've sent you&nbsp;instructions on&nbsp;how to&nbsp;send your&nbsp;photos. First spreads come 72&nbsp;hours after I&nbsp;get them.</p>
+    <p class="ty-or">Didn't get the&nbsp;email? Check spam, or&nbsp;write to&nbsp;<a class="copy-email" data-email="hello@remeet.cc" href="mailto:hello@remeet.cc">hello@remeet.cc</a>.</p>
+    <a class="button button-dark ty-home" href="/">Back to&nbsp;ReMeet</a>
   </div>
 </div>
 <div class="copy-toast" role="status" aria-live="polite" hidden>Email copied</div>
@@ -46,5 +96,24 @@ document.addEventListener('click',e=>{
   gtag('event','purchase_thank_you_copy_email');
 });
 </script>
+<script>
+  (function () {
+    var v = 0;
+    try { v = Number(localStorage.getItem('remeet_order_total')) || 0; localStorage.removeItem('remeet_order_total'); } catch (e) {}
+    if (window.fbq && v) fbq('track', 'Purchase', {value: v, currency: 'USD'});
+  })();
+</script>
+<script src="/tw.js?v=20261124e" defer></script>
+<style>.featured-on{max-width:1100px;margin:0 auto;padding:24px 20px 18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;font:12.5px/1.8 -apple-system,Helvetica,Arial,sans-serif;color:#6f756f}.featured-on a{color:#6f756f;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center}.featured-on img{height:40px;width:auto;display:block}@media(max-width:600px){.featured-on span{flex-basis:100%;text-align:center}}</style>
+<div class="featured-on">
+      <span>Featured on</span>
+      <a href="https://showmebest.ai" target="_blank" rel="noopener"><img src="/assets/badges/showmebest.webp" alt="Featured on ShowMeBest.ai" width="160" height="40" loading="lazy"></a>
+      <a href="https://www.toolpilot.ai" target="_blank" rel="noopener"><img src="/assets/badges/toolpilot.png" alt="Featured on ToolPilot" width="183" height="40" loading="lazy"></a>
+      <a href="https://fazier.com" target="_blank" rel="noopener"><img src="/assets/badges/fazier.svg" alt="Featured on Fazier" width="169" height="40" loading="lazy"></a>
+      <a href="https://startupfa.me/s/remeet" target="_blank" rel="noopener"><img src="https://startupfa.me/badges/featured-badge-small.webp" alt="ReMeet - Featured on Startup Fame" width="250" height="40" loading="lazy"></a>
+      <a href="https://startupbase.io/products/remeet" target="_blank" rel="noopener"><img src="/assets/badges/startupbase.svg" alt="Launched on StartupBase" width="150" height="40" loading="lazy"></a>
+      <a href="https://dang.ai/" target="_blank" rel="noopener">Dang.ai</a>
+      <a href="https://twelve.tools" target="_blank" rel="noopener">Twelve Tools</a>
+    </div>
 </body>
 </html>
