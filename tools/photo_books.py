@@ -22,7 +22,7 @@ PRODUCTS = [
 ]
 IMAGES = ['/assets/hero-book-by-the-water.jpg', '/assets/hero-book-picnic.jpg', '/assets/hero-book-grandma.jpg',
           '/assets/shelf-bookcase.jpg', '/assets/hero-book-table.jpg']
-RETURNS = "Every book is printed only after you approve the final design, so printed books can't be returned. Don't love your first draft? Full refund."
+RETURNS = "Every book is printed only after you approve the final design, so printed books can't be returned. Don't love your first draft? Full refund, as long as you haven't asked for edits."
 BIND_TXT = {'hardcover': 'Hardcover print', 'layflat': 'Premium layflat print: pages open completely flat, so a photo across two pages has no fold in the middle'}
 
 def desc(p):
