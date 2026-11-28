@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+<channel>
+  <title>ReMeet photo books</title>
+  <link>https://remeet.cc</link>
+  <description>Designed and printed photo books by ReMeet</description>
+  <item>
+    <g:id>hardcover-small</g:id>
+    <g:title>Small hardcover photo book, designed for you</g:title>
+    <g:description>A photo book of up to 30 pages, designed for you from your phone photos and printed as a hardcover book. Send an album link, get your first draft in 48 hours or less, 2 rounds of edits, printing after you approve. US and Canada shipping included.</g:description>
+    <g:link>https://remeet.cc/photo-books/hardcover-small/</g:link>
+    <g:image_link>https://remeet.cc/assets/hero-book-by-the-water.jpg</g:image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-picnic.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-grandma.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/shelf-bookcase.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-table.jpg</g:additional_image_link>
+    <g:price>98.00 USD</g:price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>ReMeet</g:brand>
+    <g:identifier_exists>no</g:identifier_exists>
+    <g:google_product_category>Media &gt; Books</g:google_product_category>
+    <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
+    <g:shipping><g:country>CA</g:country><g:price>0.00 USD</g:price></g:shipping>
+  </item>
+  <item>
+    <g:id>hardcover-big</g:id>
+    <g:title>Big hardcover photo book, designed for you</g:title>
+    <g:description>A photo book of up to 100 pages, designed for you from your phone photos and printed as a hardcover book. Send an album link, get your first draft in 48 hours or less, 2 rounds of edits, printing after you approve. US and Canada shipping included.</g:description>
+    <g:link>https://remeet.cc/photo-books/hardcover-big/</g:link>
+    <g:image_link>https://remeet.cc/assets/hero-book-by-the-water.jpg</g:image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-picnic.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-grandma.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/shelf-bookcase.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-table.jpg</g:additional_image_link>
+    <g:price>198.00 USD</g:price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>ReMeet</g:brand>
+    <g:identifier_exists>no</g:identifier_exists>
+    <g:google_product_category>Media &gt; Books</g:google_product_category>
+    <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
+    <g:shipping><g:country>CA</g:country><g:price>0.00 USD</g:price></g:shipping>
+  </item>
+  <item>
+    <g:id>layflat-small</g:id>
+    <g:title>Small layflat photo book, designed for you</g:title>
+    <g:description>A photo book of up to 30 pages, designed for you from your phone photos and printed as a premium layflat book. Send an album link, get your first draft in 48 hours or less, 2 rounds of edits, printing after you approve. US and Canada shipping included.</g:description>
+    <g:link>https://remeet.cc/photo-books/layflat-small/</g:link>
+    <g:image_link>https://remeet.cc/assets/hero-book-by-the-water.jpg</g:image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-picnic.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-grandma.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/shelf-bookcase.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-table.jpg</g:additional_image_link>
+    <g:price>158.00 USD</g:price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>ReMeet</g:brand>
+    <g:identifier_exists>no</g:identifier_exists>
+    <g:google_product_category>Media &gt; Books</g:google_product_category>
+    <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
+    <g:shipping><g:country>CA</g:country><g:price>0.00 USD</g:price></g:shipping>
+  </item>
+  <item>
+    <g:id>layflat-big</g:id>
+    <g:title>Big layflat photo book, designed for you</g:title>
+    <g:description>A photo book of up to 100 pages, designed for you from your phone photos and printed as a premium layflat book. Send an album link, get your first draft in 48 hours or less, 2 rounds of edits, printing after you approve. US and Canada shipping included.</g:description>
+    <g:link>https://remeet.cc/photo-books/layflat-big/</g:link>
+    <g:image_link>https://remeet.cc/assets/hero-book-by-the-water.jpg</g:image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-picnic.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-grandma.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/shelf-bookcase.jpg</g:additional_image_link>
+    <g:additional_image_link>https://remeet.cc/assets/hero-book-table.jpg</g:additional_image_link>
+    <g:price>278.00 USD</g:price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>ReMeet</g:brand>
+    <g:identifier_exists>no</g:identifier_exists>
+    <g:google_product_category>Media &gt; Books</g:google_product_category>
+    <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
+    <g:shipping><g:country>CA</g:country><g:price>0.00 USD</g:price></g:shipping>
+  </item>
+</channel>
+</rss>

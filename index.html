@@ -3,14 +3,16 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ReMeet: send a photo link, get a designed photo book</title>
+<meta name="description" content="Share an iCloud or Google Photos link and get a designer-made photo book. Books from $29: I pick the best shots and design every page by hand." />
+<link rel="canonical" href="https://remeet.cc/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <meta name="facebook-domain-verification" content="h423aiq9jhngx2pv587js6b5tu6vyx" />
   <meta name="p:domain_verify" content="84a70337c0052827267d33915f7013e8"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1ZSJLBMRD"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-X1ZSJLBMRD');</script>
 <meta name="theme-color" content="#f4f0e8" />
-<title>ReMeet: send a photo link, get a designed photo book</title>
-<meta name="description" content="Share an iCloud or Google Photos link and get a designer-made photo book. Books from $29: I pick the best shots and design every page by hand." />
-<link rel="canonical" href="https://remeet.cc/" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -38,21 +40,29 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://remeet.cc/#organization",
   "name": "ReMeet",
   "url": "https://remeet.cc",
-  "description": "ReMeet turns your everyday photos into professionally designed photo books in 48 hours or less.",
-  "logo": "https://remeet.cc/favicon.png",
+  "description": "ReMeet designs photo books from your phone photos. Send an iCloud or Google Photos link, get your first draft in 48 hours or less.",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://remeet.cc/assets/logo-512.png",
+    "width": 512,
+    "height": 512
+  },
   "email": "hello@remeet.cc",
-  "sameAs": [
-    "https://www.instagram.com/remeet.cc/",
-    "https://www.pinterest.com/remeetcc/",
-    "https://www.trustpilot.com/review/remeet.cc"
-  ],
   "founder": {
     "@type": "Person",
     "name": "Olga Miller",
     "url": "https://remeet.cc/about/"
-  }
+  },
+  "sameAs": [
+    "https://www.instagram.com/remeet.cc/",
+    "https://www.pinterest.com/remeetcc/",
+    "https://www.trustpilot.com/review/remeet.cc",
+    "https://www.indiehackers.com/product/remeet",
+    "https://www.saashub.com/remeet"
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -60,7 +70,7 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "ReMeet Photo Book",
-  "description": "A beautifully designed photo book created from your everyday photos. Upload up to 5,000 photos - we curate, design, and deliver.",
+  "description": "A beautifully designed photo book created from your everyday photos. Send up to 3,000 photos and I curate, design and deliver.",
   "image": [
     "https://remeet.cc/assets/product-open-album.jpg",
     "https://remeet.cc/assets/book-cover-eva.jpg",
@@ -81,11 +91,11 @@
       "priceValidUntil": "2027-12-31",
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 7,
-        "returnMethod": "https://schema.org/ReturnByMail",
-        "returnFees": "https://schema.org/FreeReturn"
+        "applicableCountry": [
+          "US",
+          "CA"
+        ],
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
       }
     },
     {
@@ -98,11 +108,11 @@
       "priceValidUntil": "2027-12-31",
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 7,
-        "returnMethod": "https://schema.org/ReturnByMail",
-        "returnFees": "https://schema.org/FreeReturn"
+        "applicableCountry": [
+          "US",
+          "CA"
+        ],
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
       }
     }
   ]
@@ -166,7 +176,7 @@
       "name": "What if I don't like the design?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ask for changes in plain words, 2 rounds of edits are included. Don't love the first draft? Full refund."
+        "text": "Ask for changes in plain words. 2 rounds of edits are included, each extra round is $25. Don't love the first draft and don't want to change it? Full refund. Once you ask for edits, the next version is a second draft and the refund is off."
       }
     },
     {
@@ -205,10 +215,8 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261123g"/>
+<link rel="stylesheet" href="styles.css?v=20261126c"/>
 <!-- Meta domain verification: paste the tag from Business Manager here, e.g. <meta name="facebook-domain-verification" content="..."> -->
 <script src="/pixel.js"></script>
 <!-- Yandex.Metrika counter -->
@@ -280,9 +288,9 @@
       </div>
       <div class="hero-rv" aria-label="Real ReMeet books and client reviews">
         <figure class="rv-card"><img src="assets/shelf-bookcase.jpg" alt="A shelf of ReMeet photo books: Hello Eva, 2026 Summer, Slow September, For Grandma" width="1103" height="1426" fetchpriority="high" /><span class="rv-chip">Every chapter</span></figure>
-        <figure class="rv-card rv-has"><button type="button" class="rv-hit" aria-label="Show review"></button><img src="assets/hero-sailbeyondcancer.jpg" alt="Notes from Tranquility, the 2026 season book for Sail Beyond Cancer Vermont" width="960" height="1280" loading="lazy" /><blockquote class="rv-ov">"I LOVE IT. I'd like to do this annually."</blockquote><span class="rv-chip">Travel book <span class="rv-stars" aria-label="5 stars">★★★★★</span></span><span class="rv-pill">Review</span></figure>
+        <figure class="rv-card rv-has"><button type="button" class="rv-hit" aria-label="Show review"></button><img src="assets/hero-sailbeyondcancer.jpg" alt="Notes from Tranquility, the 2026 season book for Sail Beyond Cancer Vermont" width="960" height="1280" /><blockquote class="rv-ov">"I LOVE IT. I'd like to do this annually."</blockquote><span class="rv-chip">Travel book <span class="rv-stars" aria-label="5 stars">★★★★★</span></span><span class="rv-pill">Review</span></figure>
         <figure class="rv-card rv-quote-card"><blockquote class="rv-big">"I'd forgotten how tiny he was. Such a joy."</blockquote><span class="rv-chip">Baby book <span class="rv-stars" aria-label="5 stars">★★★★★</span></span></figure>
-        <figure class="rv-card"><img src="assets/hero-book-bed.jpg" alt="ReMeet baby book open on a bed" width="900" height="1200" loading="lazy" /><span class="rv-chip">Baby book</span></figure>
+        <figure class="rv-card"><img src="assets/hero-book-bed.jpg" alt="ReMeet baby book open on a bed" width="900" height="1200" /><span class="rv-chip">Baby book</span></figure>
         <figure class="rv-card"><img src="assets/hero-book-hello-eva.jpg" alt="Hello Eva newborn photo book on a coffee table" width="900" height="1200" loading="lazy" /><span class="rv-chip">Newborn book</span></figure>
         <figure class="rv-card"><img src="assets/hero-book-table.jpg" alt="Two months photo book on a kitchen table" width="900" height="1200" loading="lazy" /><span class="rv-chip">Two months book</span></figure>
         <figure class="rv-card"><img src="assets/hero-book-grandma.jpg" alt="Grandma turning the pages of a ReMeet family book" width="900" height="1200" loading="lazy" /><span class="rv-chip">Family book</span></figure>
@@ -298,8 +306,8 @@
       <h2><span class="hi">A</span>ny moment of&nbsp;your&nbsp;life is&nbsp;worth printing.</h2>
       <p class="bk-label">Most ordered</p>
       <div class="bk-grid bk-grid-big">
-        <div class="bk-card bk-big"><a href="/books/baby/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/eva_baby_book.jpg"><source src="assets/flips/eva_baby_book.mp4" type="video/mp4" /></video></span></a><div class="bk-row"><div class="bk-meta"><a class="bk-name" href="/books/baby/">Baby's first year</a><span class="bk-from">Small&nbsp;$29 · Big&nbsp;$79</span></div><a class="button button-dark bk-buy" href="/books/baby/">Order, from $29 &rarr;</a></div></div>
-        <div class="bk-card bk-big"><a href="/books/travel/"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/travel_book.jpg"><source src="assets/flips/travel_book.mp4" type="video/mp4" /></video></span></a><div class="bk-row"><div class="bk-meta"><a class="bk-name" href="/books/travel/">Travel book</a><span class="bk-from">Small&nbsp;$29 · Big&nbsp;$79</span></div><a class="button button-dark bk-buy" href="/books/travel/">Order, from $29 &rarr;</a></div></div>
+        <div class="bk-card bk-big"><a href="/books/baby/" aria-label="Baby's first year, see inside"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/eva_baby_book.jpg"><source src="assets/flips/eva_baby_book.mp4" type="video/mp4" /></video></span></a><div class="bk-row"><div class="bk-meta"><a class="bk-name" href="/books/baby/">Baby's first year</a><span class="bk-from">Small&nbsp;$29 · Big&nbsp;$79</span></div><a class="button button-dark bk-buy" href="/books/baby/">Order, from $29 &rarr;</a></div></div>
+        <div class="bk-card bk-big"><a href="/books/travel/" aria-label="Travel book, see inside"><span class="bk-box"><video class="bk-vid" data-flip muted loop playsinline preload="metadata" poster="assets/flips/travel_book.jpg"><source src="assets/flips/travel_book.mp4" type="video/mp4" /></video></span></a><div class="bk-row"><div class="bk-meta"><a class="bk-name" href="/books/travel/">Travel book</a><span class="bk-from">Small&nbsp;$29 · Big&nbsp;$79</span></div><a class="button button-dark bk-buy" href="/books/travel/">Order, from $29 &rarr;</a></div></div>
       </div>
       <p class="bk-label">More books</p>
       <div class="bk-grid bk-grid-small">
@@ -347,14 +355,14 @@
         <p class="o2-sec">Your book</p>
         <label class="o2-opt sel"><input type="radio" name="format" value="small" checked /><span class="o2-t"><b>Small book</b><small>Up to&nbsp;30&nbsp;pages, PDF</small></span><span class="o2-p">$29</span></label>
         <label class="o2-opt"><input type="radio" name="format" value="pdf" /><span class="o2-t"><b>Big book</b><small>Up to&nbsp;100&nbsp;pages, PDF</small></span><span class="o2-p">$79</span></label>
-        <p class="o2-pages" style="text-align:left;margin:8px 0 4px">Want it&nbsp;printed? Printing from&nbsp;$69, after you approve your book.</p>
+        <p class="o2-pages" style="text-align:left;margin:8px 0 4px">Want it&nbsp;printed? Printing from&nbsp;$69, after you approve your book. Or&nbsp;get <a href="/photo-books/hardcover-small/">design and&nbsp;print in&nbsp;one price</a>: hardcover from&nbsp;$98, layflat from&nbsp;$158.</p>
         <label class="o2-opt o2-check"><input type="checkbox" name="picks" id="o2picks" /><span class="o2-t"><b>No time to&nbsp;pick your photos?</b><small>Send me up&nbsp;to&nbsp;3,000. I'll choose the&nbsp;best and&nbsp;group them for&nbsp;you.</small></span><span class="o2-p">+$25</span></label>
         <label class="o2-opt o2-check"><input type="checkbox" data-custom /><span class="o2-t"><b>Something special in&nbsp;mind?</b><small>Your notes, your own design idea. I'll&nbsp;tell&nbsp;you if&nbsp;it&nbsp;costs extra.</small></span><span class="o2-p">Ask</span></label>
         <textarea class="o2-in o2-custom" data-custom-text rows="3" style="width:100%;box-sizing:border-box;min-height:76px;font:inherit;resize:vertical;margin:0 0 8px" maxlength="1000" placeholder="For example: add our handwritten notes to each page" hidden></textarea>
         <input class="o2-in" type="email" name="email" placeholder="Your email" autocomplete="email" required />
         <select class="o2-in" name="type" aria-label="What is the book about?"><option value="">What is the book about? (optional)</option><option>Baby's first year</option><option>Family yearbook</option><option>Travel</option><option>A gift</option><option>Other</option></select>
         <p class="pay-fallback" id="payFallback" hidden><b>Got it, thank you.</b> I'll email you a&nbsp;payment link within the&nbsp;hour.</p>
-        <ul class="o2-doubts"><li>A&nbsp;real person, not a&nbsp;robot: I&nbsp;answer your emails and&nbsp;make your edits myself.</li><li>Printing later if&nbsp;you want it: from&nbsp;$69. Shipping to&nbsp;the&nbsp;US and&nbsp;Canada included, EU and&nbsp;worldwide shipping also available.</li><li>Don't love the&nbsp;first draft? <b>Full refund.</b></li></ul>
+        <ul class="o2-doubts"><li>A&nbsp;real person, not a&nbsp;robot: I&nbsp;answer your emails and&nbsp;make your edits myself.</li><li>Printing later if&nbsp;you want it: from&nbsp;$69. Shipping to&nbsp;the&nbsp;US and&nbsp;Canada included, EU and&nbsp;worldwide shipping also available.</li><li>Don't love the&nbsp;first draft? <b>Full refund</b>, before any edits.</li></ul>
         <button class="button button-dark o2-pay" id="payBtn" type="submit">Pay $29 &rarr;</button>
         <p class="o2-note">After paying, send me an&nbsp;album link or&nbsp;a&nbsp;zip. Your draft comes in&nbsp;48&nbsp;hours or&nbsp;less.</p>
         <p class="o2-contact">Questions? <a href="mailto:hello@remeet.cc">hello@remeet.cc</a></p>
@@ -382,23 +390,35 @@
         <label class="button button-dark up-btn" for="upFiles" id="upBtn">+ Add 6&nbsp;photos</label>
         <p class="up-note" id="upNote">Your first page in&nbsp;a&nbsp;minute. Full book from&nbsp;$29.</p>
       </div>
-      <p class="how2-big">5,000&nbsp;photos? Not&nbsp;a&nbsp;problem.</p>
+      <p class="how2-big">3,000&nbsp;photos? Not&nbsp;a&nbsp;problem.</p>
       <div class="hv2-grid how2-chips"><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>No&nbsp;sorting</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>No&nbsp;blurry shots</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Month by&nbsp;month</span></div><div class="hv2-item"><span class="hv2-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Small notes</span></div></div>
       <p class="try-approve" style="text-align:center">You approve every page before it's&nbsp;printed.</p>
     </section>
 
     <section class="section faq2">
       <details class="faq2-all"><summary>Questions and&nbsp;answers <span>+</span></summary>
-      <div class="faq-list"><details><summary>How does it work?</summary><p>Order, send me an&nbsp;album link or&nbsp;a&nbsp;zip, get your first draft in&nbsp;48&nbsp;hours or&nbsp;less, ask for changes, print if&nbsp;you want. Want to&nbsp;see it first? <a href="/proof/">Try a&nbsp;free preview with 6&nbsp;photos</a>.</p></details><details><summary>Can I send an iCloud or Google Photos link?</summary><p>Yes, that's the&nbsp;easiest way. After&nbsp;you&nbsp;order, paste an&nbsp;iCloud, Google Photos or&nbsp;Google Drive link, or&nbsp;email me a&nbsp;zip. On&nbsp;iPhone, select your&nbsp;photos, tap Share, then Copy iCloud Link. Please&nbsp;don't use a&nbsp;Shared Album: Apple shrinks photos there, and&nbsp;they print soft.</p></details><details><summary>How many photos should I send?</summary><p>The photos you want in&nbsp;the&nbsp;book, up&nbsp;to&nbsp;300, as&nbsp;one album link or&nbsp;a&nbsp;zip. No time to&nbsp;pick? Send me up&nbsp;to&nbsp;3,000 and&nbsp;I'll choose the&nbsp;best and&nbsp;group them for&nbsp;you, +$25 at&nbsp;checkout.</p></details><details><summary>Do you use AI?</summary><p>Only to&nbsp;sort photos. I&nbsp;never change or&nbsp;generate your&nbsp;photos. Every&nbsp;page is&nbsp;designed and&nbsp;checked by&nbsp;a&nbsp;person.</p></details><details><summary>How much does it cost?</summary><p>A&nbsp;small book up&nbsp;to&nbsp;30&nbsp;pages is&nbsp;$29 and&nbsp;a&nbsp;big book up&nbsp;to&nbsp;100&nbsp;pages is&nbsp;$79, both as&nbsp;a&nbsp;PDF, with photo picking and&nbsp;2&nbsp;rounds of&nbsp;edits included. Printing is&nbsp;extra, once you've approved your book.</p></details><details><summary>How much is printing?</summary><p>Once you've approved your book. Hardcover: $69 for a&nbsp;small book, $119 for a&nbsp;big one. Premium layflat: $129 or&nbsp;$199. Copies for family $69&nbsp;each. US and&nbsp;Canada shipping included, Europe +$15.</p></details><details><summary>What if I don't like the design?</summary><p>Ask for changes in&nbsp;plain words, 2&nbsp;rounds of&nbsp;edits are included. Don't love the&nbsp;first draft? Full refund.</p></details><details><summary>Do I need to use an editor?</summary><p>No. No&nbsp;editor, no&nbsp;templates, no&nbsp;dragging and&nbsp;dropping. You&nbsp;just reply to&nbsp;my&nbsp;email.</p></details><details><summary>Are my photos private?</summary><p>Yes. Your&nbsp;photos are encrypted in&nbsp;transit and&nbsp;at rest, used only for&nbsp;your&nbsp;book, and&nbsp;deleted 90&nbsp;days after your&nbsp;book is&nbsp;complete.</p></details><details><summary>When will I get my book?</summary><p>The first draft comes in&nbsp;48&nbsp;hours or&nbsp;less after your&nbsp;photos are in. You&nbsp;have a&nbsp;week for&nbsp;edits, or&nbsp;2&nbsp;to&nbsp;3&nbsp;days for&nbsp;Christmas orders. After&nbsp;you&nbsp;approve, printing takes 3&nbsp;to&nbsp;5&nbsp;working days, plus shipping. Order&nbsp;and&nbsp;send your&nbsp;photos by&nbsp;Dec&nbsp;1 for&nbsp;Christmas delivery.</p></details><details><summary>Do you ship outside the US?</summary><p>Yes. Shipping to&nbsp;the&nbsp;US and&nbsp;Canada is&nbsp;included, Europe is&nbsp;+$15. Worldwide shipping also available, just ask.</p></details></div></details>
+      <div class="faq-list"><details><summary>How does it work?</summary><p>Order, send me an&nbsp;album link or&nbsp;a&nbsp;zip, get your first draft in&nbsp;48&nbsp;hours or&nbsp;less, ask for changes, print if&nbsp;you want. Want to&nbsp;see it first? <a href="/proof/">Try a&nbsp;free preview with 6&nbsp;photos</a>.</p></details><details><summary>Can I send an iCloud or Google Photos link?</summary><p>Yes, that's the&nbsp;easiest way. After&nbsp;you&nbsp;order, paste an&nbsp;iCloud, Google Photos or&nbsp;Google Drive link, or&nbsp;email me a&nbsp;zip. On&nbsp;iPhone, select your&nbsp;photos, tap Share, then Copy iCloud Link. Please&nbsp;don't use a&nbsp;Shared Album: Apple shrinks photos there, and&nbsp;they print soft.</p></details><details><summary>How many photos should I send?</summary><p>The photos you want in&nbsp;the&nbsp;book, up&nbsp;to&nbsp;300, as&nbsp;one album link or&nbsp;a&nbsp;zip. No time to&nbsp;pick? Send me up&nbsp;to&nbsp;3,000 and&nbsp;I'll choose the&nbsp;best and&nbsp;group them for&nbsp;you, +$25 at&nbsp;checkout.</p></details><details><summary>Do you use AI?</summary><p>Only to&nbsp;sort photos. I&nbsp;never change or&nbsp;generate your&nbsp;photos. Every&nbsp;page is&nbsp;designed and&nbsp;checked by&nbsp;a&nbsp;person.</p></details><details><summary>How much does it cost?</summary><p>A&nbsp;small book up&nbsp;to&nbsp;30&nbsp;pages is&nbsp;$29 and&nbsp;a&nbsp;big book up&nbsp;to&nbsp;100&nbsp;pages is&nbsp;$79, both as&nbsp;a&nbsp;PDF, with photo picking and&nbsp;2&nbsp;rounds of&nbsp;edits included. Printing is&nbsp;extra, once you've approved your book.</p></details><details><summary>How much is printing?</summary><p>Once you've approved your book. Hardcover: $69 for a&nbsp;small book, $119 for a&nbsp;big one. Premium layflat: $129 or&nbsp;$199. Copies for family $69&nbsp;each. US and&nbsp;Canada shipping included, Europe +$15.</p></details><details><summary>What if I don't like the design?</summary><p>Ask for changes in&nbsp;plain words. 2&nbsp;rounds of&nbsp;edits are included, each extra round is&nbsp;$25. Don't love the&nbsp;first draft and&nbsp;don't want to&nbsp;change it? Full refund. Once you ask for&nbsp;edits, the&nbsp;next version is&nbsp;a&nbsp;second draft and&nbsp;the&nbsp;refund is&nbsp;off.</p></details><details><summary>Do I need to use an editor?</summary><p>No. No&nbsp;editor, no&nbsp;templates, no&nbsp;dragging and&nbsp;dropping. You&nbsp;just reply to&nbsp;my&nbsp;email.</p></details><details><summary>Are my photos private?</summary><p>Yes. Your&nbsp;photos are encrypted in&nbsp;transit and&nbsp;at rest, used only for&nbsp;your&nbsp;book, and&nbsp;deleted 90&nbsp;days after your&nbsp;book is&nbsp;complete.</p></details><details><summary>When will I get my book?</summary><p>The first draft comes in&nbsp;48&nbsp;hours or&nbsp;less after your&nbsp;photos are in. You&nbsp;have a&nbsp;week for&nbsp;edits, or&nbsp;2&nbsp;to&nbsp;3&nbsp;days for&nbsp;Christmas orders. After&nbsp;you&nbsp;approve, printing takes 3&nbsp;to&nbsp;5&nbsp;working days, plus shipping. Order&nbsp;and&nbsp;send your&nbsp;photos by&nbsp;Dec&nbsp;1 for&nbsp;Christmas delivery.</p></details><details><summary>Do you ship outside the US?</summary><p>Yes. Shipping to&nbsp;the&nbsp;US and&nbsp;Canada is&nbsp;included, Europe is&nbsp;+$15. Worldwide shipping also available, just ask.</p></details></div></details>
     </section>
 
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
+      <div class="footer-top">
       <div class="footer-brand">
         <span class="wordmark"><svg class="remeet-flower" width="24" height="24" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="5" fill="#5f6d60" opacity=".85"/><circle cx="22" cy="14" r="5" fill="#5f6d60" opacity=".7"/><circle cx="20" cy="21" r="5" fill="#5f6d60" opacity=".6"/><circle cx="12" cy="21" r="5" fill="#5f6d60" opacity=".7"/><circle cx="10" cy="14" r="5" fill="#5f6d60" opacity=".85"/><circle cx="16" cy="16" r="3" fill="#d4a647"/></svg><span class="hi">Re</span>Meet</span>
         <div class="footer-tagline">Photos / Stories / People / Forever</div>
+      </div>
+        <div class="featured-on">
+        <span>Featured on</span>
+        <a href="https://showmebest.ai" target="_blank" rel="noopener"><img src="/assets/badges/showmebest.webp" alt="Featured on ShowMeBest.ai" width="160" height="40" loading="lazy"></a>
+        <a href="https://www.toolpilot.ai" target="_blank" rel="noopener"><img src="/assets/badges/toolpilot.png" alt="Featured on ToolPilot" width="183" height="40" loading="lazy"></a>
+        <a href="https://fazier.com" target="_blank" rel="noopener"><img src="/assets/badges/fazier.svg" alt="Featured on Fazier" width="169" height="40" loading="lazy"></a>
+        <a href="https://startupfa.me/s/remeet" target="_blank" rel="noopener"><img src="https://startupfa.me/badges/featured-badge-small.webp" alt="ReMeet - Featured on Startup Fame" width="250" height="40" loading="lazy"></a>
+        <a href="https://startupbase.io/products/remeet" target="_blank" rel="noopener"><img src="/assets/badges/startupbase.svg" alt="Launched on StartupBase" width="150" height="40" loading="lazy"></a>
+        <a href="https://dang.ai/" target="_blank" rel="noopener">Dang.ai</a>
+        <a href="https://twelve.tools" target="_blank" rel="noopener">Twelve Tools</a>
+      </div>
       </div>
       <div class="footer-links">
         <details class="footer-col"><summary>Photo Books</summary><div class="fc-links">
@@ -455,13 +475,6 @@
           <a href="mailto:hello@remeet.cc">Contact</a>
         </div></details>
       </div>
-    </div>
-    <div class="featured-on">
-      <span>Featured on</span>
-      <a href="https://dang.ai/" target="_blank" rel="noopener">Dang.ai</a>
-      <a href="https://fazier.com/" target="_blank" rel="noopener">Fazier</a>
-      <a href="https://www.toolpilot.ai/" target="_blank" rel="noopener">ToolPilot</a>
-      <a href="https://showmebest.ai/" target="_blank" rel="noopener">ShowMeBest</a>
     </div>
     <div class="footer-bottom">&copy; 2026 <span class="hi">Re</span>Meet</div>
   </footer>
